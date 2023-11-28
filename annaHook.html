@@ -4,19 +4,23 @@
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
     <title>HookedOnTech</title>
+    <link href="https://cdn.jsdelivr.net/npm/bootstrap@5.3.2/dist/css/bootstrap.min.css" rel="stylesheet" integrity="sha384-T3c6CoIi6uLrA9TneNEoa7RxnatzjcDSCmG1MXxSR1GAsXEV/Dwwykc2MPK8M2HN" crossorigin="anonymous">
+
+
     <style>
         body {
             font-family: 'Arial', sans-serif;
             margin: 0;
             padding: 0;
-            background-color: #CAEDD1;
-            color: #155422;
+            background-color: #D7E0C5;
+            color: #1C2E22;
         }
 
         header {
-            background-color: #CAEDD1;
-            color: #CAEDD1;
+            background-color: #D7E0C5;
+            color: #1C2E22;
             text-align: center;
+            flex-direction: column;
             padding: 20px;
         }
 
@@ -25,7 +29,7 @@
         }
 
         h1, h2 {
-            color: #155422;
+            color: #1C2E22;
         }
 
         p {
@@ -33,19 +37,34 @@
         }
         
         a {
-            color: #79BA86;
+            color: #8E967E;
+            background-color: #1C2E22;
+            text-decoration: none;
+            border: #8E967E;
+            border-width: 1px;
+            border-style: solid;
+            border-radius: 5px;
+            padding: 1vw;
+           
+        }
+        a:hover {
+            color: #D7E0C5;
         }
 
         div {
             display: flex;
-            flex-direction: column;
+            flex-direction: row;
             justify-content: center;
             align-items: center;
         }
         img {
            
             border-radius: 100%;
-            width: 20%;
+            width: 30vw;
+            height:30vw;
+            object-fit: cover;
+            
+
         }
 
         footer {
@@ -56,13 +75,26 @@
             bottom: 0;
             width: 100%;
         }
+        nav {
+            display: flex;
+            flex-direction: row;
+            justify-content: center;
+            align-items: center;
+            margin-bottom: 3vh;
+            gap: 2vw;
+        }
     </style>
 </head>
 <body>
     <header>
-        <a href="/" >Home</a>
+        <nav>
+            <a href="/">Home</a>
+            <a href="/projects" >Projects</a>
+            <a href="/contact">Contact</a>
+        </nav>
+         
+        <img src="/images/annaImage.png" alt="Anna Hook's Profile Picture" >
         <h1>Anna Hook</h1>
-        <img src="/images/annaProfile.png" alt="Anna Hook's Profile Picture" >
 
     </header>
 
