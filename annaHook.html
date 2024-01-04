@@ -32,11 +32,24 @@
 
         h1 {
             color: #D7E0C5;
+            font-family: 'Times New Roman', Times, sans-serif;
+        }
+        p {
+            color: #D7E0C5;
+            font-family: Cambria, Cochin, Georgia, Times, 'Times New Roman', serif;            margin-top: 1vh;
+            font-size: 22px;
+
         }
         
         h2, h3 {
-            color: #8E967E;
+            color: #D7E0C5;
+            stroke: #D7E0C5;
+            stroke-width: 1px;
+            text-decoration: underline;
+            text-decoration-color: #8E967E;
+            font-family: 'Times New Roman', Times, sans-serif;
         }
+       
 
         ul {
             gap: 20px;
@@ -47,9 +60,11 @@
         }
 
         a {
-            color: #8E967E;
+            color: #D7E0C5;
             text-decoration: none;
+            font-family: 'Times New Roman', Times, sans-serif;
             border: #8E967E;
+            background-color: #505C38;
             border-width: 1px;
             border-style: solid;
             border-radius: 5px;
@@ -67,15 +82,32 @@
             background-position: center;
             background-repeat: no-repeat;
             background-color: rgb(3, 2, 2);
-            height: 300px;
+            height: 20vw;
             display: flex;
+            flex-direction: column;
+            place-items: center;
             justify-content: center;
             align-items: center;
             border-radius: 40px;
             box-shadow: #D7E0C5 0px 0px 10px 0px;
+            width: 20vw;
+            position: relative; /* Add this line to enable absolute positioning for children */
+
+            #anna {
+                visibility: collapse;
+            }
+            #synonym {
+                visibility: visible;
+            }
         }
 
         #personHeroSection:hover {
+            #synonym {
+                visibility: collapse;
+            }
+            #anna {
+                visibility: visible;
+            }
             background-image: url("https://media.licdn.com/dms/image/D4E03AQErQRvo0ls99w/profile-displayphoto-shrink_800_800/0/1675344606912?e=1708560000&v=beta&t=S7HxtscAqAP-eyQjOMRXnD-KCWyXmPFJzjcXmChmb_U");
         }
 
@@ -84,6 +116,52 @@
             padding: 10px;
             text-align: center;
         }
+
+        #onesection {
+            align-items: center;
+            justify-content: center;
+            display: flex;
+            flex-direction: column;
+        }
+        #twosections {
+            justify-content: center;
+            display: flex;
+            flex-direction: row;
+        }
+      
+    #anna {
+        position: absolute;
+        font-size: 3vw;
+
+    }
+    #synonym {
+        position: absolute;
+        font-size: 2vw;
+    }
+    #halfscreen {
+        width: 40vw;
+    }
+
+    @media (max-width: 768px) {
+            #halfscreen {
+                width: 90%;
+            }
+            #twosections {
+            align-items: center;
+            justify-content: center;
+            display: flex;
+            flex-direction: column;
+            text-align: center;
+            }
+            #personHeroSection {
+            height: 40vw;
+            width: 60vw;
+            }
+            p {
+                font-size: 20px;
+            }
+        }
+        
 
 
     </style>
@@ -96,29 +174,65 @@
         </nav>
     </header>
 
-    <section id="personHeroSection">
-        <h1>Anna Hook</h1>
-    </section>
-
-    <section id="interestsSection">
-        <div class="row">
-            <div class="col">
-                <ul>
-                    <li><a href="/studys.html" target="_self">Computer Science Student</a></li>
-                    <li><a href="/job.html" target="_self">Working Student at Clye</a></li>
-                    <li><a href="/challenge.html" target="_self">Current Challenge</a></li>
-                    <li><a href="/" target="_self">hooked0nTech</a></li>
-                    <li><a href="/hookb00k.html" target="_self">hookb00k</a></li>
-                    <li><a href="/apps.html" target="_self">Published Apps</a></li>
-                </ul>
-            </div>
+    
+    <section id="onesection">
+        <div id="personHeroSection">
+            <h1 id="anna">Anna Hook</h1>
+            <h1 id="synonym">HookedOnTech</h1>
         </div>
+       
     </section>
 
+       <div id="twosections">
+           <section id="halfscreen">
+               <h2>Online University</h2>
+               <p>Working on my Bachelor of Computer Science</p>
+               <a href="https://www.iu.de/bachelor/informatik/" target="_blank"> @ IU International University</a>
+            </section>
+            <section id="halfscreen">
+                <h2>Working at CLYE</h2>
+                <p>Currently, I am  contributing as a working student at CLYE. My responsibilities encompass crafting the Landing Page and engaging in various exciting projects.</p>        
+                <a href="https://clye.app/en" target="_blank"> CLYE Landingpage</a>
+            </section>
+        </div>
 
 
 
 
+        <div id="twosections">
+
+    <section id="halfscreen">
+        <h2>Current Challenge</h2>
+        <p>366 days of persistency</p>       
+        <a href="https://clye.app/en" target="_blank"> Link to Instagram</a>
+    </section>
+
+    <section id="halfscreen">
+        <h2>Published Apps</h2>
+        <p>FAB App</p>  
+        <a href="https://clye.app/en" target="_blank"> Apple app Store</a>
+        <a href="https://clye.app/en" target="_blank"> Google Play Store</a>
+        <p>Couple Corner</p>     
+        <a href="https://clye.app/en" target="_blank"> Apple app Store</a>
+    </section>
+
+    </div>
+
+
+
+    <div id="twosections">
+    <section id="halfscreen">
+        <h2>Social Media Plattforms</h2>
+        <a href="/" target="_self">hooked0nTech</a>
+        <a href="/hookb00k.html" target="_self">hookb00k</a>
+    </section>
+    <section id="halfscreen">
+        <h2>Collaborations</h2>
+        <p>Get in touch with me to discuss your ideas and projects. I'm excited to collaborate and work on Ideas together.</p>
+        <a href="mailto:hook0ntech@gmail.com" target="_self">Email: hook0ntech@gmail.com</a>
+    </section>
+
+    </div>
 
 
 
@@ -127,8 +241,7 @@
 
     
 
-    <footer>
-    </footer>
+ 
 
     <script src="https://cdn.jsdelivr.net/npm/bootstrap@5.3.2/dist/js/bootstrap.bundle.min.js" integrity="sha384-L1dZvyxd3VvKB1SCKGR5D8Y26ZjcmfPXn1T2GO6e7ngzAeGY9pLuh9nL6L9NrJSJ" crossorigin="anonymous"></script>
 </body>
