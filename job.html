@@ -3,6 +3,7 @@
 <head>
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <script src="https://cdn.jsdelivr.net/npm/chart.js"></script>
     <link href="https://cdn.jsdelivr.net/npm/bootstrap@5.3.2/dist/css/bootstrap.min.css" rel="stylesheet" integrity="sha384-T3c6CoIi6uLrA9TneNEoa7RxnatzjcDSCmG1MXxSR1GAsXEV/Dwwykc2MPK8M2HN" crossorigin="anonymous">
     <style>
         body {
@@ -80,90 +81,162 @@
         </nav>
     </header>
 
+
+    
+
     <section>
-        <canvas id="collaborationChart" width="400" height="200"></canvas>
+        <h2>Choose Collaboration Type</h2>
+        <div id="collaborationType">
+            <label for="type">Select Collaboration Type:</label>
+            <select id="type" onchange="updatePricing()">
+                <option value="under10k">>10k Followers</option>
+                <option value="tenKto15k">10K - 15K</option>
+                <option value="fifteento25k">15K -25K</option>
+                <option value="twentyfiveto50k">25K -50K</option>
+                <option value="fiftyto100k">50K - 100K</option>
+            </select>
+        </div>
+
+
+        <div style="width: 80%; margin: auto;">
+            <canvas id="pricingChart"></canvas>
+        </div>
+
+
+
+        <table class="table table-dark table-striped">
+            <thead>
+                <tr>
+                    <th scope="col">Follower count</th>
+                    <th scope="col">Story</th>
+                    <th scope="col">Photo</th>
+                    <th scope="col">Reel</th>
+
+                </tr>
+            </thead>
+            <tbody>
+                <tr>
+                    <th scope="row">under10k</th>
+                    <td id="under10k">$100-115</td>
+                    <td id="under10k">$190-250</td>
+                    <td id="under10k">$325-350</td>
+                </tr>
+                <tr>
+                    <th scope="row">tenKto15k</th>
+                    <td id="tenKto15k">$115-150</td>
+                    <td id="tenKto15k">$250-310</td>
+                    <td id="tenKto15k">$350-650</td>
+
+                </tr>
+                <tr>
+                    <th scope="row">fifteento25k</th>
+                    <td id="fifteento25k">$150-250</td>
+                    <td id="fifteento25k">$310-500</td>
+                    <td id="fifteento25k">$650-700</td>
+                </tr>
+                <tr>
+                    <th scope="row">twentyfiveto50k</th>
+                    <td id="twentyfiveto50k">$250-300</td>
+                    <td id="twentyfiveto50k">$500-650</td>
+                    <td id="twentyfiveto50k">$700-1000</td>
+                </tr>
+                <tr>
+                    <th scope="row">fiftyto100k</th>
+                    <td id="fiftyto100k">$300-570</td>
+                    <td id="fiftyto100k">$650-1120</td>
+                    <td id="fiftyto100k">$1000-1250</td>
+                </tr>
+            </tbody>
+        </table>
     </section>
 
-    <script src="https://cdn.jsdelivr.net/npm/chart.js"></script>
-
     <script>
-        // Sample data for Instagram collaboration pricing
-        var followers = 44000;
-        var prices = [100, 200, 300, 400, 500]; // Update this array with your pricing data
-    
-        // Calculate the price per follower
-        var pricePerFollower = prices.map(price => price / followers);
-    
-        // Chart.js configuration
-        var ctx = document.getElementById('collaborationChart').getContext('2d');
-        var myChart = new Chart(ctx, {
-            type: 'bar',
+
+function createLineChart() {
+        var ctx = document.getElementById('pricingChart').getContext('2d');
+        var chart = new Chart(ctx, {
+            type: 'line',
             data: {
-                labels: prices.map(price => '$' + price),
+                labels: ['story', 'photo', 'reel'],
                 datasets: [{
-                    label: 'Price per Follower',
-                    data: pricePerFollower,
-                    backgroundColor: '#505C38',
-                    borderColor: '#8E967E',
-                    borderWidth: 1
-                }]
+                    label: 'under10k',
+                    data: [100, 150, 200, 300, 600], // Adjust the values for Basic pricing
+                    borderColor: 'rgba(255, 99, 132, 1)',
+                    borderWidth: 2,
+                    fill: false
+                }, {
+                    label: 'tenKto15k',
+                    data: [150, 200, 250], // Adjust the values for Standard pricing
+                    borderColor: 'rgba(54, 162, 235, 1)',
+                    borderWidth: 2,
+                    fill: false
+                }, {
+                    label: 'fifteento25k',
+                    data: [200, 250, 300], // Adjust the values for Premium pricing
+                    borderColor: 'rgba(75, 192, 192, 1)',
+                    borderWidth: 2,
+                    fill: false
+                },
+                {
+                    label: 'twentyfiveto50k',
+                    data: [200, 250, 390], // Adjust the values for Premium pricing
+                    borderColor: 'rgba(77, 92, 192, 1)',
+                    borderWidth: 2,
+                    fill: false
+                },
+                {
+                    label: 'fiftyto100k',
+                    data: [200, 250, 350], // Adjust the values for Premium pricing
+                    borderColor: 'rgba(78, 12, 192, 1)',
+                    borderWidth: 2,
+                    fill: false
+                }
+                ]
             },
             options: {
                 scales: {
                     y: {
-                        beginAtZero: true,
-                        title: {
-                            display: true,
-                            text: 'Price per Follower'
-                        }
-                    },
-                    x: {
-                        title: {
-                            display: true,
-                            text: 'Instagram Collaboration Pricing'
-                        }
+                        beginAtZero: true
                     }
                 }
             }
         });
+    }
+
+
+
+        function updatePricing() {
+            var type = document.getElementById("type").value;
+            var under10k =  document.getElementById("under10k").textContent;
+            var tenKto15k =  document.getElementById("tenKto15k").textContent;
+            var fifteento25k =  document.getElementById("fifteento25k").textContent;
+            var twentyfiveto50k =  document.getElementById("twentyfiveto50k").textContent;
+            var fiftyto100k =  document.getElementById("fiftyto100k").textContent;
+
+            // Adjust prices based on collaboration type
+            switch(type) {
+                case 'story':
+                    break;
+                case 'photo':
+                    break;
+                case 'reel':
+                    break;
+                default:
+                    break;
+            }
+
+            // Update table with new prices
+            document.getElementById("tenKto15k").textContent = "$" + tenKto15k;
+            document.getElementById("under10k").textContent = "$" + under10k;
+            document.getElementById("fifteento25k").textContent = "$" + fifteento25k;
+            document.getElementById("twentyfiveto50k").textContent = "$" + twentyfiveto50k;
+            document.getElementById("fiftyto100k").textContent = "$" + fiftyto100k;
+        }
+
+        // Initial call to set prices based on default collaboration type
+        updatePricing();
+        createLineChart();
     </script>
-
-
-
-
-<section>
-    <h2>Pricing Packages I offer</h2>
-    
-    <table class="table table-dark table-striped">
-        <thead>
-            <tr>
-                <th scope="col">Package</th>
-                <th scope="col">Features</th>
-                <th scope="col">Price</th>
-            </tr>
-        </thead>
-        <tbody>
-            <tr>
-                <th scope="row">Basic</th>
-                <td>1 Post</td>
-                <td>$200</td>
-            </tr>
-            <tr>
-                <th scope="row">Standard</th>
-                <td>1 Posts + Story Mention</td>
-                <td>$350</td>
-            </tr>
-            <tr>
-                <th scope="row">Premium</th>
-                <td>2 Posts + Story Mention + Youtube Mention</td>
-                <td>$500</td>
-            </tr>
-        </tbody>
-    </table>
-</section>
-
-    
-
 
 </body>
 </html>
