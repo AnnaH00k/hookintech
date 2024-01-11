@@ -46,18 +46,24 @@
         }
 
         a {
-            color: #8E967E;
+            color: #D7E0C5;
             text-decoration: none;
+            font-family: 'Times New Roman', Times, sans-serif;
             border: #8E967E;
+            background-color: #505C38;
             border-width: 1px;
             border-style: solid;
             border-radius: 5px;
             padding: 5px;
             text-align: center;
+            margin: 10px;
         }
 
-       a:hover {
-            color: #D7E0C5;
+        a:hover {
+            color: #FFFFFF;
+        }
+        #back {
+            float: left;
         }
 
        
@@ -68,12 +74,95 @@
 <body>
     <header>
         <nav>
-            <a href="/annaHook.html" target="_self">Back</a>
-            <br/>
-            <br/>
-           <h1>Working at CLYE</h1>
+            <a id="back" href="/" target="_self">Back</a>
+           <h1>Collaboration Prizing</h1>
+           <p>Prizing varys with number of followers and engagement rate.</p>
         </nav>
     </header>
+
+    <section>
+        <canvas id="collaborationChart" width="400" height="200"></canvas>
+    </section>
+
+    <script src="https://cdn.jsdelivr.net/npm/chart.js"></script>
+
+    <script>
+        // Sample data for Instagram collaboration pricing
+        var followers = 44000;
+        var prices = [100, 200, 300, 400, 500]; // Update this array with your pricing data
+    
+        // Calculate the price per follower
+        var pricePerFollower = prices.map(price => price / followers);
+    
+        // Chart.js configuration
+        var ctx = document.getElementById('collaborationChart').getContext('2d');
+        var myChart = new Chart(ctx, {
+            type: 'bar',
+            data: {
+                labels: prices.map(price => '$' + price),
+                datasets: [{
+                    label: 'Price per Follower',
+                    data: pricePerFollower,
+                    backgroundColor: '#505C38',
+                    borderColor: '#8E967E',
+                    borderWidth: 1
+                }]
+            },
+            options: {
+                scales: {
+                    y: {
+                        beginAtZero: true,
+                        title: {
+                            display: true,
+                            text: 'Price per Follower'
+                        }
+                    },
+                    x: {
+                        title: {
+                            display: true,
+                            text: 'Instagram Collaboration Pricing'
+                        }
+                    }
+                }
+            }
+        });
+    </script>
+
+
+
+
+<section>
+    <h2>Pricing Packages I offer</h2>
+    
+    <table class="table table-dark table-striped">
+        <thead>
+            <tr>
+                <th scope="col">Package</th>
+                <th scope="col">Features</th>
+                <th scope="col">Price</th>
+            </tr>
+        </thead>
+        <tbody>
+            <tr>
+                <th scope="row">Basic</th>
+                <td>1 Post</td>
+                <td>$200</td>
+            </tr>
+            <tr>
+                <th scope="row">Standard</th>
+                <td>1 Posts + Story Mention</td>
+                <td>$350</td>
+            </tr>
+            <tr>
+                <th scope="row">Premium</th>
+                <td>2 Posts + Story Mention + Youtube Mention</td>
+                <td>$500</td>
+            </tr>
+        </tbody>
+    </table>
+</section>
+
+    
 
 
 </body>
