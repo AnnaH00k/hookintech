@@ -28,6 +28,24 @@
 
         section {
             margin: 20px;
+            padding: 20px;
+            border-radius: 10px;
+           
+        }
+
+        #title {
+            text-align: center;
+        }
+
+        
+
+        .formula {
+            background-color: #505C38;
+            color: #D7E0C5;
+            padding: 10px;
+            border-radius: 5px;
+            margin-top: 15px;
+            width: max-content;
         }
 
         h1 {
@@ -67,6 +85,115 @@
             float: left;
         }
 
+        #prizingCalculator {
+            display: flex;
+            flex-direction: column;
+            gap: 10px;
+            width: max-content;
+            margin: auto;
+        }   
+        #prizingCalculator label {
+            color: #8E967E;
+        }
+        #prizingCalculator input {
+            width: 200px;
+        }
+        #prizingCalculator button {
+            width: 200px;
+            margin-top: 10px;
+            background-color: #505C38;
+            color: #D7E0C5;
+            border: none;
+            border-radius: 5px;
+            padding: 5px;
+        }
+        #prizingCalculator button:hover {
+            background-color: #8E967E;
+            color: #17221B;
+        }
+        #prizingResults {
+            display: flex;
+            flex-direction: column;
+            text-align: center;
+            justify-content: center;
+            align-items: center;
+            gap: 10px;
+            margin-top: 5vh;
+        }
+      
+        #prizingResults p:first-child {
+            border-top: 1px solid #8E967E;
+            padding-top: 10px;
+        }
+        #prizingResults p:last-child {
+            border-bottom: 1px solid #8E967E;
+            padding-bottom: 10px;
+        }
+        #storyPrizing {
+            color: #71A2B6;
+        }
+        #photoPrizing {
+            color: #B68D40;
+        }
+        #reelPrizing {
+            color: #6F8241;
+        }
+      
+        @media only screen and (max-width: 768px) {
+    /* Adjust styling for small screens here */
+    body {
+        font-size: 14px; /* Adjust the font size or any other styles for better visibility on smaller screens */
+    }
+
+    header {
+        padding: 5px;
+    }
+
+    section {
+        margin: 10px;
+        padding: 10px;
+        display: flex;
+        flex-direction: column;
+        align-items: center;
+        justify-content: center;
+    }
+
+    #pricingChart {
+        width: 100%;
+    }
+
+    #calculatorAndResult {
+        flex-direction: column;
+    }
+   
+
+    #prizingCalculator input {
+        width: 100%; /* Make the input fields take full width */
+    }
+    .formula {
+            display: flex;
+            flex-direction: column;
+            text-align: center;
+            justify-content: center;
+            align-items: center;
+            background-color: #505C38;
+            align-self: center;
+            justify-content: center;
+            color: #D7E0C5;
+            padding: 10px;
+            border-radius: 5px;
+            margin-top: 15px;
+            width: 85vw;
+        }
+       
+        #title {
+            margin-top: 9vh;
+        }
+      
+}
+      
+
+
        
 
     </style>
@@ -76,30 +203,21 @@
     <header>
         <nav>
             <a id="back" href="/" target="_self">Back</a>
-           <h1>Collaboration Prizing</h1>
-           <p>Prizing varys with number of followers and engagement rate.</p>
         </nav>
     </header>
 
-
-    
+    <section id="title">
+        <h1>Collaboration Prizing</h1>
+        <p>Here you can see the estimated prizing for different types of collaborations.</p>
+        <p>Prizing varys with number of followers and engagement rate.</p>
+    </section>
 
     <section>
-        <h2>Choose Collaboration Type</h2>
-        <div id="collaborationType">
-            <label for="type">Select Collaboration Type:</label>
-            <select id="type" onchange="updatePricing()">
-                <option value="under10k">>10k Followers</option>
-                <option value="tenKto15k">10K - 15K</option>
-                <option value="fifteento25k">15K -25K</option>
-                <option value="twentyfiveto50k">25K -50K</option>
-                <option value="fiftyto100k">50K - 100K</option>
-            </select>
-        </div>
 
 
-        <div style="width: 80%; margin: auto;">
-            <canvas id="pricingChart"></canvas>
+        
+        <div style="width: 80%; margin: auto; margin-bottom: 6vh;">
+            <canvas id="pricingChart" width="400" height="250"></canvas>
         </div>
 
 
@@ -150,93 +268,227 @@
         </table>
     </section>
 
+<section>
+    <h2>Understanding Engagement Rate</h2>
+        <p>It is a crucial metric for content creators. It shows how much your audience interacts with your content.</p>
+        <p class="formula">Engagement Rate = [(Likes + Comments + Shares) / Followers] * 100</p>
+        <p class="formula">Engagement Rate (Multiple Posts) = [(Average Interactions per Post) / Followers] * 100</p>
+        <p class="formula">Average Interactions per Post = (Total Interactions / Number of Posts)</p>
+        <p>This formula considers the total number of interactions (likes, comments, shares) on your content, divided by your total number of followers. The result is then multiplied by 100 to express it as a percentage.</p>
+        <p>You can calculate this for all your posts or focus on a specific timeframe, like the last week, depending on whether you want a broader or more recent view of audience engagement.</p>
+        <p>A higher engagement rate often indicates that your audience finds your content interesting and is actively participating in the conversation, which can be valuable for collaborations and partnerships.</p>
+</section>
+
+<section>
+    <h2>Impact of Engagement Rate on Prizing</h2>
+    <p>The engagement rate plays a pivotal role in determining the prizing for collaborations. It serves as a key metric that reflects the level of interaction and interest your audience has in your content. Here's how the engagement rate influences prizing:</p>
+
+    <ol>
+        <li>
+            <strong>Higher Engagement Rate, Higher Prizing:</strong>
+            <p>A higher engagement rate generally indicates an actively involved and interested audience, making influencers with higher engagement rates more attractive to collaborators.</p>
+        </li>
+        <li>
+            <strong>Tailored Prizing for Engagement Tiers:</strong>
+            <p>The prizing structure considers both follower count and engagement rate, recognizing that influencers with different engagement rates within the same follower count category may offer varying levels of value to collaborators.</p>
+        </li>
+
+        <li>
+            <strong>Consideration for Content Types:</strong>
+            <p>The prizing chart is segmented by content types (Story, Photo, Reel), acknowledging that engagement rates can differ across various content formats. Brands may have specific preferences for certain types of content, influencing prizing strategies accordingly.</p>
+        </li>
+
+        <li>
+            <strong>Dynamic Pricing Strategy:</strong>
+            <p>By incorporating the engagement rate into the prizing strategy, you adopt a dynamic approach that reflects the evolving nature of audience interaction. This allows for a more tailored and fair compensation structure based on the actual impact an influencer has on their audience.</p>
+        </li>
+    </ol>
+</section>
+
+<section>
+    <h2>Prizing Calculator</h2>
+    <h4>The calculator does not work correctly yet!</h4>
+    <p>Calculate your estimated prizing for Story, Photo, and Reel based on your follower count and engagement rate:</p>
+    <div id="calculatorAndResult">
+        <form id="prizingCalculator">
+            <label for="followerCount">Follower Count:</label>
+            <input type="number" id="followerCount" name="followerCount" min="0">
+            
+            <label for="engagementRate">Engagement Rate (%):</label>
+            <input type="number" id="engagementRate" name="engagementRate" min="0">
+            
+            <button type="button" onclick="calculatePrizing()">Calculate Prizing</button>
+        </form>
+        
+        <div id="prizingResults">
+            <p id="storyPrizing"> Story : $0.00</p>
+            <p id="photoPrizing"> Photo : $0.00</p>
+            <p id="reelPrizing"> Reel : $0.00</p>
+        </div>
+    </div>
+</section>
+
+
+
+
+
+
     <script>
+   function calculatePrizing() {
+        var followerCount = parseFloat(document.getElementById('followerCount').value);
+        var engagementRate = parseFloat(document.getElementById('engagementRate').value);
 
-function createLineChart() {
-        var ctx = document.getElementById('pricingChart').getContext('2d');
-        var chart = new Chart(ctx, {
-            type: 'line',
-            data: {
-                labels: ['story', 'photo', 'reel'],
-                datasets: [{
-                    label: 'under10k',
-                    data: [100, 150, 200, 300, 600], // Adjust the values for Basic pricing
-                    borderColor: 'rgba(255, 99, 132, 1)',
-                    borderWidth: 2,
-                    fill: false
-                }, {
-                    label: 'tenKto15k',
-                    data: [150, 200, 250], // Adjust the values for Standard pricing
-                    borderColor: 'rgba(54, 162, 235, 1)',
-                    borderWidth: 2,
-                    fill: false
-                }, {
-                    label: 'fifteento25k',
-                    data: [200, 250, 300], // Adjust the values for Premium pricing
-                    borderColor: 'rgba(75, 192, 192, 1)',
-                    borderWidth: 2,
-                    fill: false
-                },
-                {
-                    label: 'twentyfiveto50k',
-                    data: [200, 250, 390], // Adjust the values for Premium pricing
-                    borderColor: 'rgba(77, 92, 192, 1)',
-                    borderWidth: 2,
-                    fill: false
-                },
-                {
-                    label: 'fiftyto100k',
-                    data: [200, 250, 350], // Adjust the values for Premium pricing
-                    borderColor: 'rgba(78, 12, 192, 1)',
-                    borderWidth: 2,
-                    fill: false
-                }
-                ]
-            },
-            options: {
-                scales: {
-                    y: {
-                        beginAtZero: true
-                    }
-                }
-            }
-        });
-    }
-
-
-
-        function updatePricing() {
-            var type = document.getElementById("type").value;
-            var under10k =  document.getElementById("under10k").textContent;
-            var tenKto15k =  document.getElementById("tenKto15k").textContent;
-            var fifteento25k =  document.getElementById("fifteento25k").textContent;
-            var twentyfiveto50k =  document.getElementById("twentyfiveto50k").textContent;
-            var fiftyto100k =  document.getElementById("fiftyto100k").textContent;
-
-            // Adjust prices based on collaboration type
-            switch(type) {
-                case 'story':
-                    break;
-                case 'photo':
-                    break;
-                case 'reel':
-                    break;
-                default:
-                    break;
-            }
-
-            // Update table with new prices
-            document.getElementById("tenKto15k").textContent = "$" + tenKto15k;
-            document.getElementById("under10k").textContent = "$" + under10k;
-            document.getElementById("fifteento25k").textContent = "$" + fifteento25k;
-            document.getElementById("twentyfiveto50k").textContent = "$" + twentyfiveto50k;
-            document.getElementById("fiftyto100k").textContent = "$" + fiftyto100k;
+        if (isNaN(followerCount) || isNaN(engagementRate)) {
+            document.getElementById('prizingResults').textContent = 'Please enter valid numbers for both follower count and engagement rate.';
+            return;
         }
 
+        var storyPrizing = calculatePrize('Story', followerCount, engagementRate);
+        var photoPrizing = calculatePrize('Photo', followerCount, engagementRate);
+        var reelPrizing = calculatePrize('Reel', followerCount, engagementRate);
+
+        document.getElementById('storyPrizing').textContent = 'Estimated Story Prizing: $' + storyPrizing.toFixed(2);
+        document.getElementById('photoPrizing').textContent = 'Estimated Photo Prizing: $' + photoPrizing.toFixed(2);
+        document.getElementById('reelPrizing').textContent = 'Estimated Reel Prizing: $' + reelPrizing.toFixed(2);
+    }
+
+    function calculatePrize(contentType, followerCount, engagementRate) {
+    // Placeholder base prizing based on follower count
+    var lowestPrizing;
+    var highestPrizing;
+
+    switch (contentType) {
+        case 'Story':
+            lowestPrizing = followerCount < 10000 ? 100 :
+                (followerCount < 15000 ? 115 : 
+                (followerCount < 25000 ? 150 : 
+                (followerCount < 50000 ? 250 :
+                (followerCount<100000 ? 300: 300))));
+            highestPrizing = followerCount < 10000 ? 115 : 
+                (followerCount < 15000 ? 150 : 
+                (followerCount < 25000 ? 250 : 
+                (followerCount < 50000 ? 300 :
+                (followerCount<100000 ? 570: 570))));
+
+            break;
+        case 'Photo':
+            lowestPrizing = followerCount < 10000 ? 190 : 
+                (followerCount < 15000 ? 250 : 
+                (followerCount < 25000 ? 310 : 
+                (followerCount < 50000 ? 500 : 
+                (followerCount<100000 ? 650:650))));
+            highestPrizing = followerCount < 10000 ? 250 : 
+                (followerCount < 15000 ? 310 : 
+                (followerCount < 25000 ? 500 : 
+                (followerCount < 50000 ? 650 :
+                (followerCount<100000 ? 1120: 1120))));
+
+            break;
+        case 'Reel':
+            lowestPrizing = followerCount < 10000 ? 325 : 
+                 (followerCount < 15000 ? 350 : 
+                 (followerCount < 25000 ? 650 : 
+                 (followerCount < 50000 ? 700 : 
+                 (followerCount < 100000 ? 1000 : 1000) )));
+            highestPrizing = followerCount < 10000 ? 350 : 
+                 (followerCount < 15000 ? 650 : 
+                 (followerCount < 25000 ? 700 : 
+                 (followerCount < 50000 ? 1000 : 
+                 (followerCount < 100000 ? 1250 : 1250))));
+
+            break;
+        default:
+            lowestPrizing = 0;
+            highestPrizing = 0;
+    }
+
+        // Ideal engagement rate
+        var idealEngagementRate = 4;
+
+        // Calculate the difference between actual and ideal engagement rate
+        var rateDifference = engagementRate - idealEngagementRate;
+
+        // Adjust the multiplier based on the rate difference
+        var multiplier = rateDifference * 0.1; // You can experiment with different multiplier values
+
+        // Ensure the multiplier is within reasonable bounds
+        multiplier = Math.max(-0.5, Math.min(0.5, multiplier));
+
+        var calculatedPrize = highestPrizing * (1 + multiplier);
+
+        return calculatedPrize;
+}
+
+
+
+
+
+        function createLineChart() {
+            var chart = new Chart(document.getElementById('pricingChart'), {
+                type: 'line',
+                data: {
+                    labels: ['0k', '10k', '15k', '25k', '50k', '100k'],
+                    datasets: [{
+                        label: 'estimated income for Story',
+                        data: [0, 115, 150, 250, 300, 570], // Adjust the values for Basic pricing
+                        borderColor: '#71A2B6', // Blueish
+                        backgroundColor: 'rgba(113, 162, 182, 0.2)', // Lighter shade of blueish
+                        borderWidth: 2,
+                        fill: true
+                    }, {
+                        label: 'estimated income for Photo',
+                        data: [0, 250, 310, 500, 650, 1120], // Adjust the values for Basic pricing
+                        borderColor: '#B68D40', // Brownish
+                        backgroundColor: 'rgba(182, 141, 64, 0.2)', // Lighter shade of brownish
+                        borderWidth: 2,
+                        fill: true
+                    }, {
+                        label: 'estimated income for Reel',
+                        data: [0, 350, 650, 700, 1000, 1250], // Adjust the values for Basic pricing
+                        borderColor: '#6F8241', // Greenish
+                        backgroundColor: 'rgba(111, 130, 65, 0.2)', // Lighter shade of greenish
+                        borderWidth: 2,
+                        fill: true
+                    }]
+                },
+                options: {
+                    responsive: true,
+                    title: {
+                        display: true,
+                        text: 'Pricing'
+                    },
+                    tooltips: {
+                        mode: 'index',
+                        intersect: false,
+                    },
+                    hover: {
+                        mode: 'index',
+                        intersect: false
+                    },
+                    scales: {
+                        xAxes: [{
+                            display: true,
+                            scaleLabel: {
+                                display: true,
+                                labelString: '# of Followers'
+                            }
+                        }],
+                        yAxes: [{
+                            display: true,
+                            scaleLabel: {
+                                display: true,
+                                labelString: 'Price in $'
+                            }
+                        }]
+                    }
+                }
+            });
+        }
+    
         // Initial call to set prices based on default collaboration type
-        updatePricing();
         createLineChart();
     </script>
+    
 
 </body>
 </html>
