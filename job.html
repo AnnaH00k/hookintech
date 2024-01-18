@@ -37,7 +37,11 @@
             text-align: center;
         }
 
-        
+        #disclaimer {
+            margin-top: 2vh;
+            color: #d17d7d;
+            margin-bottom: 0%;
+        }
 
         .formula {
             background-color: #505C38;
@@ -138,6 +142,14 @@
         #reelPrizing {
             color: #6F8241;
         }
+
+        #pricingChart {
+            width: 80%;
+            margin: auto;
+            display: flex;
+            align-items: center;
+            justify-content: center;
+        }
       
         @media only screen and (max-width: 768px) {
     /* Adjust styling for small screens here */
@@ -165,7 +177,6 @@
     #calculatorAndResult {
         flex-direction: column;
     }
-   
 
     #prizingCalculator input {
         width: 100%; /* Make the input fields take full width */
@@ -234,32 +245,32 @@
             </thead>
             <tbody>
                 <tr>
-                    <th scope="row">under10k</th>
+                    <th scope="row">>10K</th>
                     <td id="under10k">$100-115</td>
                     <td id="under10k">$190-250</td>
                     <td id="under10k">$325-350</td>
                 </tr>
                 <tr>
-                    <th scope="row">tenKto15k</th>
+                    <th scope="row">10K-15K</th>
                     <td id="tenKto15k">$115-150</td>
                     <td id="tenKto15k">$250-310</td>
                     <td id="tenKto15k">$350-650</td>
 
                 </tr>
                 <tr>
-                    <th scope="row">fifteento25k</th>
+                    <th scope="row">15K-25K</th>
                     <td id="fifteento25k">$150-250</td>
                     <td id="fifteento25k">$310-500</td>
                     <td id="fifteento25k">$650-700</td>
                 </tr>
                 <tr>
-                    <th scope="row">twentyfiveto50k</th>
+                    <th scope="row">25K-50K</th>
                     <td id="twentyfiveto50k">$250-300</td>
                     <td id="twentyfiveto50k">$500-650</td>
                     <td id="twentyfiveto50k">$700-1000</td>
                 </tr>
                 <tr>
-                    <th scope="row">fiftyto100k</th>
+                    <th scope="row">50K-100K</th>
                     <td id="fiftyto100k">$300-570</td>
                     <td id="fiftyto100k">$650-1120</td>
                     <td id="fiftyto100k">$1000-1250</td>
@@ -306,8 +317,15 @@
 </section>
 
 <section>
+    <h2>Engagement Rate Calculator</h2>
+    <p>Dont want to find out your engagementRate alone? <br/> Use one of the following pages:</p>
+
+    <a href="https://www.inbeat.co/engagement-rate-calculator-instagram/" target="_blank">Inbeat</a>
+    <a href="https://phlanx.com/engagement-calculator" target="_blank">Phlanx</a>
+    <p id="disclaimer">The results of external calculators is not guaranteed to be correct.</p>
+    <h5>Calculate yourself, based on the formulas mentioned above</h5>
+    <br/>
     <h2>Prizing Calculator</h2>
-    <h4>The calculator does not work correctly yet!</h4>
     <p>Calculate your estimated prizing for Story, Photo, and Reel based on your follower count and engagement rate:</p>
     <div id="calculatorAndResult">
         <form id="prizingCalculator">
@@ -346,10 +364,11 @@
         var storyPrizing = calculatePrize('Story', followerCount, engagementRate);
         var photoPrizing = calculatePrize('Photo', followerCount, engagementRate);
         var reelPrizing = calculatePrize('Reel', followerCount, engagementRate);
+        var engagementRateText = engagementRate > 4 ? ' <' : '';
 
-        document.getElementById('storyPrizing').textContent = 'Estimated Story Prizing: $' + storyPrizing.toFixed(2);
-        document.getElementById('photoPrizing').textContent = 'Estimated Photo Prizing: $' + photoPrizing.toFixed(2);
-        document.getElementById('reelPrizing').textContent = 'Estimated Reel Prizing: $' + reelPrizing.toFixed(2);
+        document.getElementById('storyPrizing').textContent = ' Story : $' + storyPrizing.toFixed(2) + engagementRateText;
+        document.getElementById('photoPrizing').textContent = ' Photo : $' + photoPrizing.toFixed(2) + engagementRateText;
+        document.getElementById('reelPrizing').textContent = ' Reel : $' + reelPrizing.toFixed(2) + engagementRateText;
     }
 
     function calculatePrize(contentType, followerCount, engagementRate) {
@@ -402,20 +421,17 @@
             highestPrizing = 0;
     }
 
+        
         // Ideal engagement rate
         var idealEngagementRate = 4;
 
-        // Calculate the difference between actual and ideal engagement rate
-        var rateDifference = engagementRate - idealEngagementRate;
-
-        // Adjust the multiplier based on the rate difference
-        var multiplier = rateDifference * 0.1; // You can experiment with different multiplier values
-
-        // Ensure the multiplier is within reasonable bounds
-        multiplier = Math.max(-0.5, Math.min(0.5, multiplier));
-
-        var calculatedPrize = highestPrizing * (1 + multiplier);
-
+        // Calculate the prizing based on follower count and engagement rate
+        var calculatedPrize;
+            if (engagementRate <= 4) {
+            calculatedPrize = lowestPrizing + ((highestPrizing - lowestPrizing) * (engagementRate / idealEngagementRate));
+            } else {
+            calculatedPrize = highestPrizing;
+            }
         return calculatedPrize;
 }
 
@@ -429,21 +445,21 @@
                 data: {
                     labels: ['0k', '10k', '15k', '25k', '50k', '100k'],
                     datasets: [{
-                        label: 'estimated income for Story',
+                        label: ' income for Story',
                         data: [0, 115, 150, 250, 300, 570], // Adjust the values for Basic pricing
                         borderColor: '#71A2B6', // Blueish
                         backgroundColor: 'rgba(113, 162, 182, 0.2)', // Lighter shade of blueish
                         borderWidth: 2,
                         fill: true
                     }, {
-                        label: 'estimated income for Photo',
+                        label: ' income for Photo',
                         data: [0, 250, 310, 500, 650, 1120], // Adjust the values for Basic pricing
                         borderColor: '#B68D40', // Brownish
                         backgroundColor: 'rgba(182, 141, 64, 0.2)', // Lighter shade of brownish
                         borderWidth: 2,
                         fill: true
                     }, {
-                        label: 'estimated income for Reel',
+                        label: ' income for Reel',
                         data: [0, 350, 650, 700, 1000, 1250], // Adjust the values for Basic pricing
                         borderColor: '#6F8241', // Greenish
                         backgroundColor: 'rgba(111, 130, 65, 0.2)', // Lighter shade of greenish
