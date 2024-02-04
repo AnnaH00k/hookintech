@@ -63,78 +63,75 @@
             float: left;
         }
 
-        /* Button Styles */
-        #minimalButton {
-            background-color: #D7E0C5;
-            color: #17221B;
+        #minimalButton{
+            display: inline-block;
+                padding: 10px 20px;
+                font-size: 1em;
+                background-color: #333;
+                color: #fff;
+                border: none;
+                cursor: pointer;
+                transition: background-color 0.3s;
+                text-decoration: none;
+                font-weight: bold;
+        }
+        #minimalButton:hover {
+                background-color: #555;
+            }
+
+       
+
+        #neumorphismButton {
+                background-color: #1a1a1a; /* Dark button background color */
+                border: 0;
+                border-radius: .5rem;
+                box-sizing: border-box;
+                color: #fff; /* White button text color */
+                font-family: "Inter var",ui-sans-serif,system-ui,-apple-system,system-ui,"Segoe UI",Roboto,"Helvetica Neue",Arial,"Noto Sans",sans-serif,"Apple Color Emoji","Segoe UI Emoji","Segoe UI Symbol","Noto Color Emoji";
+                font-size: .875rem;
+                font-weight: 600;
+                line-height: 1.25rem;
+                padding: .75rem 1rem;
+                text-align: center;
+                text-decoration: none #D1D5DB solid;
+                box-shadow: inset 6px 6px 12px #000, inset -6px -6px 12px #2e2e2e;
+                cursor: pointer;
+                transition: background-color 0.3s;
+            }
+
+            #neumorphismButton:hover {
+                background-color: #333; /* Darker background color on hover */
+            }
+
+            #neumorphismButton:focus {
+                outline: 2px solid transparent;
+                outline-offset: 2px;
+            }
+
+            #neumorphismButton:focus-visible {
+                box-shadow: none;
+            }
+
+        #glassmorphismButton{
+
         }
 
-        #neuButton {
-            background-color: #8E967E;
-            color: #17221B;
+        #claymorphismButton{
+
         }
 
-        #glassButton {
-            background-color: #17221B;
-            color: #8E967E;
-        }
+        #skeumorphismButton{
 
-        #clayButton {
-            background-color: #D7E0C5;
-            color: #17221B;
         }
-
-        #skeuButton {
-            background-color: #8E967E;
-            color: #17221B;
+       
+       
+        #links{
+            gap: 3vw;
+            display: flex;
+            flex-wrap: wrap;
+            justify-content: center;
         }
-
-        /* CSS */
-        .button-30 {
-        align-items: center;
-        appearance: none;
-        background-color: #FCFCFD;
-        border-radius: 4px;
-        border-width: 0;
-        box-shadow: rgba(45, 35, 66, 0.4) 0 2px 4px,rgba(45, 35, 66, 0.3) 0 7px 13px -3px,#D6D6E7 0 -3px 0 inset;
-        box-sizing: border-box;
-        color: #36395A;
-        cursor: pointer;
-        display: inline-flex;
-        font-family: "JetBrains Mono",monospace;
-        height: 48px;
-        justify-content: center;
-        line-height: 1;
-        list-style: none;
-        overflow: hidden;
-        padding-left: 16px;
-        padding-right: 16px;
-        position: relative;
-        text-align: left;
-        text-decoration: none;
-        transition: box-shadow .15s,transform .15s;
-        user-select: none;
-        -webkit-user-select: none;
-        touch-action: manipulation;
-        white-space: nowrap;
-        will-change: box-shadow,transform;
-        font-size: 18px;
-        }
-
-        .button-30:focus {
-        box-shadow: #D6D6E7 0 0 0 1.5px inset, rgba(45, 35, 66, 0.4) 0 2px 4px, rgba(45, 35, 66, 0.3) 0 7px 13px -3px, #D6D6E7 0 -3px 0 inset;
-        }
-
-        .button-30:hover {
-        box-shadow: rgba(45, 35, 66, 0.4) 0 4px 8px, rgba(45, 35, 66, 0.3) 0 7px 13px -3px, #D6D6E7 0 -3px 0 inset;
-        transform: translateY(-2px);
-        }
-
-        .button-30:active {
-        box-shadow: #D6D6E7 0 3px 7px inset;
-        transform: translateY(2px);
-        }
-
+        
     </style>
 </head>
 
@@ -145,13 +142,17 @@
             <br/>
             <br/>
             <h1>CSS Designs</h1>
-            <a href="/minimalism.html" target="_self">Minimalism</a>
-            <a href="/neumorphism.html" target="_self">Neumorphism</a>
-            <a href="/glassmorphism.html" target="_self">Glassmorphism</a>
-            <a href="/claymorphism.html" target="_self">Claymorphism</a>
-            <a href="/skeumorphism.html" target="_self">Skeumorphism</a>
+            
         </nav>
     </header>
+
+    <section id="links">
+        <a id="minimalButton" href="/minimalism.html" target="_self">Minimalism</a>
+        <a id="neumorphismButton" href="/neumorphism.html" target="_self">Neumorphism</a>
+        <a id="glassmorphismButton" href="/glassmorphism.html" target="_self">Glassmorphism</a>
+        <a id="claymorphismButton" href="/claymorphism.html" target="_self">Claymorphism</a>
+        <a id="skeumorphismButton" href="/skeumorphism.html" target="_self">Skeumorphism</a>
+    </section>
 
     <section>
         <h2>Sources</h2>

@@ -22,7 +22,7 @@
                 flex-direction: column;
                 width: 80vw;
                 background-color: #1a1a1a; /* Dark background color */
-                padding: 20px;
+                padding: 2vw;
                 box-shadow: 10px 10px 20px #000, -10px -10px 20px #2e2e2e;
                 border-radius: 15px;
             }
@@ -45,15 +45,15 @@
                 color: #ccc; /* Light gray text color */
                 text-align: center;
                 background-color: #1a1a1a; /* Dark background color */
-                padding: 15px;
-                border-radius: 10px;
+                padding: 2vw;
+                border-radius: 2vw;
                 box-shadow: 7px 7px 10px #000, -7px -7px 10px #2e2e2e;
                 margin-top: 10px;
             }
 
             section {
                 text-align: center;
-                padding: 20px;
+                padding: 3vw;
             }
 
             #neumorphismButton {
@@ -89,10 +89,19 @@
             }
             #headline {
                 margin-bottom: 20px;
+                font-size: xx-large;
             }
             #text {
                 margin-bottom: 20px;
+                font-size: large;
             }
+
+            @media only screen and (max-width: 768px) {
+                #neumorphismPage {
+                width: 90vw;
+            }
+            }
+
         </style>
     </head>
 
