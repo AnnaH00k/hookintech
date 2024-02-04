@@ -222,8 +222,17 @@
         #links{
             gap: 3vw;
             display: flex;
-            flex-wrap: wrap;
-            justify-content: center;
+            flex-direction: column;
+            place-items: center;
+            height: 100vh;
+            justify-items: center;
+            align-self: center;
+        }
+
+        @media only screen and (max-width: 768px) {
+            #links {
+                grid-template-columns: repeat(1, 1fr);
+            }
         }
         
     </style>
@@ -232,7 +241,7 @@
 <body>
     <header>
         <nav>
-            <a href="/annaHook.html" id="back" target="_self">Back</a>
+            <a href="/" id="back" target="_self">Back</a>
             <br/>
             <br/>
             <h1>CSS Designs</h1>
@@ -261,12 +270,6 @@
     </section>
 
 
-    <section>
-        <h2>Sources</h2>
-        <a href="https://getcssscan.com/css-buttons-examples" target="_blank">CSS Scan</a>
-    </section>
-
-    
 
 </body>
 </html>
