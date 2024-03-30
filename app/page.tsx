@@ -25,22 +25,22 @@ export default function Home() {
       <div className="flex flex-col flex-wrap justify-center gap-4 w-[90vw] ">
       <div className=" flex flex-row flex-wrap justify-center gap-4 w-[90vw] mt-8">
         <h1 className="text-2xl text-[#A0A2A0] text-center font-bold w-[90vw]">Projects</h1>
-      <div className=" flex flex-col rounded-lg max-w-[400px] min-h-[150px]  sm:w-[40vw] w-[80vw] text-center items-center justify-center gap-2 bg-[#151C14] hover:bg-[#1A2310] sm:hover:scale-105 p-4">
+      <div className=" flex flex-col rounded-lg max-w-[400px] min-h-[150px]  sm:w-[40vw] w-[80vw] text-center items-center justify-center gap-2 bg-[#151C14] sm:hover:bg-[#1A2310] sm:hover:scale-105 p-4">
                <h2 className="text-lg text-[#A0A2A0] font-bold ">Online University</h2>
                <p className="text-md text-[#7C9838]">Bachelor of Computer Science <br/> (in progress)</p>
                <a href="https://www.iu.de/bachelor/informatik/"  className="text-sm sm:text-md text-[#A0A2A0] hover:text-[#fff] rounded-full bg-[#303830] px-3 py-1" target="_blank"> @ IU International University</a>
             </div>
-            <div className=" flex flex-col rounded-lg max-w-[400px] min-h-[150px]  sm:w-[40vw] w-[80vw] text-center items-center justify-center gap-2 bg-[#151C14] hover:bg-[#1A2310] sm:hover:scale-105 p-4">
+            <div className=" flex flex-col rounded-lg max-w-[400px] min-h-[150px]  sm:w-[40vw] w-[80vw] text-center items-center justify-center gap-2 bg-[#151C14] sm:hover:bg-[#1A2310] sm:hover:scale-105 p-4">
                 <h2 className="text-lg text-[#A0A2A0] font-bold">Working at CLYE</h2>
                 <p className="text-md text-[#7C9838]">Frontend development & Landingpage design </p>        
                 <a href="https://clye.app/en" className="text-sm sm:text-md text-[#A0A2A0] hover:text-[#fff]  rounded-full bg-[#303830] px-3 py-1" target="_blank"> CLYE Landingpage</a>
             </div>
-            <div className=" flex flex-col rounded-lg max-w-[400px] min-h-[150px]  sm:w-[40vw] w-[80vw] text-center items-center justify-center gap-2 bg-[#151C14] hover:bg-[#1A2310] sm:hover:scale-105 p-4">
+            <div className=" flex flex-col rounded-lg max-w-[400px] min-h-[150px]  sm:w-[40vw] w-[80vw] text-center items-center justify-center gap-2 bg-[#151C14] sm:hover:bg-[#1A2310] sm:hover:scale-105 p-4">
                <h2 className="text-lg text-[#A0A2A0] font-bold">FAB App</h2>
                <a href="https://apps.apple.com/us/app/fabapp/id1554684851?fbclid=IwAR3ha_5Z9kWtMqfu4gVLOqbYFzdYnZSDdLVIQyKdG7YRyYWYYODJDKWLCIU"  className="text-sm text-[#A0A2A0] hover:text-[#fff] sm:text-md rounded-full bg-[#303830] px-3 py-1" target="_blank">Apple app Store</a>
                <a href="https://play.google.com/store/apps/details?id=com.Hook.fabapp&fbclid=IwAR0qtZG8s9tki8USCR4IdGCpI7nGZstqH2XIuT5D2Bo0Uuxo6A6KGWBkDT0"  className="text-sm text-[#A0A2A0] hover:text-[#fff] sm:text-md rounded-full bg-[#303830] px-3 py-1" target="_blank">Google Play Store</a>
             </div>
-            <div className=" flex flex-col rounded-lg max-w-[400px] min-h-[150px]  sm:w-[40vw] w-[80vw] text-center items-center justify-center gap-2 bg-[#151C14] hover:bg-[#1A2310] sm:hover:scale-105 p-4">
+            <div className=" flex flex-col rounded-lg max-w-[400px] min-h-[150px]  sm:w-[40vw] w-[80vw] text-center items-center justify-center gap-2 bg-[#151C14] sm:hover:bg-[#1A2310] sm:hover:scale-105 p-4">
                <h2 className="text-lg text-[#A0A2A0] font-bold">Couple Corner</h2>
                <a href="https://apps.apple.com/de/app/couplecorner/id6448982599"  className="text-sm sm:text-md text-[#A0A2A0] hover:text-[#fff] rounded-full bg-[#303830] px-3 py-1" target="_blank">Apple app Store</a>
             </div>
@@ -57,18 +57,18 @@ export default function Home() {
       <div className="flex flex-col flex-wrap justify-center gap-4 w-[90vw] ">
         <div className=" flex flex-row flex-wrap justify-center gap-4 w-[90vw] mt-8">
         <h1 className="text-2xl text-[#A0A2A0] text-center font-bold w-[90vw]">Tech Stack</h1>
-        <div className=" flex flex-col rounded-lg max-w-[400px] min-h-[150px]  sm:w-[40vw] w-[80vw] text-center items-center justify-center gap-2 bg-[#151C14] hover:bg-[#1A2310] sm:hover:scale-105 p-4">
+        <div className=" flex flex-col rounded-lg max-w-[400px] min-h-[150px]  sm:w-[40vw] w-[80vw] text-center items-center justify-center gap-2 bg-[#151C14] sm:hover:bg-[#1A2310] sm:hover:scale-105 p-4">
                <h2 className="text-lg text-[#A0A2A0] font-bold">Native App development</h2>
                <p className="text-md text-[#7C9838]">Java, Swift</p>
             </div>
             
-            <div className=" flex flex-col rounded-lg max-w-[400px] min-h-[150px]  sm:w-[40vw] w-[80vw] text-center items-center justify-center gap-2 bg-[#151C14] hover:bg-[#1A2310] sm:hover:scale-105 p-4">
+            <div className=" flex flex-col rounded-lg max-w-[400px] min-h-[150px]  sm:w-[40vw] w-[80vw] text-center items-center justify-center gap-2 bg-[#151C14] sm:hover:bg-[#1A2310] sm:hover:scale-105 p-4">
                <h2 className="text-lg text-[#A0A2A0] font-bold ">Web development</h2>
                <p className="text-md text-[#7C9838]">HTML,CSS,Typescript</p>
                <p className="text-md text-[#7C9838]">React, Next.js, Tailwind CSS</p>
             </div>
 
-            <div className=" flex flex-col rounded-lg max-w-[400px] min-h-[150px]  sm:w-[40vw] w-[80vw] text-center items-center justify-center gap-2 bg-[#151C14] hover:bg-[#1A2310] sm:hover:scale-105 p-4">
+            <div className=" flex flex-col rounded-lg max-w-[400px] min-h-[150px]  sm:w-[40vw] w-[80vw] text-center items-center justify-center gap-2 bg-[#151C14] sm:hover:bg-[#1A2310] sm:hover:scale-105 p-4">
                <h2 className="text-lg text-[#A0A2A0] font-bold ">Media Creation</h2>
                <p className="text-md text-[#7C9838]">Canva, Adobe, Figma</p>
                {/*<p className="text-md text-[#7C9838]">Da Vinci Resolve</p>*/}
@@ -90,13 +90,13 @@ export default function Home() {
       <div  className="flex flex-col flex-wrap justify-center gap-4 w-[90vw]">
       <div className=" flex flex-row flex-wrap justify-center gap-4 w-[90vw] mt-8">
         <h1 className="text-2xl text-[#A0A2A0] text-center font-bold w-[90vw]">Media</h1>
-        <div className=" flex flex-col rounded-lg max-w-[400px] min-h-[150px]  sm:w-[40vw] w-[80vw] text-center items-center justify-center gap-2 bg-[#151C14] hover:bg-[#1A2310] sm:hover:scale-105 p-4">
+        <div className=" flex flex-col rounded-lg max-w-[400px] min-h-[150px]  sm:w-[40vw] w-[80vw] text-center items-center justify-center gap-2 bg-[#151C14] sm:hover:bg-[#1A2310] sm:hover:scale-105 p-4">
                <h2 className="text-lg text-[#A0A2A0] font-bold ">YouTube</h2>
                <a className="text-sm sm:text-md text-[#A0A2A0] hover:text-[#fff] rounded-full bg-[#303830] px-3 py-1" href="https://youtube.com/@hooked0nTech?si=urTx7LmuBbzpSca0" target="_blank">hooked0nTech</a>
                <a className="text-sm sm:text-md text-[#A0A2A0] hover:text-[#fff] rounded-full bg-[#303830] px-3 py-1" href="https://youtube.com/@hookedwords?si=iG2OyeU6sYO_fkM_" target="_blank">hookb00k</a>
                <a className="text-sm sm:text-md text-[#A0A2A0] hover:text-[#fff] rounded-full bg-[#303830] px-3 py-1" href="https://youtube.com/@Studyvation?si=EzWIS-EEmj7Ndr7-" target="_blank">Studyvation</a>
             </div>
-            <div className=" flex flex-col rounded-lg max-w-[400px] min-h-[150px]  sm:w-[40vw] w-[80vw] text-center items-center justify-center gap-2 bg-[#151C14] hover:bg-[#1A2310] sm:hover:scale-105 p-4">
+            <div className=" flex flex-col rounded-lg max-w-[400px] min-h-[150px]  sm:w-[40vw] w-[80vw] text-center items-center justify-center gap-2 bg-[#151C14] sm:hover:bg-[#1A2310] sm:hover:scale-105 p-4">
                <h2 className="text-lg text-[#A0A2A0] font-bold">Instagram</h2>
                <a href="https://www.instagram.com/hooked0ntech/"   className="text-sm sm:text-md text-[#A0A2A0] hover:text-[#fff] rounded-full bg-[#303830] px-3 py-1" target="_blank">hooked0nTech</a>
                <a href="https://www.instagram.com/hookb00k/?next=https%3A%2F%2Fwww.instagram.com%2Fp%2FCBTn3TEpza3%2Fliked_by%2F%3F__coig_login%3D1"   className="text-sm sm:text-md text-[#A0A2A0] hover:text-[#fff] rounded-full bg-[#303830] px-3 py-1" target="_blank">hookb00k</a>
@@ -108,7 +108,7 @@ export default function Home() {
       <div className="flex flex-col flex-wrap justify-center gap-4 w-[90vw]">
       <div className=" flex flex-row flex-wrap justify-center gap-4 w-[90vw] mt-8">
         <h1 className="text-2xl text-[#A0A2A0] text-center font-bold w-[90vw]">Products</h1>
-        <div className=" flex flex-col rounded-lg max-w-[400px] min-h-[150px]  sm:w-[40vw] w-[80vw] text-center items-center justify-center gap-2 bg-[#151C14] hover:bg-[#1A2310] sm:hover:scale-105 p-4">
+        <div className=" flex flex-col rounded-lg max-w-[400px] min-h-[150px]  sm:w-[40vw] w-[80vw] text-center items-center justify-center gap-2 bg-[#151C14] sm:hover:bg-[#1A2310] sm:hover:scale-105 p-4">
                <h2 className="text-lg text-[#A0A2A0] font-bold">Amazon Storefront</h2>
                <a href="https://www.amazon.de/shop/hooked0ntech/list/XEYKC4SP7AYA?ref_=cm_sw_r_cp_ud_aipsflist_aipsfhooked0ntech_1ARB010TPA22B9J44HB7"   className="text-sm sm:text-md text-[#A0A2A0] hover:text-[#fff] rounded-full bg-[#303830] px-3 py-1" target="_blank">My Setup</a>
             </div>
