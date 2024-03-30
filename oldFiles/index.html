@@ -1,0 +1,374 @@
+
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Anna Hook - HookedOnTech</title>
+    <script async src="https://pagead2.googlesyndication.com/pagead/js/adsbygoogle.js?client=ca-pub-8710642569603774"
+     crossorigin="anonymous"></script>
+    <link href="https://cdn.jsdelivr.net/npm/bootstrap@5.3.2/dist/css/bootstrap.min.css" rel="stylesheet" integrity="sha384-T3c6CoIi6uLrA9TneNEoa7RxnatzjcDSCmG1MXxSR1GAsXEV/Dwwykc2MPK8M2HN" crossorigin="anonymous">
+    <style>
+        body {
+            background-color: #17221B;
+            color: #D7E0C5;
+        }
+        #add {
+            display: flex;
+            justify-content: center;
+            align-items: center;
+            margin-top: 10vh;
+            border: #8E967E;
+            background-color: #505C38;
+
+        }
+
+        header {
+            background-color: #17221B;
+            padding: 10px;
+            text-align: center;
+        }
+
+        footer {
+            background-color: #505C38;
+            padding: 10px;
+            
+            bottom: 0;
+            width: 100%;
+            text-align: center;
+        }
+
+        section {
+            margin: 20px;
+        }
+
+        h1 {
+            color: #D7E0C5;
+            font-family: 'Times New Roman', Times, sans-serif;
+        }
+        p {
+            color: #D7E0C5;
+            font-family: Cambria, Cochin, Georgia, Times, 'Times New Roman', serif;            margin-top: 1vh;
+            font-size: 22px;
+
+        }
+        
+        h2 {
+            color: #D7E0C5;
+            stroke: #D7E0C5;
+            stroke-width: 1px;
+            text-decoration: underline;
+            text-decoration-color: #8E967E;
+            font-family: 'Times New Roman', Times, sans-serif;
+        }
+        h3 {
+            color: #8E967E;
+            font-family: 'Times New Roman', Times, sans-serif;
+            margin-top: 1vh;
+        }
+       
+
+        ul {
+            gap: 20px;
+            display: grid;
+            grid-template-columns: repeat(3, 1fr);
+            list-style-type: none;
+            align-self: center;
+        }
+
+        #challengeList {
+            gap: 5px;
+            display: flex;
+            flex-direction: column;
+            list-style-type: square;
+            list-style-position: inside;
+            align-self: center;
+        }
+
+        a {
+            color: #D7E0C5;
+            text-decoration: none;
+            font-family: 'Times New Roman', Times, sans-serif;
+            border: #8E967E;
+            background-color: #505C38;
+            border-width: 1px;
+            border-style: solid;
+            border-radius: 5px;
+            padding: 5px;
+            text-align: center;
+        }
+
+       a:hover {
+            color: #D7E0C5;
+        }
+
+        #personHeroSection {
+            background-image: url("https://yt3.ggpht.com/3x9oUwjVSjMODpCGx0zKO9m_AdStP_gEvWupCFg6N2rOWfsQNICmyYeUH5IY1CLGoyr-1avN0Go=s600-c-k-c0x00ffffff-no-rj-rp-mo");
+            background-size: contain;
+            background-position: center;
+            background-repeat: no-repeat;
+            background-color: rgb(3, 2, 2);
+            height: 20vw;
+            display: flex;
+            flex-direction: column;
+            place-items: center;
+            justify-content: center;
+            align-items: center;
+            border-radius: 40px;
+            box-shadow: #D7E0C5 0px 0px 10px 0px;
+            width: 20vw;
+            position: relative; /* Add this line to enable absolute positioning for children */
+
+            #anna {
+                visibility: collapse;
+            }
+            #synonym {
+                visibility: visible;
+            }
+        }
+
+        #personHeroSection:hover {
+            #synonym {
+                visibility: collapse;
+            }
+            #anna {
+                visibility: visible;
+            }
+            background-image: url("https://media.licdn.com/dms/image/D4E03AQErQRvo0ls99w/profile-displayphoto-shrink_800_800/0/1675344606912?e=1708560000&v=beta&t=S7HxtscAqAP-eyQjOMRXnD-KCWyXmPFJzjcXmChmb_U");
+        }
+
+        #interestsSection {
+            background-color: #17221B;
+            padding: 10px;
+            text-align: center;
+        }
+
+        #onesection {
+            align-items: center;
+            justify-content: center;
+            display: flex;
+            flex-direction: column;
+        }
+        #twosections {
+            justify-content: center;
+            display: flex;
+            flex-direction: row;
+        }
+      
+    #anna {
+        position: absolute;
+        font-size: 3vw;
+
+    }
+    #synonym {
+        position: absolute;
+        font-size: 2vw;
+    }
+    #halfscreen {
+        width: 40vw;
+    }
+    #interestsSection {
+        justify-content: center;
+        display: flex;
+        flex-direction: column;
+        align-items: center;
+        align-self: center;
+    }
+    #interestsText {
+        width: 90vw;
+        justify-content: center;
+        align-items: center;
+        align-self: center;
+    }
+    #contact {
+                display: flex;
+                flex-direction: column;
+                align-items: left;
+                justify-content: center;
+                gap: 10px;
+            }
+
+
+    @media (max-width: 768px) {
+            #anna {
+            position: absolute;
+            font-size: 7vw;
+            }
+            #synonym {
+                position: absolute;
+                font-size: 6vw;
+            }
+            #halfscreen {
+                width: 90%;
+            }
+            #twosections {
+            align-items: center;
+            justify-content: center;
+            display: flex;
+            flex-direction: column;
+            text-align: center;
+            }
+            #personHeroSection {
+            height: 40vw;
+            width: 60vw;
+            }
+            p {
+                font-size: 20px;
+            }
+            #interestsSection {
+                display: flex;
+                flex-direction: column;
+                align-items: center;
+                justify-content: center;
+            }
+            #interestsText {
+                width: 80vw;
+                justify-content: center;
+                align-items: center;
+                align-self: center;
+            }
+        }
+        
+
+        @media (min-width: 1500px) {
+            #personHeroSection {
+            height: 15vw;
+            width: 40vw;
+            }
+            p {
+                font-size: 24px;
+            }
+            #allSections {
+                display: flex;
+                flex-direction: column;
+                align-items: center;
+                justify-content: center;
+            }
+            #twosections {
+                display: flex;
+                flex-direction: row;
+                align-items: center;
+                justify-content: center;
+            }
+            #halfscreen {
+                width: 30vw;
+            }
+            #interestsSection {
+                display: flex;
+                flex-direction: column;
+                align-items: center;
+                justify-content: center;
+            }
+            #interestsText {
+                width: 65vw;
+                justify-content: center;
+                align-items: center;
+                align-self: center;
+            }
+
+          
+
+
+           
+        }
+
+
+    </style>
+</head>
+
+<body>
+    <header>
+        <nav>
+           
+        </nav>
+    </header>
+  
+    
+    <section id="onesection">
+        <div id="personHeroSection">
+            <h1 id="anna">Anna Hook</h1>
+            <h1 id="synonym">HookedOnTech</h1>
+        </div>
+       
+    </section>
+
+   
+        <section id="interestsSection">
+            <h2>Interests</h2>
+            <p id="interestsText"> I am passionate about learning new things and working on exciting projects. On this site you can find the most important Information about what I do.</p>
+        </section>
+
+    <div id="allSections">
+       <div id="twosections">
+           <section id="halfscreen">
+               <h2>Online University</h2>
+               <p>Working on my Bachelor of Computer Science</p>
+               <a href="https://www.iu.de/bachelor/informatik/" target="_blank"> @ IU International University</a>
+            </section>
+            <section id="halfscreen">
+                <h2>Working at CLYE</h2>
+                <p>Currently, I am  contributing as a working student at CLYE. My responsibilities encompass crafting the Landing Page and engaging in various exciting projects.</p>        
+                <a href="https://clye.app/en" target="_blank"> CLYE Landingpage</a>
+            </section>
+        </div>
+
+
+
+
+    <div id="twosections">
+        <section id="halfscreen">
+            <h2>Current Challenge - Finding purpose</h2>
+                <p>I am currently reviewing past challenge experiences and defining a new one. Follow for more.</p>
+              
+
+            <a href="https://www.instagram.com/hooked0ntech/" target="_blank"> Link to Instagram</a>
+        </section>
+        <section id="halfscreen">
+            <h2>Published Apps</h2>
+            <h3>FAB App</h3>  
+            <a href="https://apps.apple.com/us/app/fabapp/id1554684851?fbclid=IwAR3ha_5Z9kWtMqfu4gVLOqbYFzdYnZSDdLVIQyKdG7YRyYWYYODJDKWLCIU" target="_blank"> Apple app Store</a>
+            <a href="https://play.google.com/store/apps/details?id=com.Hook.fabapp&fbclid=IwAR0qtZG8s9tki8USCR4IdGCpI7nGZstqH2XIuT5D2Bo0Uuxo6A6KGWBkDT0" target="_blank"> Google Play Store</a>
+            <h3>Couple Corner</h3>     
+            <a href="https://apps.apple.com/de/app/couplecorner/id6448982599" target="_blank"> Apple app Store</a>
+        </section>
+    </div>
+
+    <div id="twosections">
+        <section id="halfscreen">
+            <h2>Social Media Plattforms</h2>
+            <h3>YouTube</h3>
+            <a href="https://youtube.com/@hooked0nTech?si=urTx7LmuBbzpSca0" target="_blank">hooked0nTech</a>
+            <a href="https://youtube.com/@Studyvation?si=EzWIS-EEmj7Ndr7-" target="_blank">Studyvation</a>
+
+            <h3>Instagram</h3>
+            <a href="https://www.instagram.com/hooked0ntech/" target="_blank">hooked0nTech</a>
+            <a href="https://www.instagram.com/hookb00k/?next=https%3A%2F%2Fwww.instagram.com%2Fp%2FCBTn3TEpza3%2Fliked_by%2F%3F__coig_login%3D1" target="_blank">hookb00k</a>
+        </section>
+        <section id="halfscreen">
+            <h2>Collaborations</h2>
+            <p>Get in touch with me to discuss your ideas and projects. I'm excited to collaborate and work on Ideas together.</p>
+            <div id="contact">
+            <a href="mailto:hook0ntech@gmail.com" target="_blank">Email: hook0ntech@gmail.com</a>
+            <a href="/collab.html" target="_blank">Collaboration Prizing</a>
+            </div>
+        </section>
+        
+    </div>
+
+    <div id="interestsSection">
+    <section id="halfscreen">
+        <h2>Current Shananigans</h2>
+        <a href="/css.html" target="_blank"> CSS Designs</a>
+    </section>
+    </div>
+   
+    </div>
+ 
+    <footer >
+        <a href="/datasecurity.html" target="_blank">Datasecurity</a>
+    </footer>
+
+
+    <script src="https://cdn.jsdelivr.net/npm/bootstrap@5.3.2/dist/js/bootstrap.bundle.min.js" integrity="sha384-L1dZvyxd3VvKB1SCKGR5D8Y26ZjcmfPXn1T2GO6e7ngzAeGY9pLuh9nL6L9NrJSJ" crossorigin="anonymous"></script>
+</body>
+</html>

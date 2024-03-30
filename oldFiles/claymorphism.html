@@ -1,0 +1,115 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <link href="https://cdn.jsdelivr.net/npm/bootstrap@5.3.2/dist/css/bootstrap.min.css" rel="stylesheet" integrity="sha384-T3c6CoIi6uLrA9TneNEoa7RxnatzjcDSCmG1MXxSR1GAsXEV/Dwwykc2MPK8M2HN" crossorigin="anonymous">
+    <style>
+        body {
+            font-family: 'Arial', sans-serif;
+            margin: 0;
+            padding: 0;
+            background-color: #a3c3e7;
+            color: #333;
+            align-items: center;
+            justify-content: center;
+            display: flex;
+            min-height: 100vh;
+        }
+
+        #claymorphismPage {
+            display: flex;
+            flex-direction: column;
+            align-items: center;
+            justify-content: center;
+            width: 80vw;
+            background-color: #f4f4f4;
+            padding: 40px;
+            border-radius: 35px; /* Increased border-radius for a more bloated appearance */
+            box-shadow:
+                inset 12px 8px 16px rgba(255, 255, 255, 0.5), /* Top-left inner shadow */
+                24px 24px 48px rgba(0, 0, 0, 0.2),     /* Outer shadow */
+                inset -12px -8px 16px rgba(0, 0, 0, 0.5);     /* Bottom-right inner shadow */
+
+            
+        }
+
+        header {
+            text-align: center;
+            padding: 20px;
+        }
+
+        h1 {
+            font-size: xx-large;
+            margin-bottom: 20px;
+            color: #555;
+            text-shadow: 2px 2px 4px rgba(0, 0, 0, 0.1);
+        }
+
+        p {
+            font-size: large;
+            color: #666;
+            text-align: center;
+            margin-bottom: 20px;
+        }
+
+        section {
+            display: flex;
+            flex-direction: column;
+            align-items: center;
+            justify-content: center;
+            width: 100%;
+        }
+
+        #claymorphismButton {
+            background-color: #a3c3e7;
+            border: 0;
+            border-radius: 2rem; /* Increased border-radius for a more rounded appearance */
+            box-sizing: border-box;
+            color: #333;
+            font-size: large;
+            font-weight: 600;
+            padding: 1.5rem 3rem;
+            text-align: center;
+            text-decoration: none;
+            cursor: pointer;
+            transition: background-color 0.3s;
+            box-shadow:
+                inset 8px 6px 12px rgba(255, 255, 255, 0.5), /* Top-left inner shadow */
+                12px 12px 24px rgba(0, 0, 0, 0.2),     /* Outer shadow */
+                inset -8px -6px 12px rgba(0, 0, 0, 0.5);     /* Bottom-right inner shadow */
+        }
+
+        #claymorphismButton:hover {
+            background-color: #c8daee;
+        }
+
+        #claymorphismButton:focus {
+            outline: 2px solid transparent;
+            outline-offset: 2px;
+        }
+
+        #claymorphismButton:focus-visible {
+            box-shadow: none;
+        }
+
+        @media only screen and (max-width: 768px) {
+              #claymorphismPage{
+                width: 90vw;
+              }
+            }
+    </style>
+</head>
+
+<body>
+    <div id="claymorphismPage">
+        <header>
+            <h1>Claymorphism</h1>
+            <p>Experience the soft, sculpted feel of clay in design. Claymorphism brings a tactile and friendly interface using muted colors and subtle shadows.</p>
+        </header>
+        <section>
+            <a href="/css.html" id="claymorphismButton">Explore more Designs</a>
+        </section>
+    </div>
+</body>
+</html>

@@ -1,0 +1,103 @@
+<!DOCTYPE html>
+<html lang="en">
+    <head>
+        <meta charset="UTF-8">
+        <meta name="viewport" content="width=device-width, initial-scale=1.0">
+        <link href="https://cdn.jsdelivr.net/npm/bootstrap@5.3.2/dist/css/bootstrap.min.css" rel="stylesheet" integrity="sha384-T3c6CoIi6uLrA9TneNEoa7RxnatzjcDSCmG1MXxSR1GAsXEV/Dwwykc2MPK8M2HN" crossorigin="anonymous">
+        <style>
+            body {
+                font-family: 'Arial', sans-serif;
+                margin: 0;
+                padding: 0;
+                background-image: linear-gradient(45deg, #93a5cf 0%, #e4efe9 100%);
+                color: #333;
+                align-items: center;
+                justify-content: center;
+                display: flex;
+                min-height: 100vh;
+            }
+
+            #glassmorphismPage {
+                display: flex;
+                flex-direction: column;
+                width: 80vw;
+                background: rgba(255, 255, 255, 0.1); /* Glass-like background with opacity */
+                padding: 20px;
+                border-radius: 15px;
+                backdrop-filter: blur(10px); /* Blur effect for a glass-like appearance */
+                box-shadow: 0 4px 6px rgba(0, 0, 0, 0.1), 0 4px 6px rgba(255, 255, 255, 0.1);
+            }
+
+            header {
+                text-align: center;
+                padding: 20px;
+            }
+
+            h1 {
+                font-size: xx-large;
+                margin-bottom: 10px;
+                color: #51597b; /* Adjusted text color for better visibility on glass background */
+            }
+
+            p {
+                font-size: large;
+                color: #51597b; /* Adjusted text color for better visibility on glass background */
+                text-align: center;
+            }
+
+            section {
+                text-align: center;
+                padding: 20px;
+            }
+
+            #glassmorphismButton {
+                background-color: rgba(255, 255, 255, 0.2); /* Semi-transparent white button background */
+                border: 0;
+                border-radius: .5rem;
+                box-sizing: border-box;
+                color: #51597b;
+                font-family: "Inter var", ui-sans-serif, system-ui, -apple-system, system-ui, "Segoe UI", Roboto, "Helvetica Neue", Arial, "Noto Sans", sans-serif, "Apple Color Emoji", "Segoe UI Emoji", "Segoe UI Symbol", "Noto Color Emoji";
+                font-size: medium;
+                font-weight: 600;
+                line-height: 1.25rem;
+                padding: .75rem 1rem;
+                text-align: center;
+                text-decoration: none;
+                cursor: pointer;
+                margin-top: 20px;
+                transition: background-color 0.3s;
+            }
+
+            #glassmorphismButton:hover {
+                background-color: rgba(255, 255, 255, 0.4); /* Darker semi-transparent white background on hover */
+            }
+
+            #glassmorphismButton:focus {
+                outline: 2px solid transparent;
+                outline-offset: 2px;
+            }
+
+            #glassmorphismButton:focus-visible {
+                box-shadow: none;
+            }
+
+            @media only screen and (max-width: 768px) {
+              #glassmorphismPage{
+                width: 90vw;
+              }
+            }
+        </style>
+    </head>
+
+    <body>
+        <div id="glassmorphismPage">
+         
+            <section>
+                <h1>Glassmorphism</h1>
+                <p>Glassmorphism is a design trend that creates a glass-like, frosted appearance. It involves using blurred backgrounds, frosted glass elements, and subtle shadows to achieve a visually appealing and modern user interface.</p>
+                <a href="/css.html" id="glassmorphismButton">Explore more Designs</a>
+            </section>
+
+        </div>
+    </body>
+</html>
