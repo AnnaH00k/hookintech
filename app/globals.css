@@ -26,6 +26,16 @@ body {
     rgb(var(--background-start-rgb));
 }
 
+
+
+.arrow-down svg {
+  color: rgba(160, 162, 160, 0.5); /* 50% transparent */
+}
+
+.arrow-down svg:hover {
+  color: rgba(160, 162, 160, 1); /* 100% transparent */
+}
+
 @layer utilities {
   .text-balance {
     text-wrap: balance;
