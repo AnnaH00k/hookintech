@@ -8,7 +8,7 @@ export default function Home() {
   return (
     <div className="w-full ">
 
-    <main className="flex gap-6 flex-col items-center  justify-between sm:py-20 pb-[10vh] bg-[#0A1109] w-full">
+    <main className="flex gap-6 flex-col items-center  justify-between py-40 sm:py-20 pb-[10vh] bg-[#0A1109] w-full">
     <div>
         <h1 className="text-4xl text-[#7C9838] text-start font-bold w-[90vw]">
             The difference between next.config.mjs and next.config.js    
