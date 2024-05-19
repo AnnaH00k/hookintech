@@ -43,6 +43,10 @@ export default function Home() {
                <h2 className="text-lg text-[#A0A2A0] font-bold">Couple Corner</h2>
                <a href="https://apps.apple.com/de/app/couplecorner/id6448982599"  className="text-sm sm:text-md text-[#A0A2A0] hover:text-[#fff] rounded-full bg-[#303830] px-3 py-1" target="_blank">Apple app Store</a>
             </div>
+            <div className=" flex flex-col rounded-lg max-w-[400px] min-h-[150px]  sm:w-[40vw] w-[80vw] text-center items-center justify-center gap-2 bg-[#151C14] sm:hover:bg-[#1A2310] sm:hover:scale-105 p-4">
+               <h2 className="text-lg text-[#A0A2A0] font-bold">CO2 Zone</h2>
+               <a href="https://annah00k.github.io/co2-zone/en"  className="text-sm sm:text-md text-[#A0A2A0] hover:text-[#fff] rounded-full bg-[#303830] px-3 py-1" target="_blank">Link to Website</a>
+            </div>
           </div>
       </div>
       
@@ -56,7 +60,7 @@ export default function Home() {
       <div className="flex flex-col flex-wrap justify-center gap-4 w-[90vw] ">
         <div className=" flex flex-row flex-wrap justify-center gap-4 w-[90vw] mt-8">
         <h1 className="text-2xl text-[#A0A2A0] text-center font-bold w-[90vw]">Tech Stack</h1>
-        <div className=" flex flex-col rounded-lg max-w-[400px] min-h-[150px]  sm:w-[40vw] w-[80vw] text-center items-center justify-center gap-2 bg-[#151C14] sm:hover:bg-[#1A2310] sm:hover:scale-105 p-4">
+            <div className=" flex flex-col rounded-lg max-w-[400px] min-h-[150px]  sm:w-[40vw] w-[80vw] text-center items-center justify-center gap-2 bg-[#151C14] sm:hover:bg-[#1A2310] sm:hover:scale-105 p-4">
                <h2 className="text-lg text-[#A0A2A0] font-bold">Native App development</h2>
                <p className="text-md text-[#7C9838]">Java, Swift</p>
             </div>
