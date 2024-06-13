@@ -237,24 +237,99 @@ export default function Hooked0nLife() {
       </div>
     </section>
 
-    <section className="flex flex-col items-center justify-center py-4 w-[90vw] max-w-4xl">
-        <h2 className="text-2xl text-[#7E674E] font-bold mb-4">
-          Making Living Quarters Accessible
+  
+
+   
+ 
+
+
+
+
+    <section className="py-8 px-4">
+      <div className="max-w-4xl mx-auto">
+        <h2 className="text-3xl text-[#7E674E] font-bold text-center mb-6">
+          Ensuring Accessible Living Quarters
         </h2>
-        <p className="text-md text-[#1E0C08] text-center mb-4">
-          We are committed to ensuring that our living quarters are accessible to the public at an affordable price:
+        <p className="text-lg text-[#1E0C08] text-center mb-8">
+          At Hooked0nLife, we are committed to making our living spaces accessible and affordable for everyone. Our approach includes:
         </p>
-        <ul className="list-disc list-inside text-[#1E0C08] text-left">
-          <li className="mb-2">Developing a tiered pricing model based on income levels to ensure affordability.</li>
-          <li className="mb-2">Offering subsidies and financial aid for those in need through partnerships with governmental and non-governmental organizations.</li>
-          <li className="mb-2">Implementing cost-saving measures through sustainable energy use, shared resources, and efficient design.</li>
-          <li className="mb-2">Creating community-supported agriculture (CSA) programs to reduce food costs and promote local farming.</li>
-          <li className="mb-2">Encouraging volunteerism and community involvement to reduce operational costs and foster a sense of belonging.</li>
+        <ul className="grid grid-cols-1 md:grid-cols-2 gap-4">
+        <li className="flex items-start mb-4">
+            <svg xmlns="http://www.w3.org/2000/svg" className="h-6 w-6 mr-2 text-[#7E674E]" fill="none" viewBox="0 0 24 24" stroke="currentColor">
+              <path strokeLinecap="round" strokeLinejoin="round" strokeWidth={2} d="M5 13l4 4L19 7" />
+            </svg>
+            <span className="text-lg text-[#1E0C08]">Developing a tiered pricing model based on income levels to ensure affordability.</span>
+          </li>
+          <li className="flex items-start mb-4">
+            <svg xmlns="http://www.w3.org/2000/svg" className="h-6 w-6 mr-2 text-[#7E674E]" fill="none" viewBox="0 0 24 24" stroke="currentColor">
+              <path strokeLinecap="round" strokeLinejoin="round" strokeWidth={2} d="M5 13l4 4L19 7" />
+            </svg>
+            <span className="text-lg text-[#1E0C08]">Offering subsidies and financial aid through partnerships with governmental and non-governmental organizations.</span>
+          </li>
+          <li className="flex items-start mb-4">
+            <svg xmlns="http://www.w3.org/2000/svg" className="h-6 w-6 mr-2 text-[#7E674E]" fill="none" viewBox="0 0 24 24" stroke="currentColor">
+              <path strokeLinecap="round" strokeLinejoin="round" strokeWidth={2} d="M5 13l4 4L19 7" />
+            </svg>
+            <span className="text-lg text-[#1E0C08]">Implementing sustainable energy use and efficient design to reduce costs.</span>
+          </li>
+          <li className="flex items-start mb-4">
+            <svg xmlns="http://www.w3.org/2000/svg" className="h-6 w-6 mr-2 text-[#7E674E]" fill="none" viewBox="0 0 24 24" stroke="currentColor">
+              <path strokeLinecap="round" strokeLinejoin="round" strokeWidth={2} d="M5 13l4 4L19 7" />
+            </svg>
+            <span className="text-lg text-[#1E0C08]">Creating community-supported agriculture (CSA) programs for sustainable and affordable food sources.</span>
+          </li>
+          <li className="flex items-start mb-4">
+            <svg xmlns="http://www.w3.org/2000/svg" className="h-6 w-6 mr-2 text-[#7E674E]" fill="none" viewBox="0 0 24 24" stroke="currentColor">
+              <path strokeLinecap="round" strokeLinejoin="round" strokeWidth={2} d="M5 13l4 4L19 7" />
+            </svg>
+            <span className="text-lg text-[#1E0C08]">Encouraging volunteerism and community involvement to foster a sense of belonging and reduce operational costs.</span>
+          </li>
+          <li className="flex items-start mb-4">
+            <svg xmlns="http://www.w3.org/2000/svg" className="h-6 w-6 mr-2 text-[#7E674E]" fill="none" viewBox="0 0 24 24" stroke="currentColor">
+              <path strokeLinecap="round" strokeLinejoin="round" strokeWidth={2} d="M5 13l4 4L19 7" />
+            </svg>
+            <span className="text-lg text-[#1E0C08]">Incorporating universal design principles to ensure inclusivity for all residents.</span>
+          </li>
+          <li className="flex items-start mb-4">
+            <svg xmlns="http://www.w3.org/2000/svg" className="h-6 w-6 mr-2 text-[#7E674E]" fill="none" viewBox="0 0 24 24" stroke="currentColor">
+              <path strokeLinecap="round" strokeLinejoin="round" strokeWidth={2} d="M5 13l4 4L19 7" />
+            </svg>
+            <span className="text-lg text-[#1E0C08]">Developing a sustainable funding model through public-private partnerships.</span>
+          </li>
+          <li className="flex items-start mb-4">
+            <svg xmlns="http://www.w3.org/2000/svg" className="h-6 w-6 mr-2 text-[#7E674E]" fill="none" viewBox="0 0 24 24" stroke="currentColor">
+              <path strokeLinecap="round" strokeLinejoin="round" strokeWidth={2} d="M5 13l4 4L19 7" />
+            </svg>
+            <span className="text-lg text-[#1E0C08]">Securing grants and subsidies from government agencies and philanthropic organizations.</span>
+          </li>
+          <li className="flex items-start mb-4">
+            <svg xmlns="http://www.w3.org/2000/svg" className="h-6 w-6 mr-2 text-[#7E674E]" fill="none" viewBox="0 0 24 24" stroke="currentColor">
+              <path strokeLinecap="round" strokeLinejoin="round" strokeWidth={2} d="M5 13l4 4L19 7" />
+            </svg>
+            <span className="text-lg text-[#1E0C08]">Implementing tax incentives and credits for sustainable building practices.</span>
+          </li>
+          <li className="flex items-start mb-4">
+            <svg xmlns="http://www.w3.org/2000/svg" className="h-6 w-6 mr-2 text-[#7E674E]" fill="none" viewBox="0 0 24 24" stroke="currentColor">
+              <path strokeLinecap="round" strokeLinejoin="round" strokeWidth={2} d="M5 13l4 4L19 7" />
+            </svg>
+            <span className="text-lg text-[#1E0C08]">Exploring low-interest loans and financing options tailored to sustainable housing projects.</span>
+          </li>
+          <li className="flex items-start mb-4">
+            <svg xmlns="http://www.w3.org/2000/svg" className="h-6 w-6 mr-2 text-[#7E674E]" fill="none" viewBox="0 0 24 24" stroke="currentColor">
+              <path strokeLinecap="round" strokeLinejoin="round" strokeWidth={2} d="M5 13l4 4L19 7" />
+            </svg>
+            <span className="text-lg text-[#1E0C08]">Partnering with impact investors interested in social and environmental sustainability.</span>
+          </li>
+          <li className="flex items-start mb-4">
+            <svg xmlns="http://www.w3.org/2000/svg" className="h-6 w-6 mr-2 text-[#7E674E]" fill="none" viewBox="0 0 24 24" stroke="currentColor">
+              <path strokeLinecap="round" strokeLinejoin="round" strokeWidth={2} d="M5 13l4 4L19 7" />
+            </svg>
+            <span className="text-lg text-[#1E0C08]">Crowdfunding campaigns to engage community support and raise funds for accessibility features.</span>
+          </li>
         </ul>
-      </section>
+      </div>
+    </section>
 
-
-      
     
 {/*
     <section className="flex flex-col items-center justify-center py-4 w-[90vw] max-w-4xl">
