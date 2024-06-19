@@ -1,14 +1,12 @@
 import Image from "next/image";
-import MenuHeader from "../components/menuHeader";
-import Footer from "../components/footer";
 import Script from "next/script";
 
 
 export default function Home() {
   return (
-    <div className="w-full ">
+    <div className="w-[100vw] overflow-x-hidden ">
 
-    <main className="flex gap-6 flex-col items-center  justify-between py-40 sm:py-20 pb-[10vh] bg-[#0A1109] w-full">
+    <main className="flex gap-6 flex-col items-center  justify-between py-20 pb-[10vh] bg-[#0A1109] w-[100vw]">
     <div>
         <h1 className="text-4xl text-[#7C9838] text-start font-bold w-[90vw]">
             The difference between next.config.mjs and next.config.js    
@@ -53,37 +51,39 @@ export default function Home() {
     </div>
     
 
-    <table className="table-auto mt-10 w-[90vw]">
+    <div className="overflow-x-auto w-[90vw]">
+  <table className="table-auto mt-10 w-[90vw]">
     <thead>
       <tr className="bg-[#303830] text-gray-100">
-        <th className="px-4 py-2">Feature</th>
-        <th className="px-4 py-2">next.config.mjs</th>
-        <th className="px-4 py-2">next.config.js</th>
+        <th className="sm:px-4 px-1 py-2 hyphens-auto">Feature</th>
+        <th className="sm:px-4 px-1 py-2 hyphens-auto">next.config.mjs</th>
+        <th className="sm:px-4 px-1 py-2 hyphens-auto">next.config.js</th>
       </tr>
     </thead>
     <tbody className="text-gray-200">
       <tr>
-        <td className="border px-4 py-2">Module System</td>
-        <td className="border px-4 py-2">ECMAScript Modules (ESM)</td>
-        <td className="border px-4 py-2">CommonJS Modules</td>
+        <td className="border sm:px-4 px-1 py-2 hyphens-auto">Module System</td>
+        <td className="border sm:px-4 px-1 py-2 hyphens-auto">ECMAScript Modules (ESM)</td>
+        <td className="border sm:px-4 px-1 py-2 hyphens-auto">CommonJS Modules</td>
       </tr>
       <tr>
-        <td className="border px-4 py-2">Syntax</td>
-        <td className="border px-4 py-2">Modern JavaScript (import/export)</td>
-        <td className="border px-4 py-2">Traditional JavaScript (require/module.exports)</td>
+        <td className="border sm:px-4 px-1 py-2 hyphens-auto">Syntax</td>
+        <td className="border sm:px-4 px-1 py-2 hyphens-auto">Modern JavaScript (import/export)</td>
+        <td className="border sm:px-4 px-1 py-2 hyphens-auto">Traditional JavaScript (require/module.exports)</td>
       </tr>
       <tr>
-        <td className="border px-4 py-2">Support for TypeScript</td>
-        <td className="border px-4 py-2">Fully compatible</td>
-        <td className="border px-4 py-2">Fully compatible</td>
+        <td className="border sm:px-4 px-1 py-2 hyphens-auto">Support for TypeScript</td>
+        <td className="border sm:px-4 px-1 py-2 hyphens-auto">Fully compatible</td>
+        <td className="border sm:px-4 px-1 py-2 hyphens-auto">Fully compatible</td>
       </tr>
       <tr>
-        <td className="border px-4 py-2">Future-Proofing</td>
-        <td className="border px-4 py-2">Aligns with modern JavaScript standards</td>
-        <td className="border px-4 py-2">Traditional approach, might require updates in the future</td>
+        <td className="border sm:px-4 px-1 py-2 hyphens-auto">Future-Proofing</td>
+        <td className="border sm:px-4 px-1 py-2 hyphens-auto">Aligns with modern JavaScript standards</td>
+        <td className="border sm:px-4 px-1 py-2 hyphens-auto">Traditional approach, might require updates in the future</td>
       </tr>
     </tbody>
   </table>
+</div>
 
 
 
