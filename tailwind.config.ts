@@ -8,6 +8,9 @@ const config: Config = {
   ],
   theme: {
     extend: {
+      boxShadow: {
+        'neumorphic-hooked0ntech-box': 'inset 4px 4px 8px -2px #2e362e, inset -6px -6px 6px -4px #000000',
+      },
       backgroundImage: {
         "gradient-radial": "radial-gradient(var(--tw-gradient-stops))",
         "gradient-conic":
