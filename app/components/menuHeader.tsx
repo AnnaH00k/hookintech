@@ -1,3 +1,4 @@
+"use client";
 import { List } from '@phosphor-icons/react/dist/ssr';
 import React, { useState, useEffect, useRef } from 'react';
 
@@ -33,7 +34,7 @@ export default function MenuHeader() {
 
   return (
     <header>
-      <nav className='flex flex-col sm:justify-start justify-center items-center'>
+      <nav className='flex bg-[#0A1109] flex-col sm:justify-start justify-center items-center'>
 
         <button
           onClick={toggleMenu}
