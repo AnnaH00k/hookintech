@@ -5,8 +5,8 @@ import Footer from "./components/footer";
 export default function Home() {
   return (
     <div className="w-full ">
-      <main className="flex flex-col items-center justify-between sm:py-20 pb-[10vh] bg-[#0A1109] w-full">
-        <div className="flex flex-col justify-center sm:h-auto h-[90vh] items-center w-full mt-[5vh]">
+      <main className="flex flex-col items-center justify-between sm:py-20  bg-[#0A1109] w-full">
+        <div className="flex flex-col justify-center sm:h-auto h-[76vh] items-center w-full mt-[5vh]">
           <h1 className="text-4xl text-center w-[90vw] text-[#A0A2A0] font-bold">
             Hooked0ntech
           </h1>
