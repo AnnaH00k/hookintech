@@ -37,7 +37,7 @@ export default function Hooked0nPolitics() {
             <h2 className="text-3xl font-bold tracking-tighter md:text-4xl lg:text-5xl">
              Exploring the Need for Scientifically-Driven Governance
             </h2>
-            <p className="mt-4 text-muted-foreground md:text-xl lg:text-lg">
+            <p className="mt-4 text-white md:text-xl lg:text-lg">
               Current political systems often fall short in addressing the complex challenges of our time. Policies are
               frequently influenced by short-term electoral gains rather than scientific evidence and technological
               innovation, leading to inadequate responses to global issues like climate change, economic inequality, and
@@ -45,10 +45,10 @@ export default function Hooked0nPolitics() {
               technologically-competent political system can lead to better governance and more effective solutions.
             </p>
           </div>
-          <div className="grid gap-6">
+          <div className="grid gap-6 text-white">
             <div className="rounded-lg shadow-[#283150] shadow-lg bg-[#4e577e] p-6 ">
               <h3 className="text-xl font-bold">Inefficiencies in Current Systems</h3>
-              <p className="mt-2 text-muted-foreground">
+              <p className="mt-2 ">
                 Modern political systems often suffer from bureaucratic inefficiencies, outdated decision-making
                 processes, and a lack of adaptability to rapidly changing circumstances. This can result in slow
                 responses to pressing issues and a failure to capitalize on technological advancements that could
@@ -57,7 +57,7 @@ export default function Hooked0nPolitics() {
             </div>
             <div className="rounded-lg  bg-[#4e577e] p-6 shadow-[#283150] shadow-lg">
               <h3 className="text-xl font-bold">Corruption and Lack of Accountability</h3>
-              <p className="mt-2 text-muted-foreground">
+              <p className="mt-2">
                 Widespread corruption, cronyism, and a lack of transparency in many political systems undermine public
                 trust and hinder the implementation of policies that truly serve the common good. This can lead to the
                 prioritization of special interests over the needs of the broader population.
@@ -65,7 +65,7 @@ export default function Hooked0nPolitics() {
             </div>
             <div className="rounded-lg  bg-[#4e577e] p-6 shadow-[#283150] shadow-lg">
               <h3 className="text-xl font-bold">Short-Term Thinking and Lack of Vision</h3>
-              <p className="mt-2 text-muted-foreground">
+              <p className="mt-2 ">
                 Political decision-makers often focus on short-term electoral gains rather than long-term, sustainable
                 solutions. This can result in a lack of investment in critical areas like education, infrastructure, and
                 scientific research, which are essential for addressing complex, global challenges.
@@ -82,14 +82,14 @@ export default function Hooked0nPolitics() {
           <div className="space-y-4">
             <h1 className="text-4xl font-bold tracking-tight sm:text-5xl">Vision for an Ideal Political System
             </h1>
-            <p className="text-muted-foreground text-lg">
+            <p className=" text-lg">
               Integrating scientific research and technological advancements into the decision-making process for a more
               informed, transparent, and accountable political system.
             </p>
           </div>
           <div className="space-y-4">
             <h2 className="text-2xl font-bold">Key Features:</h2>
-            <ul className="space-y-2 text-muted-foreground">
+            <ul className="space-y-2 ">
               <li className="flex items-start gap-2">
               <Check size={32} />
                 <div>
@@ -133,7 +133,7 @@ export default function Hooked0nPolitics() {
 
 
 
-    <section className="mb-10 md:w-auto md:m-4 w-[90vw]">
+    <section className="mb-10 md:w-auto md:m-4 w-[90vw] text-white">
   <h2 className="text-3xl font-semibold mb-3">Implementing the Vision</h2>
   <p className="text-lg mb-5">
     To implement this vision, we propose the following steps:
