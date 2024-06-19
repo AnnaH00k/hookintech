@@ -30,7 +30,7 @@ export default function Hooked0nPolitics() {
       </div>
     </section>
 
-    <section className="w-full flex items-center justify-center bg-gradient-to-b from-[#4e577e] to-[#283150]">
+    <section className="w-full flex items-center justify-center bg-gradient-to-b from-[#4e577e] to-[#283150] text-white">
       <div className="container px-4 md:px-6">
         <div className="grid gap-8 lg:grid-cols-2">
           <div className="flex flex-col items-center justify-center">
@@ -76,7 +76,7 @@ export default function Hooked0nPolitics() {
       </div>
     </section>
 
-    <div className="flex flex-col items-center justify-center bg-background text-foreground">
+    <div className="flex flex-col items-center justify-center bg-background text-white">
       <main className="max-w-4xl w-full px-4 py-20 ">
         <div className="grid gap-8 md:grid-cols-2 lg:gap-12">
           <div className="space-y-4">
