@@ -21,6 +21,12 @@ export default function Hooked0nStudys() {
 
   // Zustand für den Countdown
   const [timeRemaining, setTimeRemaining] = useState("");
+  // Zustand für Schlafenszeit und Vorbereitungszeit
+  const [sleepTime, setSleepTime] = useState(8); // in Stunden
+  const [prepTime, setPrepTime] = useState(1); // in Stunden
+
+  // Zustand für den Anzeige-Text
+  const [timeText, setTimeText] = useState("Zeit bis zur Klausur");
 
   useEffect(() => {
     const targetDate = new Date("2024-06-22T10:00:00").getTime();
@@ -32,16 +38,27 @@ export default function Hooked0nStudys() {
         clearInterval(interval);
         setTimeRemaining("Die Klausur hat begonnen!");
       } else {
-        const hours = Math.floor((timeDifference % (1000 * 60 * 60 * 24)) / (1000 * 60 * 60));
-        const minutes = Math.floor((timeDifference % (1000 * 60 * 60)) / (1000 * 60));
-        const seconds = Math.floor((timeDifference % (1000 * 60)) / 1000);
+        const totalHours = timeDifference / (1000 * 60 * 60);
+        const availableHours = totalHours - sleepTime - prepTime;
+
+        const hours = Math.floor((availableHours % 24));
+        const minutes = Math.floor((availableHours * 60) % 60);
+        const seconds = Math.floor((availableHours * 3600) % 60);
 
         setTimeRemaining(`${hours}h ${minutes}m ${seconds}s`);
       }
     }, 1000);
 
     return () => clearInterval(interval);
-  }, []);
+  }, [sleepTime, prepTime]);
+
+  useEffect(() => {
+    if (sleepTime > 0 || prepTime > 0) {
+      setTimeText("Noch verfügbare Lernzeit");
+    } else {
+      setTimeText("Zeit bis zur Klausur");
+    }
+  }, [sleepTime, prepTime]);
 
   // Funktion zum Aktualisieren des To-Do-Status
   const handleToggle = (id: number) => {
@@ -49,16 +66,16 @@ export default function Hooked0nStudys() {
       todo.id === id ? { ...todo, completed: !todo.completed } : todo
     );
     setTodos(updatedTodos);
-    // Hier kannst du die Aktualisierung an das Backend senden (nicht im Beispiel enthalten)
   };
 
   return (
-    <main className="flex flex-col items-center min-h-screen justify-between py-20 bg-[#cdcfcd] text-white w-full">
+    <main className="flex flex-col items-center min-h-screen gap-4 py-20 bg-[#cdcfcd] text-white w-full">
       <div className="max-w-3xl w-[95vw] p-4 bg-[#303830] rounded-lg shadow-lg">
         <h1 className="text-2xl font-bold mb-4">Mathe-Klausurvorbereitung</h1>
         <div className="mb-4 text-start text-lg font-semibold text-green-500">
-          Zeit bis zur Klausur: {timeRemaining}
+          {timeText}: {timeRemaining}
         </div>
+      
         <ul className="space-y-2 ">
           {todos.map(todo => (
             <li key={todo.id} className="flex items-center ">
@@ -78,6 +95,29 @@ export default function Hooked0nStudys() {
             </li>
           ))}
         </ul>
+      </div>
+
+      <div className="max-w-3xl w-[95vw] p-4 bg-[#303830] rounded-lg shadow-lg">
+        <div className="mb-4 text-start text-lg font-semibold text-[#cdcfcd]">
+          <label htmlFor="sleepTime">Schlafenszeit (Stunden): </label>
+          <input
+            type="number"
+            id="sleepTime"
+            value={sleepTime}
+            onChange={(e) => setSleepTime(Number(e.target.value))}
+            className="ml-2 p-1 text-[#303830] bg-[#cdcfcd]"
+          />
+        </div>
+        <div className="mb-4 text-start text-lg font-semibold text-[#cdcfcd]">
+          <label htmlFor="prepTime">Zeit für Weg und Vorbereitung (Stunden): </label>
+          <input
+            type="number"
+            id="prepTime"
+            value={prepTime}
+            onChange={(e) => setPrepTime(Number(e.target.value))}
+            className="ml-2 p-1 text-[#303830] bg-[#cdcfcd]"
+          />
+        </div>
       </div>
     </main>
   );
