@@ -53,7 +53,7 @@ export default function Hooked0nStudys() {
   };
 
   return (
-    <main className="flex flex-col items-center min-h-screen justify-between py-20 bg-[#cdcfcd] w-full">
+    <main className="flex flex-col items-center min-h-screen justify-between py-20 bg-[#cdcfcd] text-white w-full">
       <div className="max-w-3xl w-[95vw] p-4 bg-[#303830] rounded-lg shadow-lg">
         <h1 className="text-2xl font-bold mb-4">Mathe-Klausurvorbereitung</h1>
         <div className="mb-4 text-start text-lg font-semibold text-green-500">
