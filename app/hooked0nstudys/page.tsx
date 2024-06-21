@@ -1,7 +1,7 @@
 "use client";
 
 import { useState, useEffect } from "react";
-import { Check } from "@phosphor-icons/react";
+import { Check, Clock } from "@phosphor-icons/react";
 
 export default function Hooked0nStudys() {
   // Zustand für die Liste der To-Dos mit Initialwerten
@@ -22,11 +22,14 @@ export default function Hooked0nStudys() {
   // Zustand für den Countdown
   const [timeRemaining, setTimeRemaining] = useState("");
   // Zustand für Schlafenszeit und Vorbereitungszeit
-  const [sleepTime, setSleepTime] = useState(8); // in Stunden
-  const [prepTime, setPrepTime] = useState(1); // in Stunden
+  const [sleepTime, setSleepTime] = useState(0); // in Stunden
+  const [prepTime, setPrepTime] = useState(0); // in Stunden
 
   // Zustand für den Anzeige-Text
   const [timeText, setTimeText] = useState("Zeit bis zur Klausur");
+
+  // Zustand für die Sichtbarkeit des Eingabebereichs
+  const [showInputs, setShowInputs] = useState(false);
 
   useEffect(() => {
     const targetDate = new Date("2024-06-22T10:00:00").getTime();
@@ -59,6 +62,11 @@ export default function Hooked0nStudys() {
       setTimeText("Zeit bis zur Klausur");
     }
   }, [sleepTime, prepTime]);
+
+  // Funktion zum Umschalten der Eingabefelder
+  const toggleInputs = () => {
+    setShowInputs(!showInputs);
+  };
 
   // Funktion zum Aktualisieren des To-Do-Status
   const handleToggle = (id: number) => {
@@ -97,28 +105,39 @@ export default function Hooked0nStudys() {
         </ul>
       </div>
 
-      <div className="max-w-3xl w-[95vw] p-4 bg-[#303830] rounded-lg shadow-lg">
-        <div className="mb-4 text-start text-lg font-semibold text-[#cdcfcd]">
-          <label htmlFor="sleepTime">Schlafenszeit (Stunden): </label>
-          <input
-            type="number"
-            id="sleepTime"
-            value={sleepTime}
-            onChange={(e) => setSleepTime(Number(e.target.value))}
-            className="ml-2 p-1 text-[#303830] bg-[#cdcfcd]"
-          />
-        </div>
-        <div className="mb-4 text-start text-lg font-semibold text-[#cdcfcd]">
-          <label htmlFor="prepTime">Zeit für Weg und Vorbereitung (Stunden): </label>
-          <input
-            type="number"
-            id="prepTime"
-            value={prepTime}
-            onChange={(e) => setPrepTime(Number(e.target.value))}
-            className="ml-2 p-1 text-[#303830] bg-[#cdcfcd]"
-          />
-        </div>
-      </div>
+      <section className="max-w-3xl w-[95vw]">
+        <button
+          onClick={toggleInputs}
+          className={`sm:text-lg text-md text-white text-center rounded-lg px-3 py-1 ${showInputs ? 'bg-green-900' : 'bg-[#303830]'}`}
+        >
+          <Clock size={32} weight="light" />
+        </button>
+      </section>
+
+      {showInputs && (
+        <section className={`max-w-3xl w-[95vw] p-4 bg-[#303830] rounded-lg shadow-lg transition-all duration-500 ease-in-out transform ${showInputs ? 'opacity-100' : 'opacity-0'}`}>
+          <div className="mb-4 text-start text-lg font-semibold text-[#cdcfcd]">
+            <label htmlFor="sleepTime">Schlafenszeit (Stunden): </label>
+            <input
+              type="number"
+              id="sleepTime"
+              value={sleepTime}
+              onChange={(e) => setSleepTime(Number(e.target.value))}
+              className="ml-2 p-1 text-[#303830] bg-[#cdcfcd]"
+            />
+          </div>
+          <div className="mb-4 text-start text-lg font-semibold text-[#cdcfcd]">
+            <label htmlFor="prepTime">Zeit für Weg und Vorbereitung (Stunden): </label>
+            <input
+              type="number"
+              id="prepTime"
+              value={prepTime}
+              onChange={(e) => setPrepTime(Number(e.target.value))}
+              className="ml-2 p-1 text-[#303830] bg-[#cdcfcd]"
+            />
+          </div>
+        </section>
+      )}
     </main>
   );
 }
