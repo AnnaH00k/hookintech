@@ -38,7 +38,7 @@ export default function MenuHeader() {
 
         <button
           onClick={toggleMenu}
-          className={`mt-4 sm:hidden text-[#A0A2A0] bg-[#303830] px-3 py-1 rounded-full`}
+          className={`my-4 sm:hidden text-[#A0A2A0] bg-[#303830] px-3 py-1 rounded-full`}
         >
           <List size={32} />
         </button>
@@ -72,7 +72,11 @@ export default function MenuHeader() {
           <a href="/hooked0npolitics" className="sm:text-lg text-md text-[#A0A2A0] text-center rounded-full bg-[#303830] px-3 py-1">
             Hooked0nPolitics
           </a>
+           <a href="/hooked0nstudys" className="sm:text-lg text-md text-[#A0A2A0] text-center rounded-full bg-[#303830] px-3 py-1">
+            Hooked0nStudys
+          </a>
           */}
+          
         </div>
       </nav>
     </header>

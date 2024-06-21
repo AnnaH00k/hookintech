@@ -4,6 +4,7 @@ import MenuHeader from "./headers/menuHeader";
 import Footer from "./footer";
 import LifeHeader from "./headers/lifeHeader";
 import PoliticsHeader from "./headers/politicsheader";
+import StudyHeader from "./headers/studyHeader";
 
 export default function ClientLayout({
   children,
@@ -13,14 +14,17 @@ export default function ClientLayout({
   const pathname = usePathname();
   const hideHeaderFooter = pathname.includes("hooked0nlife");
   const hideHeaderFooterForPolitics = pathname.includes("hooked0npolitics");
+  const hideHeaderFooterForStudy = pathname.includes("hooked0nstudys");
+
 
   return (
     <>
-      {!hideHeaderFooter && !hideHeaderFooterForPolitics && <MenuHeader />}
+      {!hideHeaderFooter && !hideHeaderFooterForPolitics && !hideHeaderFooterForStudy && <MenuHeader />}
       {hideHeaderFooterForPolitics && <PoliticsHeader />}
       {hideHeaderFooter && <LifeHeader />}
+      {hideHeaderFooterForStudy && <StudyHeader />}
       {children}
-      {!hideHeaderFooter && !hideHeaderFooterForPolitics && <Footer />}
+      {!hideHeaderFooter && !hideHeaderFooterForPolitics && !hideHeaderFooterForStudy && <Footer />}
     </>
   );
 }
