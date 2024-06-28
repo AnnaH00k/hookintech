@@ -38,7 +38,7 @@ export default function Home() {
             <h1 className="text-2xl text-[#A0A2A0] text-center font-bold w-[90vw]">
               Projects
             </h1>
-            <div className="shadow-neumorphic-hooked0ntech-box flex flex-col rounded-lg max-w-[400px] min-h-[150px] sm:w-[40vw] w-[80vw] text-center items-center justify-center gap-2 bg-[#151C14] sm:hover:bg-[#1A2310] sm:hover:scale-105 p-4">
+            <div className="shadow-neumorphic-hooked0ntech-box flex flex-col rounded-lg max-w-[400px] min-h-[150px] sm:w-[40vw] w-[80vw] text-center items-center justify-center gap-2 bg-[#151C14] sm:hover:bg-[#1A2310]  shadow-[#646864] sm:hover:scale-105 p-4">
             <h2 className="text-lg text-[#A0A2A0] font-bold ">
                 Online University
               </h2>
@@ -54,7 +54,7 @@ export default function Home() {
                 @ IU International University
               </a>
             </div>
-            <div className="shadow-neumorphic-hooked0ntech-box flex flex-col rounded-lg max-w-[400px] min-h-[150px]  sm:w-[40vw] w-[80vw] text-center items-center justify-center gap-2 bg-[#151C14] sm:hover:bg-[#1A2310] sm:hover:scale-105 p-4">
+            <div className="shadow-neumorphic-hooked0ntech-box flex flex-col rounded-lg max-w-[400px] min-h-[150px]  sm:w-[40vw] w-[80vw] text-center items-center justify-center gap-2 bg-[#151C14] sm:hover:bg-[#1A2310] shadow-[#646864] sm:hover:scale-105 p-4">
               <h2 className="text-lg text-[#A0A2A0] font-bold">
                 Working at CLYE
               </h2>
@@ -70,7 +70,7 @@ export default function Home() {
                 CLYE Landingpage
               </a>
             </div>
-            <div className="shadow-neumorphic-hooked0ntech-box flex flex-col rounded-lg max-w-[400px] min-h-[150px]  sm:w-[40vw] w-[80vw] text-center items-center justify-center gap-2 bg-[#151C14] sm:hover:bg-[#1A2310] sm:hover:scale-105 p-4">
+            <div className="shadow-neumorphic-hooked0ntech-box flex flex-col rounded-lg max-w-[400px] min-h-[150px]  sm:w-[40vw] w-[80vw] text-center items-center justify-center gap-2 bg-[#151C14] sm:hover:bg-[#1A2310] shadow-[#646864] sm:hover:scale-105 p-4">
               <h2 className="text-lg text-[#A0A2A0] font-bold">FAB App</h2>
               <a
                 href="https://apps.apple.com/us/app/fabapp/id1554684851?fbclid=IwAR3ha_5Z9kWtMqfu4gVLOqbYFzdYnZSDdLVIQyKdG7YRyYWYYODJDKWLCIU"
@@ -87,7 +87,7 @@ export default function Home() {
                 Google Play Store
               </a>
             </div>
-            <div className="shadow-neumorphic-hooked0ntech-box flex flex-col rounded-lg max-w-[400px] min-h-[150px]  sm:w-[40vw] w-[80vw] text-center items-center justify-center gap-2 bg-[#151C14] sm:hover:bg-[#1A2310] sm:hover:scale-105 p-4">
+            <div className="shadow-neumorphic-hooked0ntech-box flex flex-col rounded-lg max-w-[400px] min-h-[150px]  sm:w-[40vw] w-[80vw] text-center items-center justify-center gap-2 bg-[#151C14] sm:hover:bg-[#1A2310] shadow-[#646864] sm:hover:scale-105 p-4">
               <h2 className="text-lg text-[#A0A2A0] font-bold">
                 Couple Corner
               </h2>
@@ -99,7 +99,7 @@ export default function Home() {
                 Apple app Store
               </a>
             </div>
-            <div className="shadow-neumorphic-hooked0ntech-box flex flex-col rounded-lg max-w-[400px] min-h-[150px]  sm:w-[40vw] w-[80vw] text-center items-center justify-center gap-2 bg-[#151C14] sm:hover:bg-[#1A2310] sm:hover:scale-105 p-4">
+            <div className="shadow-neumorphic-hooked0ntech-box flex flex-col rounded-lg max-w-[400px] min-h-[150px]  sm:w-[40vw] w-[80vw] text-center items-center justify-center gap-2 bg-[#151C14] sm:hover:bg-[#1A2310] shadow-[#646864] sm:hover:scale-105 p-4">
               <h2 className="text-lg text-[#A0A2A0] font-bold">CO2 Zone</h2>
               <a
                 href="https://annah00k.github.io/co2-zone/en"
@@ -118,14 +118,14 @@ export default function Home() {
             <h1 className="text-2xl text-[#A0A2A0] text-center font-bold w-[90vw]">
               Tech Stack
             </h1>
-            <div className="shadow-neumorphic-hooked0ntech-box flex flex-col rounded-lg max-w-[400px] min-h-[150px]  sm:w-[40vw] w-[80vw] text-center items-center justify-center gap-2 bg-[#151C14] sm:hover:bg-[#1A2310] sm:hover:scale-105 p-4">
+            <div className="shadow-neumorphic-hooked0ntech-box flex flex-col rounded-lg max-w-[400px] min-h-[150px]  sm:w-[40vw] w-[80vw] text-center items-center justify-center gap-2 bg-[#151C14] sm:hover:bg-[#1A2310] shadow-[#646864] sm:hover:scale-105 p-4">
               <h2 className="text-lg text-[#A0A2A0] font-bold">
                 Native App development
               </h2>
               <p className="text-md text-[#7C9838]">Java, Swift</p>
             </div>
 
-            <div className="shadow-neumorphic-hooked0ntech-box flex flex-col rounded-lg max-w-[400px] min-h-[150px]  sm:w-[40vw] w-[80vw] text-center items-center justify-center gap-2 bg-[#151C14] sm:hover:bg-[#1A2310] sm:hover:scale-105 p-4">
+            <div className="shadow-neumorphic-hooked0ntech-box flex flex-col rounded-lg max-w-[400px] min-h-[150px]  sm:w-[40vw] w-[80vw] text-center items-center justify-center gap-2 bg-[#151C14] sm:hover:bg-[#1A2310] shadow-[#646864] sm:hover:scale-105 p-4">
               <h2 className="text-lg text-[#A0A2A0] font-bold ">
                 Web development
               </h2>
@@ -135,7 +135,7 @@ export default function Home() {
               </p>
             </div>
 
-            <div className="shadow-neumorphic-hooked0ntech-box flex flex-col rounded-lg max-w-[400px] min-h-[150px]  sm:w-[40vw] w-[80vw] text-center items-center justify-center gap-2 bg-[#151C14] sm:hover:bg-[#1A2310] sm:hover:scale-105 p-4">
+            <div className="shadow-neumorphic-hooked0ntech-box flex flex-col rounded-lg max-w-[400px] min-h-[150px]  sm:w-[40vw] w-[80vw] text-center items-center justify-center gap-2 bg-[#151C14] sm:hover:bg-[#1A2310] shadow-[#646864] sm:hover:scale-105 p-4">
               <h2 className="text-lg text-[#A0A2A0] font-bold ">
                 Media Creation
               </h2>
@@ -158,7 +158,7 @@ export default function Home() {
             <h1 className="text-2xl text-[#A0A2A0] text-center font-bold w-[90vw]">
               Media
             </h1>
-            <div className="shadow-neumorphic-hooked0ntech-box flex flex-col rounded-lg max-w-[400px] min-h-[150px]  sm:w-[40vw] w-[80vw] text-center items-center justify-center gap-2 bg-[#151C14] sm:hover:bg-[#1A2310] sm:hover:scale-105 p-4">
+            <div className="shadow-neumorphic-hooked0ntech-box flex flex-col rounded-lg max-w-[400px] min-h-[150px]  sm:w-[40vw] w-[80vw] text-center items-center justify-center gap-2 bg-[#151C14] sm:hover:bg-[#1A2310] shadow-[#646864] sm:hover:scale-105 p-4">
               <h2 className="text-lg text-[#A0A2A0] font-bold ">YouTube</h2>
               <a
                 className="text-sm sm:text-md text-[#A0A2A0] hover:text-[#fff] rounded-full bg-[#303830] px-3 py-1"
@@ -182,7 +182,7 @@ export default function Home() {
                 Studyvation
               </a>
             </div>
-            <div className="shadow-neumorphic-hooked0ntech-box flex flex-col rounded-lg max-w-[400px] min-h-[150px]  sm:w-[40vw] w-[80vw] text-center items-center justify-center gap-2 bg-[#151C14] sm:hover:bg-[#1A2310] sm:hover:scale-105 p-4">
+            <div className="shadow-neumorphic-hooked0ntech-box flex flex-col rounded-lg max-w-[400px] min-h-[150px]  sm:w-[40vw] w-[80vw] text-center items-center justify-center gap-2 bg-[#151C14] sm:hover:bg-[#1A2310] shadow-[#646864] sm:hover:scale-105 p-4">
               <h2 className="text-lg text-[#A0A2A0] font-bold">Instagram</h2>
               <a
                 href="https://www.instagram.com/hooked0ntech/"
@@ -208,7 +208,7 @@ export default function Home() {
             <h1 className="text-2xl text-[#A0A2A0] text-center font-bold w-[90vw]">
               Products
             </h1>
-            <div className="shadow-neumorphic-hooked0ntech-box flex flex-col rounded-lg max-w-[400px] min-h-[150px]  sm:w-[40vw] w-[80vw] text-center items-center justify-center gap-2 bg-[#151C14] sm:hover:bg-[#1A2310] sm:hover:scale-105 p-4">
+            <div className="shadow-neumorphic-hooked0ntech-box flex flex-col rounded-lg max-w-[400px] min-h-[150px]  sm:w-[40vw] w-[80vw] text-center items-center justify-center gap-2 bg-[#151C14] sm:hover:bg-[#1A2310] shadow-[#646864] sm:hover:scale-105 p-4">
               <h2 className="text-lg text-[#A0A2A0] font-bold">
                 Amazon Storefront
               </h2>
