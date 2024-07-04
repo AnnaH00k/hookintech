@@ -13,15 +13,19 @@ const TaskList: React.FC<TaskListProps> = ({ selectedSubject, subjectTasks, setS
     setSubjectTasks({ ...subjectTasks, [selectedSubject.id]: updatedTasks });
   };
 
-  const handleToggleTaskCompletion = (taskId: number) => {
-    const updatedTasks = subjectTasks[selectedSubject.id].map(task => {
-      if (task.id === taskId) {
-        return { ...task, completed: !task.completed };
-      }
-      return task;
-    });
-    setSubjectTasks({ ...subjectTasks, [selectedSubject.id]: updatedTasks });
-  };
+ const handleToggleTaskCompletion = (taskId: number) => {
+  const updatedTasks = subjectTasks[selectedSubject.id].map(task => {
+    if (task.id === taskId) {
+      return { ...task, completed: !task.completed };
+    }
+    return task;
+  });
+  setSubjectTasks({
+    ...subjectTasks,
+    [selectedSubject.id]: updatedTasks,
+  });
+};
+
 
   return (
     <ul className="mt-4 space-y-2">

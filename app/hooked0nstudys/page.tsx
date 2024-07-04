@@ -62,9 +62,11 @@ const MainLayout: React.FC = () => {
   };
 
   const handleSubjectChange = (index: number) => {
-    setSelectedSubject(subjects[index]); // Update here
+    setSelectedSubject(subjects[index]);
     setSelectedSubjectIndex(index);
+  
   };
+  
 
   const countdownToExamDate = (examDate: string): string => {
     if (!examDate) {
