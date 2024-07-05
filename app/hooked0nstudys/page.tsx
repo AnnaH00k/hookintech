@@ -33,7 +33,7 @@ const MainLayout: React.FC = () => {
     const savedSubjects = Cookies.get("subjects");
     return savedSubjects ? JSON.parse(savedSubjects) : [];
   });
-  const [selectedSubject, setSelectedSubject] = useState<Subject | null>(null); // Update here
+  const [selectedSubject, setSelectedSubject] = useState<Subject | null>(null);
   const [selectedSubjectIndex, setSelectedSubjectIndex] = useState<number>(0);
   const [showSubjectAddition, setShowSubjectAddition] = useState(false);
   const [subjectTasks, setSubjectTasks] = useState<SubjectTasks>(() => {
@@ -64,53 +64,63 @@ const MainLayout: React.FC = () => {
   const handleSubjectChange = (index: number) => {
     setSelectedSubject(subjects[index]);
     setSelectedSubjectIndex(index);
-  
   };
-  
 
   const countdownToExamDate = (examDate: string): string => {
     if (!examDate) {
       return "No exam date set";
     }
-  
+
     const today = new Date();
     const examDateTime = new Date(examDate);
     const timeDiff = examDateTime.getTime() - today.getTime();
-  
+
     if (timeDiff <= 0) {
       return "Exam date has passed";
     }
-  
+
     const days = Math.floor(timeDiff / (1000 * 60 * 60 * 24));
     const hours = Math.floor((timeDiff % (1000 * 60 * 60 * 24)) / (1000 * 60 * 60));
     const minutes = Math.floor((timeDiff % (1000 * 60 * 60)) / (1000 * 60));
-  
+
     return `${days}d ${hours}h ${minutes}m until exam`;
   };
-  
+
+  const clearCookies = () => {
+    Cookies.remove("subjects");
+    Cookies.remove("subjectTasks");
+    setSubjects([]);
+    setSubjectTasks({});
+    setSelectedSubject(null);
+    setSelectedSubjectIndex(0);
+  };
 
   return (
     <main className="flex flex-col items-center min-h-screen gap-4 py-20 bg-[#cdcfcd] text-[#cdcfcd] w-full">
+      {!selectedSubject && (
+        <h1 className="text-2xl text-[#303830] font-bold">Welcome to Hooked0nStudys</h1>
+      )}
+
       {selectedSubject && (
         <section className="max-w-3xl w-[95vw] p-4 bg-[#303830] rounded-lg shadow-lg">
           <div className="flex flex-row w-full items-center justify-center">
-           <button
-                onClick={() => handleSubjectChange(selectedSubjectIndex > 0 ? selectedSubjectIndex - 1 : subjects.length - 1)}
-                className="bg-[#303830] text-[#cdcfcd] rounded-lg px-4 py-1"
-                >
-                <ArrowCircleLeft size={32} />
-                </button>
-              <div className="flex flex-col items-center justify-center mb-4">
-                <h2 className="text-lg text-center font-bold">{selectedSubject.name}</h2>
-                <div>{countdownToExamDate(selectedSubject.examDate)} </div>
-              </div>
             <button
-                onClick={() => handleSubjectChange(selectedSubjectIndex < subjects.length - 1 ? selectedSubjectIndex + 1 : 0)}
-                className="bg-[#303830] text-[#cdcfcd] rounded-lg px-4 py-1"
-                >
-                <ArrowCircleRight size={32} />
-              </button>
+              onClick={() => handleSubjectChange(selectedSubjectIndex > 0 ? selectedSubjectIndex - 1 : subjects.length - 1)}
+              className="bg-[#303830] text-[#cdcfcd] rounded-lg px-4 py-1"
+            >
+              <ArrowCircleLeft size={32} />
+            </button>
+            <div className="flex flex-col items-center justify-center mb-4">
+              <h2 className="text-lg text-center font-bold">{selectedSubject.name}</h2>
+              <div>{countdownToExamDate(selectedSubject.examDate)}</div>
             </div>
+            <button
+              onClick={() => handleSubjectChange(selectedSubjectIndex < subjects.length - 1 ? selectedSubjectIndex + 1 : 0)}
+              className="bg-[#303830] text-[#cdcfcd] rounded-lg px-4 py-1"
+            >
+              <ArrowCircleRight size={32} />
+            </button>
+          </div>
           <TaskForm selectedSubject={selectedSubject} subjectTasks={subjectTasks} setSubjectTasks={setSubjectTasks} />
           <TaskList selectedSubject={selectedSubject} subjectTasks={subjectTasks} setSubjectTasks={setSubjectTasks} />
         </section>
@@ -135,12 +145,18 @@ const MainLayout: React.FC = () => {
         >
           <Clock size={32} weight="light" />
         </button>
+        <button
+          onClick={clearCookies}
+          className="sm:text-lg m-2 text-md text-rose-200 text-center bg-red-900 rounded-lg px-3 py-1"
+        >
+          Clear All Data
+        </button>
       </section>
 
       {showSubjects && (
         <SubjectList
-          subjects={subjects}
-          setSelectedSubject={setSelectedSubject} // Pass setSelectedSubject directly
+          subjects={subjects || []} // Ensure subjects is an array
+          setSelectedSubject={setSelectedSubject}
           selectedSubject={selectedSubject}
           setSubjects={setSubjects}
           subjectTasks={subjectTasks}
@@ -149,7 +165,7 @@ const MainLayout: React.FC = () => {
       )}
       {showSubjectAddition && (
         <SubjectForm
-          subjects={subjects}
+          subjects={subjects || []} // Ensure subjects is an array
           setSubjects={setSubjects}
           subjectTasks={subjectTasks}
           setSubjectTasks={setSubjectTasks}

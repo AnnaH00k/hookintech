@@ -32,6 +32,8 @@ export default function SubjectList({
 
   return (
     <section className="max-w-3xl w-[95vw] p-4 bg-[#303830] rounded-lg shadow-lg">
+        <h2 className="text-[#cdcfcd] text-lg font-bold">Courses</h2>
+        {subjects.length === 0 && <p className="text-[#cdcfcd] text-sm">No courses added yet</p>}
       <ul className="mt-4 space-y-2">
         {subjects.map(subject => (
           <li key={subject.id} className="flex items-center justify-between">
