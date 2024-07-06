@@ -72,8 +72,11 @@ export default function MenuHeader() {
           </a>
 
 {/*
+          <a href="/hooked0nideas" className="sm:text-lg text-md text-[#A0A2A0] text-center rounded-full bg-[#303830] px-3 py-1">
+            Hooked0nIdeas
+          </a>
           <a href="/hooked0nstudys" className="sm:text-lg text-md text-[#A0A2A0] text-center rounded-full bg-[#303830] px-3 py-1">
-            Hooked0nHealth
+          Hooked0nHealth
           </a>
           <a href="/hooked0nlife" className="sm:text-lg text-md text-[#A0A2A0] text-center rounded-full bg-[#303830] px-3 py-1">
             Hooked0nLife
