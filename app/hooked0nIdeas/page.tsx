@@ -4,7 +4,7 @@ import Footer from "../components/footer";
 import Script from "next/script";
 import Link from "next/link";
 
-export default function Hooked0nIdeas() {
+export default function Hooked0nideas() {
   return (
     <main className="flex flex-col items-center min-h-screen justify-center  p-20 text-[#A0A2A0] bg-[#070b0b] w-full">
       <h1 className="text-5xl font-bold mt-[5vh] mb-10">Meine Ideen</h1>
