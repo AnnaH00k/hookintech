@@ -62,7 +62,7 @@ export default function MenuHeader() {
           <a href="/#products" className="sm:text-lg text-md text-[#A0A2A0] text-center rounded-full bg-[#303830] px-3 py-1">
             Products
           </a>
-          <a href="/blogposts" className="col-span-2 sm:text-lg text-md text-[#A0A2A0] text-center rounded-full bg-[#303830] px-3 py-1">
+          <a href="/blogposts" className=" sm:text-lg text-md text-[#A0A2A0] text-center rounded-full bg-[#303830] px-3 py-1">
             Blogposts
           </a>
           
