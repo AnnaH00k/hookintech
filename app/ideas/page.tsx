@@ -65,6 +65,46 @@ export default function Ideas() {
         description: "Animationsserie über eine intelligente Superheldin",
         target: "Allgemein (mit Fokus auf junge Mädchen)",
       },
+      {
+        name: "Video: Gaining back focus and dicipline/ from blob to badass",
+        description: "Sharing my journey from being a blob to becoming a badass creator",
+        target: "People who want motivation and real life stories",
+      },
+      {
+        name: "Video: 100h of making money",
+        description: "How to make money by creating content and selling products",
+        target: "People interested in making money",
+      },
+      {
+        name: "Video: 100h of making games",
+        description: "How to make games from normal to vr games",
+        target: "developers and people interested in making games",
+      },
+      {
+        name: "Video: 100h of making music",
+        description: "How to make music that you really like and how to sell it",
+        target: "People interested in making money & music",
+      },
+      {
+        name: "Video: Creating Cinema quality videos",
+        description: " How to create videos that look like they are from the cinema",
+        target: " People interested in making videos",
+      },
+      {
+        name: "Video: How to create a frontend website with nextjs, Typescript and TailwindCSS",
+        description: "",
+        target: "developers",
+      },
+      {
+        name: "Video: How to add a backend to your website",
+        description: " ",
+        target: "developers",
+      },
+      {
+        name: "Video: Website & App in one with Nextjs",
+        description: " ",
+        target: "developers",
+      },
     ];
   
     return (
