@@ -24,6 +24,7 @@ export default function ClientLayout({
       {hideHeaderFooter && <LifeHeader />}
       {hideHeaderFooterForStudy && <StudyHeader />}
       {children}
+      <div className="h-20 bg-[#0A1109]" />
       {!hideHeaderFooter && !hideHeaderFooterForPolitics && !hideHeaderFooterForStudy && <Footer />}
     </>
   );
