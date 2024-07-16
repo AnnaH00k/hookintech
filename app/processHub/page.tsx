@@ -108,8 +108,8 @@ const ProcessHub: React.FC = () => {
         <div className="mb-4">
           <input
             type="text"
-            className="p-2 w-full mb-2 text-[#0A1109] bg-[#A0A2A0]"
-            placeholder="Process name"
+            className="p-2 w-full mb-2 text-[#0A1109] bg-[#A0A2A0] placeholder:text-[#0A1109]"
+            placeholder="Process name..."
             value={processName}
             onChange={(e) => setProcessName(e.target.value)}
           />
@@ -139,8 +139,8 @@ const ProcessHub: React.FC = () => {
             <div className="mb-4">
               <input
                 type="text"
-                className="p-2 w-full mb-2 text-[#0A1109] bg-[#A0A2A0]"
-                placeholder="Enter link"
+                className="p-2 w-full mb-2 text-[#0A1109] bg-[#A0A2A0] placeholder:text-[#0A1109]"
+                placeholder="Enter link..."
                 value={inputLink}
                 onChange={(e) => setInputLink(e.target.value)}
               />
