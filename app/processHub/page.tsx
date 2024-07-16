@@ -33,13 +33,31 @@ const ProcessHub: React.FC = () => {
 
   const addLink = () => {
     if (inputLink && selectedProcessIndex >= 0) {
+      // Regular expression to validate URL
+      const urlPattern = new RegExp('^(https?:\\/\\/)?'+ // validate protocol
+        '((([a-z\\d]([a-z\\d-]*[a-z\\d])*)\\.)+[a-z]{2,}|' + // validate domain name
+        'www\\.[a-z\\d]([a-z\\d-]*[a-z\\d])*)' + // validate www
+        '(\\:\\d+)?(\\/[-a-z\\d%_.~+]*)*' + // validate port and path
+        '(\\?[;&a-z\\d%_.~+=-]*)?' + // validate query string
+        '(\\#[-a-z\\d_]*)?$','i'); // validate fragment locator
+  
+      if (!urlPattern.test(inputLink)) {
+        alert('Please enter a valid URL.');
+        return;
+      }
+  
+      // If no protocol is provided, prepend http:// to the URL
+      const formattedLink = inputLink.match(/^https?:\/\//) ? inputLink : `http://${inputLink}`;
+  
       const updatedProcesses = [...workProcesses];
-      updatedProcesses[selectedProcessIndex].links.push(inputLink);
+      updatedProcesses[selectedProcessIndex].links.push(formattedLink);
       setWorkProcesses(updatedProcesses);
       Cookies.set('work-processes', JSON.stringify(updatedProcesses), { expires: 7 });
       setInputLink('');
     }
   };
+  
+  
 
   const deleteLink = (linkIndex: number) => {
     if (selectedProcessIndex >= 0) {
@@ -151,10 +169,10 @@ const ProcessHub: React.FC = () => {
                 Add Link
               </button>
             </div>
-            <ul className="list-disc pl-5 mb-4">
+            <div className=" flex flex-col mb-4">
               {workProcesses[selectedProcessIndex].links.map((link, index) => (
-                <li key={index} className="flex justify-between items-center">
-                  <span>{link}</span>
+                <div className="flex justify-between items-center m-2 border border-[#A0A2A0] rounded-lg" key={index}>
+                  <span className='flex truncate max-w-sm  p-2  '>{link}</span>
                   {showDeletionOptions && (
                     <button
                       className="bg-[#662828] text-white p-1 m-2 rounded"
@@ -163,9 +181,10 @@ const ProcessHub: React.FC = () => {
                       Delete
                     </button>
                   )}
-                </li>
+                </div>
+                
               ))}
-            </ul>
+            </div>
             <div className="mb-4">
               <button
                 className="bg-[#097f24] text-white p-2 rounded w-full"
