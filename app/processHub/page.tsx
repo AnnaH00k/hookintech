@@ -102,8 +102,8 @@ const ProcessHub: React.FC = () => {
   };
 
   return (
-    <div className="min-h-screen bg-[#0A1109] flex items-center justify-center text-[#A0A2A0]">
-      <div className="bg-[#303830]  p-8 rounded shadow-md w-full max-w-lg">
+    <div className="sm:min-h-screen min-h-[85vh] bg-[#0A1109] flex items-center justify-center text-[#A0A2A0]">
+      <div className="bg-[#303830]  p-8 rounded shadow-md w-[95vw] max-w-lg">
         <h1 className="text-2xl text-center font-bold mb-4">Process Hub</h1>
         <div className="mb-4">
           <input
