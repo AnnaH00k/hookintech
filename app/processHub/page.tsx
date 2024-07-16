@@ -33,22 +33,18 @@ const ProcessHub: React.FC = () => {
 
   const addLink = () => {
     if (inputLink && selectedProcessIndex >= 0) {
-      // Regular expression to validate URL
       const urlPattern = new RegExp('^(https?:\\/\\/)?'+ // validate protocol
         '((([a-z\\d]([a-z\\d-]*[a-z\\d])*)\\.)+[a-z]{2,}|' + // validate domain name
         'www\\.[a-z\\d]([a-z\\d-]*[a-z\\d])*)' + // validate www
         '(\\:\\d+)?(\\/[-a-z\\d%_.~+]*)*' + // validate port and path
         '(\\?[;&a-z\\d%_.~+=-]*)?' + // validate query string
         '(\\#[-a-z\\d_]*)?$','i'); // validate fragment locator
-  
-      if (!urlPattern.test(inputLink)) {
-        alert('Please enter a valid URL.');
-        return;
-      }
-  
-      // If no protocol is provided, prepend http:// to the URL
-      const formattedLink = inputLink.match(/^https?:\/\//) ? inputLink : `http://${inputLink}`;
-  
+
+         // If no protocol is provided, prepend http:// to the URL
+    const formattedLink = inputLink.match(/^https?:\/\//) ? inputLink : `http://${inputLink}`;
+   
+
+
       const updatedProcesses = [...workProcesses];
       updatedProcesses[selectedProcessIndex].links.push(formattedLink);
       setWorkProcesses(updatedProcesses);
@@ -56,6 +52,7 @@ const ProcessHub: React.FC = () => {
       setInputLink('');
     }
   };
+
   
   
 
