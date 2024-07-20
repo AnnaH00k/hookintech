@@ -19,7 +19,7 @@ export default function ClientLayout({
 
   return (
     <>
-      {!hideHeaderFooter && !hideHeaderFooterForPolitics && hideHeaderFooterForStudy && <MenuHeader />}
+      {!hideHeaderFooter && !hideHeaderFooterForPolitics && <MenuHeader />}
       {hideHeaderFooterForPolitics && <PoliticsHeader />}
       {hideHeaderFooter && <LifeHeader />}
       {children}
