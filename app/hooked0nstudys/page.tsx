@@ -96,9 +96,9 @@ const MainLayout: React.FC = () => {
   };
 
   return (
-    <main className="flex flex-col items-center min-h-screen gap-4 py-20 bg-[#cdcfcd] text-[#cdcfcd] w-full">
+    <main className="flex flex-col items-center min-h-screen gap-4 py-20 bg-background text-text w-full">
       {!selectedSubject && (
-        <h1 className="text-2xl text-[#303830] font-bold">Welcome to Hooked0nStudys</h1>
+        <h1 className="text-2xl text-text font-bold">Welcome to Hooked0nStudys</h1>
       )}
 
       {selectedSubject && (

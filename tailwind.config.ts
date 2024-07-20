@@ -8,6 +8,11 @@ const config: Config = {
   ],
   theme: {
     extend: {
+    colors:{
+      "background":"#0A1109",
+      "text":"#cdcfcd",
+    },
+
       boxShadow: {
         'neumorphic-hooked0ntech-box': 'inset 4px 4px 8px -2px #2e362e, inset -6px -6px 6px -4px #000000',
       },
