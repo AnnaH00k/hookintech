@@ -213,7 +213,7 @@ const MainLayout: React.FC = () => {
         </section>
       )}
 
-      <section className="max-w-3xl flex items-center justify-center w-[95vw]">
+      <section className="max-w-3xl flex flex-wrap items-center justify-center w-[95vw]">
         <button
           onClick={toggleSubjects}
           className={`sm:text-lg m-2 text-md text-white text-center rounded-lg px-3 py-1 ${showSubjects ? "bg-green-900" : "bg-[#303830]"}`}
