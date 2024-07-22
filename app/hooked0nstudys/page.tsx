@@ -42,11 +42,11 @@ const MainLayout: React.FC = () => {
   });
 
   useEffect(() => {
-    Cookies.set("subjects", JSON.stringify(subjects), { expires: 7 });
+    Cookies.set("subjects", JSON.stringify(subjects), { expires: 365 });
   }, [subjects]);
 
   useEffect(() => {
-    Cookies.set("subjectTasks", JSON.stringify(subjectTasks), { expires: 7 });
+    Cookies.set("subjectTasks", JSON.stringify(subjectTasks), { expires: 365 });
   }, [subjectTasks]);
 
   const toggleSubjects = () => {
@@ -93,6 +93,93 @@ const MainLayout: React.FC = () => {
     setSubjectTasks({});
     setSelectedSubject(null);
     setSelectedSubjectIndex(0);
+  };
+
+  const backupData = () => {
+    const data = {
+      subjects,
+      subjectTasks,
+    };
+    const dataStr = JSON.stringify(data, null, 2);
+    const blob = new Blob([dataStr], { type: "application/json" });
+  
+    // Generate a random funny file name
+  // Array of 40 funny file names
+  const funnyFileNames = [
+    "Hooked0nStudys_StudyBuddyBackup.json",
+    "Hooked0nStudys_TodoOrNotTodo.json",
+    "Hooked0nStudys_ExamPanicPack.json",
+    "Hooked0nStudys_HomeworkHoard.json",
+    "Hooked0nStudys_NotesNonsense.json",
+    "Hooked0nStudys_TaskTamer.json",
+    "Hooked0nStudys_ProcrastinationProof.json",
+    "Hooked0nStudys_SaveMyGrades.json",
+    "Hooked0nStudys_BrainDumpBackup.json",
+    "Hooked0nStudys_StudySavior.json",
+    "Hooked0nStudys_CramSessionCache.json",
+    "Hooked0nStudys_AssignmentArchive.json",
+    "Hooked0nStudys_AcedItBackup.json",
+    "Hooked0nStudys_StudyStash.json",
+    "Hooked0nStudys_TestTamer.json",
+    "Hooked0nStudys_AcademicArmory.json",
+    "Hooked0nStudys_HomeworkHoarder.json",
+    "Hooked0nStudys_GradeSaver.json",
+    "Hooked0nStudys_TaskTrackerBackup.json",
+    "Hooked0nStudys_SyllabusStash.json",
+    "Hooked0nStudys_LectureLifeline.json",
+    "Hooked0nStudys_TestTsunami.json",
+    "Hooked0nStudys_DeadlineDodge.json",
+    "Hooked0nStudys_MindMapBackup.json",
+    "Hooked0nStudys_StudySurvivalKit.json",
+    "Hooked0nStudys_AssignmentAssistant.json",
+    "Hooked0nStudys_StudySanitySaver.json",
+    "Hooked0nStudys_NoteNinja.json",
+    "Hooked0nStudys_TaskTerminator.json",
+    "Hooked0nStudys_CramCompanion.json",
+    "Hooked0nStudys_ExamEscapePlan.json",
+    "Hooked0nStudys_HomeworkHero.json",
+    "Hooked0nStudys_TaskTitan.json",
+    "Hooked0nStudys_StudySuperhero.json",
+    "Hooked0nStudys_AcademicAegis.json",
+    "Hooked0nStudys_QuizQuest.json",
+    "Hooked0nStudys_StudyShield.json",
+    "Hooked0nStudys_AssignmentAegis.json",
+    "Hooked0nStudys_GradeGuard.json",
+    "Hooked0nStudys_BrainBoostBackup.json"
+  ];
+
+  
+    const randomFileName = funnyFileNames[Math.floor(Math.random() * funnyFileNames.length)];
+  
+    const url = URL.createObjectURL(blob);
+    const a = document.createElement("a");
+    a.href = url;
+    a.download = randomFileName;
+    document.body.appendChild(a);
+    a.click();
+    document.body.removeChild(a);
+  };
+  
+
+  const restoreData = (event: React.ChangeEvent<HTMLInputElement>) => {
+    const file = event.target.files?.[0];
+    if (file) {
+      const reader = new FileReader();
+      reader.onload = (e) => {
+        try {
+          const data = JSON.parse(e.target?.result as string);
+          if (data.subjects && data.subjectTasks) {
+            setSubjects(data.subjects);
+            setSubjectTasks(data.subjectTasks);
+          } else {
+            alert("Invalid backup file.");
+          }
+        } catch (error) {
+          alert("Error reading backup file.");
+        }
+      };
+      reader.readAsText(file);
+    }
   };
 
   return (
@@ -151,6 +238,16 @@ const MainLayout: React.FC = () => {
         >
           Clear All Data
         </button>
+        <button
+          onClick={backupData}
+          className="sm:text-lg m-2 text-md text-white text-center bg-blue-900 rounded-lg px-3 py-1"
+        >
+          Backup Data
+        </button>
+        <label className="sm:text-lg m-2 text-md text-white text-center bg-blue-900 rounded-lg px-3 py-1 cursor-pointer">
+          Restore Data
+          <input type="file" accept=".json" onChange={restoreData} className="hidden" />
+        </label>
       </section>
 
       {showSubjects && (

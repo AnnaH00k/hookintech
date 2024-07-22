@@ -1,6 +1,4 @@
-import Image from "next/image";
-import MenuHeader from "./components/headers/menuHeader";
-import Footer from "./components/footer";
+
 
 export default function Home() {
   return (
@@ -20,7 +18,7 @@ export default function Home() {
               className="h-6 w-6"
               fill="none"
               viewBox="0 0 24 24"
-              stroke="currentColor"
+              stroke="currentColor"                                                                          
             >
               <path
                 strokeLinecap="round"
