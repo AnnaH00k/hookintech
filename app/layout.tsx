@@ -2,6 +2,7 @@ import type { Metadata } from "next";
 import { Inter } from "next/font/google";
 import "./globals.css";
 import ClientLayout from "./components/clientLayout";
+import ConsentBanner from "./components/consentBanner"; // Import the ConsentBanner component
 
 const inter = Inter({ subsets: ["latin"] });
 
@@ -19,6 +20,7 @@ export default function RootLayout({
     <html lang="en">
       <body className={inter.className}>
         <ClientLayout>{children}</ClientLayout>
+        <ConsentBanner /> {/* Add the ConsentBanner component */}
       </body>
     </html>
   );
