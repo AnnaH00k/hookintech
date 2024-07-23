@@ -26,7 +26,7 @@ const ProcessHub: React.FC = () => {
     if (processName) {
       const updatedProcesses = [...workProcesses, { name: processName, links: [] }];
       setWorkProcesses(updatedProcesses);
-      Cookies.set('work-processes', JSON.stringify(updatedProcesses), { expires: 7 });
+      Cookies.set('work-processes', JSON.stringify(updatedProcesses), { expires: 365 });
       setProcessName('');
     }
   };
@@ -48,7 +48,7 @@ const ProcessHub: React.FC = () => {
       const updatedProcesses = [...workProcesses];
       updatedProcesses[selectedProcessIndex].links.push(formattedLink);
       setWorkProcesses(updatedProcesses);
-      Cookies.set('work-processes', JSON.stringify(updatedProcesses), { expires: 7 });
+      Cookies.set('work-processes', JSON.stringify(updatedProcesses), { expires: 365 });
       setInputLink('');
     }
   };
@@ -61,7 +61,7 @@ const ProcessHub: React.FC = () => {
       const updatedProcesses = [...workProcesses];
       updatedProcesses[selectedProcessIndex].links.splice(linkIndex, 1);
       setWorkProcesses(updatedProcesses);
-      Cookies.set('work-processes', JSON.stringify(updatedProcesses), { expires: 7 });
+      Cookies.set('work-processes', JSON.stringify(updatedProcesses), { expires: 365 });
     }
   };
 
@@ -69,7 +69,7 @@ const ProcessHub: React.FC = () => {
     const updatedProcesses = [...workProcesses];
     updatedProcesses.splice(processIndex, 1);
     setWorkProcesses(updatedProcesses);
-    Cookies.set('work-processes', JSON.stringify(updatedProcesses), { expires: 7 });
+    Cookies.set('work-processes', JSON.stringify(updatedProcesses), { expires: 365 });
     setSelectedProcessIndex(-1);
   };
 
@@ -110,7 +110,7 @@ const ProcessHub: React.FC = () => {
         const contents = e.target?.result as string;
         const uploadedProcesses = JSON.parse(contents);
         setWorkProcesses(uploadedProcesses);
-        Cookies.set('work-processes', JSON.stringify(uploadedProcesses), { expires: 7 });
+        Cookies.set('work-processes', JSON.stringify(uploadedProcesses), { expires: 365 });
       };
       reader.readAsText(file);
     }
