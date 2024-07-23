@@ -36,6 +36,9 @@ const ConsentBanner = () => {
           const parsedConsent: Consent = JSON.parse(storedConsent);
           setConsent(parsedConsent);
           updateConsentStatus(parsedConsent);
+          if (parsedConsent.analytics_storage) {
+            loadGoogleAnalytics();
+          }
         } catch (error) {
           console.error("Error parsing cookie consent data:", error);
         }
@@ -46,6 +49,9 @@ const ConsentBanner = () => {
   const handleAccept = () => {
     Cookies.set("myAwesomeCookieConsent1", JSON.stringify(consent), { expires: 1 });
     updateConsentStatus(consent);
+    if (consent.analytics_storage) {
+      loadGoogleAnalytics();
+    }
   };
 
   const handleAcceptAll = () => {
@@ -58,6 +64,7 @@ const ConsentBanner = () => {
     setConsent(allConsent);
     Cookies.set("myAwesomeCookieConsent1", JSON.stringify(allConsent), { expires: 1 });
     updateConsentStatus(allConsent);
+    loadGoogleAnalytics();
   };
 
   const handleAcceptNecessary = () => {
@@ -84,6 +91,24 @@ const ConsentBanner = () => {
     }
   };
 
+  // Load the Google Analytics script
+const loadGoogleAnalytics = () => {
+  const script = document.createElement('script');
+  script.src = "https://www.googletagmanager.com/gtag/js?id=G-H9SD5NE89T";
+  script.async = true;
+  document.head.appendChild(script);
+
+  script.onload = () => {
+    window.dataLayer = window.dataLayer || [];
+    window.gtag = function (...args: any[]) {
+      window.dataLayer.push(args);
+    };
+    window.gtag('js', new Date());
+    window.gtag('config', 'G-H9SD5NE89T');
+  };
+};
+
+
   // Handle changes in consent checkboxes
   const handleCheckboxChange = (event: React.ChangeEvent<HTMLInputElement>) => {
     const { name, checked } = event.target;
@@ -95,21 +120,6 @@ const ConsentBanner = () => {
 
   return (
     <>
-      {/* Load the Google Analytics script */}
-      <Script
-        async
-        src="https://www.googletagmanager.com/gtag/js?id=G-H9SD5NE89T"
-        strategy="afterInteractive"
-      />
-      <Script id="google-analytics" strategy="afterInteractive">
-        {`
-          window.dataLayer = window.dataLayer || [];
-          function gtag(){dataLayer.push(arguments);}
-          gtag('js', new Date());
-          gtag('config', 'G-H9SD5NE89T');
-        `}
-      </Script>
-
       <CookieConsent
         location="bottom"
         buttonText={Object.values(consent).some(value => value) ? "Save preferences" : "Accept all"}

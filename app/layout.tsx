@@ -18,9 +18,10 @@ export default function RootLayout({
 }>) {
   return (
     <html lang="en">
+        <ConsentBanner /> {/* Add the ConsentBanner component */}
+        
       <body className={inter.className}>
         <ClientLayout>{children}</ClientLayout>
-        <ConsentBanner /> {/* Add the ConsentBanner component */}
       </body>
     </html>
   );
