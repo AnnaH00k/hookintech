@@ -133,7 +133,6 @@ const loadGoogleAnalytics = () => {
           justifyContent: "center",
           alignItems: "center",
           display: "flex",
-          fontFamily: "cursive",
         }}
         buttonStyle={{
           color: "#A0A2A0",
