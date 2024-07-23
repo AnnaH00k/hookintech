@@ -151,7 +151,7 @@ const loadGoogleAnalytics = () => {
         onAccept={Object.values(consent).some(value => value) ? handleAccept : handleAcceptAll}
         extraCookieOptions={isClient ? { domain: window.location.hostname } : {}}
       >
-        <p className="mb-2">This website uses cookies to save your preferences and improve your experience. By using this site, you consent to the use of cookies.</p>
+        <p className="mb-2">This site uses cookies to enhance your experience and save your preferences. By continuing, you agree to our cookie use.</p>
         
         <label className="m-2">
           <input
