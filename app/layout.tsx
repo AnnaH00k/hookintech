@@ -2,7 +2,7 @@ import type { Metadata } from "next";
 import { Inter } from "next/font/google";
 import "./globals.css";
 import ClientLayout from "./components/clientLayout";
-import ConsentBanner from "./components/consentBanner"; // Import the ConsentBanner component
+import ConsentBanner from "./components/consentBanner";
 
 const inter = Inter({ subsets: ["latin"] });
 
@@ -18,9 +18,25 @@ export default function RootLayout({
 }>) {
   return (
     <html lang="en">
-        <ConsentBanner /> {/* Add the ConsentBanner component */}
-        
+      <head>
+        <script
+          async
+          src="https://www.googletagmanager.com/gtag/js?id=G-H9SD5NE89T"
+        ></script>
+        <script
+          dangerouslySetInnerHTML={{
+            __html: `
+              window.dataLayer = window.dataLayer || [];
+              function gtag(){dataLayer.push(arguments);}
+              gtag('js', new Date());
+              gtag('config', 'G-H9SD5NE89T');
+            `,
+          }}
+        ></script>
+      </head>
+
       <body className={inter.className}>
+        <ConsentBanner />
         <ClientLayout>{children}</ClientLayout>
       </body>
     </html>
