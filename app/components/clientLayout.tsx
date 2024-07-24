@@ -23,8 +23,7 @@ export default function ClientLayout({
       {hideHeaderFooterForPolitics && <PoliticsHeader />}
       {hideHeaderFooter && <LifeHeader />}
       {children}
-      <div className="h-20 bg-[#0A1109]" />
-      {!hideHeaderFooter && !hideHeaderFooterForPolitics && !hideHeaderFooterForStudy && <Footer />}
+      {!hideHeaderFooter && !hideHeaderFooterForPolitics && <Footer />}
     </>
   );
 }

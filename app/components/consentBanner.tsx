@@ -62,7 +62,7 @@ const ConsentBanner = () => {
       analytics_storage: true,
     };
     setConsent(allConsent);
-    Cookies.set("myAwesomeCookieConsent1", JSON.stringify(allConsent), { expires: 1 });
+    Cookies.set("myAwesomeCookieConsent1", JSON.stringify(allConsent), { expires: 7 });
     updateConsentStatus(allConsent);
     loadGoogleAnalytics();
   };

@@ -1,3 +1,6 @@
+'use client';
+
+
 import { Trash, Pencil, FileText } from "@phosphor-icons/react";
 
 interface SubjectListProps {

@@ -214,24 +214,33 @@ const MainLayout: React.FC = () => {
       )}
 
       <section className="max-w-3xl flex flex-wrap items-center justify-center w-[95vw]">
+        <div className="flex items-center justify-center flex-wrap">
         <button
           onClick={toggleSubjects}
-          className={`sm:text-lg m-2 text-md text-white text-center rounded-lg px-3 py-1 ${showSubjects ? "bg-green-900" : "bg-[#303830]"}`}
+          className={`sm:text-lg m-2 text-md text-white text-center rounded-lg px-3 py-1 flex flex-col items-center justify-center ${showSubjects ? "bg-green-900" : "bg-[#303830]"}`}
         >
           <Notebook size={32} weight="light" />
+          <p>Subjects</p>
+
         </button>
         <button
           onClick={toggleSubjectAddition}
-          className={`sm:text-lg m-2 text-md text-white text-center rounded-lg px-3 py-1 ${showSubjectAddition ? "bg-green-900" : "bg-[#303830]"}`}
+          className={`sm:text-lg m-2 text-md text-white text-center rounded-lg px-3 py-1 flex flex-col items-center justify-center ${showSubjectAddition ? "bg-green-900" : "bg-[#303830]"}`}
         >
-          <ColumnsPlusRight size={32} weight="light" />
+          <ColumnsPlusRight size={32} weight="light" /> 
+          <p>Add subject</p>
         </button>
         <button
           onClick={toggleTimer}
-          className={`sm:text-lg m-2 text-md text-white text-center rounded-lg px-3 py-1 ${showTimer ? "bg-green-900" : "bg-[#303830]"}`}
+          className={`sm:text-lg m-2 text-md text-white text-center rounded-lg px-3 py-1 flex flex-col items-center justify-center ${showTimer ? "bg-green-900" : "bg-[#303830]"}`}
         >
           <Clock size={32} weight="light" />
+          <p>Pomodoro</p>
         </button>
+        </div>
+
+
+        <div className="flex items-center justify-center flex-wrap">
         <button
           onClick={clearCookies}
           className="sm:text-lg m-2 text-md text-rose-200 text-center bg-red-900 rounded-lg px-3 py-1"
@@ -248,6 +257,7 @@ const MainLayout: React.FC = () => {
           Restore Data
           <input type="file" accept=".json" onChange={restoreData} className="hidden" />
         </label>
+        </div>
       </section>
 
       {showSubjects && (

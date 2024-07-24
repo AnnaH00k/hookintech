@@ -13,13 +13,7 @@ export default function Hooked0nLife() {
             Hooked0nLife
           </h1>
           <p className="text-lg text-[#1E0C08] text-center mb-8">
-            Hooked0nLife is dedicated to revolutionizing living spaces through
-            sustainable buildings integrated with advanced Algorithms. Our
-            mission includes developing solutions for efficient food delivery,
-            healthcare, and enhancing the lives of those in need of specialized
-            care. Inspired by Andreas & Gertrud Höök, we aim to promote
-            self-care, sustainability, and affordable living options for all,
-            especially in older age.
+           {"Hooked0nLife is a vision I’m passionate about for optimizing life in honor of my grandparents and in preparation for my parents' future needs. Though none of these ideas have been implemented yet, I am planning to focus on revolutionizing living spaces through sustainable buildings and advanced technologies. My goal is to create solutions for efficient food delivery, healthcare, and specialized care, promoting self-care, sustainability, and affordable living options for all, especially as we all age."}
           </p>
           <p className="text-sm text-[#7E674E] italic text-center">
             {' "Improving lives, honoring legacies."'}
@@ -49,7 +43,7 @@ export default function Hooked0nLife() {
                 />
               </svg>
               <span className="text-lg text-[#1E0C08]">
-                Develop sustainable AI-integrated buildings.
+                Develop sustainable AI-integrated buildings (planned for the future).
               </span>
             </li>
             <li className="flex items-start mb-4">
@@ -68,8 +62,7 @@ export default function Hooked0nLife() {
                 />
               </svg>
               <span className="text-lg text-[#1E0C08]">
-                Innovate AI solutions for food delivery, healthcare, and elder
-                care.
+                Innovate AI solutions for food delivery, healthcare, and elder care (future goal).
               </span>
             </li>
             <li className="flex items-start mb-4">
@@ -88,8 +81,7 @@ export default function Hooked0nLife() {
                 />
               </svg>
               <span className="text-lg text-[#1E0C08]">
-                Create an advanced Alexa-like system to combat boredom and
-                cognitive decline.
+                Create an advanced Alexa-like system to combat boredom and cognitive decline (a future initiative).
               </span>
             </li>
             <li className="flex items-start mb-4">
@@ -108,7 +100,7 @@ export default function Hooked0nLife() {
                 />
               </svg>
               <span className="text-lg text-[#1E0C08]">
-                Integrate farming and natural spaces into living environments.
+                Integrate farming and natural spaces into living environments (part of the long-term plan).
               </span>
             </li>
             <li className="flex items-start mb-4">
@@ -127,8 +119,7 @@ export default function Hooked0nLife() {
                 />
               </svg>
               <span className="text-lg text-[#1E0C08]">
-                Design accessible bungalows with automated systems for
-                mobility-impaired individuals.
+                Design accessible bungalows with automated systems for mobility-impaired individuals (a future endeavor).
               </span>
             </li>
             <li className="flex items-start mb-4">
@@ -147,8 +138,7 @@ export default function Hooked0nLife() {
                 />
               </svg>
               <span className="text-lg text-[#1E0C08]">
-                Enhance quality of life for the elderly, in memoriam to Andreas
-                & Gertrud Höök.
+                Enhance quality of life for the elderly in honor of Andreas & Gertrud Höök (long-term vision).
               </span>
             </li>
             <li className="flex items-start mb-4">
@@ -167,7 +157,7 @@ export default function Hooked0nLife() {
                 />
               </svg>
               <span className="text-lg text-[#1E0C08]">
-                Promote self-care and sustainable living.
+                Promote self-care and sustainable living (a future goal).
               </span>
             </li>
             <li className="flex items-start mb-4">
@@ -186,8 +176,7 @@ export default function Hooked0nLife() {
                 />
               </svg>
               <span className="text-lg text-[#1E0C08]">
-                Ensure affordable, comfortable living for all, especially in old
-                age.
+                Ensure affordable, comfortable living for all, especially in old age (part of the future plan).
               </span>
             </li>
           </ul>
@@ -201,16 +190,14 @@ export default function Hooked0nLife() {
               Wide Doorways
             </h3>
             <p className="mb-4 text-[#1E0C08]">
-              Ensure easy access for wheelchair users and those with mobility
-              challenges by incorporating wide doorways throughout the living
-              space.
+              Ensure easy access for wheelchair users and those with mobility challenges by incorporating wide doorways throughout the living space (planned for future implementation).
             </p>
             <Link
               href="#"
-              className="inline-flex h-9 items-center  hover:scale-105 justify-center rounded-md bg-[#1E0C08] px-4 text-sm font-medium text-[#F3EFEC] shadow transition-colors hover:bg-[#1E0C08] focus-visible:outline-none focus-visible:ring-1 focus-visible:ring-[#1E0C08] disabled:pointer-events-none disabled:opacity-50"
+              className="inline-flex h-9 items-center  justify-center rounded-md bg-[#1E0C08] opacity-30 px-4 text-sm font-medium text-[#F3EFEC] shadow transition-colors hover:bg-[#1E0C08] focus-visible:outline-none focus-visible:ring-1 focus-visible:ring-[#1E0C08] disabled:pointer-events-none disabled:opacity-50"
               prefetch={false}
             >
-              Learn More
+              Learn More Soon
             </Link>
           </div>
           <div className="flex flex-col items-start justify-center group rounded-lg p-6 shadow-sm transition-all hover:shadow-lg bg-[#D1C8BD]">
@@ -218,145 +205,127 @@ export default function Hooked0nLife() {
               Adjustable Countertops
             </h3>
             <p className="mb-4 text-[#1E0C08]">
-              Incorporate adjustable countertops that can be raised or lowered
-              to accommodate users of different heights, including those in
-              wheelchairs.
+              Design countertops that can be adjusted for different user heights and needs to ensure maximum comfort and functionality (a long-term goal).
             </p>
             <Link
               href="#"
-              className="inline-flex h-9 items-center  hover:scale-105 justify-center rounded-md bg-[#1E0C08] px-4 text-sm font-medium text-[#F3EFEC] shadow transition-colors hover:bg-[#1E0C08] focus-visible:outline-none focus-visible:ring-1 focus-visible:ring-[#1E0C08] disabled:pointer-events-none disabled:opacity-50"
+              className="inline-flex h-9 items-center  justify-center rounded-md bg-[#1E0C08] opacity-30 px-4 text-sm font-medium text-[#F3EFEC] shadow transition-colors hover:bg-[#1E0C08] focus-visible:outline-none focus-visible:ring-1 focus-visible:ring-[#1E0C08] disabled:pointer-events-none disabled:opacity-50"
               prefetch={false}
             >
-              Learn More
-            </Link>
+              Learn More Soon
+              </Link>
           </div>
           <div className="flex flex-col items-start justify-center group rounded-lg p-6 shadow-sm transition-all hover:shadow-lg bg-[#D1C8BD]">
             <h3 className="mb-2 text-xl font-semibold text-[#1E0C08] ">
               Accessible Bathrooms
             </h3>
             <p className="mb-4 text-[#1E0C08]">
-              Design bathrooms with ample space, grab bars, and other features
-              to ensure they are fully accessible for users with mobility
-              challenges.
+              Implement bathrooms with features like grab bars and ample space to ensure ease of use and safety (future project).
             </p>
             <Link
               href="#"
-              className="inline-flex h-9 items-center  hover:scale-105 justify-center rounded-md bg-[#1E0C08] px-4 text-sm font-medium text-[#F3EFEC] shadow transition-colors hover:bg-[#1E0C08] focus-visible:outline-none focus-visible:ring-1 focus-visible:ring-[#1E0C08] disabled:pointer-events-none disabled:opacity-50"
+              className="inline-flex h-9 items-center  justify-center rounded-md bg-[#1E0C08] opacity-30 px-4 text-sm font-medium text-[#F3EFEC] shadow transition-colors hover:bg-[#1E0C08] focus-visible:outline-none focus-visible:ring-1 focus-visible:ring-[#1E0C08] disabled:pointer-events-none disabled:opacity-50"
               prefetch={false}
             >
-              Learn More
-            </Link>
+              Learn More Soon
+              </Link>
           </div>
           <div className="flex flex-col items-start justify-center group rounded-lg p-6 shadow-sm transition-all hover:shadow-lg bg-[#D1C8BD]">
             <h3 className="mb-2 text-xl font-semibold text-[#1E0C08] ">
               Automated Lighting
             </h3>
             <p className="mb-4 text-[#1E0C08]">
-              Implement automated lighting systems that can be controlled
-              remotely or through voice commands, making it easier for users
-              with limited mobility to navigate the space.
+              Use voice commands or remote controls to manage lighting, simplifying navigation and enhancing convenience (a future goal).
             </p>
             <Link
               href="#"
-              className="inline-flex h-9 items-center  hover:scale-105 justify-center rounded-md bg-[#1E0C08] px-4 text-sm font-medium text-[#F3EFEC] shadow transition-colors hover:bg-[#1E0C08] focus-visible:outline-none focus-visible:ring-1 focus-visible:ring-[#1E0C08] disabled:pointer-events-none disabled:opacity-50"
+              className="inline-flex h-9 items-center  justify-center rounded-md bg-[#1E0C08] opacity-30 px-4 text-sm font-medium text-[#F3EFEC] shadow transition-colors hover:bg-[#1E0C08] focus-visible:outline-none focus-visible:ring-1 focus-visible:ring-[#1E0C08] disabled:pointer-events-none disabled:opacity-50"
               prefetch={false}
             >
-              Learn More
-            </Link>
+              Learn More Soon
+              </Link>
           </div>
           <div className="flex flex-col items-start justify-center group rounded-lg p-6 shadow-sm transition-all hover:shadow-lg bg-[#D1C8BD]">
             <h3 className="mb-2 text-xl font-semibold text-[#1E0C08] ">
               Wheelchair-Friendly Flooring
             </h3>
             <p className="mb-4 text-[#1E0C08]">
-              Choose flooring materials that are smooth, level, and easy to
-              navigate for users in wheelchairs or with other mobility
-              challenges.
+              Incorporate smooth and level flooring surfaces to facilitate easier movement for wheelchair users (future plan).
             </p>
             <Link
               href="#"
-              className="inline-flex h-9 items-center  hover:scale-105 justify-center rounded-md bg-[#1E0C08] px-4 text-sm font-medium text-[#F3EFEC] shadow transition-colors hover:bg-[#1E0C08] focus-visible:outline-none focus-visible:ring-1 focus-visible:ring-[#1E0C08] disabled:pointer-events-none disabled:opacity-50"
+              className="inline-flex h-9 items-center  justify-center rounded-md bg-[#1E0C08] opacity-30 px-4 text-sm font-medium text-[#F3EFEC] shadow transition-colors hover:bg-[#1E0C08] focus-visible:outline-none focus-visible:ring-1 focus-visible:ring-[#1E0C08] disabled:pointer-events-none disabled:opacity-50"
               prefetch={false}
             >
-              Learn More
-            </Link>
+              Learn More Soon
+              </Link>
           </div>
           <div className="flex flex-col items-start justify-center group rounded-lg p-6 shadow-sm transition-all hover:shadow-lg bg-[#D1C8BD]">
-            <h3 className="mb-2 text-xl font-semibold text-[#1E0C08]">
+            <h3 className="mb-2 text-xl font-semibold text-[#1E0C08] ">
               Accessible Outdoor Spaces
             </h3>
             <p className="mb-4 text-[#1E0C08]">
-              Create outdoor environments that are accessible and enjoyable for
-              elderly residents and individuals with mobility challenges. Ensure
-              pathways are wide, smooth, and well-lit, and provide comfortable
-              seating areas for relaxation and socializing.
+              Design outdoor areas that are comfortable and well-lit, encouraging relaxation and social interaction (part of the future vision).
             </p>
             <Link
               href="#"
-              className="inline-flex h-9 items-center hover:scale-105 justify-center rounded-md bg-[#1E0C08] px-4 text-sm font-medium text-[#F3EFEC] shadow transition-colors hover:bg-[#1E0C08] focus-visible:outline-none focus-visible:ring-1 focus-visible:ring-[#1E0C08] disabled:pointer-events-none disabled:opacity-50"
+              className="inline-flex h-9 items-center  justify-center rounded-md bg-[#1E0C08] opacity-30 px-4 text-sm font-medium text-[#F3EFEC] shadow transition-colors hover:bg-[#1E0C08] focus-visible:outline-none focus-visible:ring-1 focus-visible:ring-[#1E0C08] disabled:pointer-events-none disabled:opacity-50"
               prefetch={false}
             >
-              Learn More
-            </Link>
+              Learn More Soon
+              </Link>
           </div>
           <div className="flex flex-col items-start justify-center group rounded-lg p-6 shadow-sm transition-all hover:shadow-lg bg-[#D1C8BD]">
-            <h3 className="mb-2 text-xl font-semibold text-[#1E0C08]">
+            <h3 className="mb-2 text-xl font-semibold text-[#1E0C08] ">
               AI-Powered Smart Home Controls
             </h3>
             <p className="mb-4 text-[#1E0C08]">
-              Implement AI systems that enable voice-activated control of home
-              features like lighting, temperature, and appliances. These systems
-              adapt to residents preferences and routines, enhancing comfort and
-              convenience.
+              Implement AI systems that adapt to user preferences for enhanced comfort and ease (a future initiative).
             </p>
             <Link
               href="#"
-              className="inline-flex h-9 items-center hover:scale-105 justify-center rounded-md bg-[#1E0C08] px-4 text-sm font-medium text-[#F3EFEC] shadow transition-colors hover:bg-[#1E0C08] focus-visible:outline-none focus-visible:ring-1 focus-visible:ring-[#1E0C08] disabled:pointer-events-none disabled:opacity-50"
+              className="inline-flex h-9 items-center  justify-center rounded-md bg-[#1E0C08] opacity-30 px-4 text-sm font-medium text-[#F3EFEC] shadow transition-colors hover:bg-[#1E0C08] focus-visible:outline-none focus-visible:ring-1 focus-visible:ring-[#1E0C08] disabled:pointer-events-none disabled:opacity-50"
               prefetch={false}
             >
-              Learn More
-            </Link>
+              Learn More Soon
+              </Link>
           </div>
-
           <div className="flex flex-col items-start justify-center group rounded-lg p-6 shadow-sm transition-all hover:shadow-lg bg-[#D1C8BD]">
-            <h3 className="mb-2 text-xl font-semibold text-[#1E0C08]">
+            <h3 className="mb-2 text-xl font-semibold text-[#1E0C08] ">
               AI-Powered Health Monitoring Systems
             </h3>
             <p className="mb-4 text-[#1E0C08]">
-              Deploy AI systems that monitor residents health metrics and
-              activity levels in real-time. These systems provide alerts for
-              emergencies like falls or health declines, ensuring timely
-              intervention and enhancing safety.
+              Develop real-time health monitoring systems with emergency alerts (a future development).
             </p>
             <Link
               href="#"
-              className="inline-flex h-9 items-center hover:scale-105 justify-center rounded-md bg-[#1E0C08] px-4 text-sm font-medium text-[#F3EFEC] shadow transition-colors hover:bg-[#1E0C08] focus-visible:outline-none focus-visible:ring-1 focus-visible:ring-[#1E0C08] disabled:pointer-events-none disabled:opacity-50"
+              className="inline-flex h-9 items-center  justify-center rounded-md bg-[#1E0C08] opacity-30 px-4 text-sm font-medium text-[#F3EFEC] shadow transition-colors hover:bg-[#1E0C08] focus-visible:outline-none focus-visible:ring-1 focus-visible:ring-[#1E0C08] disabled:pointer-events-none disabled:opacity-50"
               prefetch={false}
             >
-              Learn More
-            </Link>
+              Learn More Soon
+              </Link>
           </div>
-
           <div className="flex flex-col items-start justify-center group rounded-lg p-6 shadow-sm transition-all hover:shadow-lg bg-[#D1C8BD]">
-            <h3 className="mb-2 text-xl font-semibold text-[#1E0C08]">
+            <h3 className="mb-2 text-xl font-semibold text-[#1E0C08] ">
               AI-Assisted Virtual Companionship
             </h3>
             <p className="mb-4 text-[#1E0C08]">
-              Introduce AI-powered virtual companions that interact with
-              residents, providing conversation, entertainment, and reminders.
-              These companionship solutions enhance mental stimulation, reduce
-              loneliness, and assist with daily routines.
+              Create virtual companions for conversation, reminders, and mental stimulation (a long-term goal).
             </p>
             <Link
               href="#"
-              className="inline-flex h-9 items-center hover:scale-105 justify-center rounded-md bg-[#1E0C08] px-4 text-sm font-medium text-[#F3EFEC] shadow transition-colors hover:bg-[#1E0C08] focus-visible:outline-none focus-visible:ring-1 focus-visible:ring-[#1E0C08] disabled:pointer-events-none disabled:opacity-50"
+              className="inline-flex h-9 items-center  justify-center rounded-md bg-[#1E0C08] opacity-30 px-4 text-sm font-medium text-[#F3EFEC] shadow transition-colors hover:bg-[#1E0C08] focus-visible:outline-none focus-visible:ring-1 focus-visible:ring-[#1E0C08] disabled:pointer-events-none disabled:opacity-50"
               prefetch={false}
             >
-              Learn More
-            </Link>
+              Learn More Soon
+              </Link>
           </div>
         </div>
       </section>
+
+   
+
+
 
       <section className="py-8 px-4">
         <div className="max-w-4xl mx-auto">
@@ -364,8 +333,8 @@ export default function Hooked0nLife() {
             Ensuring Accessible Living Quarters
           </h2>
           <p className="text-lg text-[#1E0C08] text-center mb-8">
-            At Hooked0nLife, we are committed to making our living spaces
-            accessible and affordable for everyone. Our approach includes:
+            To bring these ideas to life, I plan to make living spaces
+            accessible and affordable for everyone. My approach includes:
           </p>
           <ul className="grid grid-cols-1 md:grid-cols-2 gap-4">
             <li className="flex items-start mb-4">
@@ -612,17 +581,6 @@ export default function Hooked0nLife() {
         </div>
       </section>
 
-      {/*
-    <section className="flex flex-col items-center justify-center py-4 w-[90vw] max-w-4xl">
-      <h2 className="text-2xl text-[#7E674E] font-bold mb-4">
-        How You Can Get Involved
-      </h2>
-      <p className="text-md text-[#1E0C08] text-center mb-4">
-        We welcome individuals and organizations to join us in our mission. Whether you’re a researcher, a technology enthusiast, or someone passionate about improving living conditions, there are many ways to get involved with Hooked0nLife. Together, we can create a future where sustainable, AI-assisted living is a reality for all.
-      </p>
-      <button className="bg-[#7E674E] text-white py-2 px-4 rounded-md">Contact Us</button>
-    </section>
-  */}
     </main>
   );
 }

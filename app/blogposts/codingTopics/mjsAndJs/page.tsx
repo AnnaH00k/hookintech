@@ -4,7 +4,7 @@ import Script from "next/script";
 
 export default function Home() {
   return (
-    <div className="w-[100vw] overflow-x-hidden ">
+    <div className=" overflow-x-hidden w-full ">
 
     <main className="flex gap-6 flex-col items-center  justify-between py-20 pb-[10vh] bg-[#0A1109] w-[100vw]">
     <div>

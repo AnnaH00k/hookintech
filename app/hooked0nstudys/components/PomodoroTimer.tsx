@@ -1,3 +1,4 @@
+'use client';
 import { ArrowCounterClockwise, Play, Stop } from "@phosphor-icons/react/dist/ssr";
 import React, { useState, useEffect, useRef } from "react";
 

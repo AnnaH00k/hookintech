@@ -1,3 +1,6 @@
+'use client';
+
+
 import React from "react";
 import { CheckCircle, Circle, Trash } from "@phosphor-icons/react";
 
