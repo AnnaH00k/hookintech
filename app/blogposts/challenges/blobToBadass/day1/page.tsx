@@ -3,12 +3,38 @@ import Script from "next/script";
 
 export default function Home() {
   return (
-    <div className="flex items-center justify-center overflow-x-hidden bg-[#0A1109] pt-[7vh] w-full ">
-      <main className="flex gap-6 flex-col items-start max-w-3xl w-[90vw] justify-start pb-[10vh]">
-        <div>
+    <div className="flex flex-col items-center justify-center overflow-x-hidden bg-[#0A1109] pt-[7vh] w-full ">
           <h1 className="text-4xl text-[#7C9838] text-start font-bold">
             {"From Blob to Badass: Day 1"}
           </h1>
+
+          <table className="text-xs sm:text-lg w-[90vw] max-w-5xl m-4 text-[#A0A2A0]">
+            <thead>
+              <tr>
+                <th className="sm:px-4 px-1 sm:py-2 py-1 border border-[#303830]">Day/Date</th>
+                <th className="sm:px-4 px-1 sm:py-2 py-1 border border-[#303830]">Private Projects</th>
+                <th className="sm:px-4 px-1 sm:py-2 py-1 border border-[#303830]">Study</th>
+                <th className="sm:px-4 px-1 sm:py-2 py-1 border border-[#303830]">Work</th>
+                <th className="sm:px-4 px-1 sm:py-2 py-1 border border-[#303830]">Health</th>
+                <th className="sm:px-4 px-1 sm:py-2 py-1 border border-[#303830]">Topic of the week</th>
+                </tr>
+              </thead>
+                <tbody>
+                <td className="sm:px-4 px-1 sm:py-2 py-1 border border-[#303830]">Day 1</td>
+                <td className="sm:px-4 px-1 sm:py-2 py-1 border border-[#303830]">4h adding google analytics to my website and seeking AdSense approval </td>
+                <td className="sm:px-4 px-1 sm:py-2 py-1 border border-[#303830]">1.5h of math repetition for an exam in 2 weeks</td>
+                <td className="sm:px-4 px-1 sm:py-2 py-1 border border-[#303830]">4h with Clye (bug fixing and video planning)</td>
+                <td className="sm:px-4 px-1 sm:py-2 py-1 border border-[#303830]">bought food to prep healthy burritos & Recovering from a vaccination </td>
+                <td className="sm:px-4 px-1 sm:py-2 py-1 border border-[#303830]">How to automate tasks to focus on whats important.</td>
+                </tbody>
+          </table>
+
+          
+      <main className="flex gap-6 flex-col items-start max-w-3xl w-[90vw] justify-start pb-[10vh]">
+        <div>
+
+
+
           <p className="text-lg text-[#A0A2A0] text-start">
             {"Hey everyone, Welcome to the first installment of my “From Blob to Badass” challenge! I’m thrilled to share this journey with you, and today I want to dive into how I’m kicking things off and what’s on the horizon. This challenge is all about transforming myself into a healthier, more efficient, and inspired version of myself. Here’s a peek into what I’ve been working on and my plans moving forward."}
           </p>
