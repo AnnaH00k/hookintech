@@ -31,7 +31,7 @@ export default function Home() {
 
 
 
-  
+
   // Define what constitutes a "bad" entry for each type of task
   const isBad = (value: string, type: any) => {
     switch (type) {
@@ -70,7 +70,7 @@ export default function Home() {
             <React.Fragment key={index}>
               {(index === 0 || task.topicOfTheWeek !== dailyTasks[index - 1].topicOfTheWeek) && (
                 <tr>
-                  <td className={`sm:px-4 px-1 sm:py-2 py-1 border border-[#303830]`} rowSpan={dailyTasks.slice(index).findIndex(t => t.topicOfTheWeek !== task.topicOfTheWeek) + 1}>
+                  <td className={`sm:px-4 px-1 sm:py-2 py-1 border border-[#303830] ${getCellClass(task.date, 'date')}`} >
                     {task.date}
                   </td>
                   <td className={`sm:px-4 px-1 sm:py-2 py-1 border border-[#303830] ${getCellClass(task.privateProjects, 'privateProjects')}`}>
@@ -92,6 +92,9 @@ export default function Home() {
               )}
               {(index > 0 && task.topicOfTheWeek === dailyTasks[index - 1].topicOfTheWeek) && (
                 <tr>
+                  <td className={`sm:px-4 px-1 sm:py-2 py-1 border border-[#303830] ${getCellClass(task.date, 'date')}`} >
+                    {task.date}
+                  </td>
                   <td className={`sm:px-4 px-1 sm:py-2 py-1 border border-[#303830] ${getCellClass(task.privateProjects, 'privateProjects')}`}>
                     {task.privateProjects}
                   </td>
