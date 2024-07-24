@@ -33,6 +33,8 @@ export default function RootLayout({
             `,
           }}
         ></script>
+        <script async src="https://pagead2.googlesyndication.com/pagead/js/adsbygoogle.js?client=ca-pub-8710642569603774"
+     crossOrigin="anonymous"></script>
       </head>
 
       <body className={inter.className}>
