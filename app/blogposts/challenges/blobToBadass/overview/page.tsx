@@ -1,3 +1,5 @@
+"use client";
+
 import Image from "next/image";
 import Script from "next/script";
 import React from "react";
@@ -21,16 +23,41 @@ export default function Home() {
       health: "Ate the rest of the chocolate I had in the house",
       topicOfTheWeek: "How to automate tasks to focus on what's important."
     },
+    {
+      date: "Day 3",
+      privateProjects: "1h working on overview for blob to badass challenge",
+      study: "2h of math repetition for an exam in 2 weeks",
+      work: "4h working for LegalBFF & Clye",
+      health: "1h bikeride",
+      topicOfTheWeek: "How to automate tasks to focus on what's important."
+    },
+
+
     // Add more daily tasks here as needed
+
+
   ];
 
 
 
+  // List of emojis to use in the Instagram post
+  const emojis = [
+    "🌱", "🚀", "🥗", "📚", "🏋️‍♂️", 
+    "🌿", "🍃", "🍀", 
+    "🚴‍♀️",
+    "📖", "📝", "📚", "📜", "📄", 
+    "📈", "📊", 
+    "💪", "🤖", "🦾" 
 
+  ];
 
+  
 
-
-
+  // Function to get a random emoji
+  const getRandomEmoji = () => {
+    const randomIndex = Math.floor(Math.random() * emojis.length);
+    return emojis[randomIndex];
+  };
 
   // Define what constitutes a "bad" entry for each type of task
   const isBad = (value: string, type: any) => {
@@ -47,6 +74,44 @@ export default function Home() {
 
   // Function to apply red background if the value is bad
   const getCellClass = (value: string, type: string) => (isBad(value, type) ? 'bg-[#431717] bg-opacity-30' : '');
+
+  // Function to generate Instagram post text
+  const generatePostText = (task: { date: any; privateProjects: any; study: any; work: any; health: any; topicOfTheWeek: any; }) => {
+    const randomEmoji = getRandomEmoji();
+    return ` ${task.date} || From Blob to Badass ${randomEmoji}
+
+Private Projects:
+- ${task.privateProjects}
+
+Study:
+- ${task.study}
+
+Work:
+- ${task.work}
+
+Health:
+- ${task.health}
+
+Topic of the week:
+- ${task.topicOfTheWeek} (I'll be making a video on this- share your thoughts in the comments!)
+
+#${task.date} #BlobToBadass #computerscience #programming #student #codinglife #webdeveloper #motivation #persistencyiskey #homeoffice #tech #studygram #software #technology #codingcommunity #codingjourney #learntocode #studyInspiration #challenge #productivity #healthjourney #mealprep #study #work #projects #developer #worklifebalance #studyhard #codingLife #techcommunity`;
+  };
+
+  // Function to copy text to clipboard
+  const copyToClipboard = (text: string) => {
+    navigator.clipboard.writeText(text).then(() => {
+      alert('Post text copied to clipboard!');
+    }, (err) => {
+      console.error('Could not copy text: ', err);
+    });
+  };
+
+  // Function to handle long click event
+  const handleLongClick = (task: { date: any; privateProjects: any; study: any; work: any; health: any; topicOfTheWeek: any; }) => {
+    const postText = generatePostText(task);
+    copyToClipboard(postText);
+  };
 
   return (
     <div className="flex flex-col items-center min-h-[90vh] justify-center overflow-x-hidden bg-[#0A1109] pt-[7vh] w-full">
@@ -69,7 +134,7 @@ export default function Home() {
           {dailyTasks.map((task, index) => (
             <React.Fragment key={index}>
               {(index === 0 || task.topicOfTheWeek !== dailyTasks[index - 1].topicOfTheWeek) && (
-                <tr>
+                <tr onPointerDown={(e) => e.persist()} onPointerUp={(e) => handleLongClick(task)}>
                   <td className={`sm:px-4 px-1 sm:py-2 py-1 border border-[#303830] ${getCellClass(task.date, 'date')}`} >
                     {task.date}
                   </td>
@@ -91,7 +156,7 @@ export default function Home() {
                 </tr>
               )}
               {(index > 0 && task.topicOfTheWeek === dailyTasks[index - 1].topicOfTheWeek) && (
-                <tr>
+                <tr onPointerDown={(e) => e.persist()} onPointerUp={(e) => handleLongClick(task)}>
                   <td className={`sm:px-4 px-1 sm:py-2 py-1 border border-[#303830] ${getCellClass(task.date, 'date')}`} >
                     {task.date}
                   </td>
