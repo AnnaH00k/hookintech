@@ -183,7 +183,7 @@ const MainLayout: React.FC = () => {
   };
 
   return (
-    <main className="flex flex-col items-center min-h-screen gap-4 py-20 bg-background text-text w-full">
+    <main className="flex flex-col items-center min-h-screen gap-4 py-10 sm:py-20 bg-background text-text w-full">
       {!selectedSubject && (
         <h1 className="text-2xl text-text font-bold">Welcome to Hooked0nStudys</h1>
       )}
