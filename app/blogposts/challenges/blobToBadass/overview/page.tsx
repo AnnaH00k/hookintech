@@ -8,7 +8,7 @@ export default function Home() {
   // Example daily tasks data (for illustration)
   const dailyTasks = [
     {
-      date: "Day 1",
+      date: "1",
       privateProjects: "4h adding Google Analytics to my website and seeking AdSense approval",
       study: "1.5h of math repetition for an exam in 2 weeks",
       work: "4h with Clye (bug fixing and video planning)",
@@ -16,7 +16,7 @@ export default function Home() {
       topicOfTheWeek: "How to automate tasks to focus on what's important."
     },
     {
-      date: "Day 2",
+      date: "2",
       privateProjects: "4h restructuring & refining my website to get AdSense approval",
       study: "nothing",
       work: "4h working on the LegalBFF Chatbot",
@@ -24,7 +24,7 @@ export default function Home() {
       topicOfTheWeek: "How to automate tasks to focus on what's important."
     },
     {
-      date: "Day 3",
+      date: "3",
       privateProjects: "1h working on overview for blob to badass challenge",
       study: "2h of math repetition for an exam in 2 weeks",
       work: "4h working for LegalBFF & Clye",
@@ -78,7 +78,7 @@ export default function Home() {
   // Function to generate Instagram post text
   const generatePostText = (task: { date: any; privateProjects: any; study: any; work: any; health: any; topicOfTheWeek: any; }) => {
     const randomEmoji = getRandomEmoji();
-    return ` ${task.date} || From Blob to Badass ${randomEmoji}
+    return `Day ${task.date} || From Blob to Badass ${randomEmoji}
 
 Private Projects:
 - ${task.privateProjects}
@@ -114,20 +114,20 @@ Topic of the week:
   };
 
   return (
-    <div className="flex flex-col items-center min-h-[90vh] justify-center overflow-x-hidden bg-[#0A1109] pt-[7vh] w-full">
-      <h1 className="text-4xl text-[#7C9838] text-start font-bold">
+    <div className="flex flex-col items-center min-h-[90vh] my-10 justify-start overflow-x-hidden bg-[#0A1109] pt-[7vh] w-[full]">
+      <h1 className="text-4xl text-[#7C9838] w-[90vw] text-center font-bold">
         {"From Blob to Badass: Overview"}
       </h1>
 
-      <table className="text-xs sm:text-lg w-[90vw] max-w-5xl m-4 text-[#A0A2A0]">
+      <table className="text-xs font-light sm:font-normal sm:text-lg max-w-[90vw] sm:max-w-5xl m-4 text-[#A0A2A0]">
         <thead>
           <tr>
-            <th className="sm:px-4 px-1 sm:py-2 py-1 border border-[#303830]">Day/Date</th>
-            <th className="sm:px-4 px-1 sm:py-2 py-1 border border-[#303830]">Private Projects</th>
-            <th className="sm:px-4 px-1 sm:py-2 py-1 border border-[#303830]">Study</th>
-            <th className="sm:px-4 px-1 sm:py-2 py-1 border border-[#303830]">Work</th>
-            <th className="sm:px-4 px-1 sm:py-2 py-1 border border-[#303830]">Health</th>
-            <th className="sm:px-4 px-1 sm:py-2 py-1 border border-[#303830]">Topic of the Week</th>
+            <th className="sm:px-4 sm:py-2  border border-[#303830]">Day</th>
+            <th className="sm:px-4 sm:py-2  border border-[#303830]">Private Projects</th>
+            <th className="sm:px-4 sm:py-2  border border-[#303830]">Study</th>
+            <th className="sm:px-4 sm:py-2  border border-[#303830]">Work</th>
+            <th className="sm:px-4 sm:py-2  border border-[#303830]">Health</th>
+            <th className="sm:px-4 sm:py-2  border border-[#303830]">Topic of the Week</th>
           </tr>
         </thead>
         <tbody>
