@@ -1,11 +1,8 @@
 "use client";
 
-import Image from "next/image";
-import Script from "next/script";
 import React from "react";
 
 export default function Home() {
-  // Example daily tasks data (for illustration)
   const dailyTasks = [
     {
       date: "1",
@@ -31,16 +28,8 @@ export default function Home() {
       health: "1h bikeride",
       topicOfTheWeek: "How to automate tasks to focus on what's important."
     },
-
-
-    // Add more daily tasks here as needed
-
-
   ];
 
-
-
-  // List of emojis to use in the Instagram post
   const emojis = [
     "🌱", "🚀", "🥗", "📚", "🏋️‍♂️", 
     "🌿", "🍃", "🍀", 
@@ -48,34 +37,26 @@ export default function Home() {
     "📖", "📝", "📚", "📜", "📄", 
     "📈", "📊", 
     "💪", "🤖", "🦾" 
-
   ];
 
-  
-
-  // Function to get a random emoji
   const getRandomEmoji = () => {
     const randomIndex = Math.floor(Math.random() * emojis.length);
     return emojis[randomIndex];
   };
 
-  // Define what constitutes a "bad" entry for each type of task
   const isBad = (value: string, type: any) => {
     switch (type) {
       case 'study':
-        return value.toLowerCase() === 'nothing'; // Example condition for bad study
+        return value.toLowerCase() === 'nothing';
       case 'health':
-        return value.toLowerCase().includes('chocolate'); // Example condition for bad health
-      // Add other conditions as needed
+        return value.toLowerCase().includes('chocolate');
       default:
         return false;
     }
   };
 
-  // Function to apply red background if the value is bad
   const getCellClass = (value: string, type: string) => (isBad(value, type) ? 'bg-[#431717] bg-opacity-30' : '');
 
-  // Function to generate Instagram post text
   const generatePostText = (task: { date: any; privateProjects: any; study: any; work: any; health: any; topicOfTheWeek: any; }) => {
     const randomEmoji = getRandomEmoji();
     return `Day ${task.date} || From Blob to Badass ${randomEmoji}
@@ -95,10 +76,9 @@ Health:
 Topic of the week:
 - ${task.topicOfTheWeek} (I'll be making a video on this- share your thoughts in the comments!)
 
-#${task.date} #BlobToBadass #computerscience #programming #student #codinglife #webdeveloper #motivation #persistencyiskey #homeoffice #tech #studygram #software #technology #codingcommunity #codingjourney #learntocode #studyInspiration #challenge #productivity #healthjourney #mealprep #study #work #projects #developer #worklifebalance #studyhard #codingLife #techcommunity`;
+#Day${task.date} #BlobToBadass #computerscience #programming #student #codinglife #webdeveloper #motivation #persistencyiskey #homeoffice #tech #studygram #software #technology #codingcommunity #codingjourney #learntocode #studyInspiration #challenge #productivity #healthjourney #mealprep #study #work #projects #developer #worklifebalance #studyhard #codingLife #techcommunity`;
   };
 
-  // Function to copy text to clipboard
   const copyToClipboard = (text: string) => {
     navigator.clipboard.writeText(text).then(() => {
       alert('Post text copied to clipboard!');
@@ -107,14 +87,26 @@ Topic of the week:
     });
   };
 
-  // Function to handle long click event
-  const handleLongClick = (task: { date: any; privateProjects: any; study: any; work: any; health: any; topicOfTheWeek: any; }) => {
+  const handleLongClick = (task: { date: string; privateProjects: string; study: string; work: string; health: string; topicOfTheWeek: string; }) => {
     const postText = generatePostText(task);
     copyToClipboard(postText);
   };
 
+  const calculateRowSpan = (index: number) => {
+    const currentTopic = dailyTasks[index].topicOfTheWeek;
+    let spanCount = 1;
+    for (let i = index + 1; i < dailyTasks.length; i++) {
+      if (dailyTasks[i].topicOfTheWeek === currentTopic) {
+        spanCount++;
+      } else {
+        break;
+      }
+    }
+    return spanCount;
+  };
+
   return (
-    <div className="flex flex-col items-center min-h-[90vh] my-10 justify-start overflow-x-hidden bg-[#0A1109] pt-[7vh] w-[full]">
+    <div className="flex flex-col items-center min-h-[90vh] py-10 justify-start overflow-x-hidden bg-[#0A1109] pt-[7vh] w-full">
       <h1 className="text-4xl text-[#7C9838] w-[90vw] text-center font-bold">
         {"From Blob to Badass: Overview"}
       </h1>
@@ -134,7 +126,7 @@ Topic of the week:
           {dailyTasks.map((task, index) => (
             <React.Fragment key={index}>
               {(index === 0 || task.topicOfTheWeek !== dailyTasks[index - 1].topicOfTheWeek) && (
-                <tr onPointerDown={(e) => e.persist()} onPointerUp={(e) => handleLongClick(task)}>
+                <tr onPointerDown={(e) => e.persist()} onPointerUp={() => handleLongClick(task)}>
                   <td className={`sm:px-4 px-1 sm:py-2 py-1 border border-[#303830] ${getCellClass(task.date, 'date')}`} >
                     {task.date}
                   </td>
@@ -150,13 +142,13 @@ Topic of the week:
                   <td className={`sm:px-4 px-1 sm:py-2 py-1 border border-[#303830] ${getCellClass(task.health, 'health')}`}>
                     {task.health}
                   </td>
-                  <td className={`sm:px-4 px-1 sm:py-2 py-1 border border-[#303830]`} rowSpan={dailyTasks.slice(index).findIndex(t => t.topicOfTheWeek !== task.topicOfTheWeek) + 1}>
+                  <td className={`sm:px-4 px-1 sm:py-2 py-1 border border-[#303830]`} rowSpan={calculateRowSpan(index)}>
                     {task.topicOfTheWeek}
                   </td>
                 </tr>
               )}
               {(index > 0 && task.topicOfTheWeek === dailyTasks[index - 1].topicOfTheWeek) && (
-                <tr onPointerDown={(e) => e.persist()} onPointerUp={(e) => handleLongClick(task)}>
+                <tr onPointerDown={(e) => e.persist()} onPointerUp={() => handleLongClick(task)}>
                   <td className={`sm:px-4 px-1 sm:py-2 py-1 border border-[#303830] ${getCellClass(task.date, 'date')}`} >
                     {task.date}
                   </td>
