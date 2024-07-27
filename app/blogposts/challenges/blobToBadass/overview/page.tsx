@@ -28,6 +28,14 @@ export default function Home() {
       health: "1h bikeride",
       topicOfTheWeek: "How to automate tasks to focus on what's important."
     },
+    {
+      date: "4",
+      privateProjects: "2h video skripting & formatting",
+      study: "1h of math tasks for an exam",
+      work: "4h working for LegalBFF & Clye",
+      health: "prepping 18 healthy burritos",
+      topicOfTheWeek: "How to automate tasks to focus on what's important."
+    },
   ];
 
   const emojis = [
