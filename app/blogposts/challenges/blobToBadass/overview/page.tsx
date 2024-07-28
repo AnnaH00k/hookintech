@@ -6,6 +6,7 @@ export default function Home() {
   const [videoSrc, setVideoSrc] = useState<string | null>(null);
   const [downloadUrl, setDownloadUrl] = useState<string | null>(null);
   const [progress, setProgress] = useState<number>(0);
+  const [processing, setProcessing] = useState<boolean>(false); // Add state to indicate processing status
   const inputVideoRef = useRef<HTMLVideoElement>(null);
   const outputVideoRef = useRef<HTMLVideoElement>(null);
   const canvasRef = useRef<HTMLCanvasElement>(null);
@@ -17,7 +18,6 @@ export default function Home() {
       const url = URL.createObjectURL(file);
       setVideoSrc(url);
       resetVideoProcessing();
-      processVideo(url);
     }
   };
 
@@ -25,6 +25,7 @@ export default function Home() {
   const resetVideoProcessing = () => {
     setDownloadUrl(null);
     setProgress(0);
+    setProcessing(false); // Reset processing status
   };
 
   // Daily tasks data
@@ -39,8 +40,8 @@ export default function Home() {
   const overlayText = `Day ${lastDayTask.date}`;
 
   // Process video and add overlay text
-  const processVideo = (url: string) => {
-    if (!inputVideoRef.current || !canvasRef.current || !outputVideoRef.current) return;
+  const processVideo = () => {
+    if (!inputVideoRef.current || !canvasRef.current || !outputVideoRef.current || !videoSrc) return;
 
     const videoElement = inputVideoRef.current;
     const canvas = canvasRef.current;
@@ -94,7 +95,7 @@ export default function Home() {
       processFrames();
     };
 
-    videoElement.src = url;
+    videoElement.src = videoSrc;
   };
 
   // Draw overlay text on the video frames
@@ -187,7 +188,6 @@ Topic of the week:
 
   const getCellClass = (value: string, type: string) => (isBad(value, type) ? 'bg-[#431717] bg-opacity-30' : '');
 
-  // Get a random emoji
   const getRandomEmoji = () => {
     const emojis = ["🌱", "🚀", "🥗", "📚", "🏋️‍♂️", "🌿", "🍃", "🍀", "🚴‍♀️", "📖", "📝", "📚", "📜", "📄", "📈", "📊", "💪", "🤖", "🦾"];
     const randomIndex = Math.floor(Math.random() * emojis.length);
@@ -201,6 +201,13 @@ Topic of the week:
       </h1>
       <label htmlFor="video-upload" className="text-[#A0A2A0]">Upload a video:</label>
       <input type="file" id="video-upload" accept="video/*" onChange={handleVideoUpload} title="Choose a video file to upload" />
+      <button 
+        className="mt-4 p-2 bg-[#7C9838] text-[#0A1109] rounded" 
+        onClick={() => { setProcessing(true); processVideo(); }}
+        disabled={!videoSrc || processing}
+      >
+        {processing ? "Processing..." : "Start Processing"}
+      </button>
       <div className="flex mt-4 flex-row gap-4">
         <video ref={inputVideoRef} style={{ display: 'none' }} />
         <video ref={outputVideoRef} controls autoPlay style={{ display: 'none', maxWidth: '300px' }} />
