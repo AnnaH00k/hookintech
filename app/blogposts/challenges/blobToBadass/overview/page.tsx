@@ -10,57 +10,35 @@ export default function Home() {
   const outputVideoRef = useRef<HTMLVideoElement>(null);
   const canvasRef = useRef<HTMLCanvasElement>(null);
 
+  // Handle video file upload
   const handleVideoUpload = (event: React.ChangeEvent<HTMLInputElement>) => {
     const file = event.target.files?.[0];
     if (file) {
       const url = URL.createObjectURL(file);
       setVideoSrc(url);
-      setDownloadUrl(null); // Reset download URL when a new video is uploaded
-      setProgress(0); // Reset progress when a new video is uploaded
+      resetVideoProcessing();
       processVideo(url);
     }
   };
 
+  // Reset video processing state
+  const resetVideoProcessing = () => {
+    setDownloadUrl(null);
+    setProgress(0);
+  };
+
+  // Daily tasks data
   const dailyTasks = [
-    {
-      date: "1",
-      privateProjects: "4h adding Google Analytics to my website and seeking AdSense approval",
-      study: "1.5h of math repetition for an exam in 2 weeks",
-      work: "4h with Clye (bug fixing and video planning)",
-      health: "Bought food to prep healthy burritos & recovering from a vaccination",
-      topicOfTheWeek: "How to automate tasks to focus on what's important."
-    },
-    {
-      date: "2",
-      privateProjects: "4h restructuring & refining my website to get AdSense approval",
-      study: "nothing",
-      work: "4h working on the LegalBFF Chatbot",
-      health: "Ate the rest of the chocolate I had in the house",
-      topicOfTheWeek: "How to automate tasks to focus on what's important."
-    },
-    {
-      date: "3",
-      privateProjects: "1h working on overview for blob to badass challenge",
-      study: "2h of math repetition for an exam in 2 weeks",
-      work: "4h working for LegalBFF & Clye",
-      health: "1h bikeride",
-      topicOfTheWeek: "How to automate tasks to focus on what's important."
-    },
-    {
-      date: "4",
-      privateProjects: "2h video scripting & formatting",
-      study: "1h of math tasks for an exam",
-      work: "4h working for LegalBFF & Clye",
-      health: "prepping 18 healthy burritos",
-      topicOfTheWeek: "How to automate tasks to focus on what's important."
-    },
+    { date: "1", privateProjects: "4h adding Google Analytics to my website and seeking AdSense approval", study: "1.5h of math repetition for an exam in 2 weeks", work: "4h with Clye (bug fixing and video planning)", health: "Bought food to prep healthy burritos & recovering from a vaccination", topicOfTheWeek: "How to automate tasks to focus on what's important." },
+    { date: "2", privateProjects: "4h restructuring & refining my website to get AdSense approval", study: "nothing", work: "4h working on the LegalBFF Chatbot", health: "Ate the rest of the chocolate I had in the house", topicOfTheWeek: "How to automate tasks to focus on what's important." },
+    { date: "3", privateProjects: "1h working on overview for blob to badass challenge", study: "2h of math repetition for an exam in 2 weeks", work: "4h working for LegalBFF & Clye", health: "1h bikeride", topicOfTheWeek: "How to automate tasks to focus on what's important." },
+    { date: "4", privateProjects: "2h video scripting & formatting", study: "1h of math tasks for an exam", work: "4h working for LegalBFF & Clye", health: "prepping 18 healthy burritos", topicOfTheWeek: "How to automate tasks to focus on what's important." },
   ];
 
   const lastDayTask = dailyTasks[dailyTasks.length - 1];
-  const overlayText = `
-    Day ${lastDayTask.date}
-  `;
+  const overlayText = `Day ${lastDayTask.date}`;
 
+  // Process video and add overlay text
   const processVideo = (url: string) => {
     if (!inputVideoRef.current || !canvasRef.current || !outputVideoRef.current) return;
 
@@ -71,26 +49,27 @@ export default function Home() {
 
     const stream = canvas.captureStream();
     const recorder = new MediaRecorder(stream, {
-      mimeType: 'video/webm;codecs=vp9', // or 'video/webm;codecs=h264' for higher compatibility
-      videoBitsPerSecond: 2500000 // Adjust bit rate to a higher value for better quality
+      mimeType: 'video/webm;codecs=vp8', // Use a more widely supported codec
+      videoBitsPerSecond: 2500000
     });
-        const chunks: BlobPart[] = [];
+
+    const chunks: BlobPart[] = [];
 
     recorder.ondataavailable = (e) => chunks.push(e.data);
     recorder.onstop = () => {
-      const blob = new Blob(chunks, { type: 'video/mp4' });
+      const blob = new Blob(chunks, { type: 'video/webm' }); // Change MIME type for broader compatibility
       const downloadUrl = URL.createObjectURL(blob);
       outputVideo.src = downloadUrl;
       outputVideo.style.display = 'block';
-      setDownloadUrl(downloadUrl); // Set download URL
-      setProgress(100); // Set progress to 100% when processing is complete
+      setDownloadUrl(downloadUrl);
+      setProgress(100);
     };
 
     recorder.start();
 
     videoElement.onloadedmetadata = () => {
       const duration = videoElement.duration;
-      const targetDuration = 6; // Target duration in seconds
+      const targetDuration = 6;
       const playbackRate = duration / targetDuration;
       videoElement.playbackRate = playbackRate;
 
@@ -104,30 +83,10 @@ export default function Home() {
         canvas.height = videoElement.videoHeight;
 
         if (context) {
-          context.drawImage(videoElement, 0, 0, canvas.width, canvas.height);
-          context.font = '250px "WhiteScratches"';
-          context.fillStyle = 'white';
-          context.strokeStyle = 'black';
-          context.textAlign = 'center';
-          context.textBaseline = 'middle';
-          context.shadowBlur = 10;
-          context.shadowColor = 'black';
-          context.imageSmoothingEnabled = true;
-          context.imageSmoothingQuality = 'high';
-
-
-          const textLines = overlayText.trim().split('\n');
-          const lineHeight = 300; // Adjusted line height
-          const x = canvas.width / 2;
-          const y = canvas.height / 2 - (lineHeight * (textLines.length - 1) / 2);
-
-          textLines.forEach((line, index) => {
-            context.fillText(line, x, y + index * lineHeight);
-            context.strokeText(line, x, y + index * lineHeight);
-          });
+          drawOverlay(context, videoElement, canvas.width, canvas.height);
         }
 
-        setProgress((prev) => prev + (100 / (duration * 60))); // Increment progress
+        setProgress((prev) => prev + (100 / (duration * 60)));
         requestAnimationFrame(processFrames);
       };
 
@@ -138,37 +97,34 @@ export default function Home() {
     videoElement.src = url;
   };
 
-  const emojis = [
-    "🌱", "🚀", "🥗", "📚", "🏋️‍♂️", 
-    "🌿", "🍃", "🍀", 
-    "🚴‍♀️",
-    "📖", "📝", "📚", "📜", "📄", 
-    "📈", "📊", 
-    "💪", "🤖", "🦾" 
-  ];
+  // Draw overlay text on the video frames
+  const drawOverlay = (context: CanvasRenderingContext2D, videoElement: HTMLVideoElement, width: number, height: number) => {
+    context.drawImage(videoElement, 0, 0, width, height);
+    context.font = '250px "WhiteScratches"';
+    context.fillStyle = 'white';
+    context.strokeStyle = 'black';
+    context.textAlign = 'center';
+    context.textBaseline = 'middle';
+    context.shadowBlur = 10;
+    context.shadowColor = 'black';
+    context.imageSmoothingEnabled = true;
+    context.imageSmoothingQuality = 'high';
 
-  const getRandomEmoji = () => {
-    const randomIndex = Math.floor(Math.random() * emojis.length);
-    return emojis[randomIndex];
+    const textLines = overlayText.trim().split('\n');
+    const lineHeight = 300;
+    const x = width / 2;
+    const y = height / 2 - (lineHeight * (textLines.length - 1) / 2);
+
+    textLines.forEach((line, index) => {
+      context.fillText(line, x, y + index * lineHeight);
+      context.strokeText(line, x, y + index * lineHeight);
+    });
   };
 
-  const isBad = (value: string, type: string) => {
-    switch (type) {
-      case 'study':
-        return value.toLowerCase() === 'nothing';
-      case 'health':
-        return value.toLowerCase().includes('chocolate');
-      default:
-        return false;
-    }
-  };
-
-  const getCellClass = (value: string, type: string) => (isBad(value, type) ? 'bg-[#431717] bg-opacity-30' : '');
-
+  // Generate post text for a specific task
   const generatePostText = (task: { date: any; privateProjects: any; study: any; work: any; health: any; topicOfTheWeek: any; }) => {
     const randomEmoji = getRandomEmoji();
     return `Day ${task.date} || From Blob to Badass ${randomEmoji}
-
 
 Private Projects:
 - ${task.privateProjects}
@@ -188,6 +144,7 @@ Topic of the week:
 #Day${task.date} #BlobToBadass #computerscience #programming #student #codinglife #webdeveloper #motivation #persistencyiskey #homeoffice #tech #studygram #software #technology #codingcommunity #codingjourney #learntocode #studyInspiration #challenge #productivity #healthjourney #mealprep #study #work #projects #developer #worklifebalance #studyhard #codingLife #techcommunity`;
   };
 
+  // Copy text to clipboard
   const copyToClipboard = (text: string) => {
     navigator.clipboard.writeText(text).then(() => {
       alert('Post text copied to clipboard!');
@@ -196,11 +153,13 @@ Topic of the week:
     });
   };
 
+  // Handle long press to copy post text
   const handleLongClick = (task: { date: string; privateProjects: string; study: string; work: string; health: string; topicOfTheWeek: string; }) => {
     const postText = generatePostText(task);
     copyToClipboard(postText);
   };
 
+  // Calculate row span for the topic of the week column
   const calculateRowSpan = (index: number) => {
     const currentTopic = dailyTasks[index].topicOfTheWeek;
     let spanCount = 1;
@@ -214,6 +173,27 @@ Topic of the week:
     return spanCount;
   };
 
+  // Determine cell class based on the value and type
+  const isBad = (value: string, type: string) => {
+    switch (type) {
+      case 'study':
+        return value.toLowerCase() === 'nothing';
+      case 'health':
+        return value.toLowerCase().includes('chocolate');
+      default:
+        return false;
+    }
+  };
+
+  const getCellClass = (value: string, type: string) => (isBad(value, type) ? 'bg-[#431717] bg-opacity-30' : '');
+
+  // Get a random emoji
+  const getRandomEmoji = () => {
+    const emojis = ["🌱", "🚀", "🥗", "📚", "🏋️‍♂️", "🌿", "🍃", "🍀", "🚴‍♀️", "📖", "📝", "📚", "📜", "📄", "📈", "📊", "💪", "🤖", "🦾"];
+    const randomIndex = Math.floor(Math.random() * emojis.length);
+    return emojis[randomIndex];
+  };
+
   return (
     <div className="flex flex-col items-center min-h-[90vh] py-10 justify-start overflow-x-hidden bg-[#0A1109] pt-[7vh] w-full">
       <h1 className="text-4xl text-[#7C9838] w-[90vw] text-center font-bold">
@@ -224,7 +204,7 @@ Topic of the week:
       <div className="flex mt-4 flex-row gap-4">
         <video ref={inputVideoRef} style={{ display: 'none' }} />
         <video ref={outputVideoRef} controls autoPlay style={{ display: 'none', maxWidth: '300px' }} />
-      <canvas ref={canvasRef} style={{ display: 'none' }}></canvas>
+        <canvas ref={canvasRef} style={{ display: 'none' }}></canvas>
       </div>
       {videoSrc && (
         <div className="mt-4 text-[#A0A2A0]">
@@ -232,19 +212,19 @@ Topic of the week:
         </div>
       )}
       {downloadUrl && (
-        <a href={downloadUrl} download="processed_video.mp4" className="rounded-xl mt-2 p-2 border ">
+        <a href={downloadUrl} download="processed_video.webm" className="rounded-xl mt-2 p-2 border">
           Download Processed Video
         </a>
       )}
       <table className="text-xs font-light sm:font-normal sm:text-lg max-w-[90vw] sm:max-w-5xl m-4 text-[#A0A2A0]">
         <thead>
           <tr>
-            <th className="sm:px-4 sm:py-2  border border-[#303830]">Day</th>
-            <th className="sm:px-4 sm:py-2  border border-[#303830]">Private Projects</th>
-            <th className="sm:px-4 sm:py-2  border border-[#303830]">Study</th>
-            <th className="sm:px-4 sm:py-2  border border-[#303830]">Work</th>
-            <th className="sm:px-4 sm:py-2  border border-[#303830]">Health</th>
-            <th className="sm:px-4 sm:py-2  border border-[#303830]">Topic of the Week</th>
+            <th className="sm:px-4 sm:py-2 border border-[#303830]">Day</th>
+            <th className="sm:px-4 sm:py-2 border border-[#303830]">Private Projects</th>
+            <th className="sm:px-4 sm:py-2 border border-[#303830]">Study</th>
+            <th className="sm:px-4 sm:py-2 border border-[#303830]">Work</th>
+            <th className="sm:px-4 sm:py-2 border border-[#303830]">Health</th>
+            <th className="sm:px-4 sm:py-2 border border-[#303830]">Topic of the Week</th>
           </tr>
         </thead>
         <tbody>
@@ -252,43 +232,21 @@ Topic of the week:
             <React.Fragment key={index}>
               {(index === 0 || task.topicOfTheWeek !== dailyTasks[index - 1].topicOfTheWeek) && (
                 <tr onPointerDown={(e) => e.persist()} onPointerUp={() => handleLongClick(task)}>
-                  <td className={`sm:px-4 px-1 sm:py-2 py-1 border border-[#303830] ${getCellClass(task.date, 'date')}`} >
-                    {task.date}
-                  </td>
-                  <td className={`sm:px-4 px-1 sm:py-2 py-1 border border-[#303830] ${getCellClass(task.privateProjects, 'privateProjects')}`}>
-                    {task.privateProjects}
-                  </td>
-                  <td className={`sm:px-4 px-1 sm:py-2 py-1 border border-[#303830] ${getCellClass(task.study, 'study')}`}>
-                    {task.study}
-                  </td>
-                  <td className={`sm:px-4 px-1 sm:py-2 py-1 border border-[#303830] ${getCellClass(task.work, 'work')}`}>
-                    {task.work}
-                  </td>
-                  <td className={`sm:px-4 px-1 sm:py-2 py-1 border border-[#303830] ${getCellClass(task.health, 'health')}`}>
-                    {task.health}
-                  </td>
-                  <td className={`sm:px-4 px-1 sm:py-2 py-1 border border-[#303830]`} rowSpan={calculateRowSpan(index)}>
-                    {task.topicOfTheWeek}
-                  </td>
+                  <td className={`sm:px-4 px-1 sm:py-2 py-1 border border-[#303830] ${getCellClass(task.date, 'date')}`}>{task.date}</td>
+                  <td className={`sm:px-4 px-1 sm:py-2 py-1 border border-[#303830] ${getCellClass(task.privateProjects, 'privateProjects')}`}>{task.privateProjects}</td>
+                  <td className={`sm:px-4 px-1 sm:py-2 py-1 border border-[#303830] ${getCellClass(task.study, 'study')}`}>{task.study}</td>
+                  <td className={`sm:px-4 px-1 sm:py-2 py-1 border border-[#303830] ${getCellClass(task.work, 'work')}`}>{task.work}</td>
+                  <td className={`sm:px-4 px-1 sm:py-2 py-1 border border-[#303830] ${getCellClass(task.health, 'health')}`}>{task.health}</td>
+                  <td className={`sm:px-4 px-1 sm:py-2 py-1 border border-[#303830]`} rowSpan={calculateRowSpan(index)}>{task.topicOfTheWeek}</td>
                 </tr>
               )}
               {(index > 0 && task.topicOfTheWeek === dailyTasks[index - 1].topicOfTheWeek) && (
                 <tr onPointerDown={(e) => e.persist()} onPointerUp={() => handleLongClick(task)}>
-                  <td className={`sm:px-4 px-1 sm:py-2 py-1 border border-[#303830] ${getCellClass(task.date, 'date')}`} >
-                    {task.date}
-                  </td>
-                  <td className={`sm:px-4 px-1 sm:py-2 py-1 border border-[#303830] ${getCellClass(task.privateProjects, 'privateProjects')}`}>
-                    {task.privateProjects}
-                  </td>
-                  <td className={`sm:px-4 px-1 sm:py-2 py-1 border border-[#303830] ${getCellClass(task.study, 'study')}`}>
-                    {task.study}
-                  </td>
-                  <td className={`sm:px-4 px-1 sm:py-2 py-1 border border-[#303830] ${getCellClass(task.work, 'work')}`}>
-                    {task.work}
-                  </td>
-                  <td className={`sm:px-4 px-1 sm:py-2 py-1 border border-[#303830] ${getCellClass(task.health, 'health')}`}>
-                    {task.health}
-                  </td>
+                  <td className={`sm:px-4 px-1 sm:py-2 py-1 border border-[#303830] ${getCellClass(task.date, 'date')}`}>{task.date}</td>
+                  <td className={`sm:px-4 px-1 sm:py-2 py-1 border border-[#303830] ${getCellClass(task.privateProjects, 'privateProjects')}`}>{task.privateProjects}</td>
+                  <td className={`sm:px-4 px-1 sm:py-2 py-1 border border-[#303830] ${getCellClass(task.study, 'study')}`}>{task.study}</td>
+                  <td className={`sm:px-4 px-1 sm:py-2 py-1 border border-[#303830] ${getCellClass(task.work, 'work')}`}>{task.work}</td>
+                  <td className={`sm:px-4 px-1 sm:py-2 py-1 border border-[#303830] ${getCellClass(task.health, 'health')}`}>{task.health}</td>
                 </tr>
               )}
             </React.Fragment>
