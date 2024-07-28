@@ -3,6 +3,8 @@ import { Inter } from "next/font/google";
 import "./globals.css";
 import ClientLayout from "./components/clientLayout";
 import ConsentBanner from "./components/consentBanner";
+import '../public/fonts.css';
+
 
 const inter = Inter({ subsets: ["latin"] });
 

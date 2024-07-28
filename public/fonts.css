@@ -1,0 +1,27 @@
+@font-face {
+    font-family: 'Blackbone';
+    src: url('/fonts/Blackbone.otf') format('truetype');
+}
+@font-face {
+    font-family: 'Black Bones';
+    src: url('/fonts/BlackBones.ttf') format('truetype');
+}
+
+@font-face {
+    font-family: 'Daugther of Fortune';
+    src: url('/fonts/DaughterofFortune.ttf') format('truetype') ;
+}
+
+@font-face {
+    font-family: 'Turtles';
+    src: url('/fonts/Turtles.ttf') format('truetype');
+}
+
+@font-face {
+    font-family: 'SmithMouth';
+    src: url('/fonts/SmithMouth.ttf') format('truetype');
+}
+@font-face {
+    font-family: 'WhiteScratches';
+    src: url('/fonts/WhiteScratches.ttf') format('truetype');
+}

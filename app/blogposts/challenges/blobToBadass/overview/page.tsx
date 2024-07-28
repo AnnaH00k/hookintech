@@ -1,8 +1,26 @@
 "use client";
 
-import React from "react";
+import React, { useState, useRef, useEffect } from "react";
 
 export default function Home() {
+  const [videoSrc, setVideoSrc] = useState<string | null>(null);
+  const [downloadUrl, setDownloadUrl] = useState<string | null>(null);
+  const [progress, setProgress] = useState<number>(0);
+  const inputVideoRef = useRef<HTMLVideoElement>(null);
+  const outputVideoRef = useRef<HTMLVideoElement>(null);
+  const canvasRef = useRef<HTMLCanvasElement>(null);
+
+  const handleVideoUpload = (event: React.ChangeEvent<HTMLInputElement>) => {
+    const file = event.target.files?.[0];
+    if (file) {
+      const url = URL.createObjectURL(file);
+      setVideoSrc(url);
+      setDownloadUrl(null); // Reset download URL when a new video is uploaded
+      setProgress(0); // Reset progress when a new video is uploaded
+      processVideo(url);
+    }
+  };
+
   const dailyTasks = [
     {
       date: "1",
@@ -30,13 +48,95 @@ export default function Home() {
     },
     {
       date: "4",
-      privateProjects: "2h video skripting & formatting",
+      privateProjects: "2h video scripting & formatting",
       study: "1h of math tasks for an exam",
       work: "4h working for LegalBFF & Clye",
       health: "prepping 18 healthy burritos",
       topicOfTheWeek: "How to automate tasks to focus on what's important."
     },
   ];
+
+  const lastDayTask = dailyTasks[dailyTasks.length - 1];
+  const overlayText = `
+    Day ${lastDayTask.date}
+  `;
+
+  const processVideo = (url: string) => {
+    if (!inputVideoRef.current || !canvasRef.current || !outputVideoRef.current) return;
+
+    const videoElement = inputVideoRef.current;
+    const canvas = canvasRef.current;
+    const context = canvas.getContext('2d');
+    const outputVideo = outputVideoRef.current;
+
+    const stream = canvas.captureStream();
+    const recorder = new MediaRecorder(stream, {
+      mimeType: 'video/webm;codecs=vp9', // or 'video/webm;codecs=h264' for higher compatibility
+      videoBitsPerSecond: 2500000 // Adjust bit rate to a higher value for better quality
+    });
+        const chunks: BlobPart[] = [];
+
+    recorder.ondataavailable = (e) => chunks.push(e.data);
+    recorder.onstop = () => {
+      const blob = new Blob(chunks, { type: 'video/mp4' });
+      const downloadUrl = URL.createObjectURL(blob);
+      outputVideo.src = downloadUrl;
+      outputVideo.style.display = 'block';
+      setDownloadUrl(downloadUrl); // Set download URL
+      setProgress(100); // Set progress to 100% when processing is complete
+    };
+
+    recorder.start();
+
+    videoElement.onloadedmetadata = () => {
+      const duration = videoElement.duration;
+      const targetDuration = 6; // Target duration in seconds
+      const playbackRate = duration / targetDuration;
+      videoElement.playbackRate = playbackRate;
+
+      const processFrames = () => {
+        if (videoElement.paused || videoElement.ended) {
+          recorder.stop();
+          return;
+        }
+
+        canvas.width = videoElement.videoWidth;
+        canvas.height = videoElement.videoHeight;
+
+        if (context) {
+          context.drawImage(videoElement, 0, 0, canvas.width, canvas.height);
+          context.font = '250px "WhiteScratches"';
+          context.fillStyle = 'white';
+          context.strokeStyle = 'black';
+          context.textAlign = 'center';
+          context.textBaseline = 'middle';
+          context.shadowBlur = 10;
+          context.shadowColor = 'black';
+          context.imageSmoothingEnabled = true;
+          context.imageSmoothingQuality = 'high';
+
+
+          const textLines = overlayText.trim().split('\n');
+          const lineHeight = 300; // Adjusted line height
+          const x = canvas.width / 2;
+          const y = canvas.height / 2 - (lineHeight * (textLines.length - 1) / 2);
+
+          textLines.forEach((line, index) => {
+            context.fillText(line, x, y + index * lineHeight);
+            context.strokeText(line, x, y + index * lineHeight);
+          });
+        }
+
+        setProgress((prev) => prev + (100 / (duration * 60))); // Increment progress
+        requestAnimationFrame(processFrames);
+      };
+
+      videoElement.play();
+      processFrames();
+    };
+
+    videoElement.src = url;
+  };
 
   const emojis = [
     "🌱", "🚀", "🥗", "📚", "🏋️‍♂️", 
@@ -52,7 +152,7 @@ export default function Home() {
     return emojis[randomIndex];
   };
 
-  const isBad = (value: string, type: any) => {
+  const isBad = (value: string, type: string) => {
     switch (type) {
       case 'study':
         return value.toLowerCase() === 'nothing';
@@ -68,6 +168,7 @@ export default function Home() {
   const generatePostText = (task: { date: any; privateProjects: any; study: any; work: any; health: any; topicOfTheWeek: any; }) => {
     const randomEmoji = getRandomEmoji();
     return `Day ${task.date} || From Blob to Badass ${randomEmoji}
+
 
 Private Projects:
 - ${task.privateProjects}
@@ -118,7 +219,23 @@ Topic of the week:
       <h1 className="text-4xl text-[#7C9838] w-[90vw] text-center font-bold">
         {"From Blob to Badass: Overview"}
       </h1>
-
+      <label htmlFor="video-upload" className="text-[#A0A2A0]">Upload a video:</label>
+      <input type="file" id="video-upload" accept="video/*" onChange={handleVideoUpload} title="Choose a video file to upload" />
+      <div className="flex mt-4 flex-row gap-4">
+        <video ref={inputVideoRef} style={{ display: 'none' }} />
+        <video ref={outputVideoRef} controls autoPlay style={{ display: 'none', maxWidth: '300px' }} />
+      <canvas ref={canvasRef} style={{ display: 'none' }}></canvas>
+      </div>
+      {videoSrc && (
+        <div className="mt-4 text-[#A0A2A0]">
+          Processing: {progress.toFixed(2)}% complete
+        </div>
+      )}
+      {downloadUrl && (
+        <a href={downloadUrl} download="processed_video.mp4" className="rounded-xl mt-2 p-2 border ">
+          Download Processed Video
+        </a>
+      )}
       <table className="text-xs font-light sm:font-normal sm:text-lg max-w-[90vw] sm:max-w-5xl m-4 text-[#A0A2A0]">
         <thead>
           <tr>
