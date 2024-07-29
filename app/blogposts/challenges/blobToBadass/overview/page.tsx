@@ -34,6 +34,7 @@ export default function Home() {
     { date: "3", privateProjects: "1h working on overview for blob to badass challenge", study: "2h of math repetition for an exam in 2 weeks", work: "4h working for LegalBFF & Clye", health: "1h bikeride", topicOfTheWeek: "How to automate tasks to focus on what's important." },
     { date: "4", privateProjects: "2h video scripting & formatting", study: "1h of math tasks for an exam", work: "4h working for LegalBFF & Clye", health: "prepping 18 healthy burritos", topicOfTheWeek: "How to automate tasks to focus on what's important." },
     { date: "5&6", privateProjects: "3h trying to make a video processing automation", study: "5h of math tasks for an exam", work: "nothing", health: "enjoying the weekend", topicOfTheWeek: "How to automate tasks to focus on what's important." },
+    { date: "7", privateProjects: "none", study: "4h of math tasks for an exam", work: "5h meetings, video animation and graphic design", health: "lots of veggies & stretching", topicOfTheWeek: "focusing on my exam, end of the week." },
 
   ];
 
@@ -141,7 +142,7 @@ Health:
 - ${task.health}
 
 Topic of the week:
-- ${task.topicOfTheWeek} (I'll be making a video on this- share your thoughts in the comments!)
+- ${task.topicOfTheWeek} 
 
 #Day${task.date} #BlobToBadass #computerscience #programming #student #codinglife #webdeveloper #motivation #persistencyiskey #homeoffice #tech #studygram #software #technology #codingcommunity #codingjourney #learntocode #studyInspiration #challenge #productivity #healthjourney #mealprep #study #work #projects #developer #worklifebalance #studyhard #codingLife #techcommunity`;
   };
