@@ -33,6 +33,8 @@ export default function Home() {
     { date: "2", privateProjects: "4h restructuring & refining my website to get AdSense approval", study: "nothing", work: "4h working on the LegalBFF Chatbot", health: "Ate the rest of the chocolate I had in the house", topicOfTheWeek: "How to automate tasks to focus on what's important." },
     { date: "3", privateProjects: "1h working on overview for blob to badass challenge", study: "2h of math repetition for an exam in 2 weeks", work: "4h working for LegalBFF & Clye", health: "1h bikeride", topicOfTheWeek: "How to automate tasks to focus on what's important." },
     { date: "4", privateProjects: "2h video scripting & formatting", study: "1h of math tasks for an exam", work: "4h working for LegalBFF & Clye", health: "prepping 18 healthy burritos", topicOfTheWeek: "How to automate tasks to focus on what's important." },
+    { date: "5&6", privateProjects: "3h trying to make a video processing automation", study: "5h of math tasks for an exam", work: "nothing", health: "enjoying the weekend", topicOfTheWeek: "How to automate tasks to focus on what's important." },
+
   ];
 
   const lastDayTask = dailyTasks[dailyTasks.length - 1];
