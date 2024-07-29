@@ -144,7 +144,7 @@ Health:
 Topic of the week:
 - ${task.topicOfTheWeek} 
 
-#Day${task.date} #BlobToBadass #computerscience #programming #student #codinglife #webdeveloper #motivation #persistencyiskey #homeoffice #tech #studygram #software #technology #codingcommunity #codingjourney #learntocode #studyInspiration #challenge #productivity #healthjourney #mealprep #study #work #projects #developer #worklifebalance #studyhard #codingLife #techcommunity`;
+#Day${task.date} #BlobToBadass #computerscience #programming #student #codinglife #webdeveloper #motivation #persistencyiskey #homeoffice #tech #studygram #software #technology #codingcommunity #codingjourney #learntocode #studyInspiration #challenge #productivity #healthjourney #mealprep #study #work #projects #developer #worklifebalance #studyhard #codingLife #blobtobaddie`;
   };
 
   // Copy text to clipboard
