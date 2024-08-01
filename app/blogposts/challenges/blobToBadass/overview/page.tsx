@@ -36,7 +36,7 @@ export default function Home() {
     { date: "5&6", privateProjects: "3h trying to make a video processing automation", study: "5h of math tasks for an exam", work: "nothing", health: "enjoying the weekend", topicOfTheWeek: "How to automate tasks to focus on what's important." },
     { date: "7", privateProjects: "none", study: "4h of math tasks for an exam", work: "5h meetings, video animation and graphic design", health: "lots of veggies & stretching", topicOfTheWeek: "focusing on my exam, end of the week." },
     { date: "8", privateProjects: "none", study: "1h of math tasks for an exam", work: "3.5h meetings, video animation and graphic design", health: "procrastinating, guess i needed a pause?", topicOfTheWeek: "focusing on my exam, end of the week." },
-    { date: "9", privateProjects: "thaught about making videos about some practical apliences of algorithms.", study: "3h of math tasks for an exam", work: "4.5h testing the new GPT4-mini model, creating video animations", health: "20 min. walk", topicOfTheWeek: "focusing on my exam, end of the week." },
+    { date: "9", privateProjects: "thought about making videos about some practical apliences of algorithms.", study: "3h of math tasks for an exam", work: "4.5h testing the new GPT4-mini model, creating video animations", health: "20 min. walk", topicOfTheWeek: "focusing on my exam, end of the week." },
 
   ];
 
