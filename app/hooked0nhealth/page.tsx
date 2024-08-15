@@ -314,7 +314,7 @@ export default function Hooked0nLife() {
   }, [measurements]);
 
   return (
-    <main className="flex sm:flex-row-reverse  flex-col-reverse items-center min-h-screen justify-between py-20 bg-[#000000] w-full">
+    <main className="flex sm:flex-row-reverse  flex-col-reverse items-center min-h-screen justify-between sm:py-20 py-10 bg-[#000000] w-full">
       <div className="flex flex-col items-center w-full max-w-4xl p-8 rounded-md shadow-lg">
         <h2 className="text-2xl font-bold mb-4">Input Your Measurements</h2>
         <form className="flex flex-col space-y-4 text-[#6b879a] w-full">
