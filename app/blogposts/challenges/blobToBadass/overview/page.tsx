@@ -49,6 +49,7 @@ export default function Home() {
     { date: "21", privateProjects: "5h cutting my video on a full project build which is out now on my YouTube account", study: "nothing", work: "4h working for CLYE", health: "nothing", topicOfTheWeek: "Video Cutting 2 days/ Requirements of Engineering 5 days" },
     { date: "22&23", privateProjects: "7h cutting my video which is now on my YouTube channel", study: "nothing", work: "8.5h working for CLYE", health: "eating icecream", topicOfTheWeek: "Video Cutting 2 days/ Requirements of Engineering 5 days" },
     { date: "24", privateProjects: "4.5h implementing Three Js to import 3D models to my website", study: "nothing", work: "4.5h working for CLYE", health: "30min. bike ride", topicOfTheWeek: "Video Cutting 2 days/ Requirements of Engineering 5 days" },
+    { date: "25-27", privateProjects: "nothing", study: "6.5h reading script on requirements of engineering", work: "5h working for CLYE", health: "2h Gym (3.5km run, full body weight training) & Enjoying the weekend.", topicOfTheWeek: "Video Cutting 2 days/ Requirements of Engineering 5 days" },
 
   ];
 

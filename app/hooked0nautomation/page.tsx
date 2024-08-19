@@ -12,8 +12,8 @@ export default function HookedOnAutomation() {
         </div>
       </header>
 
-      <div className="grid grid-cols-2 gap-4 px-5 max-w-5xl">
-      <div className="shadow-neumorphic-hooked0ntech-box justify-self-end flex flex-col rounded-lg min-h-[150px] text-start items-center justify-center  bg-[#151C14] sm:hover:bg-[#1A2310] shadow-[#646864] p-4">
+      <div  className="grid grid-cols-2 gap-4 px-5 max-w-5xl">
+      <a href="/hooked0nautomation/VideoProcessing" className="shadow-neumorphic-hooked0ntech-box justify-self-end flex flex-col rounded-lg min-h-[150px] text-start items-center justify-center  bg-[#151C14] sm:hover:bg-[#1A2310] shadow-[#646864] p-4">
           <h2 className="text-3xl font-semibold text-white">Video Processing</h2>
           <p className="mt-4">Enhance your video editing with customizable overlays, speed adjustments, and brightness control.</p>
           <ul className="mt-4 space-y-1 list-disc pl-5">
@@ -21,8 +21,8 @@ export default function HookedOnAutomation() {
             <li>Choosing the time to speed it up to.</li>
             <li>Fine-tune brightness to match your visual style.</li>
           </ul>
-        </div>
-        <div className="shadow-neumorphic-hooked0ntech-box flex flex-col rounded-lg min-h-[150px] text-start items-center justify-center  bg-[#151C14] sm:hover:bg-[#1A2310] shadow-[#646864] p-4">
+        </a>
+        <div className="shadow-neumorphic-hooked0ntech-box flex flex-col rounded-lg min-h-[150px] text-start items-center justify-center  bg-[#151C14]  shadow-[#646864] p-4">
           <h2 className="text-3xl font-semibold text-white">ChatGPT Integration</h2>
           <p className="mt-4">Leverage AI to enhance your productivity.</p>
           <ul className="mt-6 space-y-2 list-disc pl-5">
@@ -31,7 +31,7 @@ export default function HookedOnAutomation() {
             <li>Automate to-do creation and management.</li>
           </ul>
         </div>
-        <div className="col-span-2  shadow-neumorphic-hooked0ntech-box   justify-self-center flex flex-col rounded-lg min-h-[150px] text-start items-center justify-center  bg-[#151C14] sm:hover:bg-[#1A2310] shadow-[#646864] p-4">
+        <a href="/hooked0nautomation/TextGeneration"  className="col-span-2  shadow-neumorphic-hooked0ntech-box   justify-self-center flex flex-col rounded-lg min-h-[150px] text-start items-center justify-center  bg-[#151C14] sm:hover:bg-[#1A2310] shadow-[#646864] p-4">
           <h2 className="text-3xl font-semibold text-white">Text Generation for Posts</h2>
           <p className="mt-4">Create structured posts effortlessly with our dynamic text generation tool.</p>
           <ul className="mt-6 space-y-2 list-disc pl-5">
@@ -41,9 +41,9 @@ export default function HookedOnAutomation() {
             <li>Add a list of hooks for different circumstances to be called in the text structure.</li>
             <li>Simple copying to clipboard of the text structure, and a different copy option copying only the first line of the text structure.</li>
           </ul>
-        </div>
+        </a>
 
-        <div className="col-span-2 shadow-neumorphic-hooked0ntech-box flex flex-col justify-self-center rounded-lg min-h-[150px] text-start items-center justify-center  bg-[#151C14] sm:hover:bg-[#1A2310] shadow-[#646864] p-4">
+        <a href="/hooked0nautomation/ProcessDefinition" className="col-span-2 shadow-neumorphic-hooked0ntech-box flex flex-col justify-self-center rounded-lg min-h-[150px] text-start items-center justify-center  bg-[#151C14] sm:hover:bg-[#1A2310] shadow-[#646864] p-4">
           <h2 className="text-3xl font-semibold text-white">Process Definition</h2>
           <p className="mt-4">Streamline your processes with powerful tools for task management and time tracking.</p>
           <ul className="mt-6 space-y-2 list-disc pl-5">
@@ -60,7 +60,7 @@ export default function HookedOnAutomation() {
             <li>Allow making time predictions and mark red when the time predictions exceed the deadline. Take into account 8h of sleep per night and mark it as orange when getting deprived of sleep.</li>
             <li>Allow adding different process types: Study process, exam process, work process, and any other processes that could be important.</li>
           </ul>
-        </div>
+        </a>
 
        
       </div>
