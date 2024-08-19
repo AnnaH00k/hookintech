@@ -25,6 +25,10 @@ export default function Home() {
           <a href="/hooked0nautomation" className="sm:text-lg text-md text-[#A0A2A0] text-center rounded-full bg-[#303830] px-3 py-1">
             Hooked0nAutomation
           </a>
+          <a href="/hooked0nstudys" className="sm:text-lg text-md text-[#A0A2A0] text-center rounded-full bg-[#303830] px-3 py-1">
+            Hooked0nStudys
+          </a>
+          
           <a href="/ideas" className="sm:text-lg text-md text-background text-center rounded-full cursor-default bg-background px-3 py-1">
             Hooked0nIdeas
           </a>
