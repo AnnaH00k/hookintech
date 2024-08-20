@@ -2,7 +2,9 @@ interface Subject {
     id: number;
     name: string;
     examType: string[];
-    examDate: string;
+    examDate?: string;
+    note?: number; // Optional numerical score
+    passed?: boolean; // Whether the subject is just passed or not
   }
   
   interface Task {
