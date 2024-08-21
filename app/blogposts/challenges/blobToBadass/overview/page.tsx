@@ -51,6 +51,8 @@ export default function Home() {
     { date: "24", privateProjects: "4.5h implementing Three Js to import 3D models to my website", study: "nothing", work: "4.5h working for CLYE", health: "30min. bike ride", topicOfTheWeek: "Video Cutting 2 days/ Requirements of Engineering 5 days" },
     { date: "25-27", privateProjects: "nothing", study: "6.5h reading script on requirements of engineering", work: "5h working for CLYE", health: "2h Gym (3.5km run, full body weight training) & Enjoying the weekend.", topicOfTheWeek: "Video Cutting 2 days/ Requirements of Engineering 5 days" },
     { date: "28", privateProjects: "nothing", study: "4.5h reading script on requirements of engineering & doing tasks", work: "4h working for CLYE", health: "rest day", topicOfTheWeek: "Requirements of Engineering with exam end of the week" },
+    { date: "29", privateProjects: "3h adding statistics to my hooked0nStudys Page", study: "0.5h requirements of engineering", work: "4.5h working for CLYE", health: "3.33km walk with 15kg backpack", topicOfTheWeek: "Requirements of Engineering with exam end of the week" },
+
   ];
 
   const lastDayTask = dailyTasks[dailyTasks.length - 1];
