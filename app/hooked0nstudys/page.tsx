@@ -19,7 +19,7 @@ interface Subject {
   examDate?: string;
   note?: number;
   passed?: boolean;
-  passedNoNote?: boolean; // Add this to track subjects passed without a note
+  passedNoNote?: boolean; 
 }
 
 interface Task {
@@ -46,6 +46,7 @@ const MainLayout: React.FC = () => {
     const savedTasks = Cookies.get("subjectTasks");
     return savedTasks ? JSON.parse(savedTasks) : {};
   });
+  const [studysEnd, setStudysEnd] = useState<string>("");
 
   useEffect(() => {
     Cookies.set("subjects", JSON.stringify(subjects), { expires: 365 });
@@ -92,9 +93,9 @@ const MainLayout: React.FC = () => {
   const backupData = () => {
     const data = { subjects, subjectTasks };
     const dataStr = JSON.stringify(data, null, 2);
-    const blob = new Blob([dataStr], { type: "application/json" });
     const funnyFileNames = ["Hooked0nStudys_StudyBuddyBackup.json", /*...more names...*/];
     const randomFileName = funnyFileNames[Math.floor(Math.random() * funnyFileNames.length)];
+    const blob = new Blob([dataStr], { type: "application/json" });
     const url = URL.createObjectURL(blob);
     const a = document.createElement("a");
     a.href = url;
@@ -162,6 +163,64 @@ const MainLayout: React.FC = () => {
 
   const averageNote = calculateAverageNote();
 
+  const calculateMinSubjectTime = (): string => {
+    if (subjects.length === 0) return "No subjects available";
+  
+    const today = new Date();
+    const bachelorSubjects = subjects.filter(subject => subject.name.toLowerCase().includes("bachelor"));
+    const nonPassedSubjects = subjects.filter(subject => !subject.passed && !subject.passedNoNote);
+  
+    let minDate = new Date(today);
+  
+    // Add 6 months for bachelor subjects
+    if (bachelorSubjects.length > 0) {
+      minDate.setMonth(minDate.getMonth() + 6);
+    }
+  
+    // Add 7 days for each non-passed subject
+    if (nonPassedSubjects.length > 0) {
+      minDate.setDate(minDate.getDate() + 7 * nonPassedSubjects.length);
+    }
+  
+    // Format date
+    const options: Intl.DateTimeFormatOptions = { year: 'numeric', month: '2-digit', day: '2-digit' };
+    return `${minDate.toLocaleDateString(undefined, options)}`;
+  };
+  
+
+  const calculateMaxSubjectTime = (): string => {
+    if (subjects.length === 0 || !studysEnd) return "No subjects available or study end date not set";
+  
+    const today = new Date();
+    const studyEndDate = new Date(studysEnd);
+    
+    // Calculate the total available time in milliseconds
+    const totalAvailableTime = studyEndDate.getTime() - today.getTime();
+  
+    // Filter subjects based on bachelor and non-passed status
+    const bachelorSubjects = subjects.filter(subject => subject.name.toLowerCase().includes("bachelor"));
+    const nonPassedSubjects = subjects.filter(subject => !subject.passed && !subject.passedNoNote);
+  
+    // Calculate time allocated to bachelor subjects
+    const bachelorTimeAllocation = bachelorSubjects.length * 6 * 30 * 24 * 60 * 60 * 1000; // 6 months per bachelor subject
+  
+    // Calculate remaining time after allocating time for bachelor subjects
+    const remainingTime = totalAvailableTime - bachelorTimeAllocation;
+  
+    // Calculate average time per non-passed subject
+    let averageTimePerSubject = "No non-passed subjects available";
+    if (nonPassedSubjects.length > 0) {
+      const averageTimeMs = remainingTime / nonPassedSubjects.length;
+      const averageTimeDays = averageTimeMs / (1000 * 60 * 60 * 24); // Convert milliseconds to days
+      averageTimePerSubject = `${averageTimeDays.toFixed(2)} days`;
+    }
+  
+    return averageTimePerSubject;
+  };
+  
+  const averageMinSubjectTime = calculateMinSubjectTime();
+  const averageMaxSubjectTime = calculateMaxSubjectTime();
+
   return (
     <main className="flex flex-col items-center min-h-screen gap-4 py-10 sm:py-20 bg-background text-text w-full">
       <h1 className="text-2xl text-text font-bold text-center">
@@ -169,7 +228,9 @@ const MainLayout: React.FC = () => {
       </h1>
 
       {/* Statistics and Pie Chart */}
-      <div className="flex flex-col md:flex-row justify-around items-center w-full max-w-4xl gap-4">
+      <div className="flex flex-col md:flex-col justify-around items-center w-full max-w-4xl gap-4">
+        <div className="flex flex-col md:flex-row items-center justify-center gap-4">
+
         <div className="flex flex-col items-center p-4 bg-green-700 text-white rounded-lg shadow-md ">
           <p>{`Open: ${openSubjects} | Completed: ${finishedSubjects}`}</p>
         </div>
@@ -183,6 +244,42 @@ const MainLayout: React.FC = () => {
             <p>No notes available for calculation</p>
           )}
         </div>
+      </div>
+
+
+      <div className="flex flex-col text-center items-center justify-center gap-4">
+          <div>
+            <p  className="block text-[#cdcfcd] text-sm font-bold mb-2">
+              Studys End:
+            </p>
+            <input
+              className="border-1 ml-2 bg-[#303830] border-gray-300 rounded-lg p-2"
+              type="date"
+              id="studysEnd"
+              name="studysEnd"
+              value={studysEnd}
+              onChange={(e) => setStudysEnd(e.target.value)}
+              />
+          </div>
+
+            <div className="flex flex-row gap-4">
+
+                <div className="flex flex-col">
+                <p className="block text-[#cdcfcd] text-sm font-bold mb-2">Quickest date to fisish:</p>
+                <div className="flex items-center justify-center gap-4 p-4 bg-[#303830] text-white rounded-lg shadow-md">
+                  <p> {averageMinSubjectTime}</p>
+                </div>
+                </div>
+
+                <div className="flex flex-col">
+                <p className="block text-[#cdcfcd] text-sm font-bold mb-2">Average time per subject:</p>
+                <div className="flex items-center justify-center gap-4 p-4 bg-[#303830] text-white rounded-lg shadow-md">
+                <p> {averageMaxSubjectTime}</p>
+                </div>
+                </div>
+            </div>
+
+          </div>
       </div>
 
       {selectedSubject && (
