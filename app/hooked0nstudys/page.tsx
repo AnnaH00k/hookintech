@@ -35,22 +35,43 @@ interface SubjectTasks {
 const MainLayout: React.FC = () => {
   const [showSubjects, setShowSubjects] = useState(false);
   const [showTimer, setShowTimer] = useState(false);
+  const [selectedSubject, setSelectedSubject] = useState<Subject | null>(null);
+  const [selectedSubjectIndex, setSelectedSubjectIndex] = useState<number>(0);
+  const [showSubjectAddition, setShowSubjectAddition] = useState(false);
+
+
   const [subjects, setSubjects] = useState<Subject[]>(() => {
     const savedSubjects = Cookies.get("subjects");
     return savedSubjects ? JSON.parse(savedSubjects) : [];
   });
-  const [selectedSubject, setSelectedSubject] = useState<Subject | null>(null);
-  const [selectedSubjectIndex, setSelectedSubjectIndex] = useState<number>(0);
-  const [showSubjectAddition, setShowSubjectAddition] = useState(false);
+  
   const [subjectTasks, setSubjectTasks] = useState<SubjectTasks>(() => {
     const savedTasks = Cookies.get("subjectTasks");
     return savedTasks ? JSON.parse(savedTasks) : {};
   });
+  
   const [studysEnd, setStudysEnd] = useState<string>(() => {
     const savedStudysEnd = Cookies.get("studysEnd");
     return savedStudysEnd ? JSON.parse(savedStudysEnd) : "";
   });
   
+  
+  useEffect(() => {
+    console.log("Reading cookies on mount:");
+    console.log("Subjects:", Cookies.get("subjects"));
+    console.log("SubjectTasks:", Cookies.get("subjectTasks"));
+    console.log("StudysEnd:", Cookies.get("studysEnd"));
+  
+    const savedSubjects = Cookies.get("subjects");
+    const savedTasks = Cookies.get("subjectTasks");
+    const savedStudysEnd = Cookies.get("studysEnd");
+  
+    if (savedSubjects) setSubjects(JSON.parse(savedSubjects));
+    if (savedTasks) setSubjectTasks(JSON.parse(savedTasks));
+    if (savedStudysEnd) setStudysEnd(JSON.parse(savedStudysEnd));
+  }, []);
+  
+
   useEffect(() => {
     Cookies.set("subjects", JSON.stringify(subjects), { expires: 365 });
   }, [subjects]);
@@ -60,17 +81,19 @@ const MainLayout: React.FC = () => {
   }, [subjectTasks]);
 
   useEffect(() => {
-    // This code runs only on the client
-    const savedStudysEnd = Cookies.get("studysEnd");
-    if (savedStudysEnd) {
-      setStudysEnd(JSON.parse(savedStudysEnd));
-    }
-  }, []);
-
-  useEffect(() => {
-    console.log("studysEnd updated:", studysEnd);
+    Cookies.set("studysEnd", JSON.stringify(studysEnd), { expires: 365 });
   }, [studysEnd]);
+
+
+
+
+
+
+
   
+  
+
+
   
 
   const toggleSubjects = () => setShowSubjects(!showSubjects);
@@ -78,16 +101,34 @@ const MainLayout: React.FC = () => {
   const toggleTimer = () => setShowTimer(!showTimer);
 
   const handleSubjectChange = (index: number) => {
-    setSelectedSubject(subjects[index]);
-    setSelectedSubjectIndex(index);
-  };
-
-  const handleStudysEndChange = (e: React.ChangeEvent<HTMLInputElement>) => {
-    const newDate = e.target.value;
-    setStudysEnd(newDate);
-    Cookies.set("studysEnd", JSON.stringify(newDate), { expires: 365 });
+    // Find the next non-passed subject index when moving forward
+    const findNextNonPassedIndex = (startIndex: number, direction: 1 | -1) => {
+      let nextIndex = startIndex;
+      const step = direction === 1 ? 1 : -1;
+      
+      do {
+        nextIndex = (nextIndex + step + subjects.length) % subjects.length;
+      } while (subjects[nextIndex].passed && nextIndex !== startIndex);
+      
+      return nextIndex;
+    };
+  
+    // Find the next non-passed subject index based on the direction
+    const nextIndex = findNextNonPassedIndex(index, 1);
+    const prevIndex = findNextNonPassedIndex(index, -1);
+  
+    if (nextIndex !== index) {
+      setSelectedSubject(subjects[nextIndex]);
+      setSelectedSubjectIndex(nextIndex);
+    } else {
+      // Optionally handle case where no non-passed subjects are available
+      alert("No more non-passed subjects available.");
+    }
   };
   
+  
+
+
 
   const countdownToExamDate = (examDate: string): string => {
     if (!examDate) return "No exam date set";
@@ -108,8 +149,10 @@ const MainLayout: React.FC = () => {
   const clearCookies = () => {
     Cookies.remove("subjects");
     Cookies.remove("subjectTasks");
+    Cookies.remove("studysEnd");
     setSubjects([]);
     setSubjectTasks({});
+    setStudysEnd("");
     setSelectedSubject(null);
     setSelectedSubjectIndex(0);
   };
@@ -118,7 +161,7 @@ const MainLayout: React.FC = () => {
     const data = { 
       subjects, 
       subjectTasks, 
-      studysEnd // Include the study's end date in the backup
+      studysEnd 
     };
     const dataStr = JSON.stringify(data, null, 2);
     const funnyFileNames = [
@@ -182,25 +225,51 @@ const MainLayout: React.FC = () => {
     const file = event.target.files?.[0];
     if (file) {
       const reader = new FileReader();
+      
       reader.onload = (e) => {
         try {
-          const data = JSON.parse(e.target?.result as string);
-          if (data.subjects && data.subjectTasks) {
-            setSubjects(data.subjects);
-            setSubjectTasks(data.subjectTasks);
-            if (data.studysEnd) {
-              setStudysEnd(data.studysEnd); // Restore the study's end date
-            }
+          clearCookies(); // Clear existing cookies before setting new data
+          const result = e.target?.result;
+          if (typeof result === 'string') {
+            const data = JSON.parse(result);
+            
+            if (data.subjects && data.subjectTasks) {
+              console.log("Restoring data:", data); // Log data being restored
+              
+              setSubjects(data.subjects || []);
+              setSubjectTasks(data.subjectTasks || {});
+              setStudysEnd(data.studysEnd || ""); // Default to empty string if undefined
+              
+              // Set cookies
+            Cookies.set("subjects", JSON.stringify(data.subjects || []), { expires: 365 });
+            Cookies.set("subjectTasks", JSON.stringify(data.subjectTasks || {}), { expires: 365 });
+            Cookies.set("studysEnd", JSON.stringify(data.studysEnd || ""), { expires: 365 });
           } else {
-            alert("Invalid backup file.");
+            alert("Invalid backup file. Missing required data.");
           }
-        } catch (error) {
-          alert("Error reading backup file.");
+        } else {
+          alert("Error reading backup file. File content is not a string.");
         }
+      } catch (error) {
+        console.error("Error reading or parsing backup file:", error);
+        alert("Error reading backup file.");
+      }
+    };
+      
+      reader.onerror = () => {
+        alert("Error reading file.");
       };
+      
       reader.readAsText(file);
+    } else {
+      alert("No file selected.");
     }
   };
+  
+
+
+  
+
   
   const calculateStatistics = () => {
     const totalSubjects = subjects.length;
@@ -300,7 +369,7 @@ const MainLayout: React.FC = () => {
   return (
     <main className="flex flex-col items-center min-h-screen gap-4 py-10 sm:py-20 bg-background text-text w-full">
       <h1 className="text-2xl text-text font-bold text-center">
-        {!selectedSubject ? "Welcome to Hooked0nStudys" : selectedSubject.name}
+        { "Welcome to Hooked0nStudys" }
       </h1>
 
       {/* Statistics and Pie Chart */}
@@ -360,19 +429,19 @@ const MainLayout: React.FC = () => {
 
       {selectedSubject && (
         <section className="max-w-4xl w-full p-4 bg-[#303830] rounded-lg shadow-lg mt-4">
-          <div className="flex items-center justify-center">
-            <button
-              onClick={() => handleSubjectChange(selectedSubjectIndex > 0 ? selectedSubjectIndex - 1 : subjects.length - 1)}
-              className="bg-[#303830] text-[#cdcfcd] rounded-lg px-4 py-1"
-            >
-              <ArrowCircleLeft size={32} />
-            </button>
+          <div className="flex w-full items-center justify-between">
+          <button
+            onClick={() => handleSubjectChange(selectedSubjectIndex)}
+            className="bg-[#303830] text-[#cdcfcd] rounded-lg px-4 py-1"
+          >
+            <ArrowCircleLeft size={32} />
+          </button>
             <div className="flex flex-col items-center mx-4">
               <h2 className="text-lg text-center font-bold">{selectedSubject.name}</h2>
               <div>{countdownToExamDate(selectedSubject.examDate || "")}</div>
             </div>
             <button
-              onClick={() => handleSubjectChange(selectedSubjectIndex < subjects.length - 1 ? selectedSubjectIndex + 1 : 0)}
+              onClick={() => handleSubjectChange(selectedSubjectIndex)}
               className="bg-[#303830] text-[#cdcfcd] rounded-lg px-4 py-1"
             >
               <ArrowCircleRight size={32} />
