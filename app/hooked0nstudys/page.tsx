@@ -46,8 +46,11 @@ const MainLayout: React.FC = () => {
     const savedTasks = Cookies.get("subjectTasks");
     return savedTasks ? JSON.parse(savedTasks) : {};
   });
-  const [studysEnd, setStudysEnd] = useState<string>("");
-
+  const [studysEnd, setStudysEnd] = useState<string>(() => {
+    const savedStudysEnd = Cookies.get("studysEnd");
+    return savedStudysEnd ? JSON.parse(savedStudysEnd) : "";
+  });
+  
   useEffect(() => {
     Cookies.set("subjects", JSON.stringify(subjects), { expires: 365 });
   }, [subjects]);
@@ -55,6 +58,20 @@ const MainLayout: React.FC = () => {
   useEffect(() => {
     Cookies.set("subjectTasks", JSON.stringify(subjectTasks), { expires: 365 });
   }, [subjectTasks]);
+
+  useEffect(() => {
+    // This code runs only on the client
+    const savedStudysEnd = Cookies.get("studysEnd");
+    if (savedStudysEnd) {
+      setStudysEnd(JSON.parse(savedStudysEnd));
+    }
+  }, []);
+
+  useEffect(() => {
+    console.log("studysEnd updated:", studysEnd);
+  }, [studysEnd]);
+  
+  
 
   const toggleSubjects = () => setShowSubjects(!showSubjects);
   const toggleSubjectAddition = () => setShowSubjectAddition(!showSubjectAddition);
@@ -64,6 +81,13 @@ const MainLayout: React.FC = () => {
     setSelectedSubject(subjects[index]);
     setSelectedSubjectIndex(index);
   };
+
+  const handleStudysEndChange = (e: React.ChangeEvent<HTMLInputElement>) => {
+    const newDate = e.target.value;
+    setStudysEnd(newDate);
+    Cookies.set("studysEnd", JSON.stringify(newDate), { expires: 365 });
+  };
+  
 
   const countdownToExamDate = (examDate: string): string => {
     if (!examDate) return "No exam date set";
@@ -91,9 +115,57 @@ const MainLayout: React.FC = () => {
   };
 
   const backupData = () => {
-    const data = { subjects, subjectTasks };
+    const data = { 
+      subjects, 
+      subjectTasks, 
+      studysEnd // Include the study's end date in the backup
+    };
     const dataStr = JSON.stringify(data, null, 2);
-    const funnyFileNames = ["Hooked0nStudys_StudyBuddyBackup.json", /*...more names...*/];
+    const funnyFileNames = [
+      "Hooked0nStudys_StudyBuddyBackup.json",
+      "Hooked0nStudys_ProcrastinationStation.json",
+      "Hooked0nStudys_BrainBingeBackup.json",
+      "Hooked0nStudys_StressLessJson.json",
+      "Hooked0nStudys_HomeworkHero.json",
+      "Hooked0nStudys_CaffeineCraze.json",
+      "Hooked0nStudys_QuizWhizBackup.json",
+      "Hooked0nStudys_NotesNook.json",
+      "Hooked0nStudys_PencilPanic.json",
+      "Hooked0nStudys_AcademicAbyss.json",
+      "Hooked0nStudys_BrainBurst.json",
+      "Hooked0nStudys_StudySnack.json",
+      "Hooked0nStudys_HomeworkHoard.json",
+      "Hooked0nStudys_ScholarSquad.json",
+      "Hooked0nStudys_NapTimeNotes.json",
+      "Hooked0nStudys_StressSnooze.json",
+      "Hooked0nStudys_BookwormWonders.json",
+      "Hooked0nStudys_FocusFrenzy.json",
+      "Hooked0onStudys_SmartSnack.json",
+      "Hooked0nStudys_GigaStudy.json",
+      "Hooked0nStudys_SleepDeprived.json",
+      "Hooked0nStudys_PaperPanic.json",
+      "Hooked0nStudys_TeaTimeBackup.json",
+      "Hooked0nStudys_SnoozeButton.json",
+      "Hooked0nStudys_StudySpree.json",
+      "Hooked0nStudys_CramSession.json",
+      "Hooked0nStudys_DreamChaser.json",
+      "Hooked0nStudys_MidnightMirth.json",
+      "Hooked0nStudys_StudySnooze.json",
+      "Hooked0nStudys_TiredTales.json",
+      "Hooked0onStudys_FuelForFocus.json",
+      "Hooked0nStudys_SleepyScholar.json",
+      "Hooked0nStudys_PaperTrail.json",
+      "Hooked0nStudys_BookBinge.json",
+      "Hooked0nStudys_FunWithFiles.json",
+      "Hooked0nStudys_BrainyBackup.json",
+      "Hooked0nStudys_SmartStart.json",
+      "Hooked0nStudys_PowerUp.json",
+      "Hooked0nStudys_StudySaga.json",
+      "Hooked0nStudys_DeadlineDash.json",
+      "Hooked0nStudys_NoteNest.json",
+      "Hooked0nStudys_FocusFuel.json"
+    ];
+    
     const randomFileName = funnyFileNames[Math.floor(Math.random() * funnyFileNames.length)];
     const blob = new Blob([dataStr], { type: "application/json" });
     const url = URL.createObjectURL(blob);
@@ -104,6 +176,7 @@ const MainLayout: React.FC = () => {
     a.click();
     document.body.removeChild(a);
   };
+  
 
   const restoreData = (event: React.ChangeEvent<HTMLInputElement>) => {
     const file = event.target.files?.[0];
@@ -115,6 +188,9 @@ const MainLayout: React.FC = () => {
           if (data.subjects && data.subjectTasks) {
             setSubjects(data.subjects);
             setSubjectTasks(data.subjectTasks);
+            if (data.studysEnd) {
+              setStudysEnd(data.studysEnd); // Restore the study's end date
+            }
           } else {
             alert("Invalid backup file.");
           }
@@ -125,7 +201,7 @@ const MainLayout: React.FC = () => {
       reader.readAsText(file);
     }
   };
-
+  
   const calculateStatistics = () => {
     const totalSubjects = subjects.length;
 
