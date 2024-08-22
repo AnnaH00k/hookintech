@@ -1,14 +1,16 @@
-// pages/login.tsx
-"use client";
+'use client'; // This ensures the component is rendered client-side
+
 import React, { useState } from 'react';
 import { signInWithEmailAndPassword } from 'firebase/auth';
-import { auth } from '../../../firebase'; // Adjust the path if needed
+import { useRouter } from 'next/navigation'; // Use next/navigation for Next.js 13 and later
+import { auth } from '../../firebase'; // Adjust the path if needed
 
 const LoginPage: React.FC = () => {
   const [email, setEmail] = useState('');
   const [password, setPassword] = useState('');
   const [error, setError] = useState<string | null>(null);
   const [loading, setLoading] = useState(false);
+  const router = useRouter(); // Initialize router
 
   const handleLogin = async (event: React.FormEvent) => {
     event.preventDefault();
@@ -17,7 +19,7 @@ const LoginPage: React.FC = () => {
 
     try {
       await signInWithEmailAndPassword(auth, email, password);
-      window.location.href = '/'; // Or use a router if using next/router
+      router.push('/welcome'); // Redirect to the welcome page
     } catch (err: any) {
       setError(err.message);
     } finally {
