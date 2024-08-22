@@ -19,7 +19,12 @@ const firebaseConfig = {
 const app = initializeApp(firebaseConfig);
 const auth = getAuth(app);
 const db = getFirestore(app);
-const analytics = getAnalytics(app);
+
+// Conditionally initialize Firebase Analytics
+let analytics;
+if (typeof window !== "undefined") {
+    analytics = getAnalytics(app);
+}
 
 // Export the initialized services for use in other parts of the app
 export { auth, db, analytics };

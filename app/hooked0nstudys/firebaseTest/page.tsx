@@ -17,7 +17,6 @@ const LoginPage: React.FC = () => {
 
     try {
       await signInWithEmailAndPassword(auth, email, password);
-      // Redirect to another page after successful login, e.g., home page
       window.location.href = '/'; // Or use a router if using next/router
     } catch (err: any) {
       setError(err.message);
