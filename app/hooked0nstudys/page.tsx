@@ -371,6 +371,7 @@ const MainLayout: React.FC = () => {
       <h1 className="text-2xl text-text font-bold text-center">
         { "Welcome to Hooked0nStudys" }
       </h1>
+      <a className="flex rounded-full p-2 bg-green-900 shadow-md shadow-text" href="/hooked0nstudys/firebaseTest">Log in</a>
 
       {/* Statistics and Pie Chart */}
       <div className="flex flex-col md:flex-col justify-around items-center w-full max-w-4xl gap-4">
