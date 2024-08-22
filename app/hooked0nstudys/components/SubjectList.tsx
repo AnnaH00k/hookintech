@@ -1,7 +1,7 @@
 'use client';
+
 import React, { useState } from "react";
-import { Trash, Pencil, FileText } from "@phosphor-icons/react";
-import { Gear } from "@phosphor-icons/react/dist/ssr";
+import { Trash, Pencil, FileText, Gear } from "@phosphor-icons/react";
 
 interface Subject {
   id: number;
@@ -9,6 +9,7 @@ interface Subject {
   examType: string[];
   note?: number;
   passed?: boolean;
+  examDate?: string; // Add examDate to Subject interface
 }
 
 interface Task {
@@ -39,6 +40,9 @@ const SubjectList: React.FC<Props> = ({
   setSubjectTasks,
 }) => {
   const [settingsSubjectId, setSettingsSubjectId] = useState<number | null>(null);
+  const [newExamType, setNewExamType] = useState<string | null>(null);
+  const [filterType, setFilterType] = useState<string | null>(null);
+  const [examDate, setExamDate] = useState<string | null>(null); // State for exam date input
 
   const handleNoteChange = (subjectId: number, note: number) => {
     const updatedSubjects = subjects.map(subject =>
@@ -52,6 +56,30 @@ const SubjectList: React.FC<Props> = ({
       subject.id === subjectId ? { ...subject, passed } : subject
     );
     setSubjects(updatedSubjects);
+  };
+
+  const handleExamTypeChange = (subjectId: number) => {
+    const updatedSubjects = subjects.map(subject => {
+      if (subject.id === subjectId) {
+        return { ...subject, examType: newExamType ? [newExamType] : subject.examType };
+      }
+      return subject;
+    });
+    setSubjects(updatedSubjects);
+    setNewExamType(null);
+  };
+
+  const handleExamDateChange = (subjectId: number) => {
+    if (examDate) {
+      const updatedSubjects = subjects.map(subject => {
+        if (subject.id === subjectId) {
+          return { ...subject, examDate };
+        }
+        return subject;
+      });
+      setSubjects(updatedSubjects);
+      setExamDate(null); // Reset the exam date input value
+    }
   };
 
   const handleDeleteSubject = (subjectId: number) => {
@@ -71,11 +99,23 @@ const SubjectList: React.FC<Props> = ({
     setSettingsSubjectId(settingsSubjectId === subjectId ? null : subjectId);
   };
 
-  
+  const handleNewExamTypeChange = (e: React.ChangeEvent<HTMLSelectElement>) => {
+    setNewExamType(e.target.value);
+  };
 
+  const handleExamDateInputChange = (e: React.ChangeEvent<HTMLInputElement>) => {
+    setExamDate(e.target.value);
+  };
 
-  // Sorting subjects to move passed subjects to the bottom
-  const sortedSubjects = [...subjects].sort((a, b) => {
+  const handleFilterChange = (e: React.ChangeEvent<HTMLSelectElement>) => {
+    setFilterType(e.target.value);
+  };
+
+  const filteredSubjects = filterType
+    ? subjects.filter(subject => subject.examType.includes(filterType))
+    : subjects;
+
+  const sortedSubjects = [...filteredSubjects].sort((a, b) => {
     if (a.passed === b.passed) return 0;
     return a.passed ? 1 : -1;
   });
@@ -83,6 +123,23 @@ const SubjectList: React.FC<Props> = ({
   return (
     <section className="max-w-3xl w-[95vw] p-4 bg-[#303830] rounded-lg shadow-lg">
       <h2 className="text-[#cdcfcd] text-lg font-bold">Courses</h2>
+      
+      <div className="mb-4">
+        <label htmlFor="filterType" className="block text-[#cdcfcd] text-sm font-bold mb-2">
+          Filter by Exam Type:
+        </label>
+        <select
+          id="filterType"
+          className="bg-[#697a69] text-[#303830] rounded"
+          value={filterType || ""}
+          onChange={handleFilterChange}
+        >
+          <option value="">All</option>
+          <option value="exam">Regular Exam</option>
+          <option value="written">Submission</option>
+        </select>
+      </div>
+
       {sortedSubjects.length === 0 && <p className="text-[#cdcfcd] text-sm">No courses added yet</p>}
       <ul className="mt-4 space-y-2">
         {sortedSubjects.map(subject => (
@@ -95,7 +152,7 @@ const SubjectList: React.FC<Props> = ({
               className="flex items-center gap-2 w-full"
             >
               <span>{subject.name}</span>
-              {subject.examType.includes("regular") && <Pencil size={20} />}
+              {subject.examType.includes("exam") && <Pencil size={20} />}
               {subject.examType.includes("written") && <FileText size={20} />}
             </button>
 
@@ -120,6 +177,44 @@ const SubjectList: React.FC<Props> = ({
                     onChange={(e) => handlePassedChange(subject.id, e.target.checked)}
                   />
                 </label>
+                <label>
+                  Exam Type:
+                  <select
+                    className="bg-[#697a69] mx-2 text-[#303830] rounded"
+                    value={newExamType || ""}
+                    onChange={handleNewExamTypeChange}
+                  >
+                    <option value="">Select exam type</option>
+                    <option value="exam">Regular Exam</option>
+                    <option value="written">Submission</option>
+                  </select>
+                  <button
+                    className="ml-2 bg-green-600 hover:bg-green-700 text-white  py-1 px-2 rounded"
+                    onClick={() => handleExamTypeChange(subject.id)}
+                  >
+                    Update Exam Type
+                  </button>
+                </label>
+
+                <div className="m-4 gap-1 flex flex-col">
+                  <label htmlFor="examDate" className="block text-[#cdcfcd] text-sm font-bold">
+                    Exam Date:
+                  </label>
+                  <input
+                    type="date"
+                    id="examDate"
+                    name="examDate"
+                    className="shadow appearance-none border rounded w-full py-2 px-3 text-gray-700 leading-tight focus:outline-none focus:shadow-outline"
+                    value={examDate || (subject.examDate || "")}
+                    onChange={handleExamDateInputChange}
+                  />
+                  <button
+                    className="ml-2 bg-green-600 hover:bg-green-700 text-white  py-1 px-2 rounded"
+                    onClick={() => handleExamDateChange(subject.id)}
+                  >
+                    Update Exam Date
+                  </button>
+                </div>
               </div>
             )}
             <button

@@ -1,7 +1,25 @@
 'use client';
 
-
 import React, { useState } from "react";
+
+interface Subject {
+  id: number;
+  name: string;
+  examType: string[];
+  note?: number;
+  passed?: boolean;
+  examDate?: string; // Added to match the form's fields
+}
+
+interface Task {
+  id: number;
+  name: string;
+  completed: boolean;
+}
+
+interface SubjectTasks {
+  [subjectId: number]: Task[];
+}
 
 interface SubjectFormProps {
   subjects: Subject[];
@@ -34,8 +52,7 @@ const SubjectForm: React.FC<SubjectFormProps> = ({ subjects, setSubjects, subjec
   };
 
   const handleExamTypeChange = (e: React.ChangeEvent<HTMLInputElement>) => {
-    const { value } = e.target;
-    setSelectedExamType(value);
+    setSelectedExamType(e.target.value);
   };
 
   return (
@@ -46,35 +63,43 @@ const SubjectForm: React.FC<SubjectFormProps> = ({ subjects, setSubjects, subjec
             <label htmlFor="courseName" className="block text-[#cdcfcd] text-sm font-bold mb-2">
               Course Name:
             </label>
-            <input type="text" id="courseName" name="courseName" className="shadow appearance-none border rounded w-full py-2 px-3 text-gray-700 leading-tight focus:outline-none focus:shadow-outline" placeholder="Enter the course name" />
+            <input
+              type="text"
+              id="courseName"
+              name="courseName"
+              className="shadow appearance-none border rounded w-full py-2 px-3 text-gray-700 leading-tight focus:outline-none focus:shadow-outline"
+              placeholder="Enter the course name"
+            />
           </div>
           <div className="m-4">
             <label htmlFor="examType" className="block text-[#cdcfcd] text-sm font-bold mb-2">
               Exam Type:
             </label>
-            <div className="flex items-center">
-              <input
-                type="checkbox"
-                id="regularExam"
-                name="examType"
-                value="regular"
-                checked={selectedExamType === "regular"}
-                onChange={handleExamTypeChange}
-                className="mr-2 leading-tight"
-              />
-              <label htmlFor="regularExam" className="text-[#cdcfcd] text-sm">Regular Exam</label>
-            </div>
-            <div className="flex items-center">
-              <input
-                type="checkbox"
-                id="writtenExam"
-                name="examType"
-                value="written"
-                checked={selectedExamType === "written"}
-                onChange={handleExamTypeChange}
-                className="mr-2 leading-tight"
-              />
-              <label htmlFor="writtenExam" className="text-[#cdcfcd] text-sm">Submission</label>
+            <div className="flex flex-col">
+              <label className="flex items-center">
+                <input
+                  type="radio"
+                  id="regularExam"
+                  name="examType"
+                  value="exam"
+                  checked={selectedExamType === "exam"}
+                  onChange={handleExamTypeChange}
+                  className="mr-2 leading-tight"
+                />
+                Regular Exam
+              </label>
+              <label className="flex items-center mt-2">
+                <input
+                  type="radio"
+                  id="writtenExam"
+                  name="examType"
+                  value="written"
+                  checked={selectedExamType === "written"}
+                  onChange={handleExamTypeChange}
+                  className="mr-2 leading-tight"
+                />
+                Submission
+              </label>
             </div>
           </div>
         </div>
@@ -82,10 +107,20 @@ const SubjectForm: React.FC<SubjectFormProps> = ({ subjects, setSubjects, subjec
           <label htmlFor="examDate" className="block text-[#cdcfcd] text-sm font-bold mb-2">
             Exam Date:
           </label>
-          <input type="date" id="examDate" name="examDate" className="shadow appearance-none border rounded w-full py-2 px-3 text-gray-700 leading-tight focus:outline-none focus:shadow-outline" />
+          <input
+            type="date"
+            id="examDate"
+            name="examDate"
+            className="shadow appearance-none border rounded w-full py-2 px-3 text-gray-700 leading-tight focus:outline-none focus:shadow-outline"
+          />
         </div>
         <div className="flex items-center justify-between">
-          <button type="submit" className="bg-green-600 hover:bg-green-700 text-white font-bold py-2 px-4 rounded focus:outline-none focus:shadow-outline">Submit</button>
+          <button
+            type="submit"
+            className="bg-green-600 hover:bg-green-700 text-white font-bold py-2 px-4 rounded focus:outline-none focus:shadow-outline"
+          >
+            Submit
+          </button>
         </div>
       </form>
     </section>
