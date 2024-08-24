@@ -9,13 +9,28 @@ export default function Home() {
       <main className="flex gap-6 flex-col items-center min-h-[90vh] justify-between py-20 pb-[10vh] bg-[#0A1109] w-full">
         <div className="flex gap-2 items-center flex-col justify-center">
           <h1 className="text-2xl text-[#A0A2A0] text-center font-bold w-[90vw]">
-            {"Blogposts"}
+            {"News & Updates"}
           </h1>
           <p className="text-md text-[#A0A2A0] text-center mb-4 w-[90vw]">
-            {"Here you will find interesting blogposts on various topics."}
+            {"Here you will find interesting blogposts and News on various topics."}
           </p>
 
           <div className="grid gap-4 w-auto md:grid-cols-2">
+
+          <a
+              href="/blogposts/procrastinateToInnovate"
+              className="flex flex-col rounded-lg max-w-[400px] min-h-[150px] sm:w-[40vw] w-full text-center items-center justify-center gap-2 bg-[#151C14] sm:hover:bg-[#1A2310] sm:hover:scale-105 p-4"
+            >
+              <h2 className="text-lg text-[#7C9838] font-bold ">
+                {"New Book: Procrastinate to Innovate"}
+              </h2>
+              <p className="text-md text-[#909d90]">
+                {""}
+              </p>
+              <div className="text-sm sm:text-md text-[#A0A2A0] hover:text-[#fff] rounded-full bg-[#303830] px-3 py-1">
+                {"Read more"}
+              </div>
+            </a>
 
           <a
               href="/blogposts/challenges/blobToBadass/overview"
