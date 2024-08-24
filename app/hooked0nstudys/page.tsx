@@ -428,30 +428,7 @@ const MainLayout: React.FC = () => {
           </div>
       </div>
 
-      {selectedSubject && (
-        <section className="max-w-4xl w-full p-4 bg-[#303830] rounded-lg shadow-lg mt-4">
-          <div className="flex w-full items-center justify-between">
-          <button
-            onClick={() => handleSubjectChange(selectedSubjectIndex)}
-            className="bg-[#303830] text-[#cdcfcd] rounded-lg px-4 py-1"
-          >
-            <ArrowCircleLeft size={32} />
-          </button>
-            <div className="flex flex-col items-center mx-4">
-              <h2 className="text-lg text-center font-bold">{selectedSubject.name}</h2>
-              <div>{countdownToExamDate(selectedSubject.examDate || "")}</div>
-            </div>
-            <button
-              onClick={() => handleSubjectChange(selectedSubjectIndex)}
-              className="bg-[#303830] text-[#cdcfcd] rounded-lg px-4 py-1"
-            >
-              <ArrowCircleRight size={32} />
-            </button>
-          </div>
-          <TaskForm selectedSubject={selectedSubject} subjectTasks={subjectTasks} setSubjectTasks={setSubjectTasks} />
-          <TaskList selectedSubject={selectedSubject} subjectTasks={subjectTasks} setSubjectTasks={setSubjectTasks} />
-        </section>
-      )}
+     
 
       <section className="flex flex-wrap items-center justify-center w-full max-w-4xl mt-4">
         <div className="flex items-center justify-center flex-wrap gap-2">
@@ -502,7 +479,30 @@ const MainLayout: React.FC = () => {
           </label>
         </div>
       </section>
-
+      {selectedSubject && (
+        <section className="max-w-4xl w-full p-4 bg-[#303830] rounded-lg shadow-lg mt-4">
+          <div className="flex w-full items-center justify-between">
+          <button
+            onClick={() => handleSubjectChange(selectedSubjectIndex)}
+            className="bg-[#303830] text-[#cdcfcd] rounded-lg px-4 py-1"
+          >
+            <ArrowCircleLeft size={32} />
+          </button>
+            <div className="flex flex-col items-center mx-4">
+              <h2 className="text-lg text-center font-bold">{selectedSubject.name}</h2>
+              <div>{countdownToExamDate(selectedSubject.examDate || "")}</div>
+            </div>
+            <button
+              onClick={() => handleSubjectChange(selectedSubjectIndex)}
+              className="bg-[#303830] text-[#cdcfcd] rounded-lg px-4 py-1"
+            >
+              <ArrowCircleRight size={32} />
+            </button>
+          </div>
+          <TaskForm selectedSubject={selectedSubject} subjectTasks={subjectTasks} setSubjectTasks={setSubjectTasks} />
+          <TaskList selectedSubject={selectedSubject} subjectTasks={subjectTasks} setSubjectTasks={setSubjectTasks} />
+        </section>
+      )}
       {showSubjects && (
         <SubjectList
           subjects={subjects}

@@ -1,7 +1,7 @@
 'use client';
-import { ArrowCounterClockwise, Play, Stop } from "@phosphor-icons/react/dist/ssr";
+import { ArrowCounterClockwise, Play, Stop } from "@phosphor-icons/react";
 import React, { useState, useEffect, useRef } from "react";
-
+import Draggable from 'react-draggable';
 
 const PomodoroTimer: React.FC = () => {
   const [timeLeft, setTimeLeft] = useState(25 * 60); // Default pomodoro time in seconds
@@ -12,7 +12,8 @@ const PomodoroTimer: React.FC = () => {
     shortBreak: 5,
     longBreak: 15,
   });
-  const [showTimer, setShowTimer] = useState(true);
+  const [isSessionEnded, setIsSessionEnded] = useState(false); // For blinking effect
+  const [showTimer, setShowTimer] = useState(true); // To control visibility of the timer
   const timerIdRef = useRef<NodeJS.Timeout | null>(null);
 
   const formatTime = (seconds: number) => {
@@ -32,12 +33,13 @@ const PomodoroTimer: React.FC = () => {
   const handleStartTimer = () => {
     if (!isRunning) {
       setIsRunning(true);
+      setIsSessionEnded(false); // Reset blinking effect if restarting
       timerIdRef.current = setInterval(() => {
         setTimeLeft(prevTime => {
           if (prevTime <= 1) {
             clearInterval(timerIdRef.current!);
             setIsRunning(false);
-            switchSession();
+            setIsSessionEnded(true); // Trigger blinking effect
             return 0;
           }
           return prevTime - 1;
@@ -56,8 +58,15 @@ const PomodoroTimer: React.FC = () => {
   const handleResetTimer = () => {
     clearInterval(timerIdRef.current!);
     setIsRunning(false);
+    setIsSessionEnded(false);
     setTimeLeft(pomodoroSettings.work * 60);
     setCurrentSession("Work");
+  };
+
+  const handleContinue = () => {
+    switchSession();
+    setIsSessionEnded(false); // Stop blinking after continuing
+    handleStartTimer(); // Automatically start the next session
   };
 
   const switchSession = () => {
@@ -81,69 +90,102 @@ const PomodoroTimer: React.FC = () => {
 
   return (
     <>
+      <style jsx>{`
+        .blinking {
+          animation: blinker 1s linear infinite;
+        }
+        @keyframes blinker {
+          50% { background-color: #425C42; } /* Gold color */
+        }
+      `}</style>
       {showTimer && (
-        <section className="max-w-3xl w-[95vw] p-4 bg-[#303830] rounded-lg shadow-lg ">
-          <h2 className="text-xl font-bold mb-4">Pomodoro Timer</h2>
-          <div className="flex flex-col items-center mb-4">
-            {isRunning ? (
-              <p className="text-lg font-bold mb-2">Currently in {currentSession} session</p>
-            ) : (
-              <div className="flex gap-2 mb-4">
-                <label className="block text-[#cdcfcd] text-sm font-bold">
-                  Work:
-                  <input
-                    type="number"
-                    name="work"
-                    value={pomodoroSettings.work}
-                    onChange={handlePomodoroChange}
-                    className="shadow appearance-none border rounded w-full py-2 px-3 bg-[#cdcfcd] text-gray-700 leading-tight focus:outline-none focus:shadow-outline"
-                  />
-                </label>
-                <label className="block text-[#cdcfcd] text-sm font-bold">
-                  Short Break:
-                  <input
-                    type="number"
-                    name="shortBreak"
-                    value={pomodoroSettings.shortBreak}
-                    onChange={handlePomodoroChange}
-                    className="shadow appearance-none border rounded w-full bg-[#cdcfcd] py-2 px-3 text-gray-700 leading-tight focus:outline-none focus:shadow-outline"
-                  />
-                </label>
-                <label className="block text-[#cdcfcd] text-sm font-bold">
-                  Long Break:
-                  <input
-                    type="number"
-                    name="longBreak"
-                    value={pomodoroSettings.longBreak}
-                    onChange={handlePomodoroChange}
-                    className="shadow appearance-none border rounded bg-[#cdcfcd] w-full py-2 px-3 text-gray-700 leading-tight focus:outline-none focus:shadow-outline"
-                  />
-                </label>
+        <Draggable >
+          <section
+            className={`fixed self-center top-[12vh] p-4 bg-[#303830] max-w-sm rounded-lg shadow-lg resize overflow-auto ${
+              isSessionEnded ? 'blinking' : ''
+            }`}
+          >
+            <div className="cursor-move">
+              {!isRunning && (
+                <h2 className="text-xl font-bold mb-4">Pomodoro Timer</h2>
+              )}
+              
+              <div className="flex flex-col items-center mb-4">
+                {isRunning ? (
+                  <p className="text-lg font-bold mb-2">Currently in {currentSession} session</p>
+                ) : isSessionEnded ? (
+                  <button
+                    onClick={handleContinue}
+                    className="bg-yellow-700 hover:bg-yellow-600 text-white mb-2 font-bold py-2 px-4 rounded-full focus:outline-none focus:shadow-outline"
+                  >
+                    Continue to {currentSession === "Work" ? "Short Break" : currentSession === "Short Break" ? "Long Break" : "Work"}
+                  </button>
+                ) : (
+                  <div className="flex flex-col gap-2 mb-4">
+                    <label className="block text-[#cdcfcd] text-sm font-bold">
+                      Work:
+                      <input
+                        type="number"
+                        name="work"
+                        value={pomodoroSettings.work}
+                        onChange={handlePomodoroChange}
+                        className="shadow appearance-none border rounded w-full py-2 px-3 bg-[#cdcfcd] text-gray-700 leading-tight focus:outline-none focus:shadow-outline"
+                      />
+                    </label>
+                    <div className="flex gap-2">
+                      <label className="block text-[#cdcfcd] text-sm font-bold">
+                        Short Break:
+                        <input
+                          type="number"
+                          name="shortBreak"
+                          value={pomodoroSettings.shortBreak}
+                          onChange={handlePomodoroChange}
+                          className="shadow appearance-none border rounded w-full bg-[#cdcfcd] py-2 px-3 text-gray-700 leading-tight focus:outline-none focus:shadow-outline"
+                        />
+                      </label>
+                      <label className="block text-[#cdcfcd] text-sm font-bold">
+                        Long Break:
+                        <input
+                          type="number"
+                          name="longBreak"
+                          value={pomodoroSettings.longBreak}
+                          onChange={handlePomodoroChange}
+                          className="shadow appearance-none border rounded bg-[#cdcfcd] w-full py-2 px-3 text-gray-700 leading-tight focus:outline-none focus:shadow-outline"
+                        />
+                      </label>
+                    </div>
+                  </div>
+                )}
+
+                <div className="text-4xl font-bold mb-4">{formatTime(timeLeft)}</div>
+
+                {/* Conditionally render the three green buttons only when not in blinking mode */}
+                {!isSessionEnded && (
+                  <div className="flex gap-2">
+                    <button
+                      onClick={handleStartTimer}
+                      className="bg-green-700 hover:bg-green-900 text-white font-bold py-2 px-4 rounded-full focus:outline-none focus:shadow-outline"
+                    >
+                      <Play size={24} />
+                    </button>
+                    <button
+                      onClick={handleStopTimer}
+                      className="bg-green-700 hover:bg-green-900 text-white font-bold py-2 px-4 rounded-full focus:outline-none focus:shadow-outline"
+                    >
+                      <Stop size={24} />
+                    </button>
+                    <button
+                      onClick={handleResetTimer}
+                      className="bg-green-700 hover:bg-green-900 text-white font-bold py-2 px-4 rounded-full focus:outline-none focus:shadow-outline"
+                    >
+                      <ArrowCounterClockwise size={24} />
+                    </button>
+                  </div>
+                )}
               </div>
-            )}
-            <div className="text-4xl font-bold mb-4">{formatTime(timeLeft)}</div>
-            <div className="flex gap-2">
-              <button
-                onClick={handleStartTimer}
-                className="bg-green-700 hover:bg-green-900 text-white font-bold py-2 px-4 rounded-full focus:outline-none focus:shadow-outline"
-              >
-                <Play size={24} />
-              </button>
-              <button
-                onClick={handleStopTimer}
-                className="bg-green-700 hover:bg-green-900 text-white font-bold py-2 px-4 rounded-full focus:outline-none focus:shadow-outline"
-              >
-                <Stop size={24} />
-              </button>
-              <button
-                onClick={handleResetTimer}
-                className="bg-green-700 hover:bg-green-900 text-white font-bold py-2 px-4 rounded-full focus:outline-none focus:shadow-outline"
-              >
-                <ArrowCounterClockwise size={24} />
-              </button>
             </div>
-          </div>
-        </section>
+          </section>
+        </Draggable>
       )}
     </>
   );
