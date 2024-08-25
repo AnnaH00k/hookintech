@@ -53,6 +53,7 @@ export default function Home() {
     { date: "28", privateProjects: "nothing", study: "4.5h reading script on requirements of engineering & doing tasks", work: "4h working for CLYE", health: "rest day", topicOfTheWeek: "Requirements of Engineering with exam end of the week" },
     { date: "29", privateProjects: "3h adding statistics to my hooked0nStudys Page", study: "0.5h requirements of engineering", work: "4.5h working for CLYE", health: "3.33km walk with 15kg backpack", topicOfTheWeek: "Requirements of Engineering with exam end of the week" },
     { date: "30-31", privateProjects: "9.5h writing a book on procrastination", study: "0.5h requirements of engineering", work: "6h working for CLYE", health: "finally got a urban sports membership and trained 2 hours in the gym.", topicOfTheWeek: "How to be a master procrastinater and not writing your exam." },
+    { date: "32", privateProjects: "4h working om my procratination techniques defining how I want to get my procrastination under controll.", study: "3h requirements of engineering", work: "nothing", health: "some cake and yoga", topicOfTheWeek: "How to be a master procrastinater and not writing your exam." },
 
   ];
 
