@@ -55,6 +55,7 @@ export default function Home() {
     { date: "30-31", privateProjects: "9.5h writing a book on procrastination", study: "0.5h requirements of engineering", work: "6h working for CLYE", health: "finally got a urban sports membership and trained 2 hours in the gym.", topicOfTheWeek: "How to be a master procrastinater and not writing your exam." },
     { date: "32", privateProjects: "4h working om my procratination techniques defining how I want to get my procrastination under controll.", study: "3h requirements of engineering", work: "nothing", health: "some cake and yoga", topicOfTheWeek: "How to be a master procrastinater and not writing your exam." },
     { date: "33-37", privateProjects: "3:23h trying to implement a capacitor web and app solution", study: "2h memorizing requirements of engineering, IOT research 6h + (utracked time reading articles)", work: "22h working for Clye", health: "3x at the gym for min 70 min.", topicOfTheWeek: "IOT and threeJS" },
+    { date: "38", privateProjects: "nothing", study: " 1h IOT research reading articles", work: "4h working for Clye", health: "some stretching/rest day", topicOfTheWeek: "IOT and threeJS" },
 
   ];
 
