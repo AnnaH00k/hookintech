@@ -6,9 +6,10 @@ import SubjectList from "./components/SubjectList";
 import TaskForm from "./components/TaskForm";
 import TaskList from "./components/TaskList";
 import PomodoroTimer from "./components/PomodoroTimer";
-import { ArrowCircleLeft, ArrowCircleRight, Clock, CloudArrowDown, ColumnsPlusRight, Download, FileArrowUp, Notebook, Trash } from "@phosphor-icons/react/dist/ssr";
+import { ArrowCircleLeft, ArrowCircleRight, Clock, CloudArrowDown, ColumnsPlusRight, Download, FileArrowUp, ListChecks, Notebook, Trash } from "@phosphor-icons/react/dist/ssr";
 import { Pie } from "react-chartjs-2";
 import { Chart as ChartJS, ArcElement, Tooltip, Legend } from "chart.js";
+import DailyToDoList from "./components/DailyToDoList";
 
 ChartJS.register(ArcElement, Tooltip, Legend);
 
@@ -35,6 +36,7 @@ interface SubjectTasks {
 const MainLayout: React.FC = () => {
   const [showSubjects, setShowSubjects] = useState(false);
   const [showTimer, setShowTimer] = useState(false);
+  const [showDailyToDoList, setShowDailyToDoList] = useState(false);
   const [selectedSubject, setSelectedSubject] = useState<Subject | null>(null);
   const [selectedSubjectIndex, setSelectedSubjectIndex] = useState<number>(0);
   const [showSubjectAddition, setShowSubjectAddition] = useState(false);
@@ -99,6 +101,7 @@ const MainLayout: React.FC = () => {
   const toggleSubjects = () => setShowSubjects(!showSubjects);
   const toggleSubjectAddition = () => setShowSubjectAddition(!showSubjectAddition);
   const toggleTimer = () => setShowTimer(!showTimer);
+  const toggleDailyToDoList = () => setShowDailyToDoList(!showDailyToDoList);
 
   const handleSubjectChange = (index: number) => {
     // Find the next non-passed subject index when moving forward
@@ -453,6 +456,13 @@ const MainLayout: React.FC = () => {
             <Clock size={32} weight="light" />
             <p>Pomodoro</p>
           </button>
+          <button
+            onClick={toggleDailyToDoList}
+            className={`text-md text-white text-center rounded-lg px-3 py-2 ${showDailyToDoList ? "bg-green-900" : "bg-[#303830]"}`}
+          >
+            <ListChecks size={32} weight="light" />
+            <p>To-do</p>
+          </button>
         </div>
 
         <div className="flex items-center justify-center flex-wrap gap-2 m-4 sm:fixed bottom-4 right-4">
@@ -524,6 +534,7 @@ const MainLayout: React.FC = () => {
       )}
 
       {showTimer && <PomodoroTimer />}
+      {showDailyToDoList && <DailyToDoList />}
     </main>
   );
 };
