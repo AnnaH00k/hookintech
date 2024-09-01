@@ -37,7 +37,7 @@ const TaskForm: React.FC<TaskFormProps> = ({ selectedSubject, subjectTasks, setS
         <input type="text" id="taskName" name="taskName" className="shadow appearance-none border rounded w-full py-2 px-3 text-gray-700 leading-tight focus:outline-none focus:shadow-outline" placeholder="Enter task name" />
       </div>
       <div className="m-2 flex  justify-between">
-        <button type="submit" className="bg-green-600 hover:bg-green-700 text-white font-bold py-2 px-4 rounded focus:outline-none focus:shadow-outline">Add Task</button>
+        <button type="submit" className="bg-greeny hover:scale-[110%] text-white font-bold py-2 px-4 rounded focus:outline-none focus:shadow-outline">Add Task</button>
       </div>
     </form>
   );

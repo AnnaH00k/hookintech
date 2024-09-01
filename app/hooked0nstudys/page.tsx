@@ -294,7 +294,7 @@ const MainLayout: React.FC = () => {
     datasets: [
       {
         data: [openSubjects, finishedSubjects],
-        backgroundColor: ["#303830", "#4CAF50"],
+        backgroundColor: ["#1A2310", "#7C9838"],
         borderWidth: 0,
         label:`Open: ${openSubjects} | Completed: ${finishedSubjects}`,
       },
@@ -380,15 +380,15 @@ const MainLayout: React.FC = () => {
       <div className="flex flex-col md:flex-col justify-around items-center w-full max-w-4xl gap-4">
         <div className="flex flex-col md:flex-row items-center justify-center gap-4">
 
-        <div className="flex flex-col items-center p-4 bg-green-700 text-white rounded-lg shadow-md ">
+        <div className="flex flex-col items-center p-4 border-2 border-secondary text-text rounded-lg shadow-text shadow-sm ">
           <p>{`Open: ${openSubjects} | Completed: ${finishedSubjects}`}</p>
         </div>
         <div className="w-[20vh]">
           <Pie data={chartData} />
         </div>
-        <div className="flex items-center justify-center p-4 bg-green-700 text-white rounded-lg shadow-md">
+        <div className="flex items-center justify-center p-4 border-2 border-secondary text-text rounded-lg shadow-text shadow-sm">
           {averageNote !== null ? (
-            <p>{`Average Note: ${averageNote.toFixed(2)}`}</p>
+            <p>{`Average Grade: ${averageNote.toFixed(2)}`}</p>
           ) : (
             <p>No notes available for calculation</p>
           )}
@@ -402,7 +402,7 @@ const MainLayout: React.FC = () => {
               Studys End:
             </p>
             <input
-              className="border-1 ml-2 bg-[#303830] border-gray-300 rounded-lg p-2"
+              className="border-1 ml-2 bg-lighterBackground border-text rounded-lg p-2"
               type="date"
               id="studysEnd"
               name="studysEnd"
@@ -414,15 +414,15 @@ const MainLayout: React.FC = () => {
             <div className="flex flex-row gap-4">
 
                 <div className="flex flex-col">
-                <p className="block text-[#cdcfcd] text-sm font-bold mb-2">Quickest date to fisish:</p>
-                <div className="flex items-center justify-center gap-4 p-4 bg-[#303830] text-white rounded-lg shadow-md">
+                <p className="block text-text text-sm font-bold mb-2">Quickest date to fisish:</p>
+                <div className="flex items-center justify-center gap-4 p-4 border-2 border-secondary text-text rounded-lg shadow-text shadow-sm">
                   <p> {averageMinSubjectTime}</p>
                 </div>
                 </div>
 
                 <div className="flex flex-col">
-                <p className="block text-[#cdcfcd] text-sm font-bold mb-2">Average time per subject:</p>
-                <div className="flex items-center justify-center gap-4 p-4 bg-[#303830] text-white rounded-lg shadow-md">
+                <p className="block text-text text-sm font-bold mb-2">Average time per subject:</p>
+                <div className="flex items-center justify-center gap-4 p-4 border-2 border-secondary text-text rounded-lg shadow-text shadow-sm">
                 <p> {averageMaxSubjectTime}</p>
                 </div>
                 </div>
@@ -437,28 +437,28 @@ const MainLayout: React.FC = () => {
         <div className="flex items-center justify-center flex-wrap gap-2">
           <button
             onClick={toggleSubjects}
-            className={`text-md text-white text-center rounded-lg px-3 py-2 ${showSubjects ? "bg-green-900" : "bg-[#303830]"}`}
+            className={`text-md text-center rounded-lg px-3 py-2 ${showSubjects ? "bg-greeny text-background" : "bg-lighterBackground text-text"}`}
           >
             <Notebook size={32} weight="light" />
             <p>Subjects</p>
           </button>
           <button
             onClick={toggleSubjectAddition}
-            className={`text-md text-white text-center rounded-lg px-3 py-2 ${showSubjectAddition ? "bg-green-900" : "bg-[#303830]"}`}
+            className={`text-md text-center rounded-lg px-3 py-2 ${showSubjectAddition ? "bg-greeny text-background" : "bg-lighterBackground text-text"}`}
           >
             <ColumnsPlusRight size={32} weight="light" /> 
             <p>Add subject</p>
           </button>
           <button
             onClick={toggleTimer}
-            className={`text-md text-white text-center rounded-lg px-3 py-2 ${showTimer ? "bg-green-900" : "bg-[#303830]"}`}
+            className={`text-md text-center rounded-lg px-3 py-2 ${showTimer ? "bg-greeny text-background" : "bg-lighterBackground text-text"}`}
           >
             <Clock size={32} weight="light" />
             <p>Pomodoro</p>
           </button>
           <button
             onClick={toggleDailyToDoList}
-            className={`text-md text-white text-center rounded-lg px-3 py-2 ${showDailyToDoList ? "bg-green-900" : "bg-[#303830]"}`}
+            className={`text-md text-center rounded-lg px-3 py-2 ${showDailyToDoList ? "bg-greeny text-background" : "bg-lighterBackground text-text"}`}
           >
             <ListChecks size={32} weight="light" />
             <p>To-do</p>
@@ -474,11 +474,11 @@ const MainLayout: React.FC = () => {
           </button>
           <button
             onClick={backupData}
-            className="text-md text-white text-center bg-blue-900 rounded-lg px-3 py-2"
+            className="text-md text-text text-center bg-blue-900 rounded-lg px-3 py-2"
           >
             <Download size={32} />
           </button>
-          <label className="text-md text-white text-center bg-blue-900 rounded-lg px-3 py-2 cursor-pointer">
+          <label className="text-md text-text text-center bg-blue-900 rounded-lg px-3 py-2 cursor-pointer">
             <FileArrowUp size={32} />
             <input
               type="file"
@@ -490,11 +490,11 @@ const MainLayout: React.FC = () => {
         </div>
       </section>
       {selectedSubject && (
-        <section className="max-w-4xl w-full p-4 bg-[#303830] rounded-lg shadow-lg mt-4">
+        <section className="max-w-4xl w-full p-4 bg-lighterBackground rounded-lg shadow-lg mt-4">
           <div className="flex w-full items-center justify-between">
           <button
             onClick={() => handleSubjectChange(selectedSubjectIndex)}
-            className="bg-[#303830] text-[#cdcfcd] rounded-lg px-4 py-1"
+            className=" text-text rounded-lg px-4 py-1"
           >
             <ArrowCircleLeft size={32} />
           </button>
@@ -504,7 +504,7 @@ const MainLayout: React.FC = () => {
             </div>
             <button
               onClick={() => handleSubjectChange(selectedSubjectIndex)}
-              className="bg-[#303830] text-[#cdcfcd] rounded-lg px-4 py-1"
+              className=" text-text rounded-lg px-4 py-1"
             >
               <ArrowCircleRight size={32} />
             </button>

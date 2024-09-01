@@ -38,9 +38,9 @@ const ToDoList: React.FC = () => {
 
   return (
     <Draggable>
-      <section className="fixed self-center top-[12vh] p-4 bg-[#303830] max-w-sm rounded-lg shadow-lg resize overflow-auto">
+      <section className="fixed self-center top-[12vh] p-4 bg-lighterBackground max-w-sm rounded-lg shadow-sm shadow-text resize overflow-auto">
         <div className="cursor-move">
-          <h2 className="text-xl font-bold mb-4 text-white">To-Do List</h2>
+          <h2 className="text-xl font-bold mb-4 text-text">To-Do List</h2>
           
           <div className="flex flex-col items-center mb-4">
             <ul className="w-full">
@@ -48,7 +48,7 @@ const ToDoList: React.FC = () => {
                 <li
                   key={index}
                   className={`flex items-center justify-between p-2 rounded mb-2 ${
-                    todo.completed ? 'bg-green-900 text-background border border-background line-through ' : 'bg-background text-white border border-green-900'
+                    todo.completed ? 'bg-greeny text-background border border-background line-through ' : 'bg-background text-text'
                   }`}
                 >
                   <span
@@ -56,15 +56,15 @@ const ToDoList: React.FC = () => {
                     className="mr-2 cursor-pointer"
                   >
                     {todo.completed ? (
-                      <CheckCircle size={20} className="text-green-500" />
+                      <CheckCircle size={20} className="text-background" />
                     ) : (
-                      <Circle size={20} className="text-gray-500" />
+                      <Circle size={20} className="text-greeny" />
                     )}
                   </span>
                   <span className="flex-1">{todo.text}</span>
                   <button
                     onClick={() => handleRemoveTodo(index)}
-                    className="hover:text-red-500 text-white py-1 px-2 ml-2"
+                    className="hover:text-red-500 text-text py-1 px-2 ml-2"
                   >
                     <TrashSimple size={16} />
                   </button>
@@ -78,11 +78,11 @@ const ToDoList: React.FC = () => {
               onChange={(e) => setNewTodo(e.target.value)}
               onKeyDown={handleKeyDown}  
               placeholder="Add a new task"
-              className="shadow appearance-none border rounded w-full py-2 px-3 bg-[#cdcfcd] text-gray-700 mb-2 leading-tight focus:outline-none focus:shadow-outline"
+              className="shadow appearance-none  rounded w-full py-2 px-3 bg-text text-secondary mb-2 leading-tight focus:outline-none focus:shadow-outline"
             />
             <button
               onClick={handleAddTodo}
-              className="bg-green-700 hover:bg-green-900 text-white font-bold py-2 px-4 rounded-full focus:outline-none focus:shadow-outline mb-4"
+              className="bg-greeny hover:bg-green-900 text-background font-bold py-2 px-4 rounded-full focus:outline-none focus:shadow-outline mb-4"
             >
               Add Task
             </button>

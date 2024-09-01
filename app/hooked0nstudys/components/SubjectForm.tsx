@@ -56,7 +56,7 @@ const SubjectForm: React.FC<SubjectFormProps> = ({ subjects, setSubjects, subjec
   };
 
   return (
-    <section className="max-w-3xl w-[95vw] p-4 bg-[#303830] rounded-lg shadow-lg">
+    <section className="max-w-3xl w-[95vw] p-4 bg-lighterBackground rounded-lg shadow-lg">
       <form className="flex flex-col items-center justify-center" onSubmit={handleSubjectSubmit}>
         <div className="flex sm:flex-row flex-col items-center justify-center">
           <div className="sm:m-4 w-[50vw] min-w-[300px] max-w-[500px]">
@@ -117,7 +117,7 @@ const SubjectForm: React.FC<SubjectFormProps> = ({ subjects, setSubjects, subjec
         <div className="flex items-center justify-between">
           <button
             type="submit"
-            className="bg-green-600 hover:bg-green-700 text-white font-bold py-2 px-4 rounded focus:outline-none focus:shadow-outline"
+            className="bg-greeny hover:bg-green-700 text-white font-bold py-2 px-4 rounded focus:outline-none focus:shadow-outline"
           >
             Submit
           </button>

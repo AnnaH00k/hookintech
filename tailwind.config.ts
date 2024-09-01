@@ -10,7 +10,10 @@ const config: Config = {
     extend: {
     colors:{
       "background":"#0A1109",
+      "lighterBackground":"#1A2310",
+      "secondary":"#303830",
       "text":"#cdcfcd",
+      "greeny":"#7C9838",
     },
 
       boxShadow: {

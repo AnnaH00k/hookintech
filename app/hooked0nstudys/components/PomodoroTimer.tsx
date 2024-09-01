@@ -101,7 +101,7 @@ const PomodoroTimer: React.FC = () => {
       {showTimer && (
         <Draggable >
           <section
-            className={`fixed self-center top-[12vh] p-4 bg-[#303830] max-w-sm rounded-lg shadow-lg resize overflow-auto ${
+            className={`fixed self-center top-[12vh] p-4 bg-lighterBackground max-w-sm rounded-lg shadow-sm shadow-text resize overflow-auto ${
               isSessionEnded ? 'blinking' : ''
             }`}
           >
@@ -122,25 +122,25 @@ const PomodoroTimer: React.FC = () => {
                   </button>
                 ) : (
                   <div className="flex flex-col gap-2 mb-4">
-                    <label className="block text-[#cdcfcd] text-sm font-bold">
+                    <label className="block text-text text-sm font-bold">
                       Work:
                       <input
                         type="number"
                         name="work"
                         value={pomodoroSettings.work}
                         onChange={handlePomodoroChange}
-                        className="shadow appearance-none border rounded w-full py-2 px-3 bg-[#cdcfcd] text-gray-700 leading-tight focus:outline-none focus:shadow-outline"
+                        className="shadow appearance-none rounded w-full py-2 px-3 bg-text text-gray-700 leading-tight focus:outline-none focus:shadow-outline"
                       />
                     </label>
                     <div className="flex gap-2">
-                      <label className="block text-[#cdcfcd] text-sm font-bold">
+                      <label className="block text-text text-sm font-bold">
                         Short Break:
                         <input
                           type="number"
                           name="shortBreak"
                           value={pomodoroSettings.shortBreak}
                           onChange={handlePomodoroChange}
-                          className="shadow appearance-none border rounded w-full bg-[#cdcfcd] py-2 px-3 text-gray-700 leading-tight focus:outline-none focus:shadow-outline"
+                          className="shadow appearance-none rounded w-full bg-text py-2 px-3 text-gray-700 leading-tight focus:outline-none focus:shadow-outline"
                         />
                       </label>
                       <label className="block text-[#cdcfcd] text-sm font-bold">
@@ -150,7 +150,7 @@ const PomodoroTimer: React.FC = () => {
                           name="longBreak"
                           value={pomodoroSettings.longBreak}
                           onChange={handlePomodoroChange}
-                          className="shadow appearance-none border rounded bg-[#cdcfcd] w-full py-2 px-3 text-gray-700 leading-tight focus:outline-none focus:shadow-outline"
+                          className="shadow appearance-none rounded bg-text w-full py-2 px-3 text-gray-700 leading-tight focus:outline-none focus:shadow-outline"
                         />
                       </label>
                     </div>
@@ -164,19 +164,19 @@ const PomodoroTimer: React.FC = () => {
                   <div className="flex gap-2">
                     <button
                       onClick={handleStartTimer}
-                      className="bg-green-700 hover:bg-green-900 text-white font-bold py-2 px-4 rounded-full focus:outline-none focus:shadow-outline"
+                      className="bg-greeny hover:bg-green-900 text-text font-bold py-2 px-4 rounded-full focus:outline-none focus:shadow-outline"
                     >
                       <Play size={24} />
                     </button>
                     <button
                       onClick={handleStopTimer}
-                      className="bg-green-700 hover:bg-green-900 text-white font-bold py-2 px-4 rounded-full focus:outline-none focus:shadow-outline"
+                      className="bg-greeny hover:bg-green-900 text-text font-bold py-2 px-4 rounded-full focus:outline-none focus:shadow-outline"
                     >
                       <Stop size={24} />
                     </button>
                     <button
                       onClick={handleResetTimer}
-                      className="bg-green-700 hover:bg-green-900 text-white font-bold py-2 px-4 rounded-full focus:outline-none focus:shadow-outline"
+                      className="bg-greeny hover:bg-green-900 text-text font-bold py-2 px-4 rounded-full focus:outline-none focus:shadow-outline"
                     >
                       <ArrowCounterClockwise size={24} />
                     </button>
