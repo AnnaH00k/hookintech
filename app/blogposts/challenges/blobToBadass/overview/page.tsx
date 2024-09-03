@@ -151,21 +151,22 @@ export default function Home() {
   // Generate post text for a specific task
   const generatePostText = (task: { date: any; privateProjects: any; study: any; work: any; health: any; topicOfTheWeek: any; question:any; answer:any }) => {
     return`Day ${task.date} ||${task.question}
+    
     ${task.answer}
 
-    🕵🏻‍♀Private Projects: 
+🕵🏻‍♀Private Projects: 
       - ${task.privateProjects}
     
-    📚Study: 
+📚Study: 
       - ${task.study}
     
-    👩🏻‍💻Work: 
+👩🏻‍💻Work: 
       - ${task.work}
     
-    🦦Health: 
+🦦Health: 
       - ${task.health}
     
-    📍Topic of the week:
+📍Topic of the week:
       - ${task.topicOfTheWeek} 
     
 
