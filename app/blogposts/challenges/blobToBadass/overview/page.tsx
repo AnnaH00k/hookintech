@@ -59,6 +59,7 @@ export default function Home() {
     { date: "38", privateProjects: "nothing", study: " 1h IOT research reading articles", work: "4h working for Clye", health: "some stretching/rest day", topicOfTheWeek: "IOT and threeJS", question: "", answer:"" },
     { date: "39-41", privateProjects: "4h working on some python scripts & 3h API update for FABapp", study: " 3h IOT research reading articles", work: "17h working for Clye, putting in some freetime to experiment with blender and acerternity", health: "2h gym", topicOfTheWeek: "IOT and threeJS", question: "What is a GLB and a GLTF file?", answer:"- GLB: This is the binary version of the GLTF format. It packages all the 3D data, textures, and animations into a single file, making it easier to share and use in web and mobile applications.\n - GLTF: This stands for \"GL Transmission Format.\" It stores 3D model data in a JSON format. Unlike GLB, it typically references external files for textures, but it's still lightweight and efficient for web use. " },
     { date: "42", privateProjects: "redesigning my daily overview page", study: " 3h IOT research reading articles", work: "6h working for Clye", health: "nothing", topicOfTheWeek: "IOT", question: "What is QoL?", answer:"QoL stands for \"Quality of Life.\" It refers to the overall well-being and happiness of a person or group, considering factors like health, comfort, safety, and life satisfaction. It measures how good or satisfying life is for someone, beyond just wealth or material things." },
+    { date: "43", privateProjects: "nothing", study: " 5h IOT research reading articles taking notes", work: "nothing", health: "nothing", topicOfTheWeek: "IOT", question: "Service robots in nursing homes?", answer:"Service robots in nursing homes are machines designed to assist caregivers with tasks such as delivering items, observing residents, and providing support, while also ensuring a safe and comfortable environment for elderly residents, including those with cognitive impairments like dementia" },
 
   ];
 
@@ -152,7 +153,7 @@ export default function Home() {
   const generatePostText = (task: { date: any; privateProjects: any; study: any; work: any; health: any; topicOfTheWeek: any; question:any; answer:any }) => {
     return`Day ${task.date} ||${task.question}
     
-    ${task.answer}
+${task.answer}
 
 🕵🏻‍♀Private Projects: 
       - ${task.privateProjects}
