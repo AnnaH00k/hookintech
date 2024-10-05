@@ -62,22 +62,12 @@ const ConsentBanner = () => {
       analytics_storage: true,
     };
     setConsent(allConsent);
-    Cookies.set("myAwesomeCookieConsent1", JSON.stringify(allConsent), { expires: 7 });
+    Cookies.set("myAwesomeCookieConsent1", JSON.stringify(allConsent), { expires: 365 });
     updateConsentStatus(allConsent);
     loadGoogleAnalytics();
   };
 
-  const handleAcceptNecessary = () => {
-    const necessaryConsent: Consent = {
-      ad_user_data: false,
-      ad_personalization: false,
-      ad_storage: false,
-      analytics_storage: false,
-    };
-    setConsent(necessaryConsent);
-    Cookies.set("myAwesomeCookieConsent1", JSON.stringify(necessaryConsent), { expires: 1 });
-    updateConsentStatus(necessaryConsent);
-  };
+
 
   // Update the consent status
   const updateConsentStatus = (consent: Consent) => {
