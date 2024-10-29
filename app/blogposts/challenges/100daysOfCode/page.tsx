@@ -21,8 +21,8 @@ export default function CodeJourney() {
           This is my guide and progress for the 100 days of code challenge. I will be updating this page daily with my goals and stats.
         </p>
         <div className="w-full flex justify-center items-center min-h-[20vh] p-4">
-        <figure><embed className="h-[20vh] min-h-[200px] w-auto" src="https://wakatime.com/share/@hooked0ntech/2e93f1d8-d866-414e-9c10-eb0f395b141d.svg"></embed></figure>
         <figure><embed className="h-[20vh] min-h-[200px] w-auto" src="https://wakatime.com/share/@hooked0ntech/bce096f1-f745-44e9-bd3c-610bd08720eb.svg"></embed></figure>
+        <figure><embed className="h-[20vh] min-h-[200px] w-auto" src="https://wakatime.com/share/@hooked0ntech/a3093e73-b600-43f6-aa44-83e7cae41064.svg"></embed></figure>
         </div>
         
         <section className="w-full flex flex-col items-center">
