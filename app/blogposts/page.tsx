@@ -16,13 +16,27 @@ export default function Home() {
           </p>
 
           <div className="grid gap-4 w-auto md:grid-cols-2">
+          <a
+              href="/blogposts/challenges/100daysOfCode"
+              className="flex flex-col rounded-lg max-w-[400px] min-h-[150px] sm:w-[40vw] w-full text-center items-center justify-center gap-2 bg-[#151C14] sm:hover:bg-[#1A2310] sm:hover:scale-105 p-4"
+            >
+              <h2 className="text-lg text-[#7C9838] font-bold ">
+                {"New Challenge: 100 days of Code"}
+              </h2>
+              <p className="text-md text-[#909d90]">
+                {""}
+              </p>
+              <div className="text-sm sm:text-md text-[#A0A2A0] hover:text-[#fff] rounded-full bg-[#303830] px-3 py-1">
+                {"Read more"}
+              </div>
+            </a>
 
           <a
               href="/blogposts/procrastinateToInnovate"
               className="flex flex-col rounded-lg max-w-[400px] min-h-[150px] sm:w-[40vw] w-full text-center items-center justify-center gap-2 bg-[#151C14] sm:hover:bg-[#1A2310] sm:hover:scale-105 p-4"
             >
               <h2 className="text-lg text-[#7C9838] font-bold ">
-                {"New Book: Procrastinate to Innovate"}
+                {"Procrastinate to Innovate"}
               </h2>
               <p className="text-md text-[#909d90]">
                 {""}
