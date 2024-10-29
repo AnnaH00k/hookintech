@@ -14,9 +14,19 @@ export default function CodeJourney() {
     <div className="min-h-[80vh] bg-[#070b0b] text-[#A0A2A0]">
       <main className="flex flex-col items-center min-h-[80vh] justify-center sm:p-20 py-5 w-full">
         <h1 className="text-3xl sm:text-5xl font-bold mt-[5vh] mb-10">100 Days of Code</h1>
-        <p className="text-center mb-10">
+        <p className="text-center">
           This is my guide and progress for the 100 days of code challenge. I will be updating this page daily with my goals and stats.
         </p>
+        <div className="w-full flex justify-center items-center min-h-[20vh] p-4 ">
+        <figure>
+          <img  className="h-[20vh] min-h-[200px] w-auto" src="https://wakatime.com/share/@hooked0ntech/2e93f1d8-d866-414e-9c10-eb0f395b141d.svg" alt="WakaTime Chart 1" />
+        </figure>
+        <figure>
+          <img  className="h-[20vh] min-h-[200px] w-auto" src="https://wakatime.com/share/@hooked0ntech/bce096f1-f745-44e9-bd3c-610bd08720eb.svg" alt="WakaTime Chart 2" />
+        </figure>
+
+
+        </div>
         
         <section className="w-full flex flex-col items-center">
           <table className="text-sm sm:text-lg w-[90vw] max-w-5xl">
