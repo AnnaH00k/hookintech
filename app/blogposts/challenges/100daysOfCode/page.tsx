@@ -4,7 +4,7 @@ import { useState, useEffect } from "react";
 
 export default function CodeJourney() {
   const [ideas, setIdeas] = useState([
-    { day: "1", goal: "Setup overview page for 100 days of code", stats: "Pending", status: "pending" },
+    { day: "1", goal: "Setup overview page for 100 days of code", status: "complete" },
     // More days can be added here
   ]);
 
@@ -28,7 +28,6 @@ export default function CodeJourney() {
               <tr>
                 <th className="px-2 py-1 sm:px-4 sm:py-2 border border-[#303830]">Day</th>
                 <th className="px-2 py-1 sm:px-4 sm:py-2 border border-[#303830]">Goal of the Day</th>
-                <th className="px-2 py-1 sm:px-4 sm:py-2 border border-[#303830]">Stats</th>
                 <th className="px-2 py-1 sm:px-4 sm:py-2 border border-[#303830]">Status</th>
               </tr>
             </thead>
@@ -37,7 +36,6 @@ export default function CodeJourney() {
                 <tr key={index}>
                   <td className="px-2 py-1 sm:px-4 sm:py-2 border border-[#303830] text-center">{idea.day}</td>
                   <td className="px-2 py-1 sm:px-4 sm:py-2 border border-[#303830]">{idea.goal}</td>
-                  <td className="px-2 py-1 sm:px-4 sm:py-2 border border-[#303830]">{idea.stats}</td>
                   <td className="px-2 py-1 sm:px-4 sm:py-2 border border-[#303830] text-center">
                     {idea.status === "complete" && "✅"}
                     {idea.status === "incomplete" && "❌"}
@@ -57,14 +55,3 @@ export default function CodeJourney() {
   );
 }
 
-// Optional function for fetching stats (uncomment if using API integration)
-// async function fetchStats() {
-//   const response = await fetch("https://wakatime.com/api/...");
-//   const data = await response.json();
-//   return data.map((day, index) => ({
-//     day: index + 1,
-//     goal: day.description,
-//     stats: day.time_spent,
-//     status: day.is_complete ? "complete" : "incomplete"
-//   }));
-// }
