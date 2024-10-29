@@ -5,6 +5,9 @@ import { useState, useEffect } from "react";
 export default function CodeJourney() {
   const [ideas, setIdeas] = useState([
     { day: "1", goal: "Setup overview page for 100 days of code", status: "complete" },
+    { day: "2", goal: "Start with new code stack for oop2 case study", status: "pending" },
+
+    
     // More days can be added here
   ]);
 
