@@ -6,6 +6,7 @@ export default function CodeJourney() {
   const [ideas, setIdeas] = useState([
     { day: "1", goal: "Setup overview page for 100 days of code", status: "complete" },
     { day: "2", goal: "Start with new code stack for university case study, Learning about Java Beans and Java Server Faces", status: "complete" },
+    
     // More days can be added here
   ]);
   const [fullscreenEmbed, setFullscreenEmbed] = useState<string | null>(null);
@@ -24,8 +25,11 @@ export default function CodeJourney() {
     <div className="min-h-[80vh] bg-[#070b0b] text-[#A0A2A0] relative">
       <main className="flex flex-col items-center min-h-[80vh] justify-center sm:p-20 py-5 w-full">
         <h1 className="text-3xl sm:text-5xl font-bold mt-[5vh] mb-10">100 Days of Code</h1>
+        <p className="text-center w-[90vw]">
+          I will be updating this page daily with my goals and stats.
+        </p>
         <p className="text-center mb-10 w-[90vw]">
-          This is my guide and progress for the 100 days of code challenge. I will be updating this page daily with my goals and stats.
+         <span className="font-bold">Goal:</span> at least  20 min. of coding daily
         </p>
         
         {/* Clickable Wrapper around embed elements */}
