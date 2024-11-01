@@ -6,7 +6,10 @@ export default function CodeJourney() {
   const [ideas, setIdeas] = useState([
     { day: "1", goal: "Setup overview page for 100 days of code", status: "complete" },
     { day: "2", goal: "Start with new code stack for university case study, Learning about Java Beans and Java Server Faces", status: "complete" },
-    
+    { day: "3", goal: "Programming some frontend stuff for work", status: "complete" },
+    { day: "4", goal: "Beginn coding for case study (Programming an industrial Information System with Java EE) ", status: "pending" },
+
+
     // More days can be added here
   ]);
   const [fullscreenEmbed, setFullscreenEmbed] = useState<string | null>(null);
