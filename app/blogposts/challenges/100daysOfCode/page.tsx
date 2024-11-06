@@ -10,8 +10,9 @@ export default function CodeJourney() {
     { day: "4", goal: "Begin coding for case study (Programming an industrial Information System with Java EE)", status: "complete" },
     { day: "5", goal: "Designing landing page Ideas while relaxing", status: "complete" },
     { day: "6", goal: "Automated overview for all hooked0n.tech Pages", status: "complete" },
-    { day: "7", goal: "Learn about the `use client` directive in React. Build a simple component to understand its use in Next.js.", status: "pending" },
-    { day: "8", goal: "Create a basic Next.js project and implement a page that uses client-side rendering.", status: "pending" },
+    { day: "7", goal: "Learn about the `use client` directive in React.Programming for work.", status: "complete" },
+    { day: "8", goal: "Work on a maven project", status: "complete" },
+
     { day: "9", goal: "Learn about APIs and how to use `fetch` in TypeScript. Fetch data from a public API (like JSONPlaceholder).", status: "pending" },
     { day: "10", goal: "Build a small app that displays data fetched from the API (e.g., a user list).", status: "pending" },
     { day: "11", goal: "Set up an Express server and create your first endpoint that returns a JSON response.", status: "pending" },
