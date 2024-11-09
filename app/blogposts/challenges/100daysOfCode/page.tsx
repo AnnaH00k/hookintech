@@ -12,11 +12,13 @@ export default function CodeJourney() {
     { day: "6", goal: "Automated overview for all hooked0n.tech Pages", status: "complete" },
     { day: "7", goal: "Learn about the `use client` directive in React.Programming for work.", status: "complete" },
     { day: "8", goal: "Work on a maven project", status: "complete" },
+    { day: "9", goal: "Design and start building Application for ghost nets.", status: "complete" },
+    { day: "10", goal: "programming for work & connecting Ghostnet project to Github", status: "complete" },
+    { day: "11", goal: "programming for work.", status: "complete" },
 
-    { day: "9", goal: "Learn about APIs and how to use `fetch` in TypeScript. Fetch data from a public API (like JSONPlaceholder).", status: "pending" },
-    { day: "10", goal: "Build a small app that displays data fetched from the API (e.g., a user list).", status: "pending" },
-    { day: "11", goal: "Set up an Express server and create your first endpoint that returns a JSON response.", status: "pending" },
+
     { day: "12", goal: "Connect your frontend app to your Express backend using Axios or the Fetch API.", status: "pending" },
+    
     { day: "13", goal: "Implement error handling for your API requests in your frontend application.", status: "pending" },
     { day: "14", goal: "Add a loading state to your API data fetching component to improve user experience.", status: "pending" },
     { day: "15", goal: "Learn about RESTful API design principles. Start building a simple CRUD API with Express.", status: "pending" },
