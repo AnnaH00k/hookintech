@@ -15,11 +15,10 @@ export default function CodeJourney() {
     { day: "9", goal: "Design and start building Application for ghost nets.", status: "complete" },
     { day: "10", goal: "programming for work & connecting Ghostnet project to Github", status: "complete" },
     { day: "11", goal: "programming for work.", status: "complete" },
+    { day: "12", goal: "Update days of code journey", status: "complete" },
+    { day: "13", goal: "Make a birthday page for my 24 birthday and remake cookie banner", status: "pending" },
 
 
-    { day: "12", goal: "Connect your frontend app to your Express backend using Axios or the Fetch API.", status: "pending" },
-    
-    { day: "13", goal: "Implement error handling for your API requests in your frontend application.", status: "pending" },
     { day: "14", goal: "Add a loading state to your API data fetching component to improve user experience.", status: "pending" },
     { day: "15", goal: "Learn about RESTful API design principles. Start building a simple CRUD API with Express.", status: "pending" },
     { day: "16", goal: "Implement the Create and Read endpoints for your API (POST and GET).", status: "pending" },
