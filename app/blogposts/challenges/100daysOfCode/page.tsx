@@ -16,12 +16,16 @@ export default function CodeJourney() {
     { day: "10", goal: "programming for work & connecting Ghostnet project to Github", status: "complete" },
     { day: "11", goal: "programming for work.", status: "complete" },
     { day: "12", goal: "Update days of code journey", status: "complete" },
-    { day: "13", goal: "Make a birthday page for my 24 birthday and remake cookie banner", status: "pending" },
+    { day: "13", goal: "Make a birthday goal and reflection page for my 24 birthday", status: "complete" },
+    { day: "14", goal: "Work on ghost net Pages (Implementing design)", status: "complete" },
+    { day: "15", goal: "Make a project called DiaTopia for fun (diabetes innovations overview page)", status: "complete" },
 
 
-    { day: "14", goal: "Add a loading state to your API data fetching component to improve user experience.", status: "pending" },
-    { day: "15", goal: "Learn about RESTful API design principles. Start building a simple CRUD API with Express.", status: "pending" },
-    { day: "16", goal: "Implement the Create and Read endpoints for your API (POST and GET).", status: "pending" },
+    { day: "16", goal: "create some new pages at work, finish ghost net basic UI", status: "pending" },
+
+
+
+
     { day: "17", goal: "Implement the Update and Delete endpoints for your API (PUT and DELETE).", status: "pending" },
     { day: "18", goal: "Connect your API to a MongoDB database using Mongoose. Set up models for your data.", status: "pending" },
     { day: "19", goal: "Write unit tests for your API endpoints using a testing library like Jest.", status: "pending" },
