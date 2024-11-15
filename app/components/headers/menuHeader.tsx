@@ -33,8 +33,8 @@ export default function MenuHeader() {
   }, [isMenuOpen]);
 
   return (
-    <header>
-      <nav className='flex bg-[#0A1109] flex-col sm:justify-start justify-center items-center'>
+    <header className='bg-background w-full h-auto'>
+      <nav className='flex bg-[#0A1109] z-100 flex-col sm:justify-start justify-center items-center'>
 
         <button
           onClick={toggleMenu}

@@ -47,7 +47,7 @@ const ConsentBanner = () => {
   }, [isClient]);
 
   const handleAccept = () => {
-    Cookies.set("myAwesomeCookieConsent1", JSON.stringify(consent), { expires: 1 });
+    Cookies.set("myAwesomeCookieConsent1", JSON.stringify(consent), { expires: 365 });
     updateConsentStatus(consent);
     if (consent.analytics_storage) {
       loadGoogleAnalytics();
