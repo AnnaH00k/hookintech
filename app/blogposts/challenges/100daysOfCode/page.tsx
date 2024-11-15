@@ -19,16 +19,12 @@ export default function CodeJourney() {
     { day: "13", goal: "Make a birthday goal and reflection page for my 24 birthday", status: "complete" },
     { day: "14", goal: "Work on ghost net Pages (Implementing design)", status: "complete" },
     { day: "15", goal: "Make a project called DiaTopia for fun (diabetes innovations overview page)", status: "complete" },
+    { day: "16", goal: "create some new pages at work", status: "complete" },
+    { day: "17", goal: "none", status: "incomplete" },
+    { day: "18", goal: "some coding at work", status: "complete" },
 
 
-    { day: "16", goal: "create some new pages at work, finish ghost net basic UI", status: "pending" },
-
-
-
-
-    { day: "17", goal: "Implement the Update and Delete endpoints for your API (PUT and DELETE).", status: "pending" },
-    { day: "18", goal: "Connect your API to a MongoDB database using Mongoose. Set up models for your data.", status: "pending" },
-    { day: "19", goal: "Write unit tests for your API endpoints using a testing library like Jest.", status: "pending" },
+    { day: "19", goal: "finish ghost net basic UI", status: "pending" },
     { day: "20", goal: "Learn about user authentication with JWT. Implement a registration endpoint.", status: "pending" },
     { day: "21", goal: "Implement a login endpoint for your API with JWT authentication.", status: "pending" },
     { day: "22", goal: "Set up middleware to protect your routes using JWT.", status: "pending" },
