@@ -504,9 +504,9 @@ export default function Home() {
 
 // Component to display the meal cards
 const MealCards = ({ plan, handleMealClick }: { plan: DayPlan[]; handleMealClick: (meal: Meal) => void }) => (
-  <div className="flex flex-wrap justify-center gap-6">
+  <div className="flex flex-wrap justify-center w-[100vw] gap-6">
     {plan.map((day, index) => (
-      <div key={index} className="w-full md:w-1/2 lg:w-1/3">
+      <div key={index} className="w-full md:w-1/2 lg:w-1/3 ">
         <div className="bg-background shadow-xl shadow-[#292d27] border border-lighterBackground rounded-lg overflow-hidden">
           <div className="p-4 border-b">
             <h2 className="text-xl font-semibold">{day.day}</h2>
