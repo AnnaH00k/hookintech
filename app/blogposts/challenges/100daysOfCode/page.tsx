@@ -23,13 +23,14 @@ export default function CodeJourney() {
     { day: "17", goal: "none", status: "incomplete" },
     { day: "18", goal: "some coding at work", status: "complete" },
 
+    { day: "19", goal: "programming some ideas onto a page", status: "complete" },
+    { day: "20", goal: "programming some ideas onto a page", status: "complete" },
+    { day: "21", goal: "finish ghost net basic UI", status: "complete" },
+    { day: "22", goal: "programming at work", status: "complete" },
+    { day: "23", goal: "Create randomised vegetarian meal plan page", status: "complete" },
+    { day: "24", goal: "Work & add 5 day shopping list to meal plan.", status: "complete" },
 
-    { day: "19", goal: "finish ghost net basic UI", status: "pending" },
-    { day: "20", goal: "Learn about user authentication with JWT. Implement a registration endpoint.", status: "pending" },
-    { day: "21", goal: "Implement a login endpoint for your API with JWT authentication.", status: "pending" },
-    { day: "22", goal: "Set up middleware to protect your routes using JWT.", status: "pending" },
-    { day: "23", goal: "Explore how to handle CORS in your Express application.", status: "pending" },
-    { day: "24", goal: "Deploy your Express API to Heroku or Vercel.", status: "pending" },
+
     { day: "25", goal: "Update your frontend application to connect to the deployed API.", status: "pending" },
     { day: "26", goal: "Implement a simple feature that allows users to create new entries using your API.", status: "pending" },
     { day: "27", goal: "Add user authentication in your frontend app (login/register forms).", status: "pending" },
