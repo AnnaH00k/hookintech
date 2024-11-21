@@ -1,0 +1,342 @@
+{
+    "meals": {
+      "breakfast": [
+        {
+          "name": "Haferflocken mit Mandelmilch, Banane und Leinsamen",
+          "kcal": 400,
+          "ingredients": [
+            { "name": "Haferflocken", "quantity": 50, "unit": "g" },
+            { "name": "Mandelmilch", "quantity": 150, "unit": "ml" },
+            { "name": "Banane", "quantity": 1, "unit": "" },
+            { "name": "Leinsamen", "quantity": 1, "unit": "EL" }
+          ],
+          "instructions": "Mix the ingredients together and enjoy!"
+        },
+       
+        {
+          "name": "Smoothie with Spinach, Banana and Almond Milk",
+          "kcal": 400,
+          "ingredients": [
+            { "name": "Spinat", "quantity": 50, "unit": "g" },
+            { "name": "Banane", "quantity": 1, "unit": "" },
+            { "name": "Mandelmilch", "quantity": 200, "unit": "ml" },
+            { "name": "Leinsamen", "quantity": 1, "unit": "EL" }
+          ],
+          "instructions": "Blend all ingredients together until smooth."
+        },
+        {
+          "name": "Chia Pudding with Berries",
+          "kcal": 400,
+          "ingredients": [
+            { "name": "Chiasamen", "quantity": 2, "unit": "EL" },
+            { "name": "Mandelmilch", "quantity": 200, "unit": "ml" },
+            { "name": "Blaubeeren", "quantity": 50, "unit": "g" }
+          ],
+          "instructions": "Mix chia seeds with almond milk and refrigerate overnight. Top with berries before serving."
+        },
+        {
+            "name": "Avocado Toast with Cherry Tomatoes",
+            "kcal": 350,
+            "ingredients": [
+              { "name": "Whole-grain bread", "quantity": 2, "unit": "slices" },
+              { "name": "Avocado", "quantity": 1, "unit": "pcs" },
+              { "name": "Cherry tomatoes", "quantity": 50, "unit": "g" }
+            ],
+            "instructions": "Mash the avocado and spread it on toasted bread. Top with halved cherry tomatoes."
+          },
+          {
+            "name": "Greek Yogurt and Granola Bowl",
+            "kcal": 300,
+            "ingredients": [
+              { "name": "Greek yogurt", "quantity": 200, "unit": "g" },
+              { "name": "Granola", "quantity": 50, "unit": "g" },
+              { "name": "Mixed berries", "quantity": 100, "unit": "g" }
+            ],
+            "instructions": "Layer Greek yogurt, granola, and mixed berries in a bowl. Serve immediately."
+          },
+          {
+            "name": "Banana Oat Pancakes",
+            "kcal": 400,
+            "ingredients": [
+              { "name": "Oats", "quantity": 100, "unit": "g" },
+              { "name": "Banana", "quantity": 1, "unit": "pcs" },
+              { "name": "Eggs", "quantity": 2, "unit": "pcs" }
+            ],
+            "instructions": "Blend oats, banana, and eggs into a batter. Cook pancakes in a non-stick pan until golden."
+          },
+          {
+            "name": "Chia Pudding with Almond Milk",
+            "kcal": 250,
+            "ingredients": [
+              { "name": "Chia seeds", "quantity": 40, "unit": "g" },
+              { "name": "Almond milk", "quantity": 200, "unit": "ml" },
+              { "name": "Honey", "quantity": 1, "unit": "tbsp" }
+            ],
+            "instructions": "Mix chia seeds, almond milk, and honey in a jar. Let sit in the fridge overnight."
+          },
+          {
+            "name": "Spinach and Feta Omelette",
+            "kcal": 300,
+            "ingredients": [
+              { "name": "Eggs", "quantity": 2, "unit": "pcs" },
+              { "name": "Spinach leaves", "quantity": 50, "unit": "g" },
+              { "name": "Feta cheese", "quantity": 30, "unit": "g" }
+            ],
+            "instructions": "Whisk eggs, add spinach and feta. Cook in a non-stick pan until set. Fold and serve."
+          }
+      ],
+
+
+
+
+
+
+      "lunch": [
+        {
+          "name": "Linsensalat mit Tomaten, Gurken und Olivenöl",
+          "kcal": 500,
+          "ingredients": [
+            { "name": "Linsen", "quantity": 100, "unit": "g" },
+            { "name": "Tomate", "quantity": 1, "unit": "" },
+            { "name": "Gurke", "quantity": 0.5, "unit": "" },
+            { "name": "Olivenöl", "quantity": 1, "unit": "EL" }
+          ],
+          "instructions": "Cook the lentils and mix with chopped vegetables and olive oil."
+        },
+        {
+            "name": "Lentil and Vegetable Curry",
+            "kcal": 400,
+            "ingredients": [
+              { "name": "Red lentils", "quantity": 100, "unit": "g" },
+              { "name": "Coconut milk", "quantity": 200, "unit": "ml" },
+              { "name": "Mixed vegetables", "quantity": 150, "unit": "g" },
+              { "name": "Curry powder", "quantity": 1, "unit": "tbsp" }
+            ],
+            "instructions": "Cook lentils in coconut milk with vegetables and curry powder until tender."
+          },
+          {
+            "name": "Caprese Salad with Quinoa",
+            "kcal": 350,
+            "ingredients": [
+              { "name": "Quinoa", "quantity": 100, "unit": "g" },
+              { "name": "Cherry tomatoes", "quantity": 100, "unit": "g" },
+              { "name": "Mozzarella balls", "quantity": 80, "unit": "g" },
+              { "name": "Basil leaves", "quantity": 5, "unit": "pcs" },
+              { "name": "Balsamic vinegar", "quantity": 1, "unit": "tbsp" }
+            ],
+            "instructions": "Cook quinoa and mix with cherry tomatoes, mozzarella, basil, and balsamic vinegar."
+          },
+          {
+            "name": "Vegetable Stir-Fry with Tofu",
+            "kcal": 400,
+            "ingredients": [
+              { "name": "Firm tofu", "quantity": 150, "unit": "g" },
+              { "name": "Mixed vegetables", "quantity": 200, "unit": "g" },
+              { "name": "Soy sauce", "quantity": 1, "unit": "tbsp" },
+              { "name": "Olive oil", "quantity": 1, "unit": "tbsp" }
+            ],
+            "instructions": "Stir-fry tofu and vegetables in olive oil and soy sauce until golden and tender."
+          },
+          {
+            "name": "Chickpea and Spinach Wrap",
+            "kcal": 350,
+            "ingredients": [
+              { "name": "Whole-grain tortilla", "quantity": 1, "unit": "pcs" },
+              { "name": "Cooked chickpeas", "quantity": 100, "unit": "g" },
+              { "name": "Spinach leaves", "quantity": 50, "unit": "g" },
+              { "name": "Hummus", "quantity": 2, "unit": "tbsp" }
+            ],
+            "instructions": "Spread hummus on tortilla, top with chickpeas and spinach, and roll tightly."
+          },
+          {
+            "name": "Zucchini Noodles with Pesto",
+            "kcal": 300,
+            "ingredients": [
+              { "name": "Zucchini", "quantity": 200, "unit": "g" },
+              { "name": "Pesto sauce", "quantity": 2, "unit": "tbsp" },
+              { "name": "Parmesan cheese", "quantity": 20, "unit": "g" }
+            ],
+            "instructions": "Spiralize zucchini, mix with pesto, and top with grated Parmesan cheese."
+          }
+      ],
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+      "dinner": [
+        {
+          "name": "Quinoa-Gemüse-Pfanne mit Mandelmus",
+          "kcal": 450,
+          "ingredients": [
+            { "name": "Quinoa", "quantity": 100, "unit": "g" },
+            { "name": "Gemüse", "quantity": 150, "unit": "g" },
+            { "name": "Mandelmus", "quantity": 1, "unit": "EL" }
+          ],
+          "instructions": "Cook quinoa and stir-fry vegetables. Top with almond butter."
+        },
+        {
+            "name": "Quinoa-Gemüse-Pfanne mit Mandelmus",
+            "kcal": 450,
+            "ingredients": [
+              { "name": "Quinoa", "quantity": 100, "unit": "g" },
+              { "name": "Gemüse", "quantity": 150, "unit": "g" },
+              { "name": "Mandelmus", "quantity": 1, "unit": "EL" }
+            ],
+            "instructions": "Cook quinoa and stir-fry vegetables. Top with almond butter."
+          },
+          {
+            "name": "Sweet Potato and Chickpea Curry",
+            "kcal": 420,
+            "ingredients": [
+              { "name": "Sweet potato", "quantity": 200, "unit": "g" },
+              { "name": "Chickpeas", "quantity": 150, "unit": "g" },
+              { "name": "Coconut milk", "quantity": 200, "unit": "ml" },
+              { "name": "Curry powder", "quantity": 1, "unit": "tsp" }
+            ],
+            "instructions": "Simmer sweet potato and chickpeas in coconut milk with curry powder until tender."
+          },
+          {
+            "name": "Lentil and Spinach Stew",
+            "kcal": 400,
+            "ingredients": [
+              { "name": "Red lentils", "quantity": 100, "unit": "g" },
+              { "name": "Spinach", "quantity": 150, "unit": "g" },
+              { "name": "Onion", "quantity": 1, "unit": "pcs" },
+              { "name": "Vegetable stock", "quantity": 500, "unit": "ml" }
+            ],
+            "instructions": "Cook lentils in vegetable stock. Add sautéed onion and spinach, and simmer until soft."
+          },
+          {
+            "name": "Grilled Tofu with Roasted Vegetables",
+            "kcal": 380,
+            "ingredients": [
+              { "name": "Firm tofu", "quantity": 150, "unit": "g" },
+              { "name": "Bell peppers", "quantity": 100, "unit": "g" },
+              { "name": "Zucchini", "quantity": 100, "unit": "g" },
+              { "name": "Olive oil", "quantity": 1, "unit": "tbsp" }
+            ],
+            "instructions": "Grill tofu slices and roast vegetables with olive oil in the oven until golden."
+          },
+          {
+            "name": "Vegetarian Chili",
+            "kcal": 430,
+            "ingredients": [
+              { "name": "Kidney beans", "quantity": 150, "unit": "g" },
+              { "name": "Tomatoes", "quantity": 200, "unit": "g" },
+              { "name": "Corn kernels", "quantity": 100, "unit": "g" },
+              { "name": "Chili powder", "quantity": 1, "unit": "tsp" }
+            ],
+            "instructions": "Cook beans, tomatoes, and corn with chili powder. Simmer until flavors meld together."
+          }
+      ],
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+      "snack": [
+        {
+            "name": "Greek Yogurt with Honey and Nuts",
+            "kcal": 200,
+            "ingredients": [
+              { "name": "Greek yogurt", "quantity": 150, "unit": "g" },
+              { "name": "Honey", "quantity": 1, "unit": "tsp" },
+              { "name": "Mixed nuts", "quantity": 15, "unit": "g" }
+            ],
+            "instructions": "Top Greek yogurt with honey and sprinkle with mixed nuts."
+          },
+          {
+            "name": "Avocado Toast",
+            "kcal": 250,
+            "ingredients": [
+              { "name": "Whole-grain bread", "quantity": 1, "unit": "slice" },
+              { "name": "Avocado", "quantity": 50, "unit": "g" },
+              { "name": "Salt", "quantity": 1, "unit": "pinch" },
+              { "name": "Black pepper", "quantity": 1, "unit": "pinch" }
+            ],
+            "instructions": "Mash avocado onto the bread. Sprinkle with salt and black pepper."
+          },
+          {
+            "name": "Vegetable Sticks with Hummus",
+            "kcal": 180,
+            "ingredients": [
+              { "name": "Carrot", "quantity": 100, "unit": "g" },
+              { "name": "Cucumber", "quantity": 100, "unit": "g" },
+              { "name": "Hummus", "quantity": 50, "unit": "g" }
+            ],
+            "instructions": "Cut carrot and cucumber into sticks. Serve with hummus for dipping."
+          },
+          {
+            "name": "Banana and Peanut Butter Bites",
+            "kcal": 150,
+            "ingredients": [
+              { "name": "Banana", "quantity": 1, "unit": "pcs" },
+              { "name": "Peanut butter", "quantity": 1, "unit": "tbsp" }
+            ],
+            "instructions": "Slice banana and spread peanut butter on top of each slice."
+          },
+          {
+            "name": "Trail Mix",
+            "kcal": 220,
+            "ingredients": [
+              { "name": "Almonds", "quantity": 15, "unit": "g" },
+              { "name": "Dried cranberries", "quantity": 15, "unit": "g" },
+              { "name": "Dark chocolate chips", "quantity": 10, "unit": "g" }
+            ],
+            "instructions": "Mix almonds, dried cranberries, and dark chocolate chips in a small bowl."
+          }
+      ]
+    },
+
+
+
+
+
+
+
+
+
+
+    "sports": [
+      { "name": "Surfskate/Indoor Board Workout", "duration": "45 Minuten" },
+      { "name": "Yoga", "duration": "60 Minuten" },
+      { "name": "Jogging", "duration": "30 Minuten" },
+      { "name": "Bike", "duration": "45 Minuten" },
+      { "name": "Swimming", "duration": "60 Minuten" },
+      { "name": "Freeletics", "duration": "30 Minuten" },
+      { "name": "Boxing", "duration": "60 Minuten" },
+      { "name": "Hiking", "duration": "90 Minuten" },
+      { "name": "Strength Training", "duration": "45 Minuten" },
+      { "name": "Cycling", "duration": "60 Minuten" },
+      { "name": "Bodyweight Workout", "duration": "30 Minuten" },
+      { "name": "Bouldering", "duration": "60 Minuten" },
+      { "name": "Gymnastics", "duration": "45 Minuten" },
+      { "name": "MTB", "duration": "60 Minuten" },
+      { "name": "Figure Skating", "duration": "60 Minuten" },
+      { "name": "Physio therapy exercises", "duration": "60 Minuten" }
+
+
+    ]
+  }
+  

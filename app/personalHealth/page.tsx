@@ -1,8 +1,10 @@
 'use client';
 
-import { useState, useEffect } from "react";
+import { useEffect, useState } from 'react';
+import jsPDF from 'jspdf';
 
-// Types for Meal and Shopping List Items
+
+// Types for Meal
 interface Ingredient {
   name: string;
   quantity: number;
@@ -16,445 +18,99 @@ interface Meal {
   instructions: string;
 }
 
-interface ShoppingListItem extends Ingredient {
-  checked: boolean;
-}
-
 interface DayPlan {
   day: string;
-  meals: Record<string, Meal>;
+  meals: {
+    breakfast: Meal;
+    lunch: Meal;
+    dinner: Meal;
+    snack: Meal;
+  };
   sport: string;
   totalCalories: number;
 }
 
-const dailyMeals: DayPlan[] = [
-    {
-      day: "Day 1",
-      meals: {
-        breakfast: {
-          name: "Haferflocken mit Mandelmilch, Banane und Leinsamen",
-          kcal: 400,
-          ingredients: [
-            { name: "Haferflocken", quantity: 50, unit: "g" },
-            { name: "Mandelmilch", quantity: 150, unit: "ml" },
-            { name: "Banane", quantity: 1, unit: "" },
-            { name: "Leinsamen", quantity: 1, unit: "EL" },
-          ],
-          instructions: "Mix the ingredients together and enjoy!"
-        },
-        lunch: {
-          name: "Linsensalat mit Tomaten, Gurken und Olivenöl",
-          kcal: 500,
-          ingredients: [
-            { name: "Linsen", quantity: 100, unit: "g" },
-            { name: "Tomate", quantity: 1, unit: "" },
-            { name: "Gurke", quantity: 0.5, unit: "" },
-            { name: "Olivenöl", quantity: 1, unit: "EL" },
-          ],
-          instructions: "Cook the lentils and mix with chopped vegetables and olive oil."
-        },
-        dinner: {
-          name: "Quinoa-Gemüse-Pfanne mit Mandelmus",
-          kcal: 450,
-          ingredients: [
-            { name: "Quinoa", quantity: 100, unit: "g" },
-            { name: "Gemüse", quantity: 150, unit: "g" },
-            { name: "Mandelmus", quantity: 1, unit: "EL" },
-          ],
-          instructions: "Cook quinoa and stir-fry vegetables. Top with almond butter."
-        },
-      },
-      sport: "Surfskate: 45 Minuten",
-      totalCalories: 1350,
-    },
-    {
-      day: "Day 2",
-      meals: {
-        breakfast: {
-          name: "Avocado Toast with Tomato",
-          kcal: 350,
-          ingredients: [
-            { name: "Vollkornbrot", quantity: 2, unit: "Slices" },
-            { name: "Avocado", quantity: 1, unit: "" },
-            { name: "Tomate", quantity: 1, unit: "" },
-          ],
-          instructions: "Toast the bread, spread avocado, and top with sliced tomato."
-        },
-        lunch: {
-          name: "Chickpea Salad with Olive Oil",
-          kcal: 550,
-          ingredients: [
-            { name: "Kichererbsen", quantity: 100, unit: "g" },
-            { name: "Gurke", quantity: 1, unit: "" },
-            { name: "Paprika", quantity: 1, unit: "" },
-            { name: "Olivenöl", quantity: 1, unit: "EL" },
-          ],
-          instructions: "Mix chickpeas with diced vegetables and olive oil."
-        },
-        dinner: {
-          name: "Vegetable Stir-Fry with Brown Rice",
-          kcal: 600,
-          ingredients: [
-            { name: "Brauner Reis", quantity: 100, unit: "g" },
-            { name: "Gemüse", quantity: 200, unit: "g" },
-          ],
-          instructions: "Stir-fry the vegetables and serve over cooked rice."
-        },
-      },
-      sport: "Yoga: 60 Minuten",
-      totalCalories: 1500,
-    },
-    {
-      day: "Day 3",
-      meals: {
-        breakfast: {
-          name: "Smoothie with Spinach, Banana and Almond Milk",
-          kcal: 400,
-          ingredients: [
-            { name: "Spinat", quantity: 50, unit: "g" },
-            { name: "Banane", quantity: 1, unit: "" },
-            { name: "Mandelmilch", quantity: 200, unit: "ml" },
-            { name: "Leinsamen", quantity: 1, unit: "EL" },
-          ],
-          instructions: "Blend all ingredients together until smooth."
-        },
-        lunch: {
-          name: "Lentil Soup",
-          kcal: 500,
-          ingredients: [
-            { name: "Linsen", quantity: 100, unit: "g" },
-            { name: "Karotten", quantity: 2, unit: "" },
-            { name: "Sellerie", quantity: 1, unit: "Stange" },
-            { name: "Tomaten", quantity: 2, unit: "" },
-          ],
-          instructions: "Cook all ingredients in a pot until soft. Blend for a smooth texture."
-        },
-        dinner: {
-          name: "Veggie Burger with Sweet Potato Fries",
-          kcal: 600,
-          ingredients: [
-            { name: "Veggie Patty", quantity: 1, unit: "" },
-            { name: "Vollkornbrötchen", quantity: 1, unit: "" },
-            { name: "Süßkartoffeln", quantity: 200, unit: "g" },
-          ],
-          instructions: "Cook the veggie patty and serve on a bun with roasted sweet potato fries."
-        },
-      },
-      sport: "Jogging: 30 Minuten",
-      totalCalories: 1500,
-    },
-    {
-      day: "Day 4",
-      meals: {
-        breakfast: {
-          name: "Chia Pudding with Berries",
-          kcal: 400,
-          ingredients: [
-            { name: "Chiasamen", quantity: 2, unit: "EL" },
-            { name: "Mandelmilch", quantity: 200, unit: "ml" },
-            { name: "Blaubeeren", quantity: 50, unit: "g" },
-          ],
-          instructions: "Mix chia seeds with almond milk and refrigerate overnight. Top with berries before serving."
-        },
-        lunch: {
-          name: "Grilled Vegetable Wrap",
-          kcal: 550,
-          ingredients: [
-            { name: "Vollkornwrap", quantity: 1, unit: "" },
-            { name: "Gegrilltes Gemüse", quantity: 150, unit: "g" },
-          ],
-          instructions: "Fill the wrap with grilled vegetables and serve."
-        },
-        dinner: {
-          name: "Stuffed Bell Peppers with Quinoa",
-          kcal: 600,
-          ingredients: [
-            { name: "Paprika", quantity: 2, unit: "" },
-            { name: "Quinoa", quantity: 100, unit: "g" },
-          ],
-          instructions: "Stuff the peppers with cooked quinoa and bake until soft."
-        },
-      },
-      sport: "Pilates: 45 Minuten",
-      totalCalories: 1550,
-    },
-    {
-      day: "Day 5",
-      meals: {
-        breakfast: {
-          name: "Greek Yogurt with Honey and Walnuts",
-          kcal: 350,
-          ingredients: [
-            { name: "Griechischer Joghurt", quantity: 200, unit: "g" },
-            { name: "Honig", quantity: 1, unit: "TL" },
-            { name: "Walnüsse", quantity: 30, unit: "g" },
-          ],
-          instructions: "Top yogurt with honey and chopped walnuts."
-        },
-        lunch: {
-          name: "Falafel with Hummus and Salad",
-          kcal: 600,
-          ingredients: [
-            { name: "Falafel", quantity: 4, unit: "" },
-            { name: "Hummus", quantity: 2, unit: "EL" },
-            { name: "Salat", quantity: 100, unit: "g" },
-          ],
-          instructions: "Serve falafel with a side of hummus and fresh salad."
-        },
-        dinner: {
-          name: "Spaghetti with Tomato Sauce and Basil",
-          kcal: 550,
-          ingredients: [
-            { name: "Vollkornspaghetti", quantity: 100, unit: "g" },
-            { name: "Tomatensauce", quantity: 200, unit: "g" },
-            { name: "Basilikum", quantity: 5, unit: "Blätter" },
-          ],
-          instructions: "Cook pasta and serve with warm tomato sauce and fresh basil."
-        },
-      },
-      sport: "Bouldering: 60 Minuten",
-      totalCalories: 1500,
-    },
-    {
-      day: "Day 6",
-      meals: {
-        breakfast: {
-          name: "Oatmeal with Almond Butter and Strawberries",
-          kcal: 400,
-          ingredients: [
-            { name: "Haferflocken", quantity: 50, unit: "g" },
-            { name: "Mandelbutter", quantity: 1, unit: "EL" },
-            { name: "Erdbeeren", quantity: 100, unit: "g" },
-          ],
-          instructions: "Cook oats and top with almond butter and sliced strawberries."
-        },
-        lunch: {
-          name: "Sweet Potato and Black Bean Salad",
-          kcal: 550,
-          ingredients: [
-            { name: "Süßkartoffeln", quantity: 150, unit: "g" },
-            { name: "Schwarze Bohnen", quantity: 100, unit: "g" },
-          ],
-          instructions: "Roast sweet potatoes and mix with black beans. Serve with a drizzle of olive oil."
-        },
-        dinner: {
-          name: "Vegan Tacos with Guacamole",
-          kcal: 600,
-          ingredients: [
-            { name: "Tortillas", quantity: 2, unit: "" },
-            { name: "Guacamole", quantity: 2, unit: "EL" },
-            { name: "Gemüse", quantity: 100, unit: "g" },
-          ],
-          instructions: "Fill tortillas with veggies and guacamole."
-        },
-      },
-      sport: "Swimming: 45 Minutes",
-      totalCalories: 1550,
-    },
-    {
-      day: "Day 7",
-      meals: {
-        breakfast: {
-          name: "Fruit Salad with Coconut Yogurt",
-          kcal: 350,
-          ingredients: [
-            { name: "Obst", quantity: 200, unit: "g" },
-            { name: "Kokosjoghurt", quantity: 150, unit: "g" },
-          ],
-          instructions: "Mix your favorite fruits and top with coconut yogurt."
-        },
-        lunch: {
-          name: "Grilled Veggie Buddha Bowl",
-          kcal: 600,
-          ingredients: [
-            { name: "Quinoa", quantity: 100, unit: "g" },
-            { name: "Gegrilltes Gemüse", quantity: 150, unit: "g" },
-          ],
-          instructions: "Top quinoa with grilled vegetables."
-        },
-        dinner: {
-          name: "Mushroom Risotto",
-          kcal: 550,
-          ingredients: [
-            { name: "Champignons", quantity: 150, unit: "g" },
-            { name: "Reis", quantity: 100, unit: "g" },
-          ],
-          instructions: "Cook risotto with mushrooms."
-        },
-      },
-      sport: "Figure Skating: 60 Minutes",
-      totalCalories: 1500,
-    },
-    {
-      day: "Day 8",
-      meals: {
-        breakfast: {
-          name: "Smoothie Bowl with Granola",
-          kcal: 400,
-          ingredients: [
-            { name: "Frozen berries", quantity: 100, unit: "g" },
-            { name: "Banane", quantity: 1, unit: "" },
-            { name: "Granola", quantity: 30, unit: "g" },
-          ],
-          instructions: "Blend the berries and banana to make a smooth base and top with granola."
-        },
-        lunch: {
-          name: "Zucchini Noodles with Pesto",
-          kcal: 550,
-          ingredients: [
-            { name: "Zucchini", quantity: 200, unit: "g" },
-            { name: "Pesto", quantity: 2, unit: "EL" },
-          ],
-          instructions: "Make zucchini noodles and toss with pesto."
-        },
-        dinner: {
-          name: "Lentil Tacos",
-          kcal: 600,
-          ingredients: [
-            { name: "Linsen", quantity: 100, unit: "g" },
-            { name: "Tortillas", quantity: 2, unit: "" },
-          ],
-          instructions: "Fill tortillas with seasoned lentils and toppings of choice."
-        },
-      },
-      sport: "Biking: 45 Minutes",
-      totalCalories: 1550,
-    },
-    {
-      day: "Day 9",
-      meals: {
-        breakfast: {
-          name: "Scrambled Tofu with Spinach and Tomato",
-          kcal: 400,
-          ingredients: [
-            { name: "Tofu", quantity: 100, unit: "g" },
-            { name: "Spinat", quantity: 50, unit: "g" },
-            { name: "Tomaten", quantity: 2, unit: "" },
-          ],
-          instructions: "Scramble tofu and cook with spinach and tomatoes."
-        },
-        lunch: {
-          name: "Chickpea and Avocado Salad",
-          kcal: 550,
-          ingredients: [
-            { name: "Kichererbsen", quantity: 100, unit: "g" },
-            { name: "Avocado", quantity: 1, unit: "" },
-          ],
-          instructions: "Mix chickpeas and diced avocado with dressing."
-        },
-        dinner: {
-          name: "Veggie Stir-Fry with Tofu",
-          kcal: 600,
-          ingredients: [
-            { name: "Tofu", quantity: 150, unit: "g" },
-            { name: "Gemüse", quantity: 150, unit: "g" },
-          ],
-          instructions: "Stir-fry tofu with mixed veggies."
-        },
-      },
-      sport: "Swimming: 30 Minutes",
-      totalCalories: 1550,
-    },
-    {
-      day: "Day 10",
-      meals: {
-        breakfast: {
-          name: "Apple Cinnamon Oatmeal",
-          kcal: 400,
-          ingredients: [
-            { name: "Haferflocken", quantity: 50, unit: "g" },
-            { name: "Apfel", quantity: 1, unit: "" },
-            { name: "Zimt", quantity: 1, unit: "TL" },
-          ],
-          instructions: "Cook oats and top with diced apple and cinnamon."
-        },
-        lunch: {
-          name: "Veggie Wrap with Hummus",
-          kcal: 550,
-          ingredients: [
-            { name: "Vollkornwrap", quantity: 1, unit: "" },
-            { name: "Hummus", quantity: 2, unit: "EL" },
-          ],
-          instructions: "Spread hummus on the wrap and add mixed veggies."
-        },
-        dinner: {
-          name: "Stuffed Sweet Potatoes with Beans",
-          kcal: 600,
-          ingredients: [
-            { name: "Süßkartoffeln", quantity: 2, unit: "" },
-            { name: "Schwarze Bohnen", quantity: 100, unit: "g" },
-          ],
-          instructions: "Bake sweet potatoes and stuff with black beans."
-        },
-      },
-      sport: "Pilates: 45 Minutes",
-      totalCalories: 1550,
-    }
-  ];
-  
+interface DailyMeals {
+  meals: {
+    breakfast: Meal[];
+    lunch: Meal[];
+    dinner: Meal[];
+    snack: Meal[];
+  };
+  sports: { name: string; duration: string }[];
+}
+
+// Load the dailyMeals data with proper typing
+const dailyMeals: DailyMeals = require('./data/dailyMeals.json');
 
 export default function Home() {
-  const [plan, setPlan] = useState<DayPlan[]>(dailyMeals.slice(0, 5)); // Only display the first 5 days
-  const [shoppingList, setShoppingList] = useState<ShoppingListItem[]>([]);
+  const initialPlan = Array.from({ length: 5 }, (_, index) => ({
+    day: `Day ${index + 1}`,
+    meals: {
+      breakfast: dailyMeals.meals.breakfast[0], // Placeholder meal
+      lunch: dailyMeals.meals.lunch[0],
+      dinner: dailyMeals.meals.dinner[0],
+      snack: dailyMeals.meals.snack[0],
+    },
+    sport: `${dailyMeals.sports[0].name}: ${dailyMeals.sports[0].duration}`, // Placeholder sport
+    totalCalories:
+      dailyMeals.meals.breakfast[0].kcal +
+      dailyMeals.meals.lunch[0].kcal +
+      dailyMeals.meals.dinner[0].kcal +
+      dailyMeals.meals.snack[0].kcal,
+  }));
+
+  const [plan, setPlan] = useState<DayPlan[]>(initialPlan);
   const [selectedMeal, setSelectedMeal] = useState<Meal | null>(null);
   const [isModalOpen, setIsModalOpen] = useState(false);
-  const [showShoppingList, setShowShoppingList] = useState(false);
 
-  useEffect(() => {
-    generateShoppingList();
-  }, [plan]);
+  // Randomize meals and sports for the week, ensuring no repeated meals
+  const randomizeMealsAndSports = () => {
+    const randomizedPlan = Array.from({ length: 5 }, (_, index) => {
+      const usedMeals: { breakfast: Meal | null; lunch: Meal | null; dinner: Meal | null; snack: Meal | null } = {
+        breakfast: null,
+        lunch: null,
+        dinner: null,
+        snack: null,
+      };
 
-  // Randomize the meal plan
-  const randomizeMeals = () => {
-    const randomizedPlan = plan.map((day) => ({
-      ...day,
-      meals: Object.keys(day.meals).reduce((acc, mealType) => {
-        const randomMeal = dailyMeals[Math.floor(Math.random() * dailyMeals.length)].meals[mealType];
-        acc[mealType] = randomMeal;
-        return acc;
-      }, {} as Record<string, Meal>),
-    }));
+      // Function to get a random meal that hasn't been used
+      const randomMeal = (mealType: keyof DailyMeals['meals']) => {
+        const meals = dailyMeals.meals[mealType];
+        const unusedMeals = meals.filter((meal) => !Object.values(usedMeals).includes(meal));
+
+        // Select a random meal from the unused meals
+        const selectedMeal = unusedMeals[Math.floor(Math.random() * unusedMeals.length)];
+        usedMeals[mealType] = selectedMeal;
+        return selectedMeal;
+      };
+
+      const randomSport = dailyMeals.sports[Math.floor(Math.random() * dailyMeals.sports.length)];
+
+      // Randomly select meals for each day
+      const meals = {
+        breakfast: randomMeal('breakfast'),
+        lunch: randomMeal('lunch'),
+        dinner: randomMeal('dinner'),
+        snack: randomMeal('snack'),
+      };
+
+      const totalCalories = Object.values(meals).reduce((sum, meal) => sum + meal.kcal, 0);
+
+      return {
+        day: `Day ${index + 1}`,
+        meals,
+        sport: `${randomSport.name}: ${randomSport.duration}`,
+        totalCalories,
+      };
+    });
+
     setPlan(randomizedPlan);
   };
-
-  // Generate shopping list from the current meal plan
-  const generateShoppingList = () => {
-    const ingredientMap = new Map<string, { quantity: number; unit: string }>();
-
-    plan.forEach((day) => {
-      Object.values(day.meals).forEach((meal) => {
-        meal.ingredients.forEach(({ name, quantity, unit }) => {
-          const existing = ingredientMap.get(name);
-          if (existing) {
-            ingredientMap.set(name, {
-              quantity: existing.quantity + quantity,
-              unit,
-            });
-          } else {
-            ingredientMap.set(name, { quantity, unit });
-          }
-        });
-      });
-    });
-
-    const shoppingItems = Array.from(ingredientMap.entries()).map(([name, { quantity, unit }]) => ({
-      name,
-      quantity,
-      unit,
-      checked: false,
-    }));
-
-    setShoppingList(shoppingItems);
-  };
-
-  // Toggle ingredient checked state
-  const handleIngredientToggle = (index: number) => {
-    setShoppingList((prevList) => {
-      const updatedList = [...prevList];
-      updatedList[index].checked = !updatedList[index].checked;
-      return updatedList;
-    });
-  };
+  // Randomize the plan on initial load
+  useEffect(() => {
+    randomizeMealsAndSports();
+  }, []);
 
   // Handle meal click to open the modal
   const handleMealClick = (meal: Meal) => {
@@ -468,35 +124,137 @@ export default function Home() {
     setSelectedMeal(null);
   };
 
+  const generatePDF = () => {
+    const doc = new jsPDF();
+    const pageWidth = doc.internal.pageSize.width; // Width of the page
+    const pageHeight = doc.internal.pageSize.height - 10; // Usable page height (minus margins)
+  
+    const addText = (text: string, x: number, y: number, align: 'left' | 'center' = 'left') => {
+      if (align === 'center') {
+        const textWidth = doc.getTextWidth(text);
+        x = (pageWidth - textWidth) / 2; // Calculate the x-coordinate to center the text
+      }
+      doc.text(text, x, y);
+    };
+  
+    const addCheckbox = (x: number, y: number, size: number) => {
+      doc.rect(x, y, size, size); // Draw a square for the checkbox
+    };
+  
+    let y = 10; // Initial vertical position
+  
+    // Function to handle pagination for the shopping list
+    const checkAndAddPage = (lineHeight: number) => {
+      if (y + lineHeight > pageHeight) {
+        doc.addPage();
+        y = 10; // Reset vertical position on the new page
+      }
+    };
+  
+    // Loop through each day in the plan
+    plan.forEach((day, dayIndex) => {
+      // Reset position for each new page
+      y = 10;
+  
+      // Centered title for the day
+      doc.setFont('Helvetica', 'bold');
+      doc.setFontSize(18);
+      addText(day.day, 0, y, 'center'); // Center-align the title
+      y += 10;
+  
+      // Sport and Total Calories
+      doc.setFontSize(12);
+      doc.setFont('Helvetica', 'normal');
+      addText(`Sport: ${day.sport}`, 10, y, 'center');
+      y += 6;
+      addText(`Total Calories: ${day.totalCalories} kcal`, 10, y, 'center');
+      y += 10;
+  
+      // Meals for the day
+      Object.entries(day.meals).forEach(([mealType, meal]) => {
+        doc.setFont('Helvetica', 'bold');
+        doc.setFontSize(14);
+        addText(`${mealType.charAt(0).toUpperCase() + mealType.slice(1)}:`, 10, y, 'center');
+        y += 8;
+  
+        doc.setFont('Helvetica', 'bold');
+        doc.setFontSize(12);
+        addText(`${meal.name} - ${meal.kcal} kcal`, 10, y, 'center');
+        y += 6;
+  
+        meal.ingredients.forEach((ingredient) => {
+          doc.setFont('Helvetica', 'normal');
+          doc.setFontSize(12);
+          addText(`- ${ingredient.quantity} ${ingredient.unit} ${ingredient.name}`, 15, y, 'center');
+          y += 5;
+        });
+  
+        y += 6; // Space between meals
+      });
+  
+      // Add a new page after each day except the last one
+      if (dayIndex < plan.length - 1) {
+        doc.addPage();
+      }
+    });
+  
+    // Shopping List Section
+    doc.addPage(); // Add a new page for the shopping list
+    y = 10; // Reset y for the new page
+  
+    const shoppingList: { [key: string]: number } = {};
+  
+    plan.forEach((day) => {
+      Object.values(day.meals).forEach((meal) => {
+        meal.ingredients.forEach((ingredient) => {
+          const key = `${ingredient.name} (${ingredient.unit})`;
+          shoppingList[key] = (shoppingList[key] || 0) + ingredient.quantity;
+        });
+      });
+    });
+  
+    doc.setFont('Helvetica', 'bold');
+    doc.setFontSize(18);
+    addText('Shopping List:', 0, y, 'center'); // Center-align the title
+    y += 10;
+  
+    Object.entries(shoppingList).forEach(([item, quantity]) => {
+      const checkboxSize = 5;
+  
+      // Check if we need a new page
+      checkAndAddPage(8);
+  
+      // Draw the checkbox and item text
+      addCheckbox(10, y, checkboxSize); // Draw the checkbox
+      doc.setFont('Helvetica', 'normal');
+      addText(`${item}: ${quantity}`, 20, y + 4); // Align text next to checkbox
+      y += 8;
+    });
+  
+    // Save the PDF
+    doc.save('5-Day-Meal-Plan.pdf');
+  };
+  
+
   return (
-    <div className="min-h-screen bg-background">
-      <header className="py-4 pt-[7vh] bg-background text-text text-center">
+    <div className="min-h-screen flex justify-center flex-col items-center w-full  bg-background">
+      <header className="py-4 pt-[7vh] bg-background text-text text-center flex items-center justify-center flex-col">
         <h1 className="text-2xl font-bold">Your 5-Day Vegetarian Meal Plan</h1>
-        <div className="flex w-full items-center justify-center gap-4">
-          <MealRandomizer randomizeMeals={randomizeMeals} />
-          <div className="mt-8">
-            <button
-              onClick={() => setShowShoppingList((prev) => !prev)}
-              className="px-6 py-2 bg-green-800 text-white rounded-md"
-            >
-              Show Shopping List
-            </button>
-          </div>
+        <div className="flex w-[90vw] items-center justify-center gap-4">
+          <MealRandomizer randomizeMeals={randomizeMealsAndSports} />
+          <button
+          onClick={generatePDF}
+          className="mt-8 px-6 py-2 bg-green-800 text-white rounded-md"
+        >
+          Download Meal Plan as PDF
+        </button>
         </div>
       </header>
 
-      <main className="container ">
+      <main className="flex items-center justify-center flex-col">
         <MealCards plan={plan} handleMealClick={handleMealClick} />
-
-        {showShoppingList && (
-          <ShoppingList
-            shoppingList={shoppingList}
-            handleIngredientToggle={handleIngredientToggle}
-            setShowShoppingList={setShowShoppingList}
-          />
-        )}
-
         <MealModal isOpen={isModalOpen} meal={selectedMeal} closeModal={closeModal} />
+      
       </main>
     </div>
   );
@@ -504,9 +262,9 @@ export default function Home() {
 
 // Component to display the meal cards
 const MealCards = ({ plan, handleMealClick }: { plan: DayPlan[]; handleMealClick: (meal: Meal) => void }) => (
-  <div className="flex flex-wrap justify-center w-[100vw] gap-6">
+  <div className="flex flex-wrap justify-center w-[90vw] py-10 bg-background gap-6">
     {plan.map((day, index) => (
-      <div key={index} className="w-full md:w-1/2 lg:w-1/3 ">
+      <div key={index} className="w-full md:w-1/2 lg:w-1/3">
         <div className="bg-background shadow-xl shadow-[#292d27] border border-lighterBackground rounded-lg overflow-hidden">
           <div className="p-4 border-b">
             <h2 className="text-xl font-semibold">{day.day}</h2>
@@ -543,44 +301,7 @@ const MealRandomizer = ({ randomizeMeals }: { randomizeMeals: () => void }) => (
   </div>
 );
 
-// Component to display the shopping list
-const ShoppingList = ({
-  shoppingList,
-  handleIngredientToggle,
-  setShowShoppingList,
-}: {
-  shoppingList: ShoppingListItem[];
-  handleIngredientToggle: (index: number) => void;
-  setShowShoppingList: React.Dispatch<React.SetStateAction<boolean>>;
-}) => (
-  <div className="absolute w-full h-full  top-0 items-center justify-center flex flex-col">
-    <div className="bg-background relative shadow-2xl shadow-text p-6 rounded-lg  w-96">
-      <h2 className="text-2xl font-semibold mb-4">Shopping List</h2>
-      <button
-        onClick={() => setShowShoppingList((prev) => !prev)}
-        className="px-4 absolute right-4 top-4 py-2 bg-lighterBackground text-white rounded-md mb-4"
-      >
-        Close
-      </button>
-      <ul className="space-y-2">
-        {shoppingList.map((item, index) => (
-          <li key={index} className="flex items-center">
-            <input
-              type="checkbox"
-              checked={item.checked}
-              onChange={() => handleIngredientToggle(index)}
-              className="mr-2"
-            />
-            {item.quantity} {item.unit} {item.name}
-          </li>
-        ))}
-      </ul>
-    </div>
-  </div>
-);
-
-
-// Modal component for meal details
+// Component to display the meal modal
 const MealModal = ({
   isOpen,
   meal,
@@ -590,29 +311,35 @@ const MealModal = ({
   meal: Meal | null;
   closeModal: () => void;
 }) => {
-  if (!isOpen || !meal) return null;
+  if (!meal) return null;
 
   return (
-    <div className="fixed inset-0 bg-black bg-opacity-50 flex justify-center items-center">
-      <div className="bg-background p-6 relative rounded-lg shadow-lg w-96">
-        <h2 className="text-2xl font-semibold">{meal.name}</h2>
-        <p>{meal.kcal} kcal</p>
-        <h3 className="mt-4 text-lg font-semibold">Ingredients</h3>
-        <ul className="list-disc pl-6">
-          {meal.ingredients.map((ingredient, index) => (
-            <li key={index}>
-              {ingredient.name} - {ingredient.quantity} {ingredient.unit}
-            </li>
-          ))}
-        </ul>
-        <h3 className="mt-4 text-lg font-semibold">Instructions</h3>
-        <p className="mb-4">{meal.instructions}</p>
+    <div onClick={closeModal}
+      className={`fixed inset-0 bg-black bg-opacity-50 ${isOpen ? 'flex' : 'hidden'} items-center justify-center`}
+    >
+      <div className="bg-lighterBackground relative p-6 rounded-lg shadow-lg w-96">
         <button
           onClick={closeModal}
-          className="px-4 py-2 bg-lighterBackground absolute right-2 bottom-2 text-white rounded-md"
+          className="absolute text-xl top-2 right-4 text-text"
         >
-          Close
+          &times;
         </button>
+        <h2 className="text-2xl font-semibold">{meal.name}</h2>
+        <p className="mt-2">{meal.kcal} kcal</p>
+        <div className="mt-4">
+          <h3 className="font-semibold">Ingredients:</h3>
+          <ul>
+            {meal.ingredients.map((ingredient, index) => (
+              <li key={index}>
+                {ingredient.quantity} {ingredient.unit} {ingredient.name}
+              </li>
+            ))}
+          </ul>
+        </div>
+        <div className="mt-4">
+          <h3 className="font-semibold">Instructions:</h3>
+          <p>{meal.instructions}</p>
+        </div>
       </div>
     </div>
   );
