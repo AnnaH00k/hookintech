@@ -239,7 +239,7 @@ export default function Home() {
   return (
     <div className="min-h-screen flex justify-center flex-col items-center w-full  bg-background">
       <header className="py-4 pt-[7vh] bg-background text-text text-center flex items-center justify-center flex-col">
-        <h1 className="text-2xl font-bold">Your 5-Day Vegetarian Meal Plan</h1>
+        <h1 className="text-2xl  w-[90vw] font-bold">Your 5-Day Vegetarian Meal Plan</h1>
         <div className="flex w-[90vw] items-center justify-center gap-4">
           <MealRandomizer randomizeMeals={randomizeMealsAndSports} />
           <button
