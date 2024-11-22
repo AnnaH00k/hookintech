@@ -220,6 +220,20 @@
 
       "dinner": [
         {
+          "name": "bakebeans mit pumpernickel",
+          "kcal": 373,
+          "ingredients": [
+            { "name": "Pumpernickel", "quantity": 1, "unit": "Scheibe" },
+            { "name": "Bakebeans", "quantity": 415, "unit": "g" }
+          ],
+          "instructions": "Mix heat and enjoy!"
+        },
+
+
+
+
+
+        {
           "name": "Quinoa-Gemüse-Pfanne mit Mandelmus",
           "kcal": 450,
           "ingredients": [
@@ -300,6 +314,20 @@
 
 
       "snack": [
+
+
+        {
+          "name": "Reis Weinblätter",
+          "kcal": 236,
+          "ingredients": [
+            { "name": "Reis Weinblätter", "quantity": 170, "unit": "g" }
+          ],
+          "instructions": "Eat and enjoy!"
+        },
+
+
+
+
         {
             "name": "Greek Yogurt with Honey and Nuts",
             "kcal": 200,
