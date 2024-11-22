@@ -48,6 +48,11 @@ export default function Home() {
                     Website statistics                
                 </h2>
             </Link>
+            <Link  href="/ugGruendung" target="_blank" className="shadow-neumorphic-hooked0ntech-box flex flex-col rounded-lg max-w-[400px] min-h-[50px] sm:w-[40vw] w-[80vw] text-center items-center justify-center gap-2 bg-[#151C14] sm:hover:bg-[#1A2310]  shadow-[#646864] sm:hover:scale-105 p-4">
+                <h2 className="text-lg text-[#A0A2A0] font-bold ">
+                  UG Gründung        
+                </h2>
+            </Link>
             <Link  href="/openSource" target="_blank" className="shadow-neumorphic-hooked0ntech-box flex flex-col rounded-lg max-w-[400px] min-h-[50px] sm:w-[40vw] w-[80vw] text-center items-center justify-center gap-2 bg-[#151C14] sm:hover:bg-[#1A2310]  shadow-[#646864] sm:hover:scale-105 p-4">
                 <h2 className="text-lg text-[#A0A2A0] font-bold ">
                     Open Source                

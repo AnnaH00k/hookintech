@@ -534,7 +534,7 @@ const MainLayout: React.FC = () => {
       )}
 
       {showTimer && <PomodoroTimer />}
-      {showDailyToDoList && <DailyToDoList />}
+      {showDailyToDoList && <DailyToDoList page="hooked0nstudys" />}
     </main>
   );
 };
