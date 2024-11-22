@@ -22,16 +22,14 @@ export default function CodeJourney() {
     { day: "16", goal: "create some new pages at work", status: "complete" },
     { day: "17", goal: "none", status: "incomplete" },
     { day: "18", goal: "some coding at work", status: "complete" },
-
     { day: "19", goal: "programming some ideas onto a page", status: "complete" },
     { day: "20", goal: "programming some ideas onto a page", status: "complete" },
     { day: "21", goal: "finish ghost net basic UI", status: "complete" },
     { day: "22", goal: "programming at work", status: "complete" },
     { day: "23", goal: "Create randomised vegetarian meal plan page", status: "complete" },
     { day: "24", goal: "Work & add 5 day shopping list to meal plan.", status: "complete" },
+    { day: "25", goal: "Page to with tasks to found my business & programming for work", status: "complete" },
 
-
-    { day: "25", goal: "Update your frontend application to connect to the deployed API.", status: "pending" },
     { day: "26", goal: "Implement a simple feature that allows users to create new entries using your API.", status: "pending" },
     { day: "27", goal: "Add user authentication in your frontend app (login/register forms).", status: "pending" },
     { day: "28", goal: "Learn about session management and store JWT in local storage.", status: "pending" },
