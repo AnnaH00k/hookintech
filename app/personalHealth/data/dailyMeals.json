@@ -2,11 +2,35 @@
     "meals": {
       "breakfast": [
         {
-          "name": "Haferflocken mit Mandelmilch, Banane und Leinsamen",
+          "name": "Haferflocken mit Himbeeren und Schoki",
+          "kcal": 324,
+          "ingredients": [
+            { "name": "Haferflocken", "quantity": 50, "unit": "g" },
+            { "name": "Zartbitter Schokolade", "quantity": 16, "unit": "g" },
+            { "name": "Himbeeren", "quantity": 150, "unit": "g" }
+          ],
+          "instructions": "Mix the ingredients together heat and enjoy!"
+        },
+       
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+        {
+          "name": "Haferflocken mit Banane und Leinsamen",
           "kcal": 400,
           "ingredients": [
             { "name": "Haferflocken", "quantity": 50, "unit": "g" },
-            { "name": "Mandelmilch", "quantity": 150, "unit": "ml" },
             { "name": "Banane", "quantity": 1, "unit": "" },
             { "name": "Leinsamen", "quantity": 1, "unit": "EL" }
           ],
@@ -14,13 +38,12 @@
         },
        
         {
-          "name": "Smoothie with Spinach, Banana and Almond Milk",
+          "name": "Smoothie with Spinach, Banana and skyr ",
           "kcal": 400,
           "ingredients": [
             { "name": "Spinat", "quantity": 50, "unit": "g" },
             { "name": "Banane", "quantity": 1, "unit": "" },
-            { "name": "Mandelmilch", "quantity": 200, "unit": "ml" },
-            { "name": "Leinsamen", "quantity": 1, "unit": "EL" }
+            { "name": "Skyr", "quantity": 200, "unit": "g" }
           ],
           "instructions": "Blend all ingredients together until smooth."
         },
@@ -29,7 +52,7 @@
           "kcal": 400,
           "ingredients": [
             { "name": "Chiasamen", "quantity": 2, "unit": "EL" },
-            { "name": "Mandelmilch", "quantity": 200, "unit": "ml" },
+            { "name": "Kokosreismilch", "quantity": 200, "unit": "ml" },
             { "name": "Blaubeeren", "quantity": 50, "unit": "g" }
           ],
           "instructions": "Mix chia seeds with almond milk and refrigerate overnight. Top with berries before serving."
@@ -92,6 +115,27 @@
 
 
       "lunch": [
+        {
+          "name": "Quinoa-Tomaten-Zuchini Mix",
+          "kcal": 741,
+          "ingredients": [
+            { "name": "Quinoa", "quantity": 150, "unit": "g" },
+            { "name": "Tomate", "quantity": 250, "unit": "g" },
+            { "name": "Zuchini", "quantity": 1, "unit": "Stück" },
+            { "name": "Parmesan", "quantity": 100, "unit": "g" }
+          ],
+          "instructions": "Mix heat and enjoy!"
+        },
+
+
+
+
+
+
+
+
+
+
         {
           "name": "Linsensalat mit Tomaten, Gurken und Olivenöl",
           "kcal": 500,
