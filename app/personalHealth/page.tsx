@@ -237,7 +237,7 @@ export default function Home() {
   
 
   return (
-    <div className="min-h-screen flex justify-center flex-col items-center w-full  bg-background">
+    <div className="min-h-screen flex justify-center flex-col items-center w-full text-text  bg-background">
       <header className="py-4 pt-[7vh] bg-background text-text text-center flex items-center justify-center flex-col">
         <h1 className="text-2xl  w-[90vw] font-bold">Your 5-Day Vegetarian Meal Plan</h1>
         <div className="flex w-[90vw] items-center justify-center gap-4">
@@ -262,7 +262,7 @@ export default function Home() {
 
 // Component to display the meal cards
 const MealCards = ({ plan, handleMealClick }: { plan: DayPlan[]; handleMealClick: (meal: Meal) => void }) => (
-  <div className="flex flex-wrap justify-center w-[90vw] py-10 bg-background gap-6">
+  <div className="flex flex-wrap justify-center w-[90vw] py-10 bg-background text-text gap-6">
     {plan.map((day, index) => (
       <div key={index} className="w-full md:w-1/2 lg:w-1/3">
         <div className="bg-background shadow-xl shadow-[#292d27] border border-lighterBackground rounded-lg overflow-hidden">
@@ -317,7 +317,7 @@ const MealModal = ({
     <div onClick={closeModal}
       className={`fixed inset-0 bg-black bg-opacity-50 ${isOpen ? 'flex' : 'hidden'} items-center justify-center`}
     >
-      <div className="bg-lighterBackground relative p-6 rounded-lg shadow-lg w-96">
+      <div className="bg-lighterBackground text-text relative p-6 rounded-lg shadow-lg w-96">
         <button
           onClick={closeModal}
           className="absolute text-xl top-2 right-4 text-text"
