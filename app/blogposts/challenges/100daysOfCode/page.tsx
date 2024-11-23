@@ -30,7 +30,11 @@ export default function CodeJourney() {
     { day: "24", goal: "Work & add 5 day shopping list to meal plan.", status: "complete" },
     { day: "25", goal: "Page to with tasks to found my business & programming for work", status: "complete" },
 
-    { day: "26", goal: "Implement a simple feature that allows users to create new entries using your API.", status: "pending" },
+
+    { day: "26", goal: "Company Plan extensions", status: "complete" },
+
+
+
     { day: "27", goal: "Add user authentication in your frontend app (login/register forms).", status: "pending" },
     { day: "28", goal: "Learn about session management and store JWT in local storage.", status: "pending" },
     { day: "29", goal: "Create a simple dashboard to display user data fetched from the API.", status: "pending" },
