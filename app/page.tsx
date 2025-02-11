@@ -68,20 +68,20 @@ export default function Home() {
             </Link>
             <div className="shadow-neumorphic-hooked0ntech-box flex flex-col rounded-lg max-w-[400px] min-h-[150px]  sm:w-[40vw] w-[80vw] text-center items-center justify-center gap-2 bg-[#151C14] sm:hover:bg-[#1A2310] shadow-[#646864] p-4">
               <h2 className="text-lg text-[#A0A2A0] font-bold">FAB App</h2>
-              <a
+              <Link
                 href="https://apps.apple.com/us/app/fabapp/id1554684851?fbclid=IwAR3ha_5Z9kWtMqfu4gVLOqbYFzdYnZSDdLVIQyKdG7YRyYWYYODJDKWLCIU"
                 className="text-sm  sm:hover:scale-105 text-[#A0A2A0] hover:text-[#fff] sm:text-md rounded-full bg-[#303830] px-3 py-1"
                 target="_blank"
               >
                 Apple app Store
-              </a>
-              <a
+              </Link>
+              <Link
                 href="https://play.google.com/store/apps/details?id=com.Hook.fabapp&fbclid=IwAR0qtZG8s9tki8USCR4IdGCpI7nGZstqH2XIuT5D2Bo0Uuxo6A6KGWBkDT0"
                 className="text-sm  sm:hover:scale-105 text-[#A0A2A0] hover:text-[#fff] sm:text-md rounded-full bg-[#303830] px-3 py-1"
                 target="_blank"
               >
                 Google Play Store
-              </a>
+              </Link>
             </div>
             <Link  href="https://apps.apple.com/de/app/couplecorner/id6448982599"  target="_blank" className="shadow-neumorphic-hooked0ntech-box flex flex-col rounded-lg max-w-[400px] min-h-[150px]  sm:w-[40vw] w-[80vw] text-center items-center justify-center gap-2 bg-[#151C14] sm:hover:bg-[#1A2310] shadow-[#646864] sm:hover:scale-105 p-4">
               <h2 className="text-lg text-[#A0A2A0] font-bold">
@@ -152,44 +152,44 @@ export default function Home() {
             </h1>
             <div className="shadow-neumorphic-hooked0ntech-box flex flex-col rounded-lg max-w-[400px] min-h-[150px]  sm:w-[40vw] w-[80vw] text-center items-center justify-center gap-2 bg-[#151C14] sm:hover:bg-[#1A2310] shadow-[#646864] p-4">
               <h2 className="text-lg text-[#A0A2A0] font-bold ">YouTube</h2>
-              <a
+              <Link
                 className="text-sm sm:hover:scale-105 sm:text-md text-[#A0A2A0] hover:text-[#fff] rounded-full bg-[#303830] px-3 py-1"
                 href="https://youtube.com/@hooked0nTech?si=urTx7LmuBbzpSca0"
                 target="_blank"
               >
                 hooked0nTech
-              </a>
-              <a
+              </Link>
+              <Link
                 className="text-sm sm:hover:scale-105 sm:text-md text-[#A0A2A0] hover:text-[#fff] rounded-full bg-[#303830] px-3 py-1"
                 href="https://youtube.com/@hookedwords?si=iG2OyeU6sYO_fkM_"
                 target="_blank"
               >
                 hookb00k
-              </a>
-              <a
+              </Link>
+              <Link
                 className="text-sm sm:hover:scale-105 sm:text-md text-[#A0A2A0] hover:text-[#fff] rounded-full bg-[#303830] px-3 py-1"
                 href="https://youtube.com/@Studyvation?si=EzWIS-EEmj7Ndr7-"
                 target="_blank"
               >
                 Studyvation
-              </a>
+              </Link>
             </div>
             <div className="shadow-neumorphic-hooked0ntech-box flex flex-col rounded-lg max-w-[400px] min-h-[150px]  sm:w-[40vw] w-[80vw] text-center items-center justify-center gap-2 bg-[#151C14] sm:hover:bg-[#1A2310] shadow-[#646864]  p-4">
               <h2 className="text-lg text-[#A0A2A0] font-bold">Instagram</h2>
-              <a
+              <Link
                 href="https://www.instagram.com/hooked0ntech/"
                 className="text-sm sm:hover:scale-105 sm:text-md text-[#A0A2A0] hover:text-[#fff] rounded-full bg-[#303830] px-3 py-1"
                 target="_blank"
               >
                 hooked0nTech
-              </a>
-              <a
+              </Link>
+              <Link
                 href="https://www.instagram.com/hookb00k/?next=https%3A%2F%2Fwww.instagram.com%2Fp%2FCBTn3TEpza3%2Fliked_by%2F%3F__coig_login%3D1"
                 className="text-sm sm:hover:scale-105 sm:text-md text-[#A0A2A0] hover:text-[#fff] rounded-full bg-[#303830] px-3 py-1"
                 target="_blank"
               >
                 hookb00k
-              </a>
+              </Link>
             </div>
           </div>
         </div>
