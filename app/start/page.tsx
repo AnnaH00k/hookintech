@@ -40,7 +40,7 @@ export default function Home() {
 
         <main className="flex flex-col items-center justify-center min-h-[90vh] font-bold text-[#A0A2A0] text-start gap-2 w-full">
             <p>
-              1: Comuter Science Studys
+              1: Computer Science Studys
             </p>
             <p>
               2: Self employment
