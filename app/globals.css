@@ -2,8 +2,7 @@
 @tailwind components;
 @tailwind utilities;
 
-
-
+@import "./styles/vines.css";
 
 :root {
   --foreground-rgb: 0, 0, 0;
@@ -29,8 +28,6 @@ body {
     rgb(var(--background-start-rgb));
 }
 
-
-
 .arrow-down svg {
   color: rgba(160, 162, 160, 0.5); /* 50% transparent */
 }
@@ -43,4 +40,32 @@ body {
   .text-balance {
     text-wrap: balance;
   }
+}
+
+/* Add these new styles */
+.vine {
+  animation-play-state: running !important;
+}
+
+.vine:hover {
+  animation-play-state: paused !important;
+}
+
+/* Add a transform layer to handle both animation and mouse interaction */
+.vine::before {
+  content: "";
+  position: absolute;
+  top: 0;
+  left: 0;
+  width: 100%;
+  height: 100%;
+  pointer-events: none;
+}
+
+/* Ensure transforms work on both layers */
+.vine,
+.vine::before {
+  will-change: transform, opacity;
+  backface-visibility: hidden;
+  transform-style: preserve-3d;
 }

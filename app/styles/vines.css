@@ -1,0 +1,356 @@
+.vine {
+  position: absolute;
+  width: 150px;
+  height: 300px;
+  background-image: url("data:image/svg+xml,%3Csvg xmlns='http://www.w3.org/2000/svg' viewBox='0 0 100 300'%3E%3Cpath d='M50,0 Q60,50 50,100 Q40,150 50,200 Q60,250 50,300' stroke='%2390EE90' fill='none' stroke-width='2'/%3E%3Cg transform='translate(50,30) rotate(-20)'%3E%3Cpath d='M0,0 Q5,-10 0,-15 Q-5,-10 0,0 Q5,5 0,10 Q-5,5 0,0' stroke='%2390EE90' fill='%2390EE90' opacity='0.8'/%3E%3C/g%3E%3Cg transform='translate(50,80) rotate(20)'%3E%3Cpath d='M0,0 Q8,-15 0,-20 Q-8,-15 0,0 Q8,8 0,15 Q-8,8 0,0' stroke='%2390EE90' fill='%2390EE90' opacity='0.8'/%3E%3C/g%3E%3Cg transform='translate(50,140) rotate(-15)'%3E%3Cpath d='M0,0 Q10,-18 0,-25 Q-10,-18 0,0 Q10,10 0,18 Q-10,10 0,0' stroke='%2390EE90' fill='%2390EE90' opacity='0.8'/%3E%3C/g%3E%3Cg transform='translate(50,200) rotate(25)'%3E%3Cpath d='M0,0 Q8,-15 0,-20 Q-8,-15 0,0 Q8,8 0,15 Q-8,8 0,0' stroke='%2390EE90' fill='%2390EE90' opacity='0.8'/%3E%3C/g%3E%3Cg transform='translate(50,250) rotate(-20)'%3E%3Cpath d='M0,0 Q5,-10 0,-15 Q-5,-10 0,0 Q5,5 0,10 Q-5,5 0,0' stroke='%2390EE90' fill='%2390EE90' opacity='0.8'/%3E%3C/g%3E%3C/svg%3E");
+  background-repeat: repeat-y;
+  opacity: 0.5;
+  z-index: 1;
+  transform-origin: top center;
+  transition: all 0.3s ease-out;
+  will-change: transform;
+  pointer-events: auto;
+  filter: brightness(1);
+}
+
+.vine:hover {
+  opacity: 0.8;
+  filter: brightness(1.5);
+}
+
+/* Left side vines - outer to inner */
+.vine-1 {
+  left: -8%;
+  height: 60vh;
+  animation: vineSwayLeft 20s infinite ease-in-out;
+}
+
+.vine-2 {
+  left: -6%;
+  height: 55vh;
+  animation: vineSwayRight 12s infinite ease-in-out;
+  transform: scaleX(-1);
+}
+
+.vine-3 {
+  left: -4%;
+  height: 50vh;
+  animation: vineSwayLeft 22s infinite ease-in-out;
+  animation-delay: -2s;
+}
+
+.vine-4 {
+  left: -2%;
+  height: 58vh;
+  animation: vineSwayRight 9s infinite ease-in-out;
+  animation-delay: -1s;
+  transform: scaleX(-1);
+}
+
+.vine-9 {
+  left: 0%;
+  height: 45vh;
+  animation: vineSwayLeft 16s infinite ease-in-out;
+  animation-delay: -1s;
+}
+
+.vine-10 {
+  left: 2%;
+  height: 40vh;
+  animation: vineSwayRight 14s infinite ease-in-out;
+  animation-delay: -3s;
+  transform: scaleX(-1);
+}
+
+.vine-11 {
+  left: 4%;
+  height: 35vh;
+  animation: vineSwayLeft 19s infinite ease-in-out;
+  animation-delay: -2s;
+}
+
+.vine-15 {
+  left: 6%;
+  height: 42vh;
+  animation: vineSwayLeft 21s infinite ease-in-out;
+  animation-delay: -1.5s;
+}
+
+.vine-16 {
+  left: 8%;
+  height: 38vh;
+  animation: vineSwayRight 18s infinite ease-in-out;
+  animation-delay: -2.5s;
+  transform: scaleX(-1);
+}
+
+.vine-17 {
+  left: 10%;
+  height: 32vh;
+  animation: vineSwayLeft 17s infinite ease-in-out;
+  animation-delay: -3.5s;
+}
+
+.vine-18 {
+  left: 12%;
+  height: 28vh;
+  animation: vineSwayRight 19s infinite ease-in-out;
+  animation-delay: -1.8s;
+  transform: scaleX(-1);
+}
+
+/* Right side vines - outer to inner */
+.vine-5 {
+  right: -8%;
+  height: 60vh;
+  animation: vineSwayLeft 18s infinite ease-in-out;
+  animation-delay: -3s;
+}
+
+.vine-6 {
+  right: -6%;
+  height: 55vh;
+  animation: vineSwayRight 15s infinite ease-in-out;
+  animation-delay: -2s;
+  transform: scaleX(-1);
+}
+
+.vine-7 {
+  right: -4%;
+  height: 50vh;
+  animation: vineSwayLeft 20s infinite ease-in-out;
+  animation-delay: -4s;
+}
+
+.vine-8 {
+  right: -2%;
+  height: 58vh;
+  animation: vineSwayRight 11s infinite ease-in-out;
+  animation-delay: -1s;
+  transform: scaleX(-1);
+}
+
+.vine-12 {
+  right: 0%;
+  height: 45vh;
+  animation: vineSwayRight 17s infinite ease-in-out;
+  animation-delay: -2s;
+  transform: scaleX(-1);
+}
+
+.vine-13 {
+  right: 2%;
+  height: 40vh;
+  animation: vineSwayLeft 15s infinite ease-in-out;
+  animation-delay: -1s;
+}
+
+.vine-14 {
+  right: 4%;
+  height: 35vh;
+  animation: vineSwayRight 13s infinite ease-in-out;
+  animation-delay: -3s;
+  transform: scaleX(-1);
+}
+
+.vine-19 {
+  right: 6%;
+  height: 42vh;
+  animation: vineSwayRight 16s infinite ease-in-out;
+  animation-delay: -2.7s;
+  transform: scaleX(-1);
+}
+
+.vine-20 {
+  right: 8%;
+  height: 38vh;
+  animation: vineSwayLeft 23s infinite ease-in-out;
+  animation-delay: -1.2s;
+}
+
+.vine-21 {
+  right: 10%;
+  height: 32vh;
+  animation: vineSwayRight 14s infinite ease-in-out;
+  animation-delay: -3.2s;
+  transform: scaleX(-1);
+}
+
+.vine-22 {
+  right: 12%;
+  height: 28vh;
+  animation: vineSwayLeft 20s infinite ease-in-out;
+  animation-delay: -2.3s;
+}
+
+@keyframes vineSwayLeft {
+  0%,
+  100% {
+    transform: rotate(2deg) translateX(-5px);
+  }
+  25% {
+    transform: rotate(-3deg) translateX(5px) scale(1.02);
+  }
+  50% {
+    transform: rotate(1deg) translateX(-3px);
+  }
+  75% {
+    transform: rotate(-2deg) translateX(5px) scale(1.01);
+  }
+}
+
+@keyframes vineSwayRight {
+  0%,
+  100% {
+    transform: scaleX(-1) rotate(-2deg) translateX(5px);
+  }
+  25% {
+    transform: scaleX(-1) rotate(3deg) translateX(-5px) scale(1.02);
+  }
+  50% {
+    transform: scaleX(-1) rotate(-1deg) translateX(3px);
+  }
+  75% {
+    transform: scaleX(-1) rotate(2deg) translateX(-5px) scale(1.01);
+  }
+}
+
+@keyframes shimmer {
+  0% {
+    background-position: -200% center;
+    opacity: 0.3;
+  }
+  50% {
+    opacity: 0.8;
+  }
+  100% {
+    background-position: 200% center;
+    opacity: 0.3;
+  }
+}
+
+.vine::after {
+  content: "";
+  position: absolute;
+  inset: 0;
+  background: linear-gradient(
+    90deg,
+    transparent,
+    rgba(144, 238, 144, 0.2),
+    rgba(173, 255, 173, 0.4),
+    rgba(144, 238, 144, 0.2),
+    transparent
+  );
+  background-size: 200% 100%;
+  mix-blend-mode: overlay;
+  opacity: 0;
+  pointer-events: none;
+  transition: opacity 0.3s ease;
+}
+
+.vine.glowing::after {
+  animation: shimmer 2s infinite;
+}
+
+/* Hide certain vines on small screens */
+@media (max-width: 768px) {
+  .vine {
+    width: 100px;
+    opacity: 0.4;
+  }
+
+  .vine-1 {
+    left: -12%;
+    height: 45vh;
+  }
+  .vine-2 {
+    left: -8%;
+    height: 40vh;
+  }
+  .vine-3 {
+    left: -4%;
+    height: 42vh;
+  }
+  .vine-4 {
+    left: 0%;
+    height: 38vh;
+  }
+
+  .vine-5 {
+    right: -12%;
+    height: 45vh;
+  }
+  .vine-6 {
+    right: -8%;
+    height: 40vh;
+  }
+  .vine-7 {
+    right: -4%;
+    height: 42vh;
+  }
+  .vine-8 {
+    right: 0%;
+    height: 38vh;
+  }
+
+  .vine-15,
+  .vine-16,
+  .vine-17,
+  .vine-18,
+  .vine-19,
+  .vine-20,
+  .vine-21,
+  .vine-22 {
+    display: none;
+  }
+}
+
+/* Hide even more vines on very small screens */
+@media (max-width: 480px) {
+  .vine {
+    width: 80px;
+  }
+
+  .vine-1 {
+    left: -10%;
+    height: 40vh;
+  }
+  .vine-2 {
+    left: -6%;
+    height: 35vh;
+  }
+  .vine-3 {
+    left: -2%;
+    height: 38vh;
+  }
+  .vine-4 {
+    left: 2%;
+    height: 33vh;
+  }
+
+  .vine-5 {
+    right: -10%;
+    height: 40vh;
+  }
+  .vine-6 {
+    right: -6%;
+    height: 35vh;
+  }
+  .vine-7 {
+    right: -2%;
+    height: 38vh;
+  }
+  .vine-8 {
+    right: 2%;
+    height: 33vh;
+  }
+
+  .vine-9,
+  .vine-10,
+  .vine-11,
+  .vine-12,
+  .vine-13,
+  .vine-14 {
+    display: none;
+  }
+}
