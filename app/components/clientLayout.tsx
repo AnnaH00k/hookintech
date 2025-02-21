@@ -21,7 +21,7 @@ export default function ClientLayout({
 
   return (
     <>
-      {!hideHeaderFooter && !hideHeaderFooterForPolitics && !hideHeaderFooterForStart && <MenuHeader />}
+     
       {hideHeaderFooterForPolitics && <PoliticsHeader />}
       {hideHeaderFooter && <LifeHeader />}
       {children}

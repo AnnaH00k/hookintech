@@ -1,0 +1,72 @@
+{
+    "Executive_Summary": {
+      "Name": "Azubee",
+      "Description": "Eine umfassende Lernplattform und App für alle deutschen Ausbildungsberufe.",
+      "Target_Audience": ["Auszubildende (17-23 Jahre)", "Ältere Auszubildende", "Ausbilder"],
+      "Pricing": {
+        "Free": "Kostenlose Version mit Werbung",
+        "Premium": {
+          "Individual": 20,
+          "Schools_Trainers": 15
+        }
+      },
+      "Features": ["Multiple-Choice-Tests", "Karteikarten", "Offene Fragen", "Prüfungsvorbereitung", "Gamification"]
+    },
+    "Business_Goals": {
+      "Coverage": "Vollständige Abdeckung aller Ausbildungsberufe in Deutschland",
+      "Personalized_Learning": "Lernpakete für jeden Beruf, erstellt von Ausbildern",
+      "Accessibility": "Einfacher Zugang zu Lernmaterialien",
+      "Gamification": "Abzeichen, Lern-Streaks, Wettbewerbe"
+    },
+    "Target_Audience": {
+      "Apprentices": "Junge Menschen zwischen 17-23 Jahren und ältere Erwachsene in Ausbildung",
+      "Trainers_Employers": "Ausbilder und Arbeitgeber, die Lernmaterialien bereitstellen",
+      "Education_Institutions": "Schulen und Bildungseinrichtungen"
+    },
+    "Product_Offering": {
+      "Learning_Features": ["Multiple-Choice-Tests", "Personalisierte Karteikarten", "Offline & Online Speicherung", "Diskussionen zu Lerninhalten", "Digitale Berichtshefte"],
+      "Trainer_Tools": ["Lernfortschrittsüberwachung", "Erfahrungsberichte"],
+      "Career_Information": ["Berufswahltest", "Berufsübersicht"]
+    },
+    "Monetization_Model": {
+      "Free": "Werbeunterstützte Version",
+      "Premium": "Einmalzahlung von 20 Euro (15 Euro für Schulen)",
+      "Storage": "Optionaler Cloud-Speicher gegen Gebühr"
+    },
+    "Competition": ["StudySmarter", "Simpleclub", "Prozubi", "Novaheal", "Azubi Navigator", "Azubiwelt", "Wörk"],
+    "Technology": {
+      "Development": "Cross-Plattform-Codebasis für Web, iOS und Android",
+      "Beta_Testers": "Nutzer der FAB App"
+    },
+    "Marketing_Strategy": {
+      "Current": "Flyer per E-Mail an Ausbildungsbetriebe",
+      "Future": ["Social Media Kampagnen", "Direkte Ansprache von Ausbildungsbetrieben"]
+    },
+    "Financial_Strategy": {
+      "Investment": "Private Finanzierung, keine Investoren",
+      "Crowdfunding": "Optional für spezifische Features"
+    },
+    "Timeline": {
+      "Year_1": "Erste Version für Fachangestellte für Bäderbetriebe",
+      "Modular_Expansion": "Schrittweise Integration aller Ausbildungsberufe"
+    },
+    "Legal_Requirements": ["DSGVO-konforme Datenspeicherung", "Rechtliche Anforderungen für E-Learning"],
+    "Revenue_Potential": {
+      "Market_Size": "1,2 Millionen Azubis in Deutschland",
+      "Growth_Assumptions": "20 % Marktanteil in 10 Jahren",
+      "Revenue_Estimates": [
+        {"Year": 1, "Users": 12000, "Ads_Revenue": 77760, "Premium_Revenue": 24000, "Total": 101760},
+        {"Year": 2, "Users": 13800, "Ads_Revenue": 89424, "Premium_Revenue": 27600, "Total": 117024},
+        {"Year": 3, "Users": 15870, "Ads_Revenue": 102837, "Premium_Revenue": 31740, "Total": 134577},
+        {"Year": 4, "Users": 18250, "Ads_Revenue": 118263, "Premium_Revenue": 36500, "Total": 154763},
+        {"Year": 5, "Users": 20988, "Ads_Revenue": 136002, "Premium_Revenue": 41976, "Total": 177978},
+        {"Year": 6, "Users": 24136, "Ads_Revenue": 156402, "Premium_Revenue": 48272, "Total": 204674},
+        {"Year": 7, "Users": 27756, "Ads_Revenue": 179863, "Premium_Revenue": 55512, "Total": 235375},
+        {"Year": 8, "Users": 31919, "Ads_Revenue": 206843, "Premium_Revenue": 63839, "Total": 270682},
+        {"Year": 9, "Users": 36707, "Ads_Revenue": 237869, "Premium_Revenue": 73414, "Total": 311283},
+        {"Year": 10, "Users": 42213, "Ads_Revenue": 273549, "Premium_Revenue": 84427, "Total": 357976}
+      ],
+      "Total_Revenue_10_Years": 2065000
+    }
+  }
+  
