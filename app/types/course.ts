@@ -21,8 +21,14 @@ export type CourseTopic = {
   problems: string[];
 };
 
+export interface Course {
+  name: string;
+  ects: number;
+  description: string;
+}
+
 export interface Semester {
   semester: number;
   courses: Course[];
   isComplete?: boolean;
-} 
+}
