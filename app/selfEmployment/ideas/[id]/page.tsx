@@ -3,6 +3,7 @@
 import { useState, useEffect } from "react";
 import { useParams, useRouter } from "next/navigation";
 import { ArrowLeft, Pencil, FloppyDisk } from "@phosphor-icons/react";
+import { DEFAULT_AZUBEE_IDEA, COMPONENTS_IDEA } from "../../constants";
 
 interface BusinessIdea {
   id: string;
@@ -12,6 +13,15 @@ interface BusinessIdea {
   timeToMarket: string;
   priority: "high" | "medium" | "low";
   documentation?: string;
+}
+
+// This function tells Next.js which dynamic paths to pre-render
+export function generateStaticParams() {
+  // Pre-render pages for the default business ideas
+  return [
+    { id: DEFAULT_AZUBEE_IDEA.id },
+    { id: COMPONENTS_IDEA.id }
+  ];
 }
 
 export default function IdeaPage() {
