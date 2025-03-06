@@ -1,4 +1,31 @@
+import { Metadata } from "next";
 import Image from "next/image";
+
+export const metadata: Metadata = {
+  title: "Schwimmkurse in Aachen | Persönlicher Schwimmunterricht",
+  description:
+    "Individueller Schwimmunterricht in Aachen für alle Altersgruppen. Von Wassergewöhnung über Seepferdchen bis hin zu Bronze, Silber & Gold. Auch Erwachsenenkurse und Wasserfitness.",
+  openGraph: {
+    title: "Schwimmkurse in Aachen | Persönlicher Schwimmunterricht",
+    description:
+      "Individueller Schwimmunterricht in Aachen für alle Altersgruppen. Von Wassergewöhnung über Seepferdchen bis hin zu Bronze, Silber & Gold. Auch Erwachsenenkurse und Wasserfitness.",
+    images: [
+      {
+        url: "hooked0ntech/swimage.png", // Ersetzen Sie dies mit dem Pfad zu Ihrem gewünschten Vorschaubild
+        width: 1200,
+        height: 630,
+        alt: "Schwimmkurse in Aachen",
+      },
+    ],
+  },
+  twitter: {
+    card: "summary_large_image",
+    title: "Schwimmkurse in Aachen | Persönlicher Schwimmunterricht",
+    description:
+      "Individueller Schwimmunterricht in Aachen für alle Altersgruppen. Von Wassergewöhnung über Seepferdchen bis hin zu Bronze, Silber & Gold. Auch Erwachsenenkurse und Wasserfitness.",
+    images: ["hooked0ntech/swimage.png"], // Gleiches Bild wie oben
+  },
+};
 
 const SwimmingCoursesPage = () => {
   const courses = [
@@ -187,7 +214,8 @@ const SwimmingCoursesPage = () => {
               Kontakt
             </h2>
             <p className="text-xl mb-6 text-slate-700 dark:text-slate-300">
-              Interesse an einem persönlichen Schwimmkurs? <br/> Schreib mich einfach an.
+              Interesse an einem persönlichen Schwimmkurs? <br /> Schreib mich
+              einfach an.
             </p>
             <a
               href="mailto:annaschwimmt@gmail.com"
