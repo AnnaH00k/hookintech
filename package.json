@@ -9,8 +9,11 @@
     "lint": "next lint"
   },
   "dependencies": {
+    "@emotion/react": "^11.14.0",
+    "@emotion/styled": "^11.14.0",
     "@ffmpeg/core": "^0.12.6",
     "@ffmpeg/ffmpeg": "^0.12.10",
+    "@mui/material": "^6.4.7",
     "@phosphor-icons/react": "^2.1.7",
     "@types/file-saver": "^2.0.7",
     "chart.js": "^4.4.8",
