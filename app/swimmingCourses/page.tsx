@@ -12,8 +12,8 @@ export const metadata: Metadata = {
     images: [
       {
         url: "/hooked0ntech/swimage.png", // Ersetzen Sie dies mit dem Pfad zu Ihrem gewünschten Vorschaubild
-        width: 1200,
-        height: 630,
+        width: 600,
+        height: 600,
         alt: "Schwimmkurse in Aachen",
       },
     ],
