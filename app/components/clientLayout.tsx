@@ -16,6 +16,8 @@ export default function ClientLayout({
   const hideHeaderFooterForPolitics = pathname.includes("hooked0npolitics");
   const hideHeaderFooterForStudy = pathname.includes("hooked0nstudys");
   const hideHeaderFooterForStart = pathname.includes("start");
+  const hideHeaderFooterForSwimmingCourses = pathname.includes("swimmingCourses");
+
 
 
 
@@ -25,7 +27,7 @@ export default function ClientLayout({
       {hideHeaderFooterForPolitics && <PoliticsHeader />}
       {hideHeaderFooter && <LifeHeader />}
       {children}
-      {!hideHeaderFooter && !hideHeaderFooterForPolitics && !hideHeaderFooterForStart && <Footer />}
+      {!hideHeaderFooter && !hideHeaderFooterForPolitics && !hideHeaderFooterForSwimmingCourses && !hideHeaderFooterForStart && <Footer />}
     </>
   );
 }

@@ -3,36 +3,52 @@ import Image from "next/image";
 const SwimmingCoursesPage = () => {
   const courses = [
     {
-      title: "Einzelstunde",
+      title: "Einzelstunde Erwachsene",
       description:
-        "Flexibler Einzelunterricht für individuelle Bedürfnisse. Ideal für intensive Betreuung oder spezifische Technikanpassungen.",
-      price: "45€",
-      duration: "45 Minuten",
+        "Du bist Erwachsen und möchtest das Schwimmen lernen, deine Technik verbessern oder neue Schwimmstile erkunden? Gemeinsam bekommen wir das hin.",
+      price: "20€ + eigener Schwimmbad Eintritt",
+      duration: "45 Minuten, Anzahl der Einheiten wird individuell festgelegt.",
       maxParticipants: "Einzelunterricht",
     },
     {
-      title: "Wassergewöhnung & Seepferdchen",
+      title: "Wasserfitness",
       description:
-        "Behutsame erste Schritte im Wasser für die Kleinsten. Spielerisches Lernen der Grundlagen in vertrauensvoller Atmosphäre.",
-      price: "35€ pro Einheit",
-      duration: "8 Einheiten à 45 Minuten (280€)",
+        "Du hast Probleme mit den Gelenken und möchtest trotzdem deine Ausdauer, Kraft und Beweglichkeit verbessern? Das ist kein Problem im Wasser können wir problematische Belastungspunkte umgehen und langsam an einer Verbesserung arbeiten. ",
+      price: "20€ + Eintritt",
+      duration: "45 Minuten, Anzahl der Einheiten wird individuell festgelegt.",
+      maxParticipants: "Einzelunterricht",
+    },
+    {
+      title: "Wassergewöhnung",
+      description:
+        "Dein Kind hat noch wenig Erfahrung im Wasser oder vielleicht sogar noch Angst davor? Spielerisch wird das Kind dem Wasser näher gebracht. Ziel ist es das sich in Schulterhohem Wasser frei bewegen zu können und auch ohne Schwimmbrille zu tauchen.",
+      price: "20€ pro Einheit + Eintritt",
+      duration: "8 Einheiten à 45 Minuten (160€)",
+      maxParticipants: "Einzelunterricht",
+    },
+    {
+      title: "Seepferdchen",
+      description:
+        "Das Kind hat die Wassergewöhnung hinter sich und traut sich mit dem gesamten Kopf unter zu tauchen, dann kann es nun ans schwimmen gehen. Ziel ist das erreichen des Seepferdchen Abzeichens.",
+      price: "20€ pro Einheit + Eintritt",
+      duration: "8 Einheiten à 45 Minuten (160€)",
       maxParticipants: "Einzelunterricht",
     },
     {
       title: "Bronze, Silber & Gold",
       description:
         "Intensive Vorbereitung auf die Schwimmabzeichen. Perfekte Technik und Ausdauer für die erfolgreiche Prüfung.",
-      price: "40€ pro Einheit",
-      duration: "10 Einheiten à 45 Minuten (400€)",
-      maxParticipants: "Max. 2 Teilnehmer (35€/Person)",
+      price: "20€ pro Einheit",
+      duration: "10 Einheiten à 45 Minuten (200€)",
+      maxParticipants: "Max. 2 Teilnehmer (15€/Person)",
     },
     {
-      title: "Erwachsenenkurs",
+      title: "Trainingsbuddy",
       description:
-        "Individuell angepasster Schwimmunterricht für Anfänger und Fortgeschrittene in entspannter Atmosphäre.",
-      price: "45€ pro Einheit",
-      duration: "8 Einheiten à 45 Minuten (360€)",
-      maxParticipants: "Einzelunterricht",
+        "Schreib mich einfach an und wir erstellen dein personalisiertes Trainingsprogramm. Ich erstelle dir einen Trainingsplan, der dich deine Ziele erreichen lässt. Und komme auch zur Motivation mit trainieren stehe gerne auch für Motivierende Schwimm sprints oder ausdauer Ziele zur Verfügung wenn ich mithalten kann.",
+      price: "20€ ",
+      duration: " 60 Minuten",
+      maxParticipants: "Einzelstunde",
     },
   ];
 
@@ -46,34 +62,31 @@ const SwimmingCoursesPage = () => {
               Schwimmkurse in Aachen
             </h1>
             <p className="text-xl mb-4 text-white">
-              Wo Schwimmen zur Leidenschaft wird
+              Zusammen was<span className="text-white/10">s</span>erreichen
             </p>
           </section>
 
           <section className="mb-16">
-            <h2 className="text-3xl font-semibold mb-8 text-[#3592d0]">
-              Kursangebote
-            </h2>
             <div className="grid grid-cols-1 md:grid-cols-2 gap-8">
               {courses.map((course, index) => (
                 <div
                   key={index}
-                  className=" rounded-xl p-8 shadow-xl hover:shadow-2xl transition-all duration-300 backdrop-blur-sm border border-[#3592d0] "
+                  className=" rounded-xl p-4 shadow-xl hover:shadow-2xl transition-all duration-300 backdrop-blur-sm border border-[#3592d0] "
                 >
-                  <h3 className="text-2xl font-semibold mb-4 text-[#bddff5]">
+                  <h3 className="text-xl font-semibold mb-4 text-[#bddff5]">
                     {course.title}
                   </h3>
-                  <p className="mb-6 text-lg text-white">
+                  <p className="mb-6 text-md text-white">
                     {course.description}
                   </p>
-                  <div className="space-y-3 text-lg text-slate-300">
+                  <div className="space-y-3 text-md text-slate-300">
                     <p className="flex items-center">
                       <span className=" mr-2">🕒</span> {course.duration}
                     </p>
                     <p className="flex items-center">
                       <span className=" mr-2">👥</span> {course.maxParticipants}
                     </p>
-                    <p className="text-2xl font-bold text-[#bddff5] mt-4">
+                    <p className="text-xl font-bold text-[#bddff5] mt-4">
                       {course.price}
                     </p>
                   </div>
@@ -98,13 +111,14 @@ const SwimmingCoursesPage = () => {
                   <span className="text-cyan-600 dark:text-cyan-400 mr-3">
                     🎫
                   </span>{" "}
-                  Eintrittskosten für das Schwimmbad sind separat
+                  Eigene Eintrittskosten für das Schwimmbad werden separat
+                  gezahlt
                 </li>
                 <li className="flex items-center">
                   <span className="text-cyan-600 dark:text-cyan-400 mr-3">
                     💳
                   </span>{" "}
-                  Bezahlung per PayPal
+                  Bezahlung per PayPal Freunde oder Bar
                 </li>
                 <li className="flex items-center">
                   <span className="text-cyan-600 dark:text-cyan-400 mr-3">
@@ -128,7 +142,7 @@ const SwimmingCoursesPage = () => {
             </h2>
             <div className="bg-white/90 dark:bg-slate-900/90 p-8 rounded-xl shadow-xl backdrop-blur-sm">
               <p className="mb-6 text-lg text-slate-700 dark:text-slate-300">
-                Mit über 15 Jahren Schwimmerfahrung und einer abgeschlossenen
+                Mit über 20 Jahren Schwimmerfahrung und einer abgeschlossenen
                 Ausbildung als Fachangestellte für Bäderbetriebe biete ich
                 professionellen und persönlichen Schwimmunterricht an.
               </p>
@@ -143,7 +157,7 @@ const SwimmingCoursesPage = () => {
                   <span className="text-cyan-600 dark:text-cyan-400 mr-2">
                     🏊‍♀️
                   </span>{" "}
-                  7 Jahre aktiv im Schwimmverein
+                  7 Jahre aktiv im Schwimmverein mit Wettkampf Erfahrung
                 </li>
                 <li className="flex items-center">
                   <span className="text-cyan-600 dark:text-cyan-400 mr-2">
@@ -173,11 +187,14 @@ const SwimmingCoursesPage = () => {
               Kontakt
             </h2>
             <p className="text-xl mb-6 text-slate-700 dark:text-slate-300">
-              Interesse an einem persönlichen Schwimmkurs?
+              Interesse an einem persönlichen Schwimmkurs? <br/> Schreib mich einfach an.
             </p>
-            <button className="bg-[#3592d0] text-white px-10 py-4 rounded-lg text-xl font-semibold hover:bg-cyan-700 dark:bg-cyan-700 dark:hover:bg-cyan-600 transition-colors shadow-lg hover:shadow-xl">
-              Jetzt anfragen
-            </button>
+            <a
+              href="mailto:annaschwimmt@gmail.com"
+              className="inline-block bg-[#3592d0] text-white px-10 py-4 rounded-lg text-xl font-semibold hover:bg-cyan-700 dark:bg-cyan-700 dark:hover:bg-cyan-600 transition-colors shadow-lg hover:shadow-xl"
+            >
+              annaschwimmt@gmail.com
+            </a>
           </section>
         </div>
       </div>
