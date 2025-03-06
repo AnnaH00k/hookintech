@@ -4,7 +4,6 @@ const SixMonthNovelPlan = () => {
   return (
     <div
       className="max-w-4xl mx-auto p-8 bg-cover bg-center text-[#E8D8C3] rounded-lg shadow-lg"
-      style={{ backgroundImage: "url('/path/to/your/bookshelf-image.jpg')" }}
     >
       <h1 className="text-4xl font-serif font-bold text-center mb-8 text-[#D1BBA0] bg-opacity-70 bg-black rounded-lg p-4">
         Six Month Novel Writing Plan
