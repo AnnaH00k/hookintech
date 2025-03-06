@@ -219,7 +219,7 @@ const SwimmingCoursesPage = () => {
             </p>
             <a
               href="mailto:annaschwimmt@gmail.com"
-              className="inline-block bg-[#3592d0] text-white px-10 py-4 rounded-lg text-xl font-semibold hover:bg-cyan-700 dark:bg-cyan-700 dark:hover:bg-cyan-600 transition-colors shadow-lg hover:shadow-xl"
+              className="inline-block bg-[#3592d0] text-white px-10 py-4 rounded-lg sm:text-xl text-sm font-semibold hover:bg-cyan-700 dark:bg-cyan-700 dark:hover:bg-cyan-600 transition-colors shadow-lg hover:shadow-xl"
             >
               annaschwimmt@gmail.com
             </a>
