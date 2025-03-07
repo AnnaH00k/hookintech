@@ -80,7 +80,7 @@ const SwimmingCoursesPage = () => {
   ];
 
   return (
-    <main className="min-h-screen   text-slate-100 select-none">
+    <main className="min-h-screen bg-slate-950  text-slate-100 select-none">
       <div className="relative">
         <div className=" bg-blue-400/5 absolute inset-0"></div>
         <div className="container mx-auto p-8 max-w-6xl relative">
