@@ -2,9 +2,7 @@ import React from "react";
 
 const SixMonthNovelPlan = () => {
   return (
-    <div
-      className="max-w-4xl mx-auto p-8 bg-cover bg-center text-[#E8D8C3] rounded-lg shadow-lg"
-    >
+    <div className="max-w-4xl mx-auto p-8 bg-cover bg-center text-[#E8D8C3] rounded-lg shadow-lg">
       <h1 className="text-4xl font-serif font-bold text-center mb-8 text-[#D1BBA0] bg-opacity-70 bg-black rounded-lg p-4">
         Six Month Novel Writing Plan
       </h1>
@@ -14,7 +12,7 @@ const SixMonthNovelPlan = () => {
             Month 1: Planning and Outlining
           </h2>
           <ul className="list-disc list-inside pl-5">
-            <li>Define your novel's genre and target audience.</li>
+            <li>Define your novel&apos;s genre and target audience.</li>
             <li>Create character profiles for main characters.</li>
             <li>Outline the plot structure (beginning, middle, end).</li>
           </ul>
@@ -25,7 +23,7 @@ const SixMonthNovelPlan = () => {
           </h2>
           <ul className="list-disc list-inside pl-5">
             <li>
-              Conduct research relevant to your novel's setting and themes.
+              Conduct research relevant to your novel&apos;s setting and themes.
             </li>
             <li>Gather resources and references.</li>
           </ul>
@@ -36,7 +34,7 @@ const SixMonthNovelPlan = () => {
           </h2>
           <ul className="list-disc list-inside pl-5">
             <li>Write the first 25% of your novel.</li>
-            <li>Focus on getting words on the page, don't edit.</li>
+            <li>Focus on getting words on the page, don&apos;t edit.</li>
           </ul>
         </div>
         <div className="p-6 bg-[#4B3A3A] rounded-lg shadow-[4px_4px_8px_rgba(0,0,0,0.1),-4px_-4px_8px_rgba(255,255,255,0.1)]">
