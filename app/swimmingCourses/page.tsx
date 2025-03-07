@@ -80,9 +80,9 @@ const SwimmingCoursesPage = () => {
   ];
 
   return (
-    <main className="min-h-screen  text-slate-800 dark:text-slate-100 select-none">
+    <main className="min-h-screen   text-slate-100 select-none">
       <div className="relative">
-        <div className="bg-cyan-500/5 dark:bg-blue-400/5 absolute inset-0"></div>
+        <div className=" bg-blue-400/5 absolute inset-0"></div>
         <div className="container mx-auto p-8 max-w-6xl relative">
           <section className="bg-gradient-to-b from-[#3592d0] to-[#01192f] text-center mb-16 backdrop-blur-sm rounded-xl p-8 shadow-xl">
             <h1 className="text-4xl font-bold mb-4 text-black">
