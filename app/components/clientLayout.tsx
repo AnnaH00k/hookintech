@@ -14,20 +14,14 @@ export default function ClientLayout({
   const pathname = usePathname();
   const hideHeaderFooter = pathname.includes("hooked0nlife");
   const hideHeaderFooterForPolitics = pathname.includes("hooked0npolitics");
-  const hideHeaderFooterForStudy = pathname.includes("hooked0nstudys");
-  const hideHeaderFooterForStart = pathname.includes("start");
-  const hideHeaderFooterForSwimmingCourses = pathname.includes("swimmingCourses");
-
-
 
 
   return (
     <>
-     
       {hideHeaderFooterForPolitics && <PoliticsHeader />}
       {hideHeaderFooter && <LifeHeader />}
       {children}
-      {!hideHeaderFooter && !hideHeaderFooterForPolitics && !hideHeaderFooterForSwimmingCourses && !hideHeaderFooterForStart && <Footer />}
+      {pathname === "/" && <Footer />}
     </>
   );
 }

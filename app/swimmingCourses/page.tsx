@@ -126,38 +126,26 @@ const SwimmingCoursesPage = () => {
             <h2 className="text-3xl font-semibold mb-8 text-[#3592d0]">
               Wichtige Informationen
             </h2>
-            <div className="bg-white/90 dark:bg-slate-900/90 p-8 rounded-xl shadow-xl backdrop-blur-sm">
-              <ul className="space-y-4 text-lg text-slate-700 dark:text-slate-300">
+            <div className="bg-slate-900/90 p-8 rounded-xl shadow-xl backdrop-blur-sm">
+              <ul className="space-y-4 text-lg text-slate-300">
                 <li className="flex items-center">
-                  <span className="text-cyan-600 dark:text-cyan-400 mr-3">
-                    📍
-                  </span>{" "}
-                  Kurse in Aachen
+                  <span className="text-cyan-400 mr-3">📍</span> Kurse in Aachen
                 </li>
                 <li className="flex items-center">
-                  <span className="text-cyan-600 dark:text-cyan-400 mr-3">
-                    🎫
-                  </span>{" "}
-                  Eigene Eintrittskosten für das Schwimmbad werden separat
-                  gezahlt
+                  <span className="text-cyan-400 mr-3">🎫</span> Eigene
+                  Eintrittskosten für das Schwimmbad werden separat gezahlt
                 </li>
                 <li className="flex items-center">
-                  <span className="text-cyan-600 dark:text-cyan-400 mr-3">
-                    💳
-                  </span>{" "}
-                  Bezahlung per PayPal Freunde oder Bar
+                  <span className="text-cyan-400 mr-3">💳</span> Bezahlung per
+                  PayPal Freunde oder Bar
                 </li>
                 <li className="flex items-center">
-                  <span className="text-cyan-600 dark:text-cyan-400 mr-3">
-                    📝
-                  </span>{" "}
-                  Flexible Terminvereinbarung
+                  <span className="text-cyan-400 mr-3">📝</span> Flexible
+                  Terminvereinbarung
                 </li>
                 <li className="flex items-center">
-                  <span className="text-cyan-600 dark:text-cyan-400 mr-3">
-                    👤
-                  </span>{" "}
-                  Persönliche Betreuung garantiert
+                  <span className="text-cyan-400 mr-3">👤</span> Persönliche
+                  Betreuung garantiert
                 </li>
               </ul>
             </div>
@@ -167,59 +155,48 @@ const SwimmingCoursesPage = () => {
             <h2 className="text-3xl font-semibold mb-8 text-[#3592d0]">
               Über mich
             </h2>
-            <div className="bg-white/90 dark:bg-slate-900/90 p-8 rounded-xl shadow-xl backdrop-blur-sm">
-              <p className="mb-6 text-lg text-slate-700 dark:text-slate-300">
+            <div className="bg-slate-900/90 p-8 rounded-xl shadow-xl backdrop-blur-sm">
+              <p className="mb-6 text-lg text-slate-300">
                 Mit über 20 Jahren Schwimmerfahrung und einer abgeschlossenen
                 Ausbildung als Fachangestellte für Bäderbetriebe biete ich
                 professionellen und persönlichen Schwimmunterricht an.
               </p>
-              <ul className="list-none space-y-4 text-lg text-slate-700 dark:text-slate-300">
+              <ul className="list-none space-y-4 text-lg text-slate-300">
                 <li className="flex items-center">
-                  <span className="text-cyan-600 dark:text-cyan-400 mr-2">
-                    🌊
-                  </span>{" "}
+                  <span className="text-cyan-400 mr-2">🌊</span>{" "}
                   Schwimmerfahrung seit dem Alter von 2,5 Jahren
                 </li>
                 <li className="flex items-center">
-                  <span className="text-cyan-600 dark:text-cyan-400 mr-2">
-                    🏊‍♀️
-                  </span>{" "}
-                  7 Jahre aktiv im Schwimmverein mit Wettkampf Erfahrung
+                  <span className="text-cyan-400 mr-2">🏊‍♀️</span> 7 Jahre aktiv
+                  im Schwimmverein mit Wettkampf Erfahrung
                 </li>
                 <li className="flex items-center">
-                  <span className="text-cyan-600 dark:text-cyan-400 mr-2">
-                    📜
-                  </span>{" "}
-                  Ausgebildete Fachangestellte für Bäderbetriebe (Abschluss
-                  2021)
+                  <span className="text-cyan-400 mr-2">📜</span> Ausgebildete
+                  Fachangestellte für Bäderbetriebe (Abschluss 2021)
                 </li>
                 <li className="flex items-center">
-                  <span className="text-cyan-600 dark:text-cyan-400 mr-2">
-                    🏅
-                  </span>{" "}
-                  Spezialisierung auf Schwimmabzeichen-Kurse
+                  <span className="text-cyan-400 mr-2">🏅</span> Spezialisierung
+                  auf Schwimmabzeichen-Kurse
                 </li>
                 <li className="flex items-center">
-                  <span className="text-cyan-600 dark:text-cyan-400 mr-2">
-                    💪
-                  </span>{" "}
-                  Erfahrung in Wassergymnastik und Aquajogging
+                  <span className="text-cyan-400 mr-2">💪</span> Erfahrung in
+                  Wassergymnastik und Aquajogging
                 </li>
               </ul>
             </div>
           </section>
 
-          <section className="text-center bg-white/90 dark:bg-slate-900/90 rounded-xl p-8 shadow-xl backdrop-blur-sm">
+          <section className="text-center bg-slate-900/90 rounded-xl p-8 shadow-xl backdrop-blur-sm">
             <h2 className="text-3xl font-semibold mb-6 text-[#3592d0]">
               Kontakt
             </h2>
-            <p className="text-xl mb-6 text-slate-700 dark:text-slate-300">
+            <p className="text-xl mb-6 text-slate-300">
               Interesse an einem persönlichen Schwimmkurs? <br /> Schreib mich
               einfach an.
             </p>
             <a
               href="mailto:annaschwimmt@gmail.com"
-              className="inline-block bg-[#3592d0] text-white px-10 py-4 rounded-lg sm:text-xl text-sm font-semibold hover:bg-cyan-700 dark:bg-cyan-700 dark:hover:bg-cyan-600 transition-colors shadow-lg hover:shadow-xl"
+              className="inline-block bg-cyan-700 text-white px-10 py-4 rounded-lg sm:text-xl text-sm font-semibold hover:bg-cyan-600 transition-colors shadow-lg hover:shadow-xl"
             >
               annaschwimmt@gmail.com
             </a>
