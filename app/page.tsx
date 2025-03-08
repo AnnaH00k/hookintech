@@ -1,15 +1,22 @@
 "use client";
 
 import Link from "next/link";
+import Image from "next/image";
 
 export default function Home() {
   return (
     <div className="w-full ">
       <main className="flex flex-col items-center justify-between sm:py-20 pb-[10vh]  bg-[#0A1109] w-full">
         <div className="flex flex-col justify-center sm:h-auto h-[76vh] items-center w-full mt-[5vh]">
-          <h1 className="text-4xl text-center w-[90vw] text-[#A0A2A0] font-bold">
-            Hooked0ntech
-          </h1>
+       
+          <Image
+            src="/images/hooked0ntechImage.png"
+            alt="hooked0n"
+            width={200}
+            height={200}
+            className="h-[200px] w-auto"
+            priority
+          />
           <h2 className="text-2xl text-center w-[90vw] text-[#A0A2A0] font-thin">
             Portfolio of a Developer
           </h2>
@@ -54,6 +61,10 @@ export default function Home() {
                 @ IU International University
               </div>
             </Link>
+           
+           
+{/*
+           
             <Link
               href="https://clye.app/en"
               target="_blank"
@@ -70,7 +81,14 @@ export default function Home() {
                 CLYE Landingpage
               </div>
             </Link>
-            <Link  href="https://play.google.com/store/apps/details?id=com.Hook.fabapp&fbclid=IwAR0qtZG8s9tki8USCR4IdGCpI7nGZstqH2XIuT5D2Bo0Uuxo6A6KGWBkDT0" target="_blank" className="shadow-neumorphic-hooked0ntech-box flex flex-col rounded-lg max-w-[400px] min-h-[150px]  sm:w-[40vw] w-[80vw] text-center items-center justify-center gap-2 bg-[#151C14] sm:hover:bg-[#1A2310] shadow-[#646864] sm:hover:scale-105 p-4"
+
+*/}
+
+
+            <Link
+              href="https://play.google.com/store/apps/details?id=com.Hook.fabapp&fbclid=IwAR0qtZG8s9tki8USCR4IdGCpI7nGZstqH2XIuT5D2Bo0Uuxo6A6KGWBkDT0"
+              target="_blank"
+              className="shadow-neumorphic-hooked0ntech-box flex flex-col rounded-lg max-w-[400px] min-h-[150px]  sm:w-[40vw] w-[80vw] text-center items-center justify-center gap-2 bg-[#151C14] sm:hover:bg-[#1A2310] shadow-[#646864] sm:hover:scale-105 p-4"
             >
               <h2 className="text-lg text-[#A0A2A0] font-bold">FAB App</h2>
 
@@ -125,10 +143,10 @@ export default function Home() {
               {/*<p className="text-md text-[#7C9838]">Da Vinci Resolve</p>*/}
             </div>
 
-            {/*}  <div className=" flex flex-col rounded-lg max-w-[400px] min-h-[150px]  sm:w-[40vw] text-center items-center justify-center gap-2 bg-[#151C14] hover:bg-[#1A2310] hover:scale-105 p-4">
+            <div className="shadow-neumorphic-hooked0ntech-box cursor-default flex flex-col rounded-lg max-w-[400px] min-h-[150px]  sm:w-[40vw] w-[80vw] text-center items-center justify-center gap-2 bg-[#151C14] shadow-[#646864] p-4">
                 <h2 className="text-lg text-[#A0A2A0] font-bold">VR development</h2>
-                <p className="text-md text-[#744F29]">Unreal Engine 5, Meta Quest 2</p>
-            </div> */}
+                <p className="text-md text-[#7C9838]">Unreal Engine 5 (still learning), Meta Quest 2 </p>
+            </div> 
           </div>
         </div>
 
@@ -154,13 +172,7 @@ export default function Home() {
               >
                 hookb00k
               </Link>
-              <Link
-                className="text-sm sm:hover:scale-105 sm:text-md text-[#A0A2A0] hover:text-[#fff] rounded-full bg-[#303830] px-3 py-1"
-                href="https://youtube.com/@Studyvation?si=EzWIS-EEmj7Ndr7-"
-                target="_blank"
-              >
-                Studyvation
-              </Link>
+             
             </div>
             <div className="shadow-neumorphic-hooked0ntech-box flex flex-col rounded-lg max-w-[400px] min-h-[150px]  sm:w-[40vw] w-[80vw] text-center items-center justify-center gap-2 bg-[#151C14] sm:hover:bg-[#1A2310] shadow-[#646864]  p-4">
               <h2 className="text-lg text-[#A0A2A0] font-bold">Instagram</h2>
