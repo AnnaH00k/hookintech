@@ -10,7 +10,7 @@ export default function Home() {
         <div className="flex flex-col justify-center sm:h-auto h-[76vh] items-center w-full mt-[5vh]">
        
           <Image
-            src="/images/hooked0ntechImage.png"
+            src="/hooked0ntech/images/hooked0ntechImage.png"
             alt="hooked0n"
             width={200}
             height={200}
