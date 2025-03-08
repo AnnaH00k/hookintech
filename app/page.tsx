@@ -8,9 +8,8 @@ export default function Home() {
     <div className="w-full ">
       <main className="flex flex-col items-center justify-between sm:py-20 pb-[10vh]  bg-[#0A1109] w-full">
         <div className="flex flex-col justify-center sm:h-auto h-[76vh] items-center w-full mt-[5vh]">
-       
           <Image
-            src="/hooked0ntech/images/hooked0ntechImage.png"
+            src="/hooked0ntech/images/Hooked0ntechImage.png"
             alt="hooked0n"
             width={200}
             height={200}
@@ -61,9 +60,8 @@ export default function Home() {
                 @ IU International University
               </div>
             </Link>
-           
-           
-{/*
+
+            {/*
            
             <Link
               href="https://clye.app/en"
@@ -83,7 +81,6 @@ export default function Home() {
             </Link>
 
 */}
-
 
             <Link
               href="https://play.google.com/store/apps/details?id=com.Hook.fabapp&fbclid=IwAR0qtZG8s9tki8USCR4IdGCpI7nGZstqH2XIuT5D2Bo0Uuxo6A6KGWBkDT0"
@@ -144,9 +141,13 @@ export default function Home() {
             </div>
 
             <div className="shadow-neumorphic-hooked0ntech-box cursor-default flex flex-col rounded-lg max-w-[400px] min-h-[150px]  sm:w-[40vw] w-[80vw] text-center items-center justify-center gap-2 bg-[#151C14] shadow-[#646864] p-4">
-                <h2 className="text-lg text-[#A0A2A0] font-bold">VR development</h2>
-                <p className="text-md text-[#7C9838]">Unreal Engine 5 (still learning), Meta Quest 2 </p>
-            </div> 
+              <h2 className="text-lg text-[#A0A2A0] font-bold">
+                VR development
+              </h2>
+              <p className="text-md text-[#7C9838]">
+                Unreal Engine 5 (still learning), Meta Quest 2{" "}
+              </p>
+            </div>
           </div>
         </div>
 
@@ -172,7 +173,6 @@ export default function Home() {
               >
                 hookb00k
               </Link>
-             
             </div>
             <div className="shadow-neumorphic-hooked0ntech-box flex flex-col rounded-lg max-w-[400px] min-h-[150px]  sm:w-[40vw] w-[80vw] text-center items-center justify-center gap-2 bg-[#151C14] sm:hover:bg-[#1A2310] shadow-[#646864]  p-4">
               <h2 className="text-lg text-[#A0A2A0] font-bold">Instagram</h2>
