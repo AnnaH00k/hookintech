@@ -1,10 +1,16 @@
 export default function Ideas() {
     const ideas = [
+     
     
       {
         name: "Studyvation/ Hooked0nStudys",
         description: "Plattform zum Teilen von Lernmaterialien, AusbildungsHelfer, Studiumsbegleiter (Fortsetzung der FabApp), Webseite und App für effektives Lernen mit Studienorganisation, Statistiken und virtuellen Lernräumen",
         target: "Lernende aller Altersgruppen",
+      },
+      {
+        name: "International Rights / Legal Framework",
+        description: "A space to make sense of all the international rights, laws and treaties. Using AI to help people and companies navigate legal rights, norms, and definitions. Rights vary across countries, making it hard for global businesses to comply. https://www.legal-atlas.com/mapping-the-law.html ",
+        target: "Einzelpersonen & Unternehmen",
       },
    
       {
