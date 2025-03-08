@@ -25,6 +25,21 @@ interface Initiative {
 
 const INITIATIVES: Initiative[] = [
   {
+    id: "knowledge",
+    title: "Knowledge Access",
+    description:
+      "Making education and information freely accessible to everyone, everywhere.",
+    icon: <GraduationCap size={32} className="text-purple-500" />,
+    startingPoints: [
+      "Open Education Resources",
+      "Digital Libraries",
+      "Skill-Sharing Platforms",
+      "Global Learning Networks",
+    ],
+    relatedLink: { text: "Explore Hooked0nStudys", href: "/hooked0nstudys" },
+
+  },
+   {
     id: "politics",
     title: "Scientific Politics",
     description:
@@ -55,21 +70,7 @@ const INITIATIVES: Initiative[] = [
     ],
     relatedLink: { text: "Explore Hooked0nLife", href: "/hooked0nlife" },
   },
-  {
-    id: "knowledge",
-    title: "Knowledge Access",
-    description:
-      "Making education and information freely accessible to everyone, everywhere.",
-    icon: <GraduationCap size={32} className="text-purple-500" />,
-    startingPoints: [
-      "Open Education Resources",
-      "Digital Libraries",
-      "Skill-Sharing Platforms",
-      "Global Learning Networks",
-    ],
-    relatedLink: { text: "Explore Hooked0nStudys", href: "/hooked0nstudys" },
-
-  },
+ 
   {
     id: "nature-living",
     title: "Natural Integration",

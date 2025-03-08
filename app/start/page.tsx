@@ -7,8 +7,8 @@ import { useState, useEffect } from "react";
 const MAIN_NAVIGATION_ITEMS = [
   { href: "/studys", title: "Studies" },
   { href: "/selfEmployment", title: "Self Employment" },
-  { href: "/openSource", title: "Open Source" },
   { href: "/worldChange", title: "Change the World for the Better" },
+  { href: "/openSource", title: "Open Source" },
   { href: "/externalProjects", title: "External Projects" },
   {
     href: "https://analytics.google.com/analytics/web/?authuser=0#/p451197916/reports/intelligenthome",

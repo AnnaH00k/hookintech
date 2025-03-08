@@ -1,25 +1,12 @@
 export default function Ideas() {
     const ideas = [
+    
       {
-        name: "FABapp",
-        description: "Lern-App für Auszubildende in Bäderbetrieben",
-        target: "Auszubildende in Bäderbetrieben",
+        name: "Studyvation/ Hooked0nStudys",
+        description: "Plattform zum Teilen von Lernmaterialien, AusbildungsHelfer, Studiumsbegleiter (Fortsetzung der FabApp), Webseite und App für effektives Lernen mit Studienorganisation, Statistiken und virtuellen Lernräumen",
+        target: "Lernende aller Altersgruppen",
       },
-      {
-        name: "Azubee",
-        description: "Plattform zum Teilen von Lernmaterialien, AusbildungsHelfer",
-        target: "Ausbilder und Auszubildende aller Berufe",
-      },
-      {
-        name: "Challengor",
-        description: "App zum Erstellen und Teilen von Challenges",
-        target: "Allgemein",
-      },
-      {
-        name: "SipSave",
-        description: "Wein-App zum Speichern, Teilen und Finden von Weinen",
-        target: "Weinliebhaber",
-      },
+   
       {
         name: "Hookbook",
         description: "Schreib-App mit Statistik, Zielsetzung, Recherche-Organisation, To-Do-Liste und KI-Optimierung",
@@ -41,39 +28,20 @@ export default function Ideas() {
         target: "Pflegekräfte und Angehörige",
       },
       {
-        name: "Persönlicher Bot",
-        description: "Individuell entwickelter Chatbot und KI-Modell",
-        target: "Benutzerdefiniert",
-      },
-      {
         name: "VR/AR Mind Mapper",
         description: "Interaktive Lernumgebung mit VR/AR und Mind Mapping per Handtracking",
         target: "Schüler und Studenten",
       },
-      {
-        name: "Hooked0nStudys",
-        description: "Webseite und App für effektives Lernen mit Studienorganisation, Statistiken und virtuellen Lernräumen",
-        target: "Online-Studierende",
-      },
+    
       {
         name: "Zukunftsblick",
         description: "Sachbuch/ geschichte über Politik, Motivation und Vertrauen in Wissenschaft und Logik",
         target: "Allgemein",
       },
       {
-        name: "Superhelden-Serie",
-        description: "Animationsserie über eine intelligente Superheldin",
+        name: "Strong female Animation Series",
+        description: "Animationsserie über intelligente Frauen",
         target: "Allgemein (mit Fokus auf junge Mädchen)",
-      },
-      {
-        name: "Video: Gaining back focus and dicipline/ from blob to badass",
-        description: "Sharing my journey from being a blob to becoming a badass creator",
-        target: "People who want motivation and real life stories",
-      },
-      {
-        name: "Video: 100h of making money",
-        description: "How to make money by creating content and selling products",
-        target: "People interested in making money",
       },
       {
         name: "Video: 100h of making games",
@@ -86,25 +54,11 @@ export default function Ideas() {
         target: "People interested in making money & music",
       },
       {
-        name: "Video: Creating Cinema quality videos",
-        description: " How to create videos that look like they are from the cinema",
-        target: " People interested in making videos",
-      },
-      {
-        name: "Video: How to create a frontend website with nextjs, Typescript and TailwindCSS",
-        description: "",
+        name: "Videos on development ",
+        description: "How to add a backend to your website, Website & App in one with Nextjs ",
         target: "developers",
       },
-      {
-        name: "Video: How to add a backend to your website",
-        description: " ",
-        target: "developers",
-      },
-      {
-        name: "Video: Website & App in one with Nextjs",
-        description: " ",
-        target: "developers",
-      },
+     
     ];
   
     return (
