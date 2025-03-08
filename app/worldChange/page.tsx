@@ -67,6 +67,8 @@ const INITIATIVES: Initiative[] = [
       "Skill-Sharing Platforms",
       "Global Learning Networks",
     ],
+    relatedLink: { text: "Explore Hooked0nStudys", href: "/hooked0nstudys" },
+
   },
   {
     id: "nature-living",

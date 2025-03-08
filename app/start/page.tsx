@@ -9,21 +9,14 @@ const MAIN_NAVIGATION_ITEMS = [
   { href: "/selfEmployment", title: "Self Employment" },
   { href: "/openSource", title: "Open Source" },
   { href: "/worldChange", title: "Change the World for the Better" },
-] as const;
-
-const PROJECT_LINKS = [
   { href: "/externalProjects", title: "External Projects" },
   {
     href: "https://analytics.google.com/analytics/web/?authuser=0#/p451197916/reports/intelligenthome",
     title: "Website Statistics",
   },
-  { href: "/ugGruendung", title: "UG Gründung" },
-  { href: "/openSource", title: "Open Source" },
-  { href: "/apiSite", title: "API Site" },
-  { href: "/gameProjects", title: "Game Projects" },
-  { href: "/aiPowered", title: "AI Powered" },
-  { href: "/toolsForDevelopers", title: "Tools for Developers" },
 ] as const;
+
+
 
 const VINE_COUNT = 22;
 
@@ -165,7 +158,7 @@ export default function Home() {
             <Globe size={32} />
           </Link>
           <h1 className="text-4xl text-center text-[#A0A2A0] font-bold">
-            Level2025
+            Level 2025
           </h1>
           <Link href="/" className="text-lg text-[#A0A2A0] hover:scale-110 p-4">
             <Alien size={32} />
@@ -180,15 +173,7 @@ export default function Home() {
           ))}
         </nav>
 
-        <section className="flex flex-col flex-wrap justify-center gap-4 w-[90vw] mt-[5vh]">
-          <div className="flex flex-row flex-wrap justify-center gap-4 w-[90vw] mt-8">
-            {PROJECT_LINKS.map(({ href, title }) => (
-              <ProjectButton key={href} href={href}>
-                {title}
-              </ProjectButton>
-            ))}
-          </div>
-        </section>
+       
       </main>
     </div>
   );

@@ -34,7 +34,7 @@ export function CourseCard({
 
   return (
     <Link
-      href={isComplete ? `/studys/informatik/courses/${slug}` : "#"}
+      href={isComplete ? `/studys/informatik/${slug}` : "#"}
       className={`block border-t border-[#2A3828]/30 pt-4 first:border-0  
         hover:bg-[#1A2310] transition-colors duration-200 -mx-6 px-6 py-4 first:-mt-6 -mb-4 last:mb-[-1.5rem]
         group ${!isComplete ? "opacity-50 cursor-not-allowed" : ""}`}

@@ -32,37 +32,37 @@ export default function PageOverview() {
   const organizedLinks = organizeLinks(allLinks);
 
   // Render links recursively with connectors
-  const renderLinks = (linkStructure: any) => {
+  const renderLinks = (linkStructure: any, parentPath = "") => {
     return Object.keys(linkStructure).map((key) => {
       const value = linkStructure[key];
-
+      const fullPath = `${parentPath}/${key}`.replace(/^\/+/, ""); // Entfernt doppelten Slash
+  
       return (
         <div key={key} className="mb-6 relative">
           <h3 className="text-lg text-[#A0A2A0] font-semibold flex items-center">
-            {Array.isArray(value) && <span className="mr-2">🔽</span>}
-            {key}
+            {Array.isArray(value) && value.length > 0 ? <span className="mr-2">🔽</span> : "📁"}
+            <Link href={`/${fullPath}`} className="hover:underline">
+              {key}
+            </Link>
           </h3>
           {Array.isArray(value) ? (
             <div className="flex flex-col ml-4">
               {value.map((link) => (
-                <Link
-                  key={link}
-                  href={link}
-                  className="bg-secondary p-2 rounded-md shadow-lg transition-transform transform hover:shadow-text shadow-md mb-2"
-                >
+                <Link key={link} href={link} className="bg-secondary p-2 rounded-md shadow-lg transition-transform hover:shadow-text shadow-md mb-2">
                   <p className="text-text hyphens-auto">{link}</p>
                 </Link>
               ))}
             </div>
           ) : (
-            <div className="ml-4">{renderLinks(value)}</div>
+            <div className="ml-4">{renderLinks(value, fullPath)}</div>
           )}
-          {/* Draw connector lines */}
+          {/* Linien zeichnen */}
           <div className="absolute left-0 top-6 h-full w-px bg-[#A0A2A0]"></div>
         </div>
       );
     });
   };
+  
 
   return (
     <div className="w-full h-auto">
