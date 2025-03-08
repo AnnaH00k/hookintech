@@ -16,8 +16,6 @@ const MAIN_NAVIGATION_ITEMS = [
   },
 ] as const;
 
-
-
 const VINE_COUNT = 22;
 
 const NavigationButton = ({
@@ -128,15 +126,14 @@ export default function Home() {
             rotate(var(--rotation))
           `;
           vineElement.style.opacity = "0.9";
-          vineElement.style.filter =
-            "brightness(1) saturate(2) hue-rotate(-2deg)";
+          vineElement.style.filter = "brightness(1.2)";
         } else {
           vineElement.style.removeProperty("--moveX");
           vineElement.style.removeProperty("--moveY");
           vineElement.style.removeProperty("--rotation");
           vineElement.style.transform = isEvenVine ? "scaleX(-1)" : "";
           vineElement.style.opacity = "0.5";
-          vineElement.style.filter = "brightness(1) saturate(1)";
+          vineElement.style.filter = "brightness(1)";
         }
       });
     };
@@ -172,8 +169,6 @@ export default function Home() {
             </NavigationButton>
           ))}
         </nav>
-
-       
       </main>
     </div>
   );
