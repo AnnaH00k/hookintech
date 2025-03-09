@@ -6,6 +6,7 @@ import {
   ContentTree,
 } from "@/utils/contentUtils";
 import { FolderIcon, DocumentIcon } from "@heroicons/react/24/outline";
+import CircuitBackground from "./components/CircuitBackground";
 
 export const dynamic = "force-dynamic";
 export const revalidate = 0;
@@ -30,8 +31,9 @@ export default async function Home() {
   const allArticles = await getAllArticles();
 
   return (
-    <div className="w-full">
-      <main className="flex flex-col items-center justify-between sm:py-20 pb-[10vh] min-h-[91vh] bg-[#0A1109] w-full">
+    <div className="w-full min-h-screen bg-[#0A1109] relative">
+      <CircuitBackground />
+      <main className="flex flex-col items-center justify-between sm:py-20 pb-[10vh] min-h-screen w-full relative z-10">
         <div className="flex flex-col justify-center sm:h-auto items-center w-full mt-[5vh] max-w-7xl mx-auto px-4 sm:px-6 lg:px-8">
           <Image
             src="/hooked0ntech/images/Hooked0ntechImage.png"
@@ -53,7 +55,7 @@ export default async function Home() {
           </p>
 
           {/* Topics Section */}
-          <div className="w-full max-w-6xl mb-16 rounded-xl border border-[#1A2310] shadow-[4px_4px_8px_0px_#070B06,_-4px_-4px_8px_0px_#1F2B1B] p-6">
+          <div className="w-full max-w-6xl mb-16 rounded-xl border bg-[#0A1109] border-[#1A2310] shadow-[4px_4px_8px_0px_#070B06,_-4px_-4px_8px_0px_#1F2B1B] p-6">
             <h2 className="text-2xl font-semibold text-[#D7E0C5] text-center mb-6">
               Topics
             </h2>
@@ -74,7 +76,7 @@ export default async function Home() {
           </div>
 
           {/* All Articles Section */}
-          <div className="w-full max-w-6xl mb-16 rounded-xl border border-[#1A2310] shadow-[4px_4px_8px_0px_#070B06,_-4px_-4px_8px_0px_#1F2B1B] p-6">
+          <div className="w-full max-w-6xl mb-16 rounded-xl border bg-[#0A1109] border-[#1A2310] shadow-[4px_4px_8px_0px_#070B06,_-4px_-4px_8px_0px_#1F2B1B] p-6">
             <h2 className="text-2xl font-semibold text-[#D7E0C5] mb-6 text-center">
               All Articles
             </h2>

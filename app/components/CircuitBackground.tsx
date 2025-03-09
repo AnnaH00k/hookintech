@@ -73,7 +73,7 @@ const CenterCircuitSVG = ({ className }: { className: string }) => (
 
 const CircuitBackground = () => {
   return (
-    <div className="absolute inset-0 pointer-events-none z-0">
+    <div className="absolute inset-0 w-full h-full pointer-events-none z-0">
       <svg width="0" height="0">
         <defs>
           <linearGradient id="shimmer" x1="0%" y1="0%" x2="100%" y2="0%">
@@ -126,7 +126,6 @@ const CircuitBackground = () => {
       <div className="absolute top-1/2 right-0 w-[300px] h-[300px] opacity-40 -translate-y-1/2 rotate-180">
         <CenterCircuitSVG className="" />
       </div>
-      
     </div>
   );
 };
