@@ -48,13 +48,14 @@ function getAllMarkdownPaths(
   // If it's a markdown file
   if (tree.type === "file" && tree.name.endsWith(".md")) {
     const type = currentPath[0] || "";
-    // Get the cleaned topic name (without numeric prefix) and the article name
-    const topic = cleanDirectoryName(currentPath[1] || "");
+    const topic = currentPath[1] || "";
+    // Clean the topic name for the URL but keep the article name as is
+    const cleanTopic = cleanDirectoryName(topic);
     const article = tree.name.replace(/\.md$/, "");
     return [
       {
         type,
-        slug: [topic, article],
+        slug: [cleanTopic, article],
       },
     ];
   }
@@ -63,18 +64,30 @@ function getAllMarkdownPaths(
 
   return tree.children.reduce(
     (paths: { type: string; slug: string[] }[], child) => {
-      return [
-        ...paths,
-        ...getAllMarkdownPaths(child, currentPath.concat(child.name)),
-      ];
+      // For the root level, use the tree name as the type
+      const newPath =
+        currentPath.length === 0
+          ? [tree.name, child.name]
+          : [...currentPath, child.name];
+
+      return [...paths, ...getAllMarkdownPaths(child, newPath)];
     },
     []
   );
 }
 
 export async function generateStaticParams() {
-  const contentTree = await getContentTree("articles");
-  return getAllMarkdownPaths(contentTree);
+  const paths: { type: string; slug: string[] }[] = [];
+
+  // Only handle articles since other directories no longer exist
+  try {
+    const contentTree = await getContentTree("articles");
+    paths.push(...getAllMarkdownPaths(contentTree));
+  } catch (error) {
+    console.error("Error processing articles:", error);
+  }
+
+  return paths;
 }
 
 async function getContent(
