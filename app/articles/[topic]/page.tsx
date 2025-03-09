@@ -8,13 +8,18 @@ interface TopicPageProps {
   };
 }
 
+function cleanDirectoryName(name: string): string {
+  // Remove numeric prefix (e.g., "1.KnowledgeAccess" -> "KnowledgeAccess")
+  return name.replace(/^\d+\./, "");
+}
+
 export async function generateStaticParams() {
   const topicTree = await getContentTree("articles");
   const topics =
     topicTree.children
       ?.filter((child) => child.type === "directory")
       .map((child) => ({
-        topic: child.name,
+        topic: cleanDirectoryName(child.name),
       })) || [];
   return topics;
 }
@@ -37,9 +42,9 @@ export default async function TopicPage({ params }: TopicPageProps) {
   const { topic } = params;
   const topicTree = await getContentTree("articles");
 
-  // Find the specific topic directory
+  // Find the specific topic directory using the clean name
   const topicDir = topicTree.children?.find(
-    (child) => child.type === "directory" && child.name === topic
+    (child) => cleanDirectoryName(child.name) === topic
   );
 
   if (!topicDir) {

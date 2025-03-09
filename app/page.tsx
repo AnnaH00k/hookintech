@@ -15,7 +15,12 @@ function getTopics(tree: ContentTree): string[] {
   if (!tree || !tree.children) return [];
   return tree.children
     .filter((child) => child.type === "directory")
-    .map((child) => child.name);
+    .map((child) => cleanDirectoryName(child.name));
+}
+
+function cleanDirectoryName(name: string): string {
+  // Remove numeric prefix (e.g., "1.KnowledgeAccess" -> "KnowledgeAccess")
+  return name.replace(/^\d+\./, "");
 }
 
 function formatTopicName(name: string): string {
@@ -84,7 +89,9 @@ export default async function Home() {
               {allArticles.map((article) => (
                 <Link
                   key={`${article.meta?.topic}/${article.meta?.slug}`}
-                  href={`/articles/${article.meta?.topic}/${article.meta?.slug}`}
+                  href={`/articles/${cleanDirectoryName(
+                    article.meta?.topic || ""
+                  )}/${article.meta?.slug}`}
                   className="group bg-[#151C14] rounded-xl border border-[#1A2310] p-6 transition-all duration-300 hover:border-[#7C9838]"
                 >
                   <div className="flex items-start space-x-3">

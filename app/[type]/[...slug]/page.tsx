@@ -6,6 +6,8 @@ import {
 import { MDXRemote } from "next-mdx-remote";
 import remarkGfm from "remark-gfm";
 import { compileMDX } from "next-mdx-remote/rsc";
+import { readFile } from "fs/promises";
+import { join } from "path";
 
 interface PageProps {
   params: {
@@ -14,9 +16,27 @@ interface PageProps {
   };
 }
 
+interface ContentMeta {
+  title: string;
+  date: string;
+  description?: string;
+  tags?: string[];
+}
+
 function cleanDirectoryName(name: string): string {
   // Remove numeric prefix (e.g., "1.KnowledgeAccess" -> "KnowledgeAccess")
   return name.replace(/^\d+\./, "");
+}
+
+function getOriginalDirectoryName(
+  tree: ContentTree,
+  cleanName: string
+): string | null {
+  // Find the original directory name (with numeric prefix) from the clean name
+  return (
+    tree.children?.find((child) => cleanDirectoryName(child.name) === cleanName)
+      ?.name || null
+  );
 }
 
 function getAllMarkdownPaths(
@@ -57,10 +77,64 @@ export async function generateStaticParams() {
   return getAllMarkdownPaths(contentTree);
 }
 
+async function getContent(
+  type: "articles" | "tutorials" | "docs",
+  slug: string[]
+): Promise<{ meta: ContentMeta; content: string }> {
+  try {
+    // Get the content tree to find the original directory name with numeric prefix
+    const contentTree = await getContentTree(type);
+    const [topicClean, articleName] = slug;
+
+    // Find the original directory name with numeric prefix
+    const originalTopicDir = getOriginalDirectoryName(contentTree, topicClean);
+    if (!originalTopicDir) {
+      throw new Error(`Topic directory not found: ${topicClean}`);
+    }
+
+    // Construct the correct file path
+    const contentPath = join(
+      process.cwd(),
+      "content",
+      type,
+      originalTopicDir,
+      `${articleName}.md`
+    );
+    const fileContents = await readFile(contentPath, "utf8");
+
+    // Parse frontmatter and content
+    const { data, content } = await import("gray-matter").then((mod) =>
+      mod.default(fileContents)
+    );
+
+    const meta: ContentMeta = {
+      title: data.title || articleName,
+      date: data.date || new Date().toISOString(),
+      description: data.description,
+      tags: data.tags,
+    };
+
+    return { meta, content };
+  } catch (error) {
+    console.error(`Error reading content:`, error);
+    return {
+      meta: {
+        title: "Not Found",
+        date: new Date().toISOString(),
+        description: "Content not found",
+        tags: [],
+      },
+      content: "# Content Not Found\nThe requested content could not be found.",
+    };
+  }
+}
+
 export default async function ContentPage({ params }: PageProps) {
   const { type, slug } = params;
-  const slugPath = slug.join("/");
-  const { meta, content } = await getContentBySlug(type, slugPath);
+  const { meta, content } = await getContent(
+    type as "articles" | "tutorials" | "docs",
+    slug
+  );
 
   const { content: mdxContent } = await compileMDX({
     source: content,
@@ -83,7 +157,7 @@ export default async function ContentPage({ params }: PageProps) {
             <p className="text-xl text-[#8E967E] mb-4">{meta.description}</p>
           )}
           <div className="flex flex-wrap gap-2">
-            {meta.tags?.map((tag) => (
+            {meta.tags?.map((tag: string) => (
               <span
                 key={tag}
                 className="px-3 py-1 bg-[#151C14] text-[#8E967E] rounded-full text-sm"
