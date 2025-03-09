@@ -40,7 +40,11 @@ export default async function Home() {
       <main className="flex flex-col items-center justify-between sm:py-20 pb-[10vh] min-h-screen w-full relative z-10">
         <div className="flex flex-col justify-center sm:h-auto items-center w-full mt-[5vh] max-w-7xl mx-auto px-4 sm:px-6 lg:px-8">
           <Image
-            src="/images/Hooked0ntechImage.png"
+            src={
+              process.env.NODE_ENV === "production"
+                ? "/hooked0ntech/images/Hooked0ntechImage.png"
+                : "/images/Hooked0ntechImage.png"
+            }
             alt="hooked on tech logo"
             width={200}
             height={200}
