@@ -157,7 +157,7 @@ export default function Home() {
           <h1 className="text-4xl text-center text-[#A0A2A0] font-bold">
             Level 2025
           </h1>
-          <Link href="/" className="text-lg text-[#A0A2A0] hover:scale-110 p-4">
+          <Link href="/portfolio" className="text-lg text-[#A0A2A0] hover:scale-110 p-4">
             <Alien size={32} />
           </Link>
         </header>
