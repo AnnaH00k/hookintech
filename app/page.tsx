@@ -46,7 +46,6 @@ export default async function Home() {
             height={200}
             className="h-[200px] w-auto mb-8"
             priority
-            unoptimized
           />
 
           <h1 className="text-4xl absolute top-4 opacity-0  sm:text-6xl font-bold text-[#D7E0C5] text-center mb-6">
