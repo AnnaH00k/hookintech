@@ -1,6 +1,5 @@
 /** @type {import('next').NextConfig} */
 const nextConfig = {
-  basePath: process.env.NODE_ENV === "production" ? "/hooked0ntech" : "",
   experimental: {
     serverComponentsExternalPackages: ["gray-matter"],
   },

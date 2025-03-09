@@ -27,7 +27,7 @@ export interface ContentTree {
   meta?: ContentMeta;
 }
 
-const CONTENT_PATH = join(process.cwd(), "content");
+const CONTENT_PATH = join(process.cwd(), "public", "content");
 
 export const getContentTree = cache(async function (
   contentType: "articles" | "tutorials" | "docs"

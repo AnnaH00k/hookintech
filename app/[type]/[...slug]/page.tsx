@@ -95,6 +95,7 @@ async function getContent(
     // Construct the correct file path
     const contentPath = join(
       process.cwd(),
+      "public",
       "content",
       type,
       originalTopicDir,
