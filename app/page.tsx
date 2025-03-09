@@ -8,9 +8,6 @@ import {
 import { FolderIcon, DocumentIcon } from "@heroicons/react/24/outline";
 import CircuitBackground from "./components/CircuitBackground";
 
-export const dynamic = "force-dynamic";
-export const revalidate = 0;
-
 function getTopics(tree: ContentTree): string[] {
   if (!tree || !tree.children) return [];
   return tree.children

@@ -34,12 +34,18 @@ export const getContentTree = cache(async function (
 ): Promise<ContentTree> {
   const basePath = join(CONTENT_PATH, contentType);
   try {
-    return await buildContentTree(basePath, "");
+    const tree = await buildContentTree(basePath, contentType);
+    return {
+      name: contentType,
+      path: contentType,
+      type: "directory",
+      children: tree.children,
+    };
   } catch (error) {
     console.error(`Error building content tree for ${contentType}:`, error);
     return {
       name: contentType,
-      path: "",
+      path: contentType,
       type: "directory",
       children: [],
     };
@@ -86,9 +92,7 @@ async function buildContentTree(
       const children = await Promise.all(
         files.map(async (file) => {
           const childPath = join(dirPath, file);
-          const childRelativePath = relativePath
-            ? join(relativePath, file)
-            : file;
+          const childRelativePath = join(relativePath, file);
           return buildContentTree(childPath, childRelativePath);
         })
       );
@@ -116,7 +120,7 @@ export const getContentBySlug = cache(async function (
   contentType: string,
   slug: string
 ): Promise<ContentItem> {
-  const fullPath = join(CONTENT_PATH, `${contentType}/${slug}.md`);
+  const fullPath = join(CONTENT_PATH, contentType, `${slug}.md`);
   try {
     const fileContents = await readFile(fullPath, "utf8");
     const { data, content } = matter(fileContents);
