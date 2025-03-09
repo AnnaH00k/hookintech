@@ -1,4 +1,8 @@
-import { getContentBySlug } from "@/utils/contentUtils";
+import {
+  getContentBySlug,
+  getContentTree,
+  ContentTree,
+} from "@/utils/contentUtils";
 import { MDXRemote } from "next-mdx-remote";
 import remarkGfm from "remark-gfm";
 import { compileMDX } from "next-mdx-remote/rsc";
@@ -8,6 +12,49 @@ interface PageProps {
     type: string;
     slug: string[];
   };
+}
+
+function cleanDirectoryName(name: string): string {
+  // Remove numeric prefix (e.g., "1.KnowledgeAccess" -> "KnowledgeAccess")
+  return name.replace(/^\d+\./, "");
+}
+
+function getAllMarkdownPaths(
+  tree: ContentTree,
+  currentPath: string[] = []
+): { type: string; slug: string[] }[] {
+  if (!tree) return [];
+
+  // If it's a markdown file
+  if (tree.type === "file" && tree.name.endsWith(".md")) {
+    const type = currentPath[0] || "";
+    // Get the cleaned topic name (without numeric prefix) and the article name
+    const topic = cleanDirectoryName(currentPath[1] || "");
+    const article = tree.name.replace(/\.md$/, "");
+    return [
+      {
+        type,
+        slug: [topic, article],
+      },
+    ];
+  }
+
+  if (!tree.children) return [];
+
+  return tree.children.reduce(
+    (paths: { type: string; slug: string[] }[], child) => {
+      return [
+        ...paths,
+        ...getAllMarkdownPaths(child, currentPath.concat(child.name)),
+      ];
+    },
+    []
+  );
+}
+
+export async function generateStaticParams() {
+  const contentTree = await getContentTree("articles");
+  return getAllMarkdownPaths(contentTree);
 }
 
 export default async function ContentPage({ params }: PageProps) {
