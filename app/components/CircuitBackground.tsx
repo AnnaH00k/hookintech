@@ -105,25 +105,25 @@ const CircuitBackground = () => {
         </defs>
       </svg>
 
-      {/* Corner circuits */}
-      <div className="absolute top-0 left-0 w-[300px] h-[300px] opacity-40">
+      {/* Corner circuits - responsive sizes */}
+      <div className="absolute top-0 left-0 w-[150px] md:w-[300px] h-[150px] md:h-[300px] opacity-30 md:opacity-40">
         <CircuitSVG className="" />
       </div>
-      <div className="absolute top-0 right-0 w-[300px] h-[300px] opacity-40 transform rotate-90">
+      <div className="absolute top-0 right-0 w-[150px] md:w-[300px] h-[150px] md:h-[300px] opacity-30 md:opacity-40 transform rotate-90">
         <CircuitSVG className="" />
       </div>
-      <div className="absolute bottom-0 left-0 w-[300px] h-[300px] opacity-40 transform -rotate-90">
+      <div className="absolute bottom-0 left-0 w-[150px] md:w-[300px] h-[150px] md:h-[300px] opacity-30 md:opacity-40 transform -rotate-90">
         <CircuitSVG className="" />
       </div>
-      <div className="absolute bottom-0 right-0 w-[300px] h-[300px] opacity-40 transform rotate-180">
+      <div className="absolute bottom-0 right-0 w-[150px] md:w-[300px] h-[150px] md:h-[300px] opacity-30 md:opacity-40 transform rotate-180">
         <CircuitSVG className="" />
       </div>
 
-      {/* Center circuits */}
-      <div className="absolute top-1/2 left-0 w-[300px] h-[300px] opacity-40 -translate-y-1/2">
+      {/* Center circuits - hidden on mobile, visible on larger screens */}
+      <div className="hidden md:block absolute top-1/2 left-0 w-[300px] h-[300px] opacity-40 -translate-y-1/2">
         <CenterCircuitSVG className="" />
       </div>
-      <div className="absolute top-1/2 right-0 w-[300px] h-[300px] opacity-40 -translate-y-1/2 rotate-180">
+      <div className="hidden md:block absolute top-1/2 right-0 w-[300px] h-[300px] opacity-40 -translate-y-1/2 rotate-180">
         <CenterCircuitSVG className="" />
       </div>
     </div>
