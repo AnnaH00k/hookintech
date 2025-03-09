@@ -8,6 +8,17 @@ interface TopicPageProps {
   };
 }
 
+export async function generateStaticParams() {
+  const topicTree = await getContentTree("articles");
+  const topics =
+    topicTree.children
+      ?.filter((child) => child.type === "directory")
+      .map((child) => ({
+        topic: child.name,
+      })) || [];
+  return topics;
+}
+
 function formatTopicName(name: string): string {
   return name
     .split("-")
