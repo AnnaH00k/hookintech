@@ -1,13 +1,16 @@
 /** @type {import('next').NextConfig} */
 const isProduction = process.env.NODE_ENV === "production";
 const repoName = "hooked0ntech";
+const basePath = isProduction ? `/${repoName}` : "";
 
 const nextConfig = {
-  basePath: isProduction ? `/${repoName}` : "",
-  assetPrefix: isProduction ? `/${repoName}` : "",
+  output: "export",
+  basePath,
+  assetPrefix: basePath,
   images: {
     unoptimized: true,
-    path: isProduction ? `/${repoName}/_next/image` : "/_next/image",
+    loader: "custom",
+    loaderFile: "./utils/imageLoader.ts",
   },
   experimental: {
     serverComponentsExternalPackages: ["gray-matter"],
