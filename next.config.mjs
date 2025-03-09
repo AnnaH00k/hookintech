@@ -1,7 +1,14 @@
 /** @type {import('next').NextConfig} */
+const isProduction = process.env.NODE_ENV === "production";
+const repoName = "hooked0ntech";
+
 const nextConfig = {
-  basePath: process.env.NODE_ENV === "production" ? "/hooked0ntech" : "",
-  assetPrefix: process.env.NODE_ENV === "production" ? "/hooked0ntech/" : "",
+  basePath: isProduction ? `/${repoName}` : "",
+  assetPrefix: isProduction ? `/${repoName}` : "",
+  images: {
+    unoptimized: true,
+    path: isProduction ? `/${repoName}/_next/image` : "/_next/image",
+  },
   experimental: {
     serverComponentsExternalPackages: ["gray-matter"],
   },
