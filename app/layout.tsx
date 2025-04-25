@@ -9,7 +9,7 @@ import '../public/fonts.css';
 const inter = Inter({ subsets: ["latin"] });
 
 export const metadata: Metadata = {
-  title: "Hooked0ntech",
+  title: "HookInTech",
   description: "Welcome to a safe space for tech enthusiasts, developers, and creators. On this platform, I showcase my projects, share my experiences, and provide resources to help you grow.",
 };
 
