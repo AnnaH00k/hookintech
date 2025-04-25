@@ -42,10 +42,10 @@ export default async function Home() {
           <Image
             src={
               process.env.NODE_ENV === "production"
-                ? "/hooked0ntech/images/Hooked0ntechImage.png"
-                : "/images/Hooked0ntechImage.png"
+                ? "/hooked0ntech/images/HookInTechImage.png"
+                : "/images/HookInTechImage.png"
             }
-            alt="hooked on tech logo"
+            alt="hook in tech logo"
             width={200}
             height={200}
             className="h-[200px] w-auto mb-8"
@@ -53,7 +53,7 @@ export default async function Home() {
           />
 
           <h1 className="text-4xl absolute top-4 opacity-0  sm:text-6xl font-bold text-[#D7E0C5] text-center mb-6">
-            Hooked on Tech
+            Hook In Tech
           </h1>
 
           <p className="text-xl sm:text-2xl text-[#8E967E] text-center max-w-3xl mb-12 cursor-default">
