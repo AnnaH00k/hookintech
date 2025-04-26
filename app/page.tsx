@@ -53,9 +53,8 @@ export default async function Home() {
           </h1>
 
           <p className="text-xl sm:text-2xl text-[#8E967E] text-center max-w-3xl mb-12 cursor-default">
-            Exploring ways to make a positive impact through{" "}
-            <span className="text-[#D7E0C5]">technology</span> and{" "}
-            <span className="text-[#D7E0C5]">innovation</span>
+            Welcome to my journey in the{" "}
+            <span className="text-[#D7E0C5]">Tech</span> industry.{" "}
           </p>
 
           {/* Topics Section */}
