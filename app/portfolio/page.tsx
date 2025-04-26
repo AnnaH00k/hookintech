@@ -13,7 +13,7 @@ export default function Home() {
         <CircuitBackground />
         <div className="relative flex flex-col justify-center h-auto items-center w-full mt-[5vh] z-10">
           <Image
-            src="/hooked0ntech/images/Anna.jpg"
+            src="/images/Anna.jpg"
             alt="Profile Picture"
             width={200}
             height={200}
