@@ -4,7 +4,6 @@ import Footer from "../components/footer";
 export default function Datasecurity() {
   return (
     <div className="flex flex-col ">
-      <MenuHeader />
       <main className="flex flex-col items-center justify-center sm:py-20 py-40 bg-[#0A1109] ">
         <div className="flex flex-col items-start justify-center">
           <h1 className="text-4xl text-center w-[90vw] text-[#A0A2A0] font-bold">
@@ -16,7 +15,7 @@ export default function Datasecurity() {
           </h1>
           <p className="text-[#A0A2A0] w-[90vw] mt-8">
             {" "}
-            This Privacy Policy describes how Hooked0nTech collects, uses, and
+            This Privacy Policy describes how HookInTech collects, uses, and
             protects the personal information you provide when visiting our
             website.
           </p>
@@ -105,11 +104,11 @@ export default function Datasecurity() {
             please contact us at:
           </p>
           <a
-            href="mailto:hook0ntech@gmail.com"
+            href="mailto:hookintech@gmail.com"
             className="text-sm sm:text-md text-center text-[#A0A2A0] hover:text-[#fff] rounded-full mt-8 bg-[#303830] px-3 py-1"
             target="_blank"
           >
-            Email: hook0ntech@gmail.com
+            Email: hookintech@gmail.com
           </a>
         </div>
       </main>

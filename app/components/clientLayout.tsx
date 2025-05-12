@@ -5,6 +5,7 @@ import Footer from "./footer";
 import LifeHeader from "./headers/lifeHeader";
 import PoliticsHeader from "./headers/politicsheader";
 import StudyHeader from "./headers/studyHeader";
+import Header from "./header";
 
 export default function ClientLayout({
   children,
@@ -18,6 +19,7 @@ export default function ClientLayout({
 
   return (
     <>
+    <Header/>
       {hideHeaderFooterForPolitics && <PoliticsHeader />}
       {hideHeaderFooter && <LifeHeader />}
       {children}

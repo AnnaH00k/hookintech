@@ -9,6 +9,7 @@ import { FolderIcon, DocumentIcon } from "@heroicons/react/24/outline";
 import CircuitBackground from "./components/CircuitBackground";
 import { CustomImage } from "@/components/CustomImage";
 import { usePathname } from "next/navigation";
+import Header from "./components/header";
 
 function getTopics(tree: ContentTree): string[] {
   if (!tree || !tree.children) return [];
@@ -37,7 +38,8 @@ export default async function Home() {
   return (
     <div className="w-full min-h-screen bg-[#0A1109] relative">
       <CircuitBackground />
-      <main className="flex flex-col items-center justify-between sm:py-20 pb-[10vh] min-h-screen w-full relative z-10">
+      <Header />
+      <main className="flex flex-col items-center justify-between sm:py-20 pb-[10vh] min-h-screen w-full relative z-10 pt-20">
         <div className="flex flex-col justify-center sm:h-auto items-center w-full mt-[5vh] max-w-7xl mx-auto px-4 sm:px-6 lg:px-8">
           <Image
             src={"/images/HookInTechImage.png"}
