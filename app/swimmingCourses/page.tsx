@@ -89,7 +89,7 @@ const SwimmingCoursesPage = () => {
               Schwimmkurse in Aachen
             </h1>
             <p className="text-xl mb-4 text-white">
-              Zusammen was<span className="text-white/10">s</span>erreichen
+              Zusammen was<span className="text-white/50">s</span>erreichen
             </p>
           </section>
 

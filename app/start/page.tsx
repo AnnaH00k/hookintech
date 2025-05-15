@@ -5,15 +5,16 @@ import Link from "next/link";
 import { useState, useEffect } from "react";
 
 const MAIN_NAVIGATION_ITEMS = [
-  { href: "/studys", title: "Studies" },
   { href: "/selfEmployment", title: "Self Employment" },
-  { href: "/worldChange", title: "Change the World for the Better" },
   { href: "/openSource", title: "Open Source" },
   { href: "/externalProjects", title: "External Projects" },
+
   {
     href: "https://analytics.google.com/analytics/web/?authuser=0#/p451197916/reports/intelligenthome",
     title: "Website Statistics",
   },
+  { href: "/unrealisticPlans", title: "Unrealistic Plans" },
+
 ] as const;
 
 const VINE_COUNT = 22;
@@ -143,21 +144,21 @@ export default function Home() {
   }, []);
 
   return (
-    <div className="w-full relative overflow-hidden">
+    <div className="flex w-full min-h-screen relative overflow-hidden  bg-[#0A1109]">
       <VineBackground />
 
-      <main className="flex flex-col items-center justify-center sm:py-20 bg-[#0A1109]/90 min-h-[100vh] w-full relative z-10">
-        <header className="flex w-full items-center justify-around top-5 absolute">
+      <main className="flex flex-col items-center justify-center sm:py-20 bg-[#0A1109]/50 min-h-[100vh] w-full pt-[10vh]    relative z-10">
+        <header className="flex w-full  items-center justify-around pt-[7vh] top-5 absolute">
           <Link
             href="/pageOverview"
-            className="text-lg text-[#A0A2A0] hover:scale-110 p-4"
+            className="text-lg text-[#A0A2A0] bg-background rounded-full hover:scale-110 p-4"
           >
             <Globe size={32} />
           </Link>
-          <h1 className="text-4xl text-center text-[#A0A2A0] font-bold">
-            Level 2025
+          <h1 className="text-4xl   text-center text-[#A0A2A0] font-bold">
+            2025
           </h1>
-          <Link href="/portfolio" className="text-lg text-[#A0A2A0] hover:scale-110 p-4">
+          <Link href="/portfolio" className="text-lg bg-background rounded-full text-[#A0A2A0] hover:scale-110 p-4">
             <Alien size={32} />
           </Link>
         </header>

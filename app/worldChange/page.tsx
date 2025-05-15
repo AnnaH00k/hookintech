@@ -140,7 +140,7 @@ const INITIATIVES: Initiative[] = [
 
 export default function WorldChange() {
   return (
-    <div className="min-h-screen bg-[#0A1109] text-[#A0A2A0]">
+    <div className="min-h-screen pt-[5vh] bg-[#0A1109] text-[#A0A2A0]">
       <main className="container mx-auto px-4 py-8 relative">
         <div className="absolute top-8 left-4">
           <Link

@@ -93,7 +93,7 @@ const RoadmapNode = ({
 
   return (
     <div
-      className={`relative flex ${
+      className={`relative flex  ${
         index % 2 === 0 ? "justify-end pr-8" : "justify-start pl-8"
       } w-1/2 ml-auto ${index % 2 === 0 ? "mr-[50%]" : "ml-[50%]"}`}
     >
@@ -136,7 +136,7 @@ const RoadmapNode = ({
 
 export default function Studies() {
   return (
-    <div className="w-full relative overflow-hidden">
+    <div className="w-full pt-[7vh] bg-background relative overflow-hidden">
       <main className="flex flex-col items-center justify-start min-h-screen bg-[#0A1109]/90 py-8 px-4">
         <header className="w-full max-w-7xl flex items-center justify-between mb-12">
           <Link
