@@ -2,7 +2,7 @@ import React from "react";
 
 const HookBook = () => {
   return (
-    <div className="flex flex-col items-center justify-center min-h-screen p-8 bg-gradient-to-b from-[#1d150a] to-[#b9afa1] pt-[10vh]">
+    <div className="flex flex-col items-center justify-center min-h-screen p-8 bg-gradient-to-b from-[#1d150a] to-[#b9afa1]">
       <div className="max-w-6xl w-full space-y-20">
         <div className="text-center space-y-6">
           <h1 className="text-6xl font-serif font-bold text-[#F5F0E8] tracking-wide drop-shadow-sm">
