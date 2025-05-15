@@ -50,7 +50,7 @@ export default function SelfEmployment() {
 
 
 
-      <section className="flex flex-col items-center opacity-0 justify-center max-w-4xl mx-auto mb-12 bg-[#1A211A]  rounded-lg p-6">
+      <section className="flex flex-col items-center justify-center max-w-4xl mx-auto mb-12 bg-[#1A211A]  rounded-lg p-6">
         <h2 className="text-2xl text-center font-semibold mb-4 text-[#C0C2C0]">
            Social Anxiety Ideas
         </h2>
@@ -66,19 +66,7 @@ export default function SelfEmployment() {
               <p className="text-sm text-[#808280]">Teach swimming lessons</p>
             </div>
           </Link>
-          <Link
-            href="/studyvation"
-            target="_blank"
-            rel="noopener noreferrer"
-            className="flex items-center justify-center p-4 bg-[#2A312A] rounded-lg hover:bg-[#3A413A] transition-colors duration-200"
-          >
-            <div className="text-center">
-              <h3 className="font-medium text-lg mb-2">App Development</h3>
-              <p className="text-sm text-[#808280]">Build and launch FaBapp</p>
-            </div>
-          </Link>
-        
-       
+
         
         </div>
       </section>

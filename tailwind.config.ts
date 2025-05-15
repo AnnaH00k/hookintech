@@ -14,6 +14,9 @@ const config: Config = {
         secondary: "#303830",
         text: "#cdcfcd",
         greeny: "#7C9838",
+        fabMainBlue: "#141C3C",
+        fabMainBeige: "#D1D3CA",
+
       },
 
       boxShadow: {
