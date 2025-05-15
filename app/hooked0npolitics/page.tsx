@@ -1,6 +1,4 @@
 import Image from "next/image";
-import MenuHeader from "../components/headers/menuHeader";
-import Footer from "../components/footer";
 import Script from "next/script";
 import Link from "next/link";
 import { Check } from "@phosphor-icons/react/dist/ssr";
