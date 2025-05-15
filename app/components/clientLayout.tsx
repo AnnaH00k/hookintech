@@ -25,7 +25,6 @@ export default function ClientLayout({
     <>
       {!hideHeaderFooterForHookBook && !hideHeaderFooterForPolitics && !hideHeaderFooter && !hideHeaderFooterForSwimmingCourses && !hideHeaderFooterForfabapp && <Header />}
       {hideHeaderFooterForPolitics && <PoliticsHeader />}
-      {hideHeaderFooterForHookBook && <StudyHeader />}
 
       {hideHeaderFooter && <LifeHeader />}
 
