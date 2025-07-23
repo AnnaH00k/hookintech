@@ -15,13 +15,16 @@ export default function ClientLayout({
   const hideHeaderFooter = pathname.includes("hooked0nlife");
   const hideHeaderFooterForPolitics = pathname.includes("hooked0npolitics");
   const hideHeaderFooterForHookBook = pathname.includes("hookbook");
+  const hideHeaderFooterForSwimmingCourses = pathname.includes("swimmingCourses");
+  const hideHeaderFooterForfabapp = pathname.includes("fabapp");
+
+
 
 
   return (
     <>
-      {!hideHeaderFooterForHookBook && !hideHeaderFooterForPolitics && !hideHeaderFooter && <Header />}
+      {!hideHeaderFooterForHookBook && !hideHeaderFooterForPolitics && !hideHeaderFooter && !hideHeaderFooterForSwimmingCourses && !hideHeaderFooterForfabapp && <Header />}
       {hideHeaderFooterForPolitics && <PoliticsHeader />}
-      {hideHeaderFooterForHookBook && <StudyHeader />}
 
       {hideHeaderFooter && <LifeHeader />}
 

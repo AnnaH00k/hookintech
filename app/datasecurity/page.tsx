@@ -1,4 +1,3 @@
-import MenuHeader from "../components/headers/menuHeader";
 import Footer from "../components/footer";
 
 export default function Datasecurity() {
