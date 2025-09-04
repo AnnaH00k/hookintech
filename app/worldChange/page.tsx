@@ -142,7 +142,7 @@ export default function WorldChange() {
   return (
     <div className="min-h-screen pt-[5vh] bg-[#0A1109] text-[#A0A2A0]">
       <main className="container mx-auto px-4 py-8 relative">
-        <div className="absolute top-8 left-4">
+        <div className="absolute hidden top-8 left-4">
           <Link
             href="/start"
             className="inline-flex items-center px-4 py-2 rounded-lg
