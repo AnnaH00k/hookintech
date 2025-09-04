@@ -274,7 +274,7 @@ export default async function Home() {
               </Link>
 
               <Link
-                href="/externalProjects"
+                href="https://github.com/AnnaH00k" target="_blank"
                 className="group bg-[#1A1F15] hover:bg-[#2A2F25] border border-[#3A3F35] hover:border-[#D7E0C5] rounded-lg p-6 transition-all duration-300 transform hover:scale-105"
               >
                 <div className="text-center">
