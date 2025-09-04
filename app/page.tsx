@@ -115,7 +115,7 @@ export default async function Home() {
                   <h3 className="text-lg font-semibold text-[#D7E0C5] mb-2">
                     Native App Development
                   </h3>
-                  <p className="text-sm text-[#8E967E]">Java, Swift</p>
+                  <p className="text-sm text-[#8E967E]">Java, Swift, Kotlin</p>
                 </div>
               </div>
 
@@ -181,7 +181,7 @@ export default async function Home() {
                 </div>
               </Link>
               <Link
-                href="https://play.google.com/store/apps/details?id=com.Hook.fabapp&fbclid=IwAR0qtZG8s9tki8USCR4IdGCpI7nGZstqH2XIuT5D2Bo0Uuxo6A6KGWBkDT0"
+                href="https://fabapp.jimdosite.com/"
                 target="_blank"
                 className="group bg-[#1A1F15] hover:bg-[#2A2F25] border border-[#3A3F35] hover:border-[#D7E0C5] rounded-lg p-6 transition-all duration-300 transform hover:scale-105"
               >
@@ -190,7 +190,8 @@ export default async function Home() {
                     FAB App
                   </h3>
                   <p className="text-sm text-[#8E967E] group-hover:text-[#D7E0C5]">
-                    Google Play Store
+                    Google Play Store <br />
+                    Apple App Store
                   </p>
                 </div>
               </Link>
@@ -292,7 +293,7 @@ export default async function Home() {
       
 
           {/* Connect With Me Section */}
-          <div className="w-full max-w-4xl mb-12">
+          <div className="w-full max-w-4xl mb-12 hidden">
             <h2 className="text-2xl sm:text-3xl font-bold text-[#D7E0C5] text-center mb-8">
               Connect
             </h2>
