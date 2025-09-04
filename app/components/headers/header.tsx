@@ -23,7 +23,7 @@ export default function Header() {
           </Link>
 
           {/* Navigation Links */}
-          <nav className="flex items-center gap-2">
+          <nav className=" hidden items-center gap-2">
             <Link
               href="/portfolio"
               className="group flex items-center gap-2 text-[#8E967E] hover:text-[#D7E0C5] transition-all duration-300"
