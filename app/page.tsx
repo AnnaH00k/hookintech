@@ -59,49 +59,29 @@ export default async function Home() {
             <span className="text-[#D7E0C5]">Tech</span> industry.{" "}
           </p>
 
-          {/* Topics Section */}
-          <div className="w-full max-w-6xl mb-16 rounded-xl border bg-[#0A1109] border-[#1A2310] shadow-[4px_4px_8px_0px_#070B06,_-4px_-4px_8px_0px_#1F2B1B] p-6">
-            <h2 className="text-2xl font-semibold text-[#D7E0C5] text-center mb-6">
-              Topics
-            </h2>
-            <div className="flex flex-wrap gap-4 justify-center">
-              {topics.map((topic) => (
-                <Link
-                  key={topic}
-                  href={`/articles/${topic}`}
-                  className="flex items-center space-x-2 px-6 py-3 bg-[#151C14] rounded-xl border border-[#1A2310] hover:border-[#7C9838] transition-all duration-300"
-                >
-                  <FolderIcon className="h-5 w-5 text-[#7C9838]" />
-                  <span className="text-[#D7E0C5] font-medium">
-                    {formatTopicName(topic)}
-                  </span>
-                </Link>
-              ))}
-            </div>
-          </div>
 
-          {/* All Articles Section */}
-          <div className="w-full max-w-6xl mb-16 rounded-xl border bg-[#0A1109] border-[#1A2310] shadow-[4px_4px_8px_0px_#070B06,_-4px_-4px_8px_0px_#1F2B1B] p-6">
-            <h2 className="text-2xl font-semibold text-[#D7E0C5] mb-6 text-center">
-              All Articles
+              {/* Articles Section */}
+              <div className="w-full max-w-6xl mb-12">
+            <h2 className="text-2xl sm:text-3xl font-bold text-[#D7E0C5] text-center mb-8">
+              Latest Articles
             </h2>
             <div className="grid grid-cols-1 md:grid-cols-2 lg:grid-cols-3 gap-6 justify-items-center">
-              {allArticles.map((article) => (
+              {allArticles.slice(0, 3).map((article) => (
                 <Link
                   key={`${article.meta?.topic}/${article.meta?.slug}`}
                   href={`/articles/${cleanDirectoryName(
                     article.meta?.topic || ""
                   )}/${article.meta?.slug}`}
-                  className="group bg-[#151C14] rounded-xl border border-[#1A2310] p-6 transition-all duration-300 hover:border-[#7C9838]"
+                  className="group bg-[#1A1F15] hover:bg-[#2A2F25] border border-[#3A3F35] hover:border-[#D7E0C5] rounded-lg p-6 transition-all duration-300 transform hover:scale-105"
                 >
                   <div className="flex items-start space-x-3">
                     <DocumentIcon className="h-5 w-5 text-[#7C9838] flex-shrink-0 mt-1" />
                     <div>
-                      <h3 className="text-[#D7E0C5] font-semibold text-xl mb-3 group-hover:text-[#7C9838] transition-colors">
+                      <h3 className="text-[#D7E0C5] font-semibold text-xl mb-3 group-hover:text-white transition-colors">
                         {article.meta?.title}
                       </h3>
                       {article.meta?.description && (
-                        <p className="text-[#8E967E] text-sm mb-4">
+                        <p className="text-[#8E967E] text-sm mb-4 group-hover:text-[#D7E0C5] transition-colors">
                           {article.meta.description}
                         </p>
                       )}
@@ -121,6 +101,248 @@ export default async function Home() {
                   </div>
                 </Link>
               ))}
+            </div>
+          </div>
+
+          {/* Tech Stack Section */}
+          <div className="w-full max-w-4xl mb-12">
+            <h2 className="text-2xl sm:text-3xl font-bold text-[#D7E0C5] text-center mb-8">
+              Tech Stack
+            </h2>
+            <div className="grid grid-cols-1 sm:grid-cols-2 lg:grid-cols-2 gap-6">
+              <div className="bg-[#1A1F15] border border-[#3A3F35] rounded-lg p-6">
+                <div className="text-center">
+                  <h3 className="text-lg font-semibold text-[#D7E0C5] mb-2">
+                    Native App Development
+                  </h3>
+                  <p className="text-sm text-[#8E967E]">Java, Swift</p>
+                </div>
+              </div>
+
+              <div className="bg-[#1A1F15] border border-[#3A3F35] rounded-lg p-6">
+                <div className="text-center">
+                  <h3 className="text-lg font-semibold text-[#D7E0C5] mb-2">
+                    Web Development
+                  </h3>
+                  <p className="text-sm text-[#8E967E] mb-1">
+                    HTML, CSS, TypeScript
+                  </p>
+                  <p className="text-sm text-[#8E967E]">
+                    React, Next.js, Tailwind CSS
+                  </p>
+                </div>
+              </div>
+
+              <div className="bg-[#1A1F15] border border-[#3A3F35] rounded-lg p-6">
+                <div className="text-center">
+                  <h3 className="text-lg font-semibold text-[#D7E0C5] mb-2">
+                    Media Creation
+                  </h3>
+                  <p className="text-sm text-[#8E967E]">
+                    Canva, Adobe, Figma, Da Vinci Resolve
+                  </p>
+                </div>
+              </div>
+
+              <div className="bg-[#1A1F15] border border-[#3A3F35] rounded-lg p-6">
+                <div className="text-center">
+                  <h3 className="text-lg font-semibold text-[#D7E0C5] mb-2">
+                    VR Development
+                  </h3>
+                  <p className="text-sm text-[#8E967E]">
+                    Unreal Engine 5 (still learning), Meta Quest 2
+                  </p>
+                </div>
+              </div>
+            </div>
+          </div>
+
+          {/* Projects Section */}
+          <div className="w-full max-w-4xl mb-12">
+            <h2 className="text-2xl sm:text-3xl font-bold text-[#D7E0C5] text-center mb-8">
+              Projects
+            </h2>
+            <div className="grid grid-cols-1 sm:grid-cols-2 lg:grid-cols-2 gap-6">
+              <Link
+                href="https://www.iu.de/bachelor/informatik/"
+                target="_blank"
+                className="group bg-[#1A1F15] hover:bg-[#2A2F25] border border-[#3A3F35] hover:border-[#D7E0C5] rounded-lg p-6 transition-all duration-300 transform hover:scale-105"
+              >
+                <div className="text-center">
+                  <h3 className="text-lg font-semibold text-[#D7E0C5] group-hover:text-white mb-2">
+                    Online University
+                  </h3>
+                  <p className="text-sm text-[#8E967E] group-hover:text-[#D7E0C5] mb-2">
+                    Bachelor of Computer Science (in progress)
+                  </p>
+                  <p className="text-xs text-[#8E967E] group-hover:text-[#D7E0C5]">
+                    @ IU International University
+                  </p>
+                </div>
+              </Link>
+              <Link
+                href="https://play.google.com/store/apps/details?id=com.Hook.fabapp&fbclid=IwAR0qtZG8s9tki8USCR4IdGCpI7nGZstqH2XIuT5D2Bo0Uuxo6A6KGWBkDT0"
+                target="_blank"
+                className="group bg-[#1A1F15] hover:bg-[#2A2F25] border border-[#3A3F35] hover:border-[#D7E0C5] rounded-lg p-6 transition-all duration-300 transform hover:scale-105"
+              >
+                <div className="text-center">
+                  <h3 className="text-lg font-semibold text-[#D7E0C5] group-hover:text-white mb-2">
+                    FAB App
+                  </h3>
+                  <p className="text-sm text-[#8E967E] group-hover:text-[#D7E0C5]">
+                    Google Play Store
+                  </p>
+                </div>
+              </Link>
+              <Link
+                href="https://annah00k.github.io/co2-zone/en"
+                target="_blank"
+                className="group bg-[#1A1F15] hover:bg-[#2A2F25] border border-[#3A3F35] hover:border-[#D7E0C5] rounded-lg p-6 transition-all duration-300 transform hover:scale-105"
+              >
+                <div className="text-center">
+                  <h3 className="text-lg font-semibold text-[#D7E0C5] group-hover:text-white mb-2">
+                    CO2 Zone
+                  </h3>
+                  <p className="text-sm text-[#8E967E] group-hover:text-[#D7E0C5]">
+                    Link to Website
+                  </p>
+                </div>
+              </Link>
+              <Link
+                href="https://www.amazon.de/shop/hooked0ntech/list/XEYKC4SP7AYA?ref_=cm_sw_r_cp_ud_aipsflist_aipsfhooked0ntech_1ARB010TPA22B9J44HB7"
+                target="_blank"
+                className="group bg-[#1A1F15] hover:bg-[#2A2F25] border border-[#3A3F35] hover:border-[#D7E0C5] rounded-lg p-6 transition-all duration-300 transform hover:scale-105"
+              >
+                <div className="text-center">
+                  <h3 className="text-lg font-semibold text-[#D7E0C5] group-hover:text-white mb-2">
+                    Amazon Storefront
+                  </h3>
+                  <p className="text-sm text-[#8E967E] group-hover:text-[#D7E0C5]">
+                    My Setup
+                  </p>
+                </div>
+              </Link>
+            </div>
+          </div>
+
+          {/* Featured Pages Section */}
+          <div className="w-full max-w-4xl mb-12">
+            <h2 className="text-2xl sm:text-3xl font-bold text-[#D7E0C5] text-center mb-8">
+              Featured Pages
+            </h2>
+            <div className="grid grid-cols-1 sm:grid-cols-2 lg:grid-cols-4 gap-6">
+              <Link
+                href="/blogPosts"
+                className="group bg-[#1A1F15] hover:bg-[#2A2F25] border border-[#3A3F35] hover:border-[#D7E0C5] rounded-lg p-6 transition-all duration-300 transform hover:scale-105"
+              >
+                <div className="text-center">
+                  <h3 className="text-lg font-semibold text-[#D7E0C5] group-hover:text-white mb-2">
+                    Blog Posts
+                  </h3>
+                  <p className="text-sm text-[#8E967E] group-hover:text-[#D7E0C5]">
+                    Latest thoughts and insights
+                  </p>
+                </div>
+              </Link>
+
+              <Link
+                href="/hookbook"
+                className="group bg-[#1A1F15] hover:bg-[#2A2F25] border border-[#3A3F35] hover:border-[#D7E0C5] rounded-lg p-6 transition-all duration-300 transform hover:scale-105"
+              >
+                <div className="text-center">
+                  <h3 className="text-lg font-semibold text-[#D7E0C5] group-hover:text-white mb-2">
+                    Hookbook
+                  </h3>
+                  <p className="text-sm text-[#8E967E] group-hover:text-[#D7E0C5]">
+                    Writing Tool Idea
+                  </p>
+                </div>
+              </Link>
+
+              <Link
+                href="/worldChange"
+                className="group bg-[#1A1F15] hover:bg-[#2A2F25] border border-[#3A3F35] hover:border-[#D7E0C5] rounded-lg p-6 transition-all duration-300 transform hover:scale-105"
+              >
+                <div className="text-center">
+                  <h3 className="text-lg font-semibold text-[#D7E0C5] group-hover:text-white mb-2">
+                    World Change
+                  </h3>
+                  <p className="text-sm text-[#8E967E] group-hover:text-[#D7E0C5]">
+                    Making a difference
+                  </p>
+                </div>
+              </Link>
+
+              <Link
+                href="/externalProjects"
+                className="group bg-[#1A1F15] hover:bg-[#2A2F25] border border-[#3A3F35] hover:border-[#D7E0C5] rounded-lg p-6 transition-all duration-300 transform hover:scale-105"
+              >
+                <div className="text-center">
+                  <h3 className="text-lg font-semibold text-[#D7E0C5] group-hover:text-white mb-2">
+                    External Projects
+                  </h3>
+                  <p className="text-sm text-[#8E967E] group-hover:text-[#D7E0C5]">
+                    Work beyond the site
+                  </p>
+                </div>
+              </Link>
+            </div>
+          </div>
+
+      
+
+          {/* Connect With Me Section */}
+          <div className="w-full max-w-4xl mb-12">
+            <h2 className="text-2xl sm:text-3xl font-bold text-[#D7E0C5] text-center mb-8">
+              Connect
+            </h2>
+            <div className="grid grid-cols-1 sm:grid-cols-2 lg:grid-cols-2 gap-6">
+              <div className="group bg-[#1A1F15] hover:bg-[#2A2F25] border border-[#3A3F35] hover:border-[#D7E0C5] rounded-lg p-6 transition-all duration-300 transform hover:scale-105">
+                <div className="text-center">
+                  <h3 className="text-lg font-semibold text-[#D7E0C5] group-hover:text-white mb-4">
+                    YouTube
+                  </h3>
+                  <div className="space-y-2">
+                    <Link
+                      className="block text-sm text-[#8E967E] group-hover:text-[#D7E0C5] transition-colors"
+                      href="https://youtube.com/@hookInTech?si=urTx7LmuBbzpSca0"
+                      target="_blank"
+                    >
+                      hookInTech
+                    </Link>
+                    <Link
+                      className="block text-sm text-[#8E967E] group-hover:text-[#D7E0C5] transition-colors"
+                      href="https://youtube.com/@hookedwords?si=iG2OyeU6sYO_fkM_"
+                      target="_blank"
+                    >
+                      hookb00k
+                    </Link>
+                  </div>
+                </div>
+              </div>
+              <div className="group bg-[#1A1F15] hover:bg-[#2A2F25] border border-[#3A3F35] hover:border-[#D7E0C5] rounded-lg p-6 transition-all duration-300 transform hover:scale-105">
+                <div className="text-center">
+                  <h3 className="text-lg font-semibold text-[#D7E0C5] group-hover:text-white mb-4">
+                    Instagram
+                  </h3>
+                  <div className="space-y-2">
+                    <Link
+                      href="https://www.instagram.com/hookIntech/"
+                      className="block text-sm text-[#8E967E] group-hover:text-[#D7E0C5] transition-colors"
+                      target="_blank"
+                    >
+                      hookInTech
+                    </Link>
+                    <Link
+                      href="https://www.instagram.com/hookb00k/?next=https%3A%2F%2Fwww.instagram.com%2Fp%2FCBTn3TEpza3%2Fliked_by%2F%3F__coig_login%3D1"
+                      className="block text-sm text-[#8E967E] group-hover:text-[#D7E0C5] transition-colors"
+                      target="_blank"
+                    >
+                      hookb00k
+                    </Link>
+                  </div>
+                </div>
+              </div>
             </div>
           </div>
         </div>
