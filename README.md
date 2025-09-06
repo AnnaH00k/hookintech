@@ -1,36 +1,42 @@
-This is a [Next.js](https://nextjs.org/) project bootstrapped with [`create-next-app`](https://github.com/vercel/next.js/tree/canary/packages/create-next-app).
+<img src="https://www.hookin.tech/images/HookInTechImage.png" alt="HookinTech Banner" width="400"/>
 
-## Getting Started
+> Welcome to my journey in the Tech industry.  
 
-First, run the development server:
+[![Live Site](https://img.shields.io/badge/Live%20Site-Visit%20Now-brightgreen)](https://www.hookin.tech/)
+![GitHub stars](https://img.shields.io/github/stars/AnnaH00k/hookintech)
+![Last commit](https://img.shields.io/github/last-commit/AnnaH00k/hookintech)
+![Vercel](https://img.shields.io/badge/Hosted%20on-Vercel-black)
+![Powered by 🍵🐱](https://img.shields.io/badge/Powered%20by-🍵%20%26%20🐱-blue)
+
+
+---
+
+## 🌟 About HookinTech
+HookinTech is my **personal landing page and blog** that highlights my journey in tech, shares insights, and features stories that inspire change.
+
+🔗 **Live:** [https://www.hookin.tech](https://www.hookin.tech/)  
+📖 **Blog Posts:** [https://www.hookin.tech/blogPosts](https://www.hookin.tech/blogPosts)  
+🌍 **World Change Section:** [https://www.hookin.tech/worldChange](https://www.hookin.tech/worldChange)
+
+---
+
+## 🔧 Tech Stack
+- ⚡ **Next.js** 13 (App Router)
+- ⚛️ **React** 18
+- 🎨 **TailwindCSS**
+- ☁️ **Vercel Hosting**
+- 🔍 SEO Optimized
+- 📱 Fully Responsive
+
+---
+
+## 🚀 Getting Started
+
+Clone the repo and run it locally:
 
 ```bash
+git clone https://github.com/AnnaH00k/hookintech.git
+cd hookintech
+npm install
 npm run dev
-# or
-yarn dev
-# or
-pnpm dev
-# or
-bun dev
-```
 
-Open [http://localhost:3000](http://localhost:3000) with your browser to see the result.
-
-You can start editing the page by modifying `app/page.tsx`. The page auto-updates as you edit the file.
-
-This project uses [`next/font`](https://nextjs.org/docs/basic-features/font-optimization) to automatically optimize and load Inter, a custom Google Font.
-
-## Learn More
-
-To learn more about Next.js, take a look at the following resources:
-
-- [Next.js Documentation](https://nextjs.org/docs) - learn about Next.js features and API.
-- [Learn Next.js](https://nextjs.org/learn) - an interactive Next.js tutorial.
-
-You can check out [the Next.js GitHub repository](https://github.com/vercel/next.js/) - your feedback and contributions are welcome!
-
-## Deploy on Vercel
-
-The easiest way to deploy your Next.js app is to use the [Vercel Platform](https://vercel.com/new?utm_medium=default-template&filter=next.js&utm_source=create-next-app&utm_campaign=create-next-app-readme) from the creators of Next.js.
-
-Check out our [Next.js deployment documentation](https://nextjs.org/docs/deployment) for more details.
