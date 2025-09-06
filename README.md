@@ -31,6 +31,69 @@ HookinTech is my **personal landing page and blog** that highlights my journey i
 
 ---
 
+## 🚀 Getting Started
+
+Clone the repo and run it locally:
+
+```bash
+git clone https://github.com/AnnaH00k/hookintech.git
+cd hookintech
+npm install
+npm run dev
+```
+
+---
+
+## 📁 Project Overview
+
+HookinTech is built with a modular architecture that separates concerns effectively:
+
+- **📱 App Directory**: Contains all Next.js pages, API routes, and app-specific components
+- **🧩 Components**: Reusable UI components used across the application
+- **📊 Data**: JSON files and data sources for the application
+- **🔧 Utils**: Helper functions and utilities
+- **📝 Types**: TypeScript type definitions
+- **📚 Public Assets**: Static files, images, fonts, and 3D models
+- **⚙️ Scripts**: Development and build utilities
+
+### Key Features:
+
+- 🎓 **Study Management**: Comprehensive study tools with Pomodoro timer and task management
+- 📝 **Blog System**: Dynamic blog posts and article management
+- 🎨 **Interactive UI**: Circuit backgrounds, 3D models, and responsive design
+- 🔐 **Authentication**: Login system with Firebase integration
+- 📊 **Data Visualization**: Charts and analytics for personal tracking
+
+---
+
+## 🔄 Regenerating the UML Diagram
+
+The project structure diagram below is automatically generated and can be updated whenever you add new pages, components, or reorganize your code structure.
+
+### To regenerate the UML diagram:
+
+```bash
+npm run generate-uml
+```
+
+This command will:
+
+- 🔍 Scan your current project structure
+- 🎨 Generate a new Mermaid diagram
+- 📝 Automatically update this README.md file
+
+### When to regenerate:
+
+- ✅ After adding new pages or routes
+- ✅ After creating new components
+- ✅ After reorganizing your directory structure
+- ✅ After adding new API routes
+- ✅ After adding new data files or utilities
+
+The diagram will always reflect your current project structure, ensuring your documentation stays up-to-date!
+
+---
+
 ## 🏗️ Project Structure
 
 The following diagram shows the architecture and structure of the HookinTech project:
@@ -64,13 +127,13 @@ graph TD
 
     %% Study Sections
     B1C --> B1C1["📚 Informatik"]
-    B1C1 --> B1C1A["🧮 Algorithmen & Datenstrukturen"]
-    B1C1 --> B1C1B["🌐 Computer Networks"]
-    B1C1 --> B1C1C["🗄️ Datenbanksysteme"]
+    B1C1 --> B1C1A["🧮 Algorithmen"]
+    B1C1 --> B1C1B["🌐 Networks"]
+    B1C1 --> B1C1C["🗄️ Datenbanken"]
     B1C1 --> B1C1D["🔢 Digitaltechnik"]
     B1C1 --> B1C1E["💻 Programmierung"]
-    B1C1 --> B1C1F["🤖 Machine Learning"]
-    B1C1 --> B1C1G["📐 Mathematik I & II"]
+    B1C1 --> B1C1F["🤖 ML Foundations"]
+    B1C1 --> B1C1G["📐 Mathematik"]
     B1C1 --> B1C1H["🔧 Softwaretechnik"]
     B1C1 --> B1C1I["⚙️ Systemprogrammierung"]
     B1C1 --> B1C1J["🧠 Theoretische Informatik"]
@@ -121,13 +184,15 @@ graph TD
     %% Scripts
     H --> H1["📊 UML Generator"]
 
-    %% Styling
-    classDef pageClass fill:#e1f5fe,stroke:#01579b,stroke-width:2px
-    classDef componentClass fill:#f3e5f5,stroke:#4a148c,stroke-width:2px
-    classDef dataClass fill:#e8f5e8,stroke:#1b5e20,stroke-width:2px
-    classDef utilClass fill:#fff3e0,stroke:#e65100,stroke-width:2px
-    classDef assetClass fill:#fce4ec,stroke:#880e4f,stroke-width:2px
+    %% Enhanced Styling for Better Contrast
+    classDef pageClass fill:#ffffff,stroke:#1976d2,stroke-width:3px,color:#000000
+    classDef componentClass fill:#f8f9fa,stroke:#7b1fa2,stroke-width:3px,color:#000000
+    classDef dataClass fill:#e8f5e8,stroke:#388e3c,stroke-width:3px,color:#000000
+    classDef utilClass fill:#fff3e0,stroke:#f57c00,stroke-width:3px,color:#000000
+    classDef assetClass fill:#fce4ec,stroke:#c2185b,stroke-width:3px,color:#000000
+    classDef mainClass fill:#e3f2fd,stroke:#1565c0,stroke-width:4px,color:#000000
 
+    class A mainClass
     class B1A,B1B,B1C,B1D,B1E,B1F,B1G,B1H,B1I,B1C1A,B1C1B,B1C1C,B1C1D,B1C1E,B1C1F,B1C1G,B1C1H,B1C1I,B1C1J pageClass
     class B3A,B3B,B3C,B3D,B3E,B3F,B3G,B3B1,B3B2,B3B3,B3B4,C1 componentClass
     class D1,D2 dataClass
@@ -139,55 +204,8 @@ _This diagram is automatically generated and shows the main components, pages, a
 
 ---
 
-## 🚀 Getting Started
+## 📚 Additional Resources
 
-Clone the repo and run it locally:
-
-```bash
-git clone https://github.com/AnnaH00k/hookintech.git
-cd hookintech
-npm install
-npm run dev
-```
-
----
-
-## 🔄 Regenerating the UML Diagram
-
-The project structure diagram above is automatically generated and can be updated whenever you add new pages, components, or reorganize your code structure.
-
-### To regenerate the UML diagram:
-
-```bash
-npm run generate-uml
-```
-
-This command will:
-
-- 🔍 Scan your current project structure
-- 🎨 Generate a new Mermaid diagram
-- 📝 Automatically update this README.md file
-
-### When to regenerate:
-
-- ✅ After adding new pages or routes
-- ✅ After creating new components
-- ✅ After reorganizing your directory structure
-- ✅ After adding new API routes
-- ✅ After adding new data files or utilities
-
-The diagram will always reflect your current project structure, ensuring your documentation stays up-to-date!
-
----
-
-## 📁 Project Overview
-
-HookinTech is built with a modular architecture that separates concerns effectively:
-
-- **📱 App Directory**: Contains all Next.js pages, API routes, and app-specific components
-- **🧩 Components**: Reusable UI components used across the application
-- **📊 Data**: JSON files and data sources for the application
-- **🔧 Utils**: Helper functions and utilities
-- **📝 Types**: TypeScript type definitions
-- **📚 Public Assets**: Static files, images, fonts, and 3D models
-- **⚙️ Scripts**: Development and build utilities
+- 📖 **Documentation**: Check the `scripts/README.md` for detailed information about the UML generator
+- 🔧 **Development**: Use `npm run generate-uml` to update the project structure diagram
+- 🌐 **Live Site**: Visit [hookin.tech](https://www.hookin.tech) to see the project in action
