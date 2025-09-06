@@ -206,6 +206,5 @@ _This diagram is automatically generated and shows the main components, pages, a
 
 ## 📚 Additional Resources
 
-- 📖 **Documentation**: Check the `scripts/README.md` for detailed information about the UML generator
 - 🔧 **Development**: Use `npm run generate-uml` to update the project structure diagram
 - 🌐 **Live Site**: Visit [hookin.tech](https://www.hookin.tech) to see the project in action
