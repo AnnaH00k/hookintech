@@ -1,11 +1,9 @@
-![Last Commit](https://img.shields.io/github/last-commit/AnnaH00k/hookintech?style=flat-square&color=purple)
-![Contributors](https://img.shields.io/github/contributors/AnnaH00k/hookintech?style=flat-square&color=teal)
-![Repo Size](https://img.shields.io/github/repo-size/AnnaH00k/hookintech?style=flat-square&color=gray)
-
 <img src="https://www.hookin.tech/images/HookInTechImage.png" alt="HookinTech Banner" width="400"/>
 
 > Welcome to my journey in the Tech industry.
 
+![Contributors](https://img.shields.io/github/contributors/AnnaH00k/hookintech?style=flat-square&color=teal)
+![Repo Size](https://img.shields.io/github/repo-size/AnnaH00k/hookintech?style=flat-square&color=gray)
 [![Live Site](https://img.shields.io/badge/Live%20Site-Visit%20Now-brightgreen)](https://www.hookin.tech/)
 ![GitHub stars](https://img.shields.io/github/stars/AnnaH00k/hookintech)
 ![Last commit](https://img.shields.io/github/last-commit/AnnaH00k/hookintech)
