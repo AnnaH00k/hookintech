@@ -2,6 +2,8 @@
 
 > Welcome to my journey in the Tech industry.
 
+![Contributors](https://img.shields.io/github/contributors/AnnaH00k/hookintech?style=flat-square&color=teal)
+![Repo Size](https://img.shields.io/github/repo-size/AnnaH00k/hookintech?style=flat-square&color=gray)
 [![Live Site](https://img.shields.io/badge/Live%20Site-Visit%20Now-brightgreen)](https://www.hookin.tech/)
 ![GitHub stars](https://img.shields.io/github/stars/AnnaH00k/hookintech)
 ![Last commit](https://img.shields.io/github/last-commit/AnnaH00k/hookintech)
@@ -206,6 +208,5 @@ _This diagram is automatically generated and shows the main components, pages, a
 
 ## 📚 Additional Resources
 
-- 📖 **Documentation**: Check the `scripts/README.md` for detailed information about the UML generator
 - 🔧 **Development**: Use `npm run generate-uml` to update the project structure diagram
 - 🌐 **Live Site**: Visit [hookin.tech](https://www.hookin.tech) to see the project in action
