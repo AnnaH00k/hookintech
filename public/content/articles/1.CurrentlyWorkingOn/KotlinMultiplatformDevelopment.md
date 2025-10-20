@@ -9,10 +9,52 @@ All developers have to make a decision when they start programming. Which Progra
 
 Kotlin Multiplattform allows to create apps for Android, IOS,Web and Desktop.
 What are the pros and cons of this programming environment?
-And is KMP really the all encompassing production tool many developers have long hoped for?
-In the following two months i will find out and share all my experiences here.
 
-So far:
-- Biggest Con sadly is that you still need to programm on a mac, because there is no other way for IOS testing.
-- Once everything is installed, the running of the default KMP application runs effortlessly on all simulators.
-- Only the running of 4 simulators at the same time was not able on my device since the website run seemed to use a lot of calculating power.
+
+| **Pros**                                                                                 | **Cons**                                                                          |
+| ---------------------------------------------------------------------------------------- | --------------------------------------------------------------------------------- |
+| **Effortless Simulator Testing**: On IOS,Android, Web and Desktop.                       |  Still **requires Mac** for iOS testing and deployment            |
+| **Performance**: Near-native performance with shared business logic                      | **Platform-Specific Code**: Still need native code for platform-specific features |
+| **Single Language**: Use Kotlin for all platforms                                        | **Learning Curve**: Requires understanding of multiple platform architectures     |
+| **JetBrains Support**: Strong backing from JetBrains with regular updates                | **Debugging Complexity**: Cross-platform debugging can be more challenging        |
+| **Gradual Adoption**: Can be adopted incrementally in existing projects                  | **Simultaneous testing**: Running 4 simulators at the same time are not possible on my 6 year old mac.       |
+
+
+
+# Notes
+
+### Getting started:
+
+- https://kotlinlang.org/docs/multiplatform.html
+- https://www.youtube.com/playlist?list=PLQkwcJG4YTCS55alEYv3J8CD4BXhqLUuk
+- https://www.kotlinguide.com/gridview-in-kmp-compose-multiplatform/
+
+### What is Gradle?
+
+- The package manager
+
+### How is the User Interface created?
+
+UI Framework = Compose Multiplatform?
+
+What are modifiers?
+https://medium.com/@serhiihulenko/kmp-compose-modifier-b2cbbafaaa83
+
+### How to change icon?
+
+https://medium.com/@hunterfreas/changing-app-icon-in-kotlin-multiplatform-7b615568cd26
+https://proandroiddev.com/building-deploying-a-simple-kmm-app-part-1-app-icons-8e8b739c7981
+
+## Steps to Open and Run the KMP App on iOS
+
+1. Find the Xcode project file:
+   Navigate to the iosApp folder in your Android Studio project's file structure.
+   Within this folder you will find the file iosApp.xcodeproj.
+2. Open the project in Xcode:
+   Right-click on the iosApp.xcodeproj file and select "Open in → Xcode".
+
+## Kotlin Basics
+
+### Follow the coding conventions:
+
+https://kotlinlang.org/docs/coding-conventions.html
