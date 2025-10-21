@@ -104,6 +104,104 @@ export default async function Home() {
             </div>
           </div>
 
+          {/* Projects Section */}
+          <div className="w-full max-w-4xl mb-12">
+            <h2 className="text-2xl sm:text-3xl font-bold text-[#D7E0C5] text-center mb-8">
+              Projects
+            </h2>
+            <div className="grid grid-cols-1 sm:grid-cols-2 lg:grid-cols-2 gap-6">
+             
+              <Link
+                href="https://fabapp.jimdosite.com/"
+                target="_blank"
+                className="group bg-[#1A1F15] hover:bg-[#2A2F25] border border-[#3A3F35] hover:border-[#D7E0C5] rounded-lg p-6 transition-all duration-300 transform hover:scale-105"
+              >
+                <div className="text-center">
+                  <h3 className="text-lg font-semibold text-[#D7E0C5] group-hover:text-white mb-2">
+                    FAB App
+                  </h3>
+                  <p className="text-sm text-[#8E967E] group-hover:text-[#D7E0C5]">
+                  Learning app for German vocational training programs
+                  </p>
+                </div>
+              </Link>
+              <Link
+                href="https://annah00k.github.io/co2-zone/en"
+                target="_blank"
+                className="group bg-[#1A1F15] hover:bg-[#2A2F25] border border-[#3A3F35] hover:border-[#D7E0C5] rounded-lg p-6 transition-all duration-300 transform hover:scale-105"
+              >
+                <div className="text-center">
+                  <h3 className="text-lg font-semibold text-[#D7E0C5] group-hover:text-white mb-2">
+                    CO2 Zone
+                  </h3>
+                  <p className="text-sm text-[#8E967E] group-hover:text-[#D7E0C5]">
+                    University project demo
+                  </p>
+                </div>
+              </Link>
+              <Link
+                href="https://www.instagram.com/hookintech/"
+                target="_blank"
+                className="group bg-[#1A1F15] hover:bg-[#2A2F25] border border-[#3A3F35] hover:border-[#D7E0C5] rounded-lg p-6 transition-all duration-300 transform hover:scale-105"
+              >
+                <div className="text-center">
+                  <h3 className="text-lg font-semibold text-[#D7E0C5] group-hover:text-white mb-2">
+                    Instagram
+                  </h3>
+                  <p className="text-sm text-[#8E967E] group-hover:text-[#D7E0C5]">
+                   Where I post my coding challenges
+                  </p>
+                </div>
+              </Link>
+              <Link
+                href="https://www.amazon.de/shop/hooked0ntech/list/XEYKC4SP7AYA?ref_=cm_sw_r_cp_ud_aipsflist_aipsfhooked0ntech_1ARB010TPA22B9J44HB7"
+                target="_blank"
+                className="group bg-[#1A1F15] hover:bg-[#2A2F25] border border-[#3A3F35] hover:border-[#D7E0C5] rounded-lg p-6 transition-all duration-300 transform hover:scale-105"
+              >
+                <div className="text-center">
+                  <h3 className="text-lg font-semibold text-[#D7E0C5] group-hover:text-white mb-2">
+                    Amazon Storefront
+                  </h3>
+                  <p className="text-sm text-[#8E967E] group-hover:text-[#D7E0C5]">
+                    My Setup
+                  </p>
+                </div>
+              </Link>
+              <Link
+                href="https://annah00k.github.io/CountingSite/"
+                target="_blank"
+                className="group bg-[#1A1F15] hover:bg-[#2A2F25] border border-[#3A3F35] hover:border-[#D7E0C5] rounded-lg p-6 transition-all duration-300 transform hover:scale-105"
+              >
+                <div className="text-center">
+                  <h3 className="text-lg font-semibold text-[#D7E0C5] group-hover:text-white mb-2">
+                    Counting Site
+                  </h3>
+                  <p className="text-sm text-[#8E967E] group-hover:text-[#D7E0C5]">
+                   Simple Counter for work
+                  </p>
+                </div>
+              </Link>
+              <Link
+                href="https://www.iu.de/bachelor/informatik/"
+                target="_blank"
+                className="group bg-[#1A1F15] hover:bg-[#2A2F25] border border-[#3A3F35] hover:border-[#D7E0C5] rounded-lg p-6 transition-all duration-300 transform hover:scale-105"
+              >
+                <div className="text-center">
+                  <h3 className="text-lg font-semibold text-[#D7E0C5] group-hover:text-white mb-2">
+                    Online University
+                  </h3>
+                  <p className="text-sm text-[#8E967E] group-hover:text-[#D7E0C5] mb-2">
+                    Bachelor of Computer Science (in progress)
+                  </p>
+                  <p className="text-xs text-[#8E967E] group-hover:text-[#D7E0C5]">
+                    @ IU International University
+                  </p>
+                </div>
+              </Link>
+              
+            </div>
+          </div>
+
           {/* Tech Stack Section */}
           <div className="w-full max-w-4xl mb-12">
             <h2 className="text-2xl sm:text-3xl font-bold text-[#D7E0C5] text-center mb-8">
@@ -157,74 +255,7 @@ export default async function Home() {
             </div>
           </div>
 
-          {/* Projects Section */}
-          <div className="w-full max-w-4xl mb-12">
-            <h2 className="text-2xl sm:text-3xl font-bold text-[#D7E0C5] text-center mb-8">
-              Projects
-            </h2>
-            <div className="grid grid-cols-1 sm:grid-cols-2 lg:grid-cols-2 gap-6">
-              <Link
-                href="https://www.iu.de/bachelor/informatik/"
-                target="_blank"
-                className="group bg-[#1A1F15] hover:bg-[#2A2F25] border border-[#3A3F35] hover:border-[#D7E0C5] rounded-lg p-6 transition-all duration-300 transform hover:scale-105"
-              >
-                <div className="text-center">
-                  <h3 className="text-lg font-semibold text-[#D7E0C5] group-hover:text-white mb-2">
-                    Online University
-                  </h3>
-                  <p className="text-sm text-[#8E967E] group-hover:text-[#D7E0C5] mb-2">
-                    Bachelor of Computer Science (in progress)
-                  </p>
-                  <p className="text-xs text-[#8E967E] group-hover:text-[#D7E0C5]">
-                    @ IU International University
-                  </p>
-                </div>
-              </Link>
-              <Link
-                href="https://fabapp.jimdosite.com/"
-                target="_blank"
-                className="group bg-[#1A1F15] hover:bg-[#2A2F25] border border-[#3A3F35] hover:border-[#D7E0C5] rounded-lg p-6 transition-all duration-300 transform hover:scale-105"
-              >
-                <div className="text-center">
-                  <h3 className="text-lg font-semibold text-[#D7E0C5] group-hover:text-white mb-2">
-                    FAB App
-                  </h3>
-                  <p className="text-sm text-[#8E967E] group-hover:text-[#D7E0C5]">
-                    Google Play Store <br />
-                    Apple App Store
-                  </p>
-                </div>
-              </Link>
-              <Link
-                href="https://annah00k.github.io/co2-zone/en"
-                target="_blank"
-                className="group bg-[#1A1F15] hover:bg-[#2A2F25] border border-[#3A3F35] hover:border-[#D7E0C5] rounded-lg p-6 transition-all duration-300 transform hover:scale-105"
-              >
-                <div className="text-center">
-                  <h3 className="text-lg font-semibold text-[#D7E0C5] group-hover:text-white mb-2">
-                    CO2 Zone
-                  </h3>
-                  <p className="text-sm text-[#8E967E] group-hover:text-[#D7E0C5]">
-                    Link to Website
-                  </p>
-                </div>
-              </Link>
-              <Link
-                href="https://www.amazon.de/shop/hooked0ntech/list/XEYKC4SP7AYA?ref_=cm_sw_r_cp_ud_aipsflist_aipsfhooked0ntech_1ARB010TPA22B9J44HB7"
-                target="_blank"
-                className="group bg-[#1A1F15] hover:bg-[#2A2F25] border border-[#3A3F35] hover:border-[#D7E0C5] rounded-lg p-6 transition-all duration-300 transform hover:scale-105"
-              >
-                <div className="text-center">
-                  <h3 className="text-lg font-semibold text-[#D7E0C5] group-hover:text-white mb-2">
-                    Amazon Storefront
-                  </h3>
-                  <p className="text-sm text-[#8E967E] group-hover:text-[#D7E0C5]">
-                    My Setup
-                  </p>
-                </div>
-              </Link>
-            </div>
-          </div>
+          
 
           {/* Featured Pages Section */}
           <div className="w-full max-w-4xl mb-12">
