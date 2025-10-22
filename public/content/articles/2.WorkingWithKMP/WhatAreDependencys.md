@@ -2,7 +2,7 @@
 title: What are dependencies?
 description: What are they in general and what is special about them in KMP? 
 date: 2025-10-22
-tags: [ KMP, dependencys]
+tags: [ KMP, dependencies]
 ---
 
 ## Introduction to Dependencies in Programming
