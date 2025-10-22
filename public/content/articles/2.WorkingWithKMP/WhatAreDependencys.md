@@ -45,7 +45,7 @@ Version catalogs support plugins too, ensuring consistent tooling. They promote 
 
 ## Best Practices for Beginners
 
-Start by adding only essential dependencies to keep your project lightweight. Use official sources like Maven Central or JetBrains' repository for KMP libraries. Tools like [klibs.io](https://klibs.io/?_cl=MTsxOzE7V01SVnNaOHlhWVFWejNudTZZdkh3VGFoYVV3bzlTMGpKNEdjSzJiRmhKMVU3SjhFTFVKSDNYWVFoclZKYjY4WTs=) help discover multiplatform options.
+Start by adding only essential dependencies to keep your project lightweight. Use official sources like Maven Central or JetBrains repository for KMP libraries. Tools like [klibs.io](https://klibs.io/?_cl=MTsxOzE7V01SVnNaOHlhWVFWejNudTZZdkh3VGFoYVV3bzlTMGpKNEdjSzJiRmhKMVU3SjhFTFVKSDNYWVFoclZKYjY4WTs=) help discover multiplatform options.
 
 Test dependencies on all targets early to catch platform issues. For security, review library licenses and avoid outdated versions. 
 
