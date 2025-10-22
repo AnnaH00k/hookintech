@@ -10,16 +10,13 @@ All developers have to make a decision when they start programming. Which Progra
 Kotlin Multiplattform allows to create apps for Android, IOS,Web and Desktop.
 What are the pros and cons of this programming environment?
 
-
-| **Pros**                                                                                 | **Cons**                                                                          |
-| ---------------------------------------------------------------------------------------- | --------------------------------------------------------------------------------- |
-| **Effortless Simulator Testing**: On IOS,Android, Web and Desktop.                       |  Still **requires Mac** for iOS testing and deployment            |
-| **Performance**: Near-native performance with shared business logic                      | **Platform-Specific Code**: Still need native code for platform-specific features |
-| **Single Language**: Use Kotlin for all platforms                                        | **Learning Curve**: Requires understanding of multiple platform architectures     |
-| **JetBrains Support**: Strong backing from JetBrains with regular updates                | **Debugging Complexity**: Cross-platform debugging can be more challenging        |
-| **Gradual Adoption**: Can be adopted incrementally in existing projects                  | **Simultaneous testing**: Running 4 simulators at the same time are not possible on my 6 year old mac.       |
-
-
+| **Pros**                                                                  | **Cons**                                                                                               |
+| ------------------------------------------------------------------------- | ------------------------------------------------------------------------------------------------------ |
+| **Effortless Simulator Testing**: On IOS,Android, Web and Desktop.        | Still **requires Mac** for iOS testing and deployment                                                  |
+| **Performance**: Near-native performance with shared business logic       | **Platform-Specific Code**: Still need native code for platform-specific features                      |
+| **Single Language**: Use Kotlin for all platforms                         | **Learning Curve**: Requires understanding of multiple platform architectures                          |
+| **JetBrains Support**: Strong backing from JetBrains with regular updates | **Debugging Complexity**: Cross-platform debugging can be more challenging                             |
+| **Gradual Adoption**: Can be adopted incrementally in existing projects   | **Simultaneous testing**: Running 4 simulators at the same time are not possible on my 6 year old mac. |
 
 # Notes
 
@@ -40,12 +37,16 @@ UI Framework = Compose Multiplatform?
 What are modifiers?
 https://medium.com/@serhiihulenko/kmp-compose-modifier-b2cbbafaaa83
 
+### What are Lambdas?
+
+https://kotlinlang.org/docs/lambdas.html
+
 ### How to change icon?
 
 https://medium.com/@hunterfreas/changing-app-icon-in-kotlin-multiplatform-7b615568cd26
 https://proandroiddev.com/building-deploying-a-simple-kmm-app-part-1-app-icons-8e8b739c7981
 
-## Steps to Open and Run the KMP App on iOS
+### Steps to Open and Run the KMP App on iOS
 
 1. Find the Xcode project file:
    Navigate to the iosApp folder in your Android Studio project's file structure.
