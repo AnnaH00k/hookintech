@@ -10,6 +10,7 @@ import CircuitBackground from "./components/CircuitBackground";
 import { CustomImage } from "@/components/CustomImage";
 import { usePathname } from "next/navigation";
 import Header from "./components/headers/header";
+import ArticlesSection from "./components/ArticlesSection";
 
 function getTopics(tree: ContentTree): string[] {
   if (!tree || !tree.children) return [];
@@ -59,50 +60,8 @@ export default async function Home() {
             <span className="text-[#D7E0C5]">Tech</span> industry.{" "}
           </p>
 
-
-              {/* Articles Section */}
-              <div className="w-full max-w-6xl mb-12">
-            <h2 className="text-2xl sm:text-3xl font-bold text-[#D7E0C5] text-center mb-8">
-              Latest Articles
-            </h2>
-            <div className="grid grid-cols-1 md:grid-cols-2 lg:grid-cols-3 gap-6 justify-items-center">
-              {allArticles.slice(0, 3).map((article) => (
-                <Link
-                  key={`${article.meta?.topic}/${article.meta?.slug}`}
-                  href={`/articles/${cleanDirectoryName(
-                    article.meta?.topic || ""
-                  )}/${article.meta?.slug}`}
-                  className="group bg-[#1A1F15] hover:bg-[#2A2F25] border border-[#3A3F35] hover:border-[#D7E0C5] rounded-lg p-6 transition-all duration-300 transform hover:scale-105"
-                >
-                  <div className="flex items-start space-x-3">
-                    <DocumentIcon className="h-5 w-5 text-[#7C9838] flex-shrink-0 mt-1" />
-                    <div>
-                      <h3 className="text-[#D7E0C5] font-semibold text-xl mb-3 group-hover:text-white transition-colors">
-                        {article.meta?.title}
-                      </h3>
-                      {article.meta?.description && (
-                        <p className="text-[#8E967E] text-sm mb-4 group-hover:text-[#D7E0C5] transition-colors">
-                          {article.meta.description}
-                        </p>
-                      )}
-                      {article.meta?.tags && (
-                        <div className="flex flex-wrap gap-2">
-                          {article.meta.tags.map((tag) => (
-                            <span
-                              key={tag}
-                              className="px-2 py-1 bg-[#1A2310] text-[#8E967E] rounded-full text-xs"
-                            >
-                              {tag}
-                            </span>
-                          ))}
-                        </div>
-                      )}
-                    </div>
-                  </div>
-                </Link>
-              ))}
-            </div>
-          </div>
+          {/* Articles Section */}
+          <ArticlesSection articles={allArticles} />
 
           {/* Projects Section */}
           <div className="w-full max-w-4xl mb-12">
@@ -110,7 +69,6 @@ export default async function Home() {
               Projects
             </h2>
             <div className="grid grid-cols-1 sm:grid-cols-2 lg:grid-cols-2 gap-6">
-             
               <Link
                 href="https://fabapp.jimdosite.com/"
                 target="_blank"
@@ -121,7 +79,7 @@ export default async function Home() {
                     FAB App
                   </h3>
                   <p className="text-sm text-[#8E967E] group-hover:text-[#D7E0C5]">
-                  Learning app for German vocational training programs
+                    Learning app for German vocational training programs
                   </p>
                 </div>
               </Link>
@@ -149,7 +107,7 @@ export default async function Home() {
                     Instagram
                   </h3>
                   <p className="text-sm text-[#8E967E] group-hover:text-[#D7E0C5]">
-                   Where I post my coding challenges
+                    Where I post my coding challenges
                   </p>
                 </div>
               </Link>
@@ -177,7 +135,7 @@ export default async function Home() {
                     Counting Site
                   </h3>
                   <p className="text-sm text-[#8E967E] group-hover:text-[#D7E0C5]">
-                   Simple Counter for work
+                    Simple Counter for work
                   </p>
                 </div>
               </Link>
@@ -198,7 +156,6 @@ export default async function Home() {
                   </p>
                 </div>
               </Link>
-              
             </div>
           </div>
 
@@ -255,8 +212,6 @@ export default async function Home() {
             </div>
           </div>
 
-          
-
           {/* Featured Pages Section */}
           <div className="w-full max-w-4xl mb-12">
             <h2 className="text-2xl sm:text-3xl font-bold text-[#D7E0C5] text-center mb-8">
@@ -306,7 +261,8 @@ export default async function Home() {
               </Link>
 
               <Link
-                href="https://github.com/AnnaH00k" target="_blank"
+                href="https://github.com/AnnaH00k"
+                target="_blank"
                 className="group bg-[#1A1F15] hover:bg-[#2A2F25] border border-[#3A3F35] hover:border-[#D7E0C5] rounded-lg p-6 transition-all duration-300 transform hover:scale-105"
               >
                 <div className="text-center">
@@ -320,8 +276,6 @@ export default async function Home() {
               </Link>
             </div>
           </div>
-
-      
 
           {/* Connect With Me Section */}
           <div className="w-full max-w-4xl mb-12 hidden">

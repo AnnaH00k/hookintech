@@ -92,7 +92,7 @@ export default async function Home() {
                   href={`/articles/${cleanDirectoryName(
                     article.meta?.topic || ""
                   )}/${article.meta?.slug}`}
-                  className="group bg-[#151C14] rounded-xl border border-[#1A2310] p-6 transition-all duration-300 hover:border-[#7C9838]"
+                  className="group bg-[#151C14] rounded-xl border border-[#1A2310] p-6 transition-all duration-300 hover:border-[#7C9838] w-full break-words word-break-natural"
                 >
                   <div className="flex items-start space-x-3">
                     <DocumentIcon className="h-5 w-5 text-[#7C9838] flex-shrink-0 mt-1" />

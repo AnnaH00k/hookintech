@@ -22,7 +22,7 @@ export default function ClientLayout({
 
 
   return (
-    <>
+    <div className="pt-10">
       {!hideHeaderFooterForHookBook && !hideHeaderFooterForPolitics && !hideHeaderFooter && !hideHeaderFooterForSwimmingCourses && !hideHeaderFooterForfabapp && <Header />}
       {hideHeaderFooterForPolitics && <PoliticsHeader />}
 
@@ -30,6 +30,6 @@ export default function ClientLayout({
 
       {children}
       {pathname === "/" && <Footer />}
-    </>
+    </div>
   );
 }

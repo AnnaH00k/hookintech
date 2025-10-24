@@ -74,7 +74,7 @@ export default async function TopicPage({ params }: TopicPageProps) {
     <div className="min-h-screen bg-[#0A1109] py-16">
       <div className="max-w-4xl mx-auto px-4 sm:px-6 lg:px-8">
         <div className="flex items-center justify-between mb-8">
-          <h1 className="text-4xl font-bold text-[#D7E0C5]">
+          <h1 className="text-4xl font-bold text-[#D7E0C5] text-wrap text-break break-words">
             {formatTopicName(topic)}
           </h1>
           <Link
@@ -95,7 +95,7 @@ export default async function TopicPage({ params }: TopicPageProps) {
               <div className="flex items-start space-x-4">
                 <DocumentIcon className="h-6 w-6 text-[#7C9838] flex-shrink-0 mt-1" />
                 <div>
-                  <h2 className="text-[#D7E0C5] font-semibold text-xl mb-2 group-hover:text-[#7C9838] transition-colors">
+                  <h2 className="text-[#D7E0C5] font-semibold text-xl mb-2 group-hover:text-[#7C9838] transition-colors text-wrap text-break break-words">
                     {article.meta?.title || article.name.replace(/\.md$/, "")}
                   </h2>
                   {article.meta?.description && (
