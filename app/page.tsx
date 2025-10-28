@@ -11,6 +11,7 @@ import { CustomImage } from "@/components/CustomImage";
 import { usePathname } from "next/navigation";
 import Header from "./components/headers/header";
 import ArticlesSection from "./components/ArticlesSection";
+import HiddenStartButton from "./components/HiddenStartButton";
 
 function getTopics(tree: ContentTree): string[] {
   if (!tree || !tree.children) return [];
@@ -60,6 +61,7 @@ export default async function Home() {
             <span className="text-[#D7E0C5]">Tech</span> industry.{" "}
           </p>
 
+<HiddenStartButton/>
           {/* Articles Section */}
           <ArticlesSection articles={allArticles} />
 
