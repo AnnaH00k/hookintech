@@ -71,6 +71,20 @@ export default async function Home() {
               Projects
             </h2>
             <div className="grid grid-cols-1 sm:grid-cols-2 lg:grid-cols-2 gap-6">
+            <Link
+                href="https://500px.com/p/annah00k"
+                target="_blank"
+                className="group bg-[#1A1F15] hover:bg-[#2A2F25] border border-[#3A3F35] hover:border-[#D7E0C5] rounded-lg p-6 transition-all duration-300 transform hover:scale-105"
+              >
+                <div className="text-center">
+                  <h3 className="text-lg font-semibold text-[#D7E0C5] group-hover:text-white mb-2">
+                    Photography
+                  </h3>
+                  <p className="text-sm text-[#8E967E] group-hover:text-[#D7E0C5] mb-2">
+                    Some of my shots for sale on 500px
+                  </p>
+                </div>
+              </Link>
               <Link
                 href="https://fabapp.jimdosite.com/"
                 target="_blank"
@@ -141,23 +155,8 @@ export default async function Home() {
                   </p>
                 </div>
               </Link>
-              <Link
-                href="https://www.iu.de/bachelor/informatik/"
-                target="_blank"
-                className="group bg-[#1A1F15] hover:bg-[#2A2F25] border border-[#3A3F35] hover:border-[#D7E0C5] rounded-lg p-6 transition-all duration-300 transform hover:scale-105"
-              >
-                <div className="text-center">
-                  <h3 className="text-lg font-semibold text-[#D7E0C5] group-hover:text-white mb-2">
-                    Online University
-                  </h3>
-                  <p className="text-sm text-[#8E967E] group-hover:text-[#D7E0C5] mb-2">
-                    Bachelor of Computer Science (in progress)
-                  </p>
-                  <p className="text-xs text-[#8E967E] group-hover:text-[#D7E0C5]">
-                    @ IU International University
-                  </p>
-                </div>
-              </Link>
+
+
             </div>
           </div>
 

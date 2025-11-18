@@ -162,7 +162,7 @@ export default async function ContentPage({ params }: PageProps) {
 
   return (
     <div className="min-h-screen bg-[#0A1109] py-16">
-      <article className="max-w-4xl mx-auto px-4 sm:px-6 lg:px-8">
+      <article className="max-w-4xl mx-auto px-4 sm:px-6 lg:px-8 pt-10">
         <header className="mb-8">
           <h1 className="text-4xl font-bold text-[#D7E0C5] mb-4">
             {meta.title}

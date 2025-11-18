@@ -36,7 +36,7 @@ export default async function Home() {
   const allArticles = await getAllArticles();
 
   return (
-    <div className="w-full min-h-screen bg-[#0A1109] relative">
+    <div className="w-full min-h-screen bg-[#0A1109] relative pt-10">
       <CircuitBackground />
       <Header />
       <main className="flex flex-col items-center justify-between sm:py-20 pb-[10vh] min-h-screen w-full relative z-10 pt-20">

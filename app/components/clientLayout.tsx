@@ -22,7 +22,7 @@ export default function ClientLayout({
 
 
   return (
-    <div className="pt-10">
+    <div className="">
       {!hideHeaderFooterForHookBook && !hideHeaderFooterForPolitics && !hideHeaderFooter && !hideHeaderFooterForSwimmingCourses && !hideHeaderFooterForfabapp && <Header />}
       {hideHeaderFooterForPolitics && <PoliticsHeader />}
 
