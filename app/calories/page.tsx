@@ -143,7 +143,7 @@ const WeeklyConingentPage = () => {
   } = calculateWeeklyStats(week, initialCarryOver);
 
   return (
-    <div className="min-h-screen bg-gradient-to-b from-green-900/30 via-black to-green-900/30 text-slate-50 px-4 py-24">
+    <div className="min-h-screen bg-gradient-to-b from-background via-black to-background text-slate-50 px-4 py-24">
       <div className="mx-auto flex w-full max-w-7xl flex-col gap-10">
         <header className="space-y-3">
           <p className="text-xs font-semibold uppercase tracking-[0.3em] text-green-400/80">
