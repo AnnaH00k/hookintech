@@ -152,11 +152,6 @@ const WeeklyConingentPage = () => {
           <h1 className="text-balance text-3xl font-semibold tracking-tight sm:text-4xl">
             Weekly calorie overview
           </h1>
-          <p className="max-w-2xl text-sm leading-relaxed text-slate-300">
-            Keep your week in view with a simple, fluid overview. Enter what you
-            eat and burn each day, and we&apos;ll show you how it adds up
-            against your goal and maintenance level.
-          </p>
         </header>
 
         <section className="rounded-3xl border border-white/10 bg-white/5 p-6 shadow-[0_18px_60px_rgba(0,0,0,0.55)] backdrop-blur-md sm:p-8">
@@ -281,12 +276,7 @@ const WeeklyConingentPage = () => {
                           (kcal)
                         </span>
                       </th>
-                      <th className="px-4 py-3 font-medium text-slate-100">
-                        Allowed
-                        <span className="ml-1 text-[11px] font-normal text-slate-300">
-                          (kcal)
-                        </span>
-                      </th>
+                     
                       <th className="px-4 py-3 font-medium text-slate-100">
                         Net
                         <span className="ml-1 text-[11px] font-normal text-slate-300">
@@ -348,9 +338,7 @@ const WeeklyConingentPage = () => {
                             placeholder="0"
                           />
                         </td>
-                        <td className="whitespace-nowrap px-4 py-3 text-xs tabular-nums text-slate-100 sm:text-sm">
-                          {day.allowed}
-                        </td>
+                       
                         <td className="whitespace-nowrap px-4 py-3 text-xs tabular-nums text-slate-100 sm:text-sm">
                           {day.net}
                         </td>
