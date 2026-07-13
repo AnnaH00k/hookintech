@@ -1,29 +1,24 @@
 /** @type {import('next').NextConfig} */
-const isProduction = process.env.NODE_ENV === "production";
-const basePath = isProduction ? '/hookintech' : '';
-const assetPrefix = isProduction ? '/hookintech' : '';
+const isProduction = process.env.NODE_ENV === 'production'
+const repo = '/hookintech'
 
 const nextConfig = {
-  output: "export",
-  basePath,
-  assetPrefix,
+  output: 'export',
+  basePath: isProduction ? repo : '',
+  assetPrefix: isProduction ? repo : '',
   images: {
     unoptimized: true,
-    loader: "custom",
-    loaderFile: "./utils/imageLoader.ts",
   },
-  experimental: {
-    serverComponentsExternalPackages: ["gray-matter"],
-  },
+  serverExternalPackages: ['gray-matter'],
   webpack: (config, { isServer }) => {
     if (!isServer) {
       config.resolve.fallback = {
         fs: false,
         path: false,
-      };
+      }
     }
-    return config;
+    return config
   },
-};
+}
 
-export default nextConfig;
+export default nextConfig
