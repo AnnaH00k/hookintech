@@ -8,6 +8,8 @@ const nextConfig = {
   assetPrefix: isProduction ? repo : '',
   images: {
     unoptimized: true,
+    loader: "custom",
+    loaderFile: "./utils/imageLoader.ts",
   },
   serverExternalPackages: ['gray-matter'],
   webpack: (config, { isServer }) => {
