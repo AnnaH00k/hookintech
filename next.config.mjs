@@ -1,8 +1,12 @@
 /** @type {import('next').NextConfig} */
 const isProduction = process.env.NODE_ENV === "production";
+const basePath = isProduction ? '/hookintech' : '';
+const assetPrefix = isProduction ? '/hookintech' : '';
 
 const nextConfig = {
   output: "export",
+  basePath,
+  assetPrefix,
   images: {
     unoptimized: true,
     loader: "custom",
