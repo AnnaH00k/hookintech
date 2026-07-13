@@ -19,13 +19,17 @@ jobs:
       - name: Setup Node.js
         uses: actions/setup-node@v4
         with:
-          node-version: '18'
+          node-version: '24'
           cache: 'pnpm'
 
-      - name: Enable Corepack and install pnpm
+      - name: Enable Corepack and ensure pnpm
         run: |
-          corepack enable
-          corepack prepare pnpm@latest --activate
+          corepack enable || true
+          corepack prepare pnpm@latest --activate || true
+          # Fallback: install pnpm globally if corepack didn't provide it
+          if ! command -v pnpm >/dev/null 2>&1; then
+            npm install -g pnpm@latest
+          fi
 
       - name: Install dependencies
         run: pnpm install --frozen-lockfile
