@@ -7,7 +7,6 @@ import {
 } from "@/utils/contentUtils";
 import { FolderIcon, DocumentIcon } from "@heroicons/react/24/outline";
 import CircuitBackground from "./components/CircuitBackground";
-import { CustomImage } from "@/components/CustomImage";
 import { usePathname } from "next/navigation";
 import Header from "./components/headers/header";
 import ArticlesSection from "./components/ArticlesSection";

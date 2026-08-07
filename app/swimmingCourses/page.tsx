@@ -11,7 +11,7 @@ export const metadata: Metadata = {
       "Individueller Schwimmunterricht in Aachen für alle Altersgruppen. Von Wassergewöhnung über Seepferdchen bis hin zu Bronze, Silber & Gold. Auch Erwachsenenkurse und Wasserfitness.",
     images: [
       {
-        url: "/hooked0ntech/swimage.png", // Ersetzen Sie dies mit dem Pfad zu Ihrem gewünschten Vorschaubild
+        url: "/hookintech/swimage.png", // Ersetzen Sie dies mit dem Pfad zu Ihrem gewünschten Vorschaubild
         width: 600,
         height: 600,
         alt: "Schwimmkurse in Aachen",
@@ -23,7 +23,7 @@ export const metadata: Metadata = {
     title: "Schwimmkurse in Aachen | Persönlicher Schwimmunterricht",
     description:
       "Individueller Schwimmunterricht in Aachen für alle Altersgruppen. Von Wassergewöhnung über Seepferdchen bis hin zu Bronze, Silber & Gold. Auch Erwachsenenkurse und Wasserfitness.",
-    images: ["/hooked0ntech/swimage.png"], // Gleiches Bild wie oben
+    images: ["/hookintech/swimage.png"], // Gleiches Bild wie oben
   },
 };
 

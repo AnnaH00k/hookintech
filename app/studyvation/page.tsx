@@ -1,6 +1,7 @@
 "use client";
 
 import { useState } from "react";
+import Image from "next/image";
 import {
   LineChart,
   Line,
@@ -127,10 +128,12 @@ export default function Studyvation() {
             <div className="grid grid-cols-1 sm:grid-cols-2 gap-12 items-center mb-12">
               <div className="relative flex justify-center p-2">
                 <div className="hover:scale-150 hover:bg-background hover:shadow-md hover:shadow-gray-600 hover:items-center left-0 right-0 mx-auto p-2 transition-all duration-300 ease-in-out">
-                  <img
+                  <Image
                     src="/images/berufsberatung.svg"
                     alt="Berufsberatung"
-                    className="rounded-lg shadow-2xl max-w-xs"
+                    width={732}
+                    height={444}
+                    className="rounded-lg shadow-2xl max-w-xs h-auto"
                   />
                 </div>
               </div>
@@ -155,10 +158,12 @@ export default function Studyvation() {
             <div className="grid grid-cols-1 sm:grid-cols-2 gap-12 items-center mb-12">
               <div className="relative flex justify-center p-2">
                 <div className="hover:scale-150 hover:bg-background hover:shadow-md hover:shadow-gray-600 hover:items-center left-0 right-0 mx-auto p-2 transition-all duration-300 ease-in-out">
-                  <img
+                  <Image
                     src="/images/lernmaterialien.svg"
                     alt="Lernmaterialien"
-                    className="rounded-lg shadow-2xl max-w-xs"
+                    width={708}
+                    height={385}
+                    className="rounded-lg shadow-2xl max-w-xs h-auto"
                   />
                 </div>
               </div>
@@ -183,10 +188,12 @@ export default function Studyvation() {
             <div className="grid grid-cols-1 sm:grid-cols-2 gap-12 items-center mb-12">
               <div className="relative flex justify-center p-2">
                 <div className="hover:scale-150 hover:bg-background hover:shadow-md hover:shadow-gray-600 hover:items-center left-0 right-0 mx-auto p-2 transition-all duration-300 ease-in-out">
-                  <img
+                  <Image
                     src="/images/motivation.svg"
                     alt="Motivation"
-                    className="rounded-lg shadow-2xl max-w-xs"
+                    width={258}
+                    height={362}
+                    className="rounded-lg shadow-2xl max-w-xs h-auto"
                   />
                 </div>
               </div>
@@ -206,10 +213,12 @@ export default function Studyvation() {
             <div className="grid grid-cols-1 sm:grid-cols-2 gap-12 items-center mb-12">
               <div className="relative flex justify-center p-2">
                 <div className="hover:scale-150 hover:bg-background hover:shadow-md hover:shadow-gray-600 hover:items-center left-0 right-0 mx-auto p-2 transition-all duration-300 ease-in-out">
-                  <img
+                  <Image
                     src="/images/daten.svg"
                     alt="Daten"
-                    className="rounded-lg shadow-2xl max-w-xs"
+                    width={578}
+                    height={361}
+                    className="rounded-lg shadow-2xl max-w-xs h-auto"
                   />
                 </div>
               </div>
@@ -229,10 +238,12 @@ export default function Studyvation() {
             <div className="grid grid-cols-1 sm:grid-cols-2 gap-12 items-center mb-12">
               <div className="relative flex justify-center p-2">
                 <div className="hover:scale-150 hover:bg-background hover:shadow-md hover:shadow-gray-600 hover:items-center left-0 right-0 mx-auto p-2 transition-all duration-300 ease-in-out">
-                  <img
+                  <Image
                     src="/images/ausbildungsWerkzeuge.svg"
                     alt="Ausbildungswerkzeuge"
-                    className="rounded-lg shadow-2xl max-w-xs"
+                    width={698}
+                    height={451}
+                    className="rounded-lg shadow-2xl max-w-xs h-auto"
                   />
                 </div>
               </div>

@@ -7,7 +7,6 @@ const nextConfig = {
   basePath: isProduction ? repo : '',
   assetPrefix: isProduction ? repo : '',
   images: {
-    unoptimized: true,
     loader: "custom",
     loaderFile: "./utils/imageLoader.ts",
   },
